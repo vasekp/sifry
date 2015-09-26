@@ -10,25 +10,7 @@
 	<string name="tRDObsahuje">Contains</string>
 	<string name="tRDNeobsahuje">Exclude</string>
 
-		
-	<!--string name="tRDDownloadDirURL" translatable="false">http://niebelung.fjfi.cvut.cz/~vasek/sifry/</string-->
-	<string name="tRDDownloadDirURL" translatable="false">http://sifry.martasdx.cz/</string>
-	
-	<string name="tRDFilename">en.canon.gz</string>
-	<integer name="iRDFilesize">364866</integer>
-	<string name="tRDStahnout">This component provides a regular expression–based search in a dictionary
-		of ca. 90k English words and their variants. It is intended for users experienced in working
-		with regular expressions. To open access to the functionality, the application needs to download
-		the dictionary data (approx. 400 kB). Download now?</string>
-	<string name="tRDStahnoutInterni">This component provides a regular expression–based search in a dictionary
-		of ca. 90k English words and their variants. It is intended for users experienced in working
-		with regular expressions. To open access to the functionality, the application needs to download
-		the dictionary data (approx. 400 kB).\n\
-		External storage not accessible at this moment. Download into the device\'s internal memory?</string>
-	<string name="tRDAktualizace">An actualized dictionary is available. Download now (approx. 400 kB)?</string>
-	<string name="tRDStahovani">Downloading dictionary data…</string>
-	<string name="tRDZruseno">Download cancelled.</string>
-	<string name="tRDChybaStahovani">Download failed.</string>
+	<string name="tRDFilename">en.canon</string>
 
 
 <string name="tHelpRegExp"><![CDATA[

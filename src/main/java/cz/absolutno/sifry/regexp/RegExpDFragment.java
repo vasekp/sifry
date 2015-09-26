@@ -15,6 +15,7 @@ import android.widget.ToggleButton;
 import cz.absolutno.sifry.R;
 import cz.absolutno.sifry.Utils;
 import cz.absolutno.sifry.common.activity.AbstractDFragment;
+import cz.absolutno.sifry.regexp.RegExpNative.Progress;
 
 public final class RegExpDFragment extends AbstractDFragment {
 
@@ -63,8 +64,8 @@ public final class RegExpDFragment extends AbstractDFragment {
 		if(re == null)
 			return;
 		final int[] progress = re.getProgress();
-		if(progress[1] > 0) {
-			int matches = (progress[1] <= 10000)?progress[1]:10000;
+		if(progress[Progress.MATCHES] > 0) {
+			int matches = (progress[Progress.MATCHES] <= 10000)?progress[Progress.MATCHES]:10000;
 			tvProgress.setText(String.valueOf(progress[1]));
 			adapter.update(matches);
 		}
@@ -101,17 +102,17 @@ public final class RegExpDFragment extends AbstractDFragment {
 					return;
 				}
 				final int[] progress = re.getProgress();
-				if(progress[5] != 0) {
+				if(progress[Progress.ERR] != 0) {
 					Utils.toast(re.getError());
 					tvProgress.setText("");
 					re.stopThread();
 					updateGoButton();
 					return;
 				}
-				int matches = (progress[1] <= 10000)?progress[1]:10000;
-				if(progress[4] != 0 || matches > 0 || tvProgress.length() > 0)
-					tvProgress.setText(String.valueOf(progress[1]));
-				if(progress[4] != 0)
+				int matches = (progress[Progress.MATCHES] <= 10000)?progress[Progress.MATCHES]:10000;
+				if(progress[Progress.RUN] != 0 || matches > 0 || tvProgress.length() > 0)
+					tvProgress.setText(String.valueOf(progress[Progress.MATCHES]));
+				if(progress[Progress.RUN] != 0)
 					h.postDelayed(this, matchesDelay);
 				adapter.update(matches);
 				updateGoButton();
@@ -124,8 +125,8 @@ public final class RegExpDFragment extends AbstractDFragment {
 					return;
 				}
 				final int[] progress = re.getProgress();
-				pbProgress.setProgress((int)((float)progress[3]/progress[2]*1000));
-				if(progress[4] != 0)
+				pbProgress.setProgress((int)((float)progress[Progress.POS]/progress[Progress.SIZE]*1000));
+				if(progress[Progress.RUN] != 0)
 					h.postDelayed(this, progressDelay);
 				else
 					pbProgress.setVisibility(View.GONE);

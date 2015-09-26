@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "cz.absolutno.sifry"
-        minSdkVersion 7
+        minSdkVersion 9
         targetSdkVersion 23
 
         compileOptions.with {
@@ -16,7 +16,7 @@ android {
 
         /* Until Google makes Gradle usable for NDK I'm refusing (after 5 wasted hours) to find any workarounds.
          * If you want to modify any NDK code, go to src/main/jni and run manually:
-         *  ndk-build -C .
+         *  ndk-build
          */
         /*ndk {
             moduleName "regrep"

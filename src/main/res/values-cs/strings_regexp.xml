@@ -10,21 +10,7 @@
 	<string name="tRDObsahuje">Obsahuje</string>
 	<string name="tRDNeobsahuje">Neobsahuje</string>
 
-		
-	<string name="tRDFilename">cs.canon.gz</string>
-	<integer name="iRDFilesize">16963039</integer>
-	<string name="tRDStahnout">Tato část aplikace umožňuje vyhledávání ve speciálním slovníku zhruba
-		4 milionů českých slov pomocí regulárních výrazů. Je určena pro uživatele se zkušenostmi
-		v jejich používání. Pro funkčnost je třeba slovník stáhnout jako externí soubor (velikost
-		asi 16 MB). Stáhnout nyní?</string>
-	<string name="tRDStahnoutInterni">Tato část aplikace umožňuje vyhledávání ve speciálním slovníku zhruba
-		4 milionů českých slov pomocí regulárních výrazů. Je určena pro uživatele se zkušenostmi
-		v jejich používání. Pro funkčnost je třeba slovník stáhnout jako externí soubor (velikost
-		asi 16 MB).\nExterní úložiště není připojeno. Stáhnout do interní paměti telefonu?</string>
-		<string name="tRDStahovani">Probíhá stahování slovníku…</string>
-	<string name="tRDAktualizace">Je dostupná aktualizace slovníku. Stáhnout nyní (velikost 17 MB)?</string>
-	<string name="tRDZruseno">Stahování zrušeno.</string>
-	<string name="tRDChybaStahovani">Chyba při stahování.</string>
+	<string name="tRDFilename">cs.canon</string>
 
 		
 <string name="tHelpRegExp"><![CDATA[

@@ -1,21 +1,25 @@
 #include <jni.h>
+#include <android/asset_manager_jni.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <fcntl.h>
-#include <errno.h>
 #include <stdlib.h>
 #include <string.h>
 #include <pthread.h>
-#include <zlib.h>
 #include "pcre.h"
 
-#define BUFSZ 4096
 #define PATSZ 256
 #define FNSZ 256
 #define LINESZ 100
-#define N 3
-#define OVECSZ 3
+#define MAXPAT 3
 #define MAXRES 10000
+
+#define ERR_PCRE    1
+#define ERR_PTHREAD 2
+#define ERR_NUMPAT  3
+#define ERR_ASSET   4
+#define ERR_READ    5
+
+AAssetManager *mgr;
 
 pthread_t t;
 char fn[FNSZ];
@@ -23,7 +27,7 @@ const char *pcreerror;
 int stop;
 int refcount = 0;
 int run = 0, err = 0;
-int ts = 0, ps = 0, mc = 0, prg = 0;
+int size = 0, pos = 0, matches = 0;
 
 typedef struct {
 	pcre *cmp;
@@ -33,7 +37,7 @@ typedef struct {
 	int val;
 } pattern;
 
-pattern p[N];
+pattern p[MAXPAT];
 
 char *res[MAXRES] = {0};
 
@@ -42,19 +46,20 @@ void stopThread();
 void *thr(void*);
 
 
-JNIEXPORT void JNICALL Java_cz_absolutno_sifry_regexp_RegExpNative_init(JNIEnv *env, jobject obj, jstring jfn) {
+JNIEXPORT void JNICALL Java_cz_absolutno_sifry_regexp_RegExpNative_init(JNIEnv *env, jobject obj, jobject jmgr, jstring jfn) {
 	const char *cfn = (*env)->GetStringUTFChars(env, jfn, 0);
 	strcpy(fn, cfn);
 	(*env)->ReleaseStringUTFChars(env, jfn, cfn);
+	mgr = AAssetManager_fromJava(env, jmgr);
 	refcount++;
 }
 
 JNIEXPORT void JNICALL Java_cz_absolutno_sifry_regexp_RegExpNative_free(JNIEnv *env, jobject obj) {
 	int i;
 	stopThread();
-	ts = 0;
-	ps = 0;
-	mc = 0;
+	size = 0;
+	pos = 0;
+	matches = 0;
 	for(i = 0; i < MAXRES; i++) {
 		if(res[i]) free(res[i]);
 	}
@@ -71,8 +76,8 @@ JNIEXPORT void JNICALL Java_cz_absolutno_sifry_regexp_RegExpNative_startThread(J
 
 	if(run) stopThread();
 	n = (*env)->GetArrayLength(env, joa);
-	if(n > N) {
-		err = 3;
+	if(n > MAXPAT) {
+		err = ERR_NUMPAT;
 		return;
 	}
 	for(i = 0; i < n; i++) {
@@ -89,7 +94,7 @@ JNIEXPORT void JNICALL Java_cz_absolutno_sifry_regexp_RegExpNative_startThread(J
 		else p[i].act = 0;
 		(*env)->ReleaseStringUTFChars(env, js, str);
 	}
-	for(; i < N; i++) {
+	for(; i < MAXPAT; i++) {
 		p[i].act = 0;
 	}
 	startThread(p);
@@ -105,25 +110,25 @@ JNIEXPORT jboolean JNICALL Java_cz_absolutno_sifry_regexp_RegExpNative_isRunning
 }
 
 JNIEXPORT jintArray JNICALL Java_cz_absolutno_sifry_regexp_RegExpNative_getProgress(JNIEnv *env , jobject obj) {
-	jint tmp[6] = {prg, mc, ts, ps, run, err};
+	jint tmp[5] = {run, err, matches, pos, size};
 	jintArray ret;
-	ret = (*env)->NewIntArray(env, 6);
-	(*env)->SetIntArrayRegion(env, ret, 0, 6, tmp);
+	ret = (*env)->NewIntArray(env, 5);
+	(*env)->SetIntArrayRegion(env, ret, 0, 5, tmp);
 	return ret;
 }
 
 JNIEXPORT jstring JNICALL Java_cz_absolutno_sifry_regexp_RegExpNative_getResult(JNIEnv *env, jobject obj, jint ix) {
-	if(ix < 0 || ix >= mc) return NULL;
+	if(ix < 0 || ix >= matches) return NULL;
 	return (*env)->NewStringUTF(env, res[ix]);
 }
 
 JNIEXPORT jstring JNICALL Java_cz_absolutno_sifry_regexp_RegExpNative_getError(JNIEnv *env, jobject obj) {
 	switch(err) {
-	case 1: return (*env)->NewStringUTF(env, pcreerror);
-	case 2: return (*env)->NewStringUTF(env, "pthread_create failed");
-	case 3: return (*env)->NewStringUTF(env, "Illegal number of patterns");
-	case 4: return (*env)->NewStringUTF(env, fn);
-	case 5: return (*env)->NewStringUTF(env, "Failed to open gzip stream");
+	case ERR_PCRE:    return (*env)->NewStringUTF(env, pcreerror);
+	case ERR_PTHREAD: return (*env)->NewStringUTF(env, "pthread_create failed");
+	case ERR_NUMPAT:  return (*env)->NewStringUTF(env, "Illegal number of patterns");
+	case ERR_ASSET:   return (*env)->NewStringUTF(env, "Cannot find asset");
+	case ERR_READ:    return (*env)->NewStringUTF(env, "Read error");
 	default: return NULL;
 	}
 }
@@ -133,7 +138,7 @@ void startThread(void *data) {
 	if(run) return;
 	stop = 0;
 	if(!pthread_create(&t, NULL, thr, data)) { run = 1; err = 0; }
-	else { run = 0; err = 2; }
+	else { run = 0; err = ERR_PTHREAD; }
 }
 
 void stopThread() {
@@ -145,77 +150,101 @@ void stopThread() {
 
 
 void *thr(void *data) {
+	AAsset *a;
 	pattern *p = (pattern*)data;
 	int erroroffset;
 	char buf[LINESZ];
-	int ovec[OVECSZ];
-	int i, r, ll;
-	int f;
-	gzFile g;
+	int o1, o2, o3; /* Buffer start, end, line break */
+	int i, r;
 
-	mc = 0;
-	prg = 0;
+	/* Clear matches */
+	matches = 0;
 	for(i = 0; i < MAXRES; i++) {
 		if(res[i]) free(res[i]);
 	}
 	memset(res, 0, sizeof(res));
-	for(i = 0; i < N; i++) {
+
+	/* Initialize asset and PCRE */
+	a = AAssetManager_open(mgr, fn, AASSET_MODE_STREAMING);
+	if(a == NULL) {
+		err = ERR_ASSET;
+		return NULL;
+	}
+	for(i = 0; i < MAXPAT; i++) {
 		if(p[i].act) {
 			p[i].cmp = pcre_compile(p[i].pat, PCRE_UTF8 | PCRE_UCP, &pcreerror, &erroroffset, NULL);
 			if(!p[i].cmp) {
-				err = 1;
+				err = ERR_PCRE;
 				run = 0;
+				AAsset_close(a);
 				return NULL;
 			}
 			p[i].extra = pcre_study(p[i].cmp, 0, &pcreerror);
 		}
 	}
 
-	f = open(fn, O_RDONLY);
-	if(f < 0) {
-		err = 4;
-		strcpy(fn, strerror(errno));
-		return NULL;
-	}
-	ts = (int)lseek(f, 0, SEEK_END);
-	lseek(f, 0, SEEK_SET);
-	g = gzdopen(f, "r");
-	if(!g) {
-		close(f);
-		err = 5;
-		return NULL;
-	}
+	size = AAsset_getLength(a);
+	o1 = 0;
+	o2 = 0;
 	while(!stop) {
-		if(!gzgets(g, buf, LINESZ)) break;
-		ll = strlen(buf);
-		if(!ll) continue;
-		prg = ((int)(buf[0]-'a')*26) + (buf[1]==':'?0:buf[1]-'a');
-		for(i = 0; i < N; i++) {
+		/* Read one line between o1 and o2; o3 = current end of cached input */
+		for(;;) {
+			for(o3 = o1; o3 < o2; o3++)
+				if(buf[o3] == '\n') break;
+			if(o3 < o2) break;
+			memmove(buf, buf+o1, o2-o1);
+			o2 -= o1;
+			o1 = 0;
+			if(o2 == LINESZ) {
+				err = ERR_READ; /* Line too long */
+				break;
+			}
+			r = AAsset_read(a, buf+o2, LINESZ-o2);
+			if(r == 0) {
+				break; /* EOF */
+			} else if(r < 0) {
+				err = ERR_READ;
+				break;
+			} else {
+				o2 += r;
+			}
+		}
+		if(o1 == o2 && !AAsset_getRemainingLength(a)) break; /* EOF */
+		if(err) break;
+		if(o3 == o1) continue; /* Empty line */
+
+		/* Pattern matching */
+		for(i = 0; i < MAXPAT; i++) {
 			if(!p[i].act) continue;
-			r = pcre_exec(p[i].cmp, p[i].extra, buf, ll, 0, 0, ovec, OVECSZ);
+			r = pcre_exec(p[i].cmp, p[i].extra, buf+o1, o3-o1, 0, 0, NULL, 0);
 			if(r < 0 && p[i].val == 1) break;
 			if(r >= 0 && p[i].val == 0) break;
 		}
-		if(i == N) {
-			if(mc < MAXRES) {
-				for(i = 0; i < ll; i++)
-					if(buf[i] == ':') break;
-				i++;
-				res[mc] = malloc(ll - i);
-				strncpy(res[mc], buf+i, ll-i-1);
-				res[mc][ll-i-1] = 0;
+		/* All tests passed = match found */
+		if(i == MAXPAT) {
+			if(matches < MAXRES) {
+				while(buf[o1++] != ':') {};
+				res[matches] = malloc(o3-o1+1);
+				strncpy(res[matches], buf+o1, o3-o1);
+				res[matches][o3-o1] = 0;
 			}
-			mc++;
+			matches++;
 		}
-		ps = (int)lseek(f, 0, SEEK_CUR);
+
+		/* Discard the line */
+		o1 = o3+1;
+		pos = size - AAsset_getRemainingLength(a);
 	}
-	for(i = 0; i < N; i++) {
+
+	/* Free PCRE data and asset */
+	for(i = 0; i < MAXPAT; i++) {
 		if(p[i].act) {
 			if(p[i].extra) pcre_free_study(p[i].extra);
 			if(p[i].cmp) pcre_free(p[i].cmp);
 		}
 	}
-	gzclose(g);
+	AAsset_close(a);
 	run = 0;
+	/* Exit the thread */
 	return NULL;
 }

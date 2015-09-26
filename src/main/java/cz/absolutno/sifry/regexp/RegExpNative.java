@@ -1,6 +1,8 @@
 package cz.absolutno.sifry.regexp;
 
-import java.io.File;
+import android.content.res.AssetManager;
+
+import cz.absolutno.sifry.App;
 
 public final class RegExpNative {
 
@@ -8,10 +10,18 @@ public final class RegExpNative {
 		System.loadLibrary("pcre");
 		System.loadLibrary("regrep");
 	}
-	
-	private String fname; 
 
-	private native void init(String fn);
+	public static final class Progress {
+		public static final int RUN = 0;
+		public static final int ERR = 1;
+		public static final int MATCHES = 2;
+		public static final int POS = 3;
+		public static final int SIZE = 4;
+	}
+
+	private AssetManager mgr;
+
+	private native void init(AssetManager mgr, String fn);
 	public native int free();
 	private native void nativeFinalize();
 
@@ -23,18 +33,14 @@ public final class RegExpNative {
 	public native String getResult(int ix);
 	public native String getError();
   
-	public RegExpNative(String path) {
-		fname = new File(path).getName();
-		init(path);
+	public RegExpNative(String filename) {
+		mgr = App.getContext().getAssets();
+		init(mgr, "raw/" + filename);
 	}
 	
 	@Override
 	public void finalize() {
 		nativeFinalize();
 	}
-	
-	public String getFileName() {
-		return fname;
-	}
-	
+
 }
