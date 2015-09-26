@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+ 	<string name="cptZapisnik">Zápisník stanovišť</string>
+ 	<string name="tZDefault">Zápisník</string>
+	<string name="tZNew">Nové stanoviště…</string>
+	<string name="tZPozn">…</string>
+	<string name="tZClearQ">Smazat všechny záznamy?</string>
+	
+	<string name="tZOdchod">Odchod</string>
+	<string name="tZZmena">Upravit</string>
+	<string name="tZSmaz">Smazat</string>
+	
+	<string name="cptZDAdd">Přidat záznam</string>
+	<string name="cptZDModify">Upravit záznam</string>
+	<string name="tZDNazev">Název stanoviště:</string>
+	<string name="tZDHeslo">Kód stanoviště:</string>
+	<string name="tZDRes">Řešení:</string>
+	<string name="tZDUpres">Upřesnítko:</string>
+	<string name="tZDPozn">Poznámka:</string>
+	<string name="patZDDefault">Stanoviště %d</string>
+	<string name="tZDZobr">Zobrazit</string>
+	<string name="tZDPrichod">Čas příchodu:</string>
+	<string name="tZDOdchod">Čas opuštění:</string>
+	
+	<string name="tZENazev">Název souboru:</string>
+	<string name="tZEPole">Exportovat pole:</string>
+	<string name="tZEJak">Po exportu:</string>
+	<string name="tZEExt">Otevřít v externí aplikaci</string>
+	<string name="tZEErrEmpty">Zápisník je prázdný.</string>
+	<string name="tZEErrStorage">Externí úložiště nedostupné.</string>
+	<string name="patZESuccess">Uloženo jako %s.</string>
+
+
+<string name="tHelpZapisnik"><![CDATA[
+<h1>Zápisník</h1>
+
+<p>Tato komponenta nabízí funkci zápisníku kontrolních stanovišť navštívených například během
+šifrovací hry – času příchodu, odchodu, nalezeného řešení a dalších informací. Zadané hodnoty
+jsou interně uchovávány i po opuštění aplikace a je možno je i exportovat pro uložení nebo
+zpracování v jiném programu.</p>
+
+
+<h3>Základní ovládání</h3>
+
+<p>Při příchodu na stanoviště klikněte na položku <i>Nové stanoviště</i>. Zobrazený dialog ukáže
+relevantní položky s předvyplněným časem příchodu a podle nastavení doplní nebo nedoplní i automatické
+označení stanoviště číslem.  Všechny automaticky doplněné hodnoty je samozřejmě možno měnit.</p>
+
+<p>Po opuštění stanoviště klikněte na jeho nedokončený záznam v seznamu. Otevře se dialog odkrývající
+nyní předvyplněný čas odchodu a nabízející možnost zapsat si řešení a případné další poznámky.</p>
+
+<p>Jestliže kliknete na některé z již plně vyplněných stanovišť, zobrazený dialog nabídne možnost
+změny libovolných údajů souvisejících s příchodem i odchodem. Stejně tak je možno si nechat zobrazit
+plnou verzi dialogu hned při příchodu.</p>
+
+
+<h3>Export</h3>
+
+<p>Pro archivaci záznamů je možno využít záložky <i>Exportovat</i>. Export vždy probíhá do textového
+formátu CSV (comma-separated values), který je rozeznáván všemi běžnými kancelářskými aplikacemi.
+Aplikace nabízí možnost zvolit si, která pole se mají ve výsledném souboru objevit.</p>
+
+<p>Vytvořený soubor se uloží na paměť zařízení v adresáři \"Šifry\" (jméno nově vytvořeného souboru
+se pak krátce zobrazí). <i>Šifrovací pomůcky</i> nabízejí možnost exportovaný soubor také přímo
+otevřít v některém z nainstalovaných tabulkových editorů; k uložení souboru do zařízení však
+dojde v každém případě.</p> 
+
+
+<h3>Nastavení</h3>
+
+<p>V hlavním nastavení aplikace je možno určit, zda zápisník bude stanoviště automaticky označovat jako
+\"Stanoviště 1, 2, …\". Jestliže je toto nastavení deaktivováno, nová stanoviště nebudou mít žádný
+předvyplněný název. I při automatickém číslování je možno název měnit, například přečíslovat skupinu
+stanovišť na \"1A\", \"1B\" apod. Následující automaticky očíslované stanoviště použije číslo o jedna
+větší, než je stanoviště s aktuálně nejvyšší hodnotou podle předepsaného vzoru.</p>  
+
+
+<h3>Tipy a triky</h3>
+
+<p>Jestliže byl ke stanovišti zadáno upřesnění nebo poznámky, zobrazí se vedle něj v seznamu
+značka \"…\". Takto je možno si snadno připomenout, že je k dispozici nějaká dodatečná informace,
+která se v seznamu nezobrazuje přímo.</p>
+]]></string>
+	
+	
+</resources>

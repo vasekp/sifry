@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+	
+	<string name="prefLocale">Jazyk aplikace</string>
+    
+	<string name="prefAbcTitle">Nastavení abecedy</string>
+	<string name="prefAbcSummary">Čísla písmen, Substituce a Posuny</string>
+
+	<string name="prefAbcChTitle">Počítat do abecedy Ch</string>
+	<string name="prefAbcChSummary">Zaškrtněte pro zařazení Ch mezi H a I</string>
+
+	<string name="prefAbcQTitle">Počítat do abecedy Q</string>
+	<string name="prefAbcQSummary">Zrušte zaškrtnutí pro vyřazení Q z abecedy (…OPRS…)</string>
+
+	<string name="prefAbcWTitle">Počítat do abecedy W</string>
+	<string name="prefAbcWSummary">Zrušte zaškrtnutí pro vyřazení W z abecedy</string>
+
+	<string name="prefAbcXTitle">Počítat do abecedy X</string>
+	<string name="prefAbcXSummary">Zrušte zaškrtnutí pro vyřazení X z abecedy</string>
+
+	<string name="prefBGestureTitle">Zadávání tahem</string>
+	<string name="prefBGestureSummary">Urychlení zadávání přejetím prstu přes černé tečky</string>
+
+	<string name="prefBSpaceTitle">Umožnit vkládání mezer</string>
+	<string name="prefBSpaceSummary">Mezeru vložíte do vstupu kliknutím na prázdný Braillův znak</string>
+	
+	<string name="prefBNumberTitle">Umožnit zadávání číslic</string>
+	<string name="prefBNumberSummary">Přijmout do vstupu číselný prefix</string>
+	
+	<string name="prefBNumPersTitle">Řetězce číslic</string>
+	<string name="prefBNumPersSummary">Číselný prefix platný až do zrušení</string>
+		
+	<string name="prefBDiaTitle">Umožnit zadávání diakritiky</string>
+	<string name="prefBDiaSummary">Přijmout znak do vstupu, pokud obsahuje diakritiku</string>
+	
+	<string name="prefBItpTitle">Umožnit zadávání interpunkce</string>
+	<string name="prefBItpSummary">Přijmout do vstupu interpunkční znaménka</string>
+	
+	<string name="prefBFmtTitle">Umožnit formátování</string>
+	<string name="prefBFmtSummary">Přijmout a zpracovat formátovací značky</string>
+
+	<string name="prefSmNumberTitle">Umožnit zadávání číslic</string>
+	<string name="prefSmNumberSummary">Přijmout do vstupu prefixy čísel a písmen</string>
+	
+	<string name="prefTAidTitle">Zobrazovat náhledy znaků</string>
+	<string name="prefTAidSummary">Obrana proti zakrývání bříškem prstu</string>
+
+	<string name="prefVDelayTitle">Doba zpracování znaku</string>
+	<string name="prefVDelaySummary">Prodleva, než se spustí rozpoznání</string>
+	<string name="prefVDelayHi">Dlouho</string>
+	<string name="prefVDelayLo">Krátce</string>
+	
+	<string name="prefKalNamedaysTitle">Jmenný kalendář</string>
+						
+	<string name="prefZAutoTitle">Číslovat automaticky</string>
+	<string name="prefZAutoSummary">Nová stanoviště nazývat "Stanoviště 1, 2, …"</string>
+		
+	<string name="prefClearTitle">Obnovit výchozí hodnoty</string>
+	<string name="prefClearSummary">Vrátit výchozí hodnoty všech nastavení</string>
+	
+	<string name="prefParseTitle">Dělení textu na znaky</string>
+	<string name="prefParseSummary">Frekvenční analýza, Transpozice</string>
+	
+	<string name="prefParseAbcTitle">Pojetí abecedy</string>
+	<string name="prefParseAbcDefault">-Ch</string>
+	
+	<string name="prefParseNPTitle">Ignorovat nepísmenné znaky</string>
+	<string name="prefParseNPSummary">Přeskočit (Transpozice) nebo nevypisovat v seznamu (Empirická substituce)</string>
+	
+	<string-array name="saJazyky">
+	    <item>Automaticky</item>
+	    <item>Česky</item>
+	    <item>Anglicky</item>
+	</string-array>
+	
+	<string-array name="saLocale">
+	    <item></item>
+	    <item>cs</item>
+	    <item>en</item>
+	</string-array>
+	
+	<string-array name="saAbcVarNazvy" tools:ignore="MissingTranslation">
+		<item>Základní bez diakritiky</item>
+		<item>Základní s Ch</item>
+		<item>Včetně diakritiky</item>
+		<item>Včetně diakritiky i Ch</item>
+	</string-array>
+	
+	<string-array name="saAbcVarKody" tools:ignore="MissingTranslation">
+		<item>-Ch</item>
+		<item>+Ch</item>
+		<item>Full-Ch</item>
+		<item>Full+Ch</item>
+	</string-array>
+		
+</resources>

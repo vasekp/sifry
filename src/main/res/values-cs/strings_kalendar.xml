@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+	<string name="cptKalendar">Kalendář, svátky</string>
+	<string name="tKDMesicRok">Měsíc, rok:</string>
+	<string name="tKDDny">Kalendář:</string>
+	<string name="tKDDenRoku">Den v roce:</string>
+	<string name="patKDDniOd">Dní od %s:</string>
+	<string name="tKDJmeno">Svátek:</string>
+
+	<string name="tKDDef">Kalendář</string>
+	<string name="tKDRefJD">Svátky dle jména</string>
+	<string name="tKDRefDJ">Svátky dle data</string>
+	
+	
+<string name="tHelpKalendar"><![CDATA[
+<h1>Kalendář</h1>
+
+<p>V této komponentě je možno procházet standardní gregoriánský kalendář s použitím různých
+kombinací údajů: měsíc, číslo dne v něm, v roce, číslo týdne atd. Lze také automaticky počítat
+rozdíly v počtu dní mezi daty. Nakonec se nabízí obousměrné vyhledávání v českém a slovenském
+kalendáři včetně referenčního seznamu.</p>
+
+
+<h3>Základní ovládání</h3>
+
+<p>Při spuštění komponenty se zobrazí kalendář nastavený na aktuální datum a jméno, které má
+svátek (případně název státního svátku). Změnou zobrazených polí lze libovolný údaj změnit
+a nechat přepočítat ostatní. Pro přechod o měsíc či rok dopředu či dozadu je možno také
+využít zkratková tlačítka označená šipkami, přesun o měsíc lze také provést přejetím prstem
+po ploše kalendáře nahoru nebo dolů.</p>
+
+<p>Při každé aktualizaci kalendáře se také zobrazí jméno odpovídající novému vybranému dni.
+Naopak je možno přepsat pole <i>Svátek</i> a tím najít den spjatý s daným jménem. Jméno není
+nutné zadávat s diakritikou, ale <b>je potřeba</b> výběr potvrdit mezi nabízenými možnostmi,
+i když jméno napíšete celé.</p>
+
+<p>K vyhledávání svátků je také možno využít dvě různé referenční tabulky (viz záložky ve
+spodním řádku) – seznam všech svátků v roce seřazený podle data nebo všech jmenin podle abecedy.</p>
+
+
+<h3>Pokročilé ovládání</h3>
+
+<p>Ve výchozím nastavení se jako jedna z položek nabízí počet dní od aktuálního data. Výběrem
+jiného dne v kalendáři se spočítá rozdíl od současného dne, naopak zadáním hodnoty rozdílu
+se najde den vzdálený o požadovaný počet od něj. Toto referenční datum nemusí být nutně shodné
+se dneškem. Pokud jej chcete změnit, poklepejte dvakrát na jiný den. Zvýrazní se červenou
+barvou a všechny rozdíly se následně budou počítat od něj.</p>
+
+<p><i>Kalendář</i> nabízí také možnost si některé dny nechat označit pro účely sledování, zda na
+ploše kalendáře nevykreslí nějaký souvislý obrazec. Označení dne žlutou barvou dosáhnete
+dlouhým přidržením prstu na něm. Stejně lze předchozí označení zrušit. Žlutě označené dny
+nemají žádný jiný význam.</p>
+
+<p>Výběr referenčního data ani množina žlutě označených dní se po opuštění komponenty nezachovává.</p>
+
+
+<h3>Nastavení</h3>
+
+<p>V nastavení je možno zvolit, zda se má zobrazovat český nebo slovenský kalendář, případně zda
+se nemá zobrazovat vůbec. Změny se projeví okamžitě.</p> 
+]]></string>
+
+
+	<string-array name="saKDKalendare">
+		<item>Český</item>
+		<item>Slovenský</item>
+		<item>Nezobrazovat</item>
+	</string-array>
+	
+	<string-array name="saKDKalendareKody">
+		<item>svatkyCZ</item>
+		<item>svatkySK</item>
+		<item></item>
+	</string-array>
+	
+	<string name="pref_kal_namedays_default">svatkyCZ</string>
+
+
+	<string-array name="saKDMesice">
+		<item>Leden</item>
+		<item>Únor</item>
+		<item>Březen</item>
+		<item>Duben</item>
+		<item>Květen</item>
+		<item>Červen</item>
+		<item>Červenec</item>
+		<item>Srpen</item>
+		<item>Září</item>
+		<item>Říjen</item>
+		<item>Listopad</item>
+		<item>Prosinec</item>
+	</string-array>
+	
+</resources>

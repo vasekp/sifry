@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="cptKalendar">Calendar</string>
+	<string name="tKDMesicRok">Month, year:</string>
+	<string name="tKDDny">Calendar:</string>
+	<string name="tKDDenRoku">Day of year:</string>
+	<string name="patKDDniOd">Days since %s:</string>
+	<string name="tKDJmeno">Name:</string>
+	
+	<string name="tKDDef">Calendar</string>
+	<string name="tKDRefJD">Name → Date</string>
+	<string name="tKDRefDJ">Date → Name</string>
+
+	
+<string name="tHelpKalendar"><![CDATA[
+<h1>Calendar</h1>
+
+<p>Use this component to navigate in the calendar, using various combinations of data (month
+number, day of month, day of year, weekday etc.) and retrieving the full set of such values
+for each day. You can also use it to compute the differences between two dates in days
+easily.</p>
+
+
+<h3>Basic usage</h3>
+
+<p>The calendar displayed in the main part of the screen is initially set to the current date.
+Changing any of the text fields or clicking a day in the calendar widget will select the new
+date and recompute all the remaining fields accordingly. Month and year can also be more
+conveniently changed using the arrow buttons, or swiping over the calendar widget vertically.</p>
+
+
+<h3>Advanced usage</h3>
+
+<p>The <i>Days since</i> field displays (or allows the user to enter) the difference in days with
+respect to the current system date. This anchor can be changed by double clicking the requested
+date in the calendar widget. It will be shown in red to reflect this property.</p>
+
+<p>It is also possible to mark a subset of days in the calendar by long-clicking them. The marked
+days will be displayed in yellow colour. This has no other purpose than checking for a possible
+geometrical pattern leading to the solution of a calendar-based puzzle.</p>
+
+<p>Neither the anchor date nor the set of dates marked this way are kept when the component is
+exited.</p>
+
+
+<h3>Name days</h3>
+
+<p>The app contains a database of Czech and Slovak name days, i.e., names associated with most
+of the days in a year. This feature is hidden in the English locale by default but can be brought
+up via Preferences.</p>
+
+<p>If name days are enabled, the name day associated with the selected day of year (or public
+holiday name in the few cases where there is none) is displayed along the other calendar data.
+It can also be used to conversely find a day by its name day. If diacritics are present in
+the name you would like to enter, they can be omitted.</p>
+
+<p>The layout of the component also changes to offer two new tabs, allowing to browse all
+name days either alphabetically or in the order they appear during the year, respectively.</p>  
+]]></string>
+		
+
+	<string-array name="saKDKalendare">
+	    <item>Don\'t display</item>
+	    <item>Czech</item>
+	    <item>Slovak</item>
+	</string-array>
+	
+	<string-array name="saKDKalendareKody">
+	    <item></item>
+		<item>svatkyCZ</item>
+		<item>svatkySK</item>
+	</string-array>
+	
+	<string name="pref_kal_namedays_default"></string>
+	
+			
+	<string-array name="saKDMesice">
+		<item>January</item>
+		<item>February</item>
+		<item>March</item>
+		<item>April</item>
+		<item>May</item>
+		<item>June</item>
+		<item>July</item>
+		<item>August</item>
+		<item>September</item>
+		<item>October</item>
+		<item>November</item>
+		<item>December</item>
+	</string-array>
+
+</resources>

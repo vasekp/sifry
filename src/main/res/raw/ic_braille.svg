@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Copyright (c) 2012 Vašek Potoček -->
+
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="512"
+   height="512">
+  <defs>
+    <radialGradient
+       cx="159.666"
+       cy="74.333"
+       r="20"
+       id="radialGradient1"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="0" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1" />
+    </radialGradient>
+    <radialGradient
+       cx="159.666"
+       cy="245"
+       r="20"
+       id="radialGradient2"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="0" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1" />
+    </radialGradient>
+    <radialGradient
+       cx="181.666"
+       cy="436.666"
+       r="50"
+       id="radialGradient3"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="0" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1" />
+    </radialGradient>
+    <radialGradient
+       cx="352.333"
+       cy="96.333"
+       r="50"
+       id="radialGradient4"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="0" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1" />
+    </radialGradient>
+    <radialGradient
+       cx="352.333"
+       cy="267"
+       r="50"
+       id="radialGradient5"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="0" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1" />
+    </radialGradient>
+    <radialGradient
+       cx="352.333"
+       cy="437.666"
+       r="50"
+       id="radialGradient6"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="0" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1" />
+    </radialGradient>
+  </defs>
+  <circle
+     cx="170.666"
+     cy="85.333"
+     r="57.888"
+     fill="#404040" />
+  <circle
+     cx="170.666"
+     cy="85.333"
+     r="57.888"
+     style="fill:url(#radialGradient1);stroke:#000000;stroke-width:7.2" />
+  <circle
+     cx="170.666"
+     cy="256"
+     r="57.888"
+     fill="#404040" />
+  <circle
+     cx="170.666"
+     cy="256"
+     r="57.888"
+     style="fill:url(#radialGradient2);stroke:#000000;stroke-width:7.2" />
+  <circle
+     cx="170.666"
+     cy="426.666"
+     r="57.888"
+     fill="#c0c0c0" />
+  <circle
+     cx="170.666"
+     cy="426.666"
+     r="57.888"
+     style="fill:url(#radialGradient3);stroke:#000000;stroke-width:7.2" />
+  <circle
+     cx="341.333"
+     cy="85.333"
+     r="57.888"
+     fill="#c0c0c0" />
+  <circle
+     cx="341.333"
+     cy="85.333"
+     r="57.888"
+     style="fill:url(#radialGradient4);stroke:#000000;stroke-width:7.2" />
+  <circle
+     cx="341.333"
+     cy="256"
+     r="57.888"
+     fill="#c0c0c0" />
+  <circle
+     cx="341.333"
+     cy="256"
+     r="57.888"
+     style="fill:url(#radialGradient5);stroke:#000000;stroke-width:7.2" />
+  <circle
+     cx="341.333"
+     cy="426.666"
+     r="57.888"
+     fill="#c0c0c0" />
+  <circle
+     cx="341.333"
+     cy="426.666"
+     r="57.888"
+     style="fill:url(#radialGradient6);stroke:#000000;stroke-width:7.2" />
+</svg>

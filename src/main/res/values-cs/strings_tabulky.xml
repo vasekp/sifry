@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+	<string name="cptPolskyTabulky">Polský kříž,\nšifrovací tabulky</string>
+	<string name="cptTabulky">Šifrovací tabulky</string>
+	<string name="tTDTab">Šifrovací tabulka:</string>
+	<string name="tTDVar">Varianta:</string>
+	<string name="tTDVstup">Zvolte podle zadání:</string>
+	<string name="tTDSour">Po souřadnicích:</string>
+	
+	<string name="tTDErrMobilVar">Nedostupné pro tuto tabulku.</string>
+
+	<string name="tTDCtvBifidXY">Šifra Bifid, XY</string>
+	<string name="tTDCtvBifidYX">Šifra Bifid, YX</string>
+
+
+<string name="tHelpTabulky"><![CDATA[
+<h1>Šifrovací tabulky</h1>
+
+<p>Tato komponenta nabízí pomoc při dekódování velkého a malého polského kříže (též známých jako
+zednářské nebo rosikruciánské kříže), šifrovací tabulky 5×5 (Polybiova čtverce) a také multi-tap
+klávesnice mobilních telefonů.</p>
+
+
+<h3>Základní ovládání</h3>
+
+<p>Pomocí ovládacích prvků v horní části obrazovky je možno zvolit druh šifrovací tabulky a jednu
+z různých variant, ve kterých se stejný princip může vyskytovat. Aplikace vykreslí danou tabulku
+vyplněnou písmeny v odpovídajících pozicích. Ta lze přímo číst nebo kliknutím zaznamenat v poli
+<i>Řešení</i>. To slouží pro pohodlné přečtení celé zprávy v celku, ale také pro případné zpracování
+variant vstupu.</p>
+
+
+<h5>Velký polský kříž</h5>
+
+<p>Základní zadání šifry sestává z částí rámečků obdélníků s tečkami vlevo, uprostřed nebo vpravo. Pomocí
+zvýrazněných okrajů vykreslených aplikací snadno určíme správný segment odpovídající tvaru znaku
+ze zadání a v něm odpovídající první, druhé či třetí písmeno.</p> 
+
+<p>Pole <i>Varianta</i> v této možnosti nabízí i alternativní rozložení velkého polského kříže, přezdívané
+občas \"hebrejština\". Zde je okraj rámečku doplněn žádnou, jednou či dvěma tečkami. Ve vykreslené vizualizaci
+zvolíme podle počtu teček odpovídající tabulku a v ní snadno dohledáme segment. Vzhledem k tomu, že se
+jedná jen o jiné pořadí tří souřadnic, mezi variantami <i>Velkého polského kříže</i> lze volně přecházet.</p>
+
+<p>Souřadnice X, Y a polohu tečky (klasické rozložení), případně X, Y a počet teček (alternativní
+rozložení) lze zadat i přímo jako trojici čísel 1 až 3.</p>
+
+<p>V záložce <i>Varianty</i> je možno stejný vstup interpretovat mnoha alternativními možnostmi, především
+založenými na prohození významu souřadnic či jejich zrcadlové otočení, přijetí a nepřijetí spřežky <b>ch</b>,
+ale i více komplikovanou trigrafickou šifru známou jako \"trifid\".</p>
+
+
+<h5>Malý polský kříž</h5>
+
+<p>Základní zadání šifry sestává z částí rámečků čtverců, buď vodorovně položených nebo natočených na
+špičku, a doplněných nebo nedoplněných tečkou. Varianty se liší podle pořadí, v jakém symbolům přiřadíme
+písmena. Vizualizace vykreslená aplikací vysvětluje vše.</p>
+
+<p>Alternativní interpretace malého polského kříže, nabízené v záložce <i>Varianty</i>, zahrnují prohození
+či zrcadlení směrů a prohození významu tečky / žádné tečky.</p> 
+
+
+<h5>Polybiův čtverec</h5>
+
+<p>Zadání šifry sestává buď ze dvojic čísel (často dále zakódovaných, např. jako zlomek nebo jako počet
+vodorovných a počet svislých čar), nebo z obrázků symbolizujících místa v rámci čtverce 5×5. Podle toho
+můžeme znaky dohledávat buď v obrázku nebo zadávat pomocí dvojic souřadnic. Protože typická abeceda
+používaná v šifrování má písmen 26, je potřeba jedno z méně obvyklých písmen vyřadit. Je možno zvolit
+W, Q, X nebo J, podle čehož se tabulka přeznačí. Nabízené možnosti nejsou ovlivněny globálním nastavením
+abecedy ani jej nemění.</p>
+
+<p>Případné <i>Varianty</i> berou v ohled možnost nesprávného zvolení písmene vyřazeného z tabulky a dále
+možné prohození vodorovné a svislé souřadnice a počítání z jednoho či druhého směru. S Polybiovým čtvercem
+také úzce souvisí bigrafická varianta šifry trifid známá jako \"bifid\".</p> 
+
+
+<h5>Klávesnice mobilu</h5>
+
+<p>Zadání šifry typicky sestává z nehomogenní dvojice čísel, kde číslici v rozsahu 2–9 je třeba interpretovat
+jako klávesu na klávesnici 3×3 a podružnou číslici 1–4 jako počet stisknutí klávesy ve funkci Multi-tap.
+Řešení můžeme z obrazovky buď přímo číst nebo vykreslené klávesy skutečně v odpovídajícím počtu rychlých
+opakování stisknout. Toto rozložení nenabízí žádné varianty vstupu, protože klávesnice mobilního
+telefonu má díky nevyužité klávese 1 a díky více písmenům na 7 a 9 jen jednu správnou orientaci.</p>
+
+
+<h3>Šifrování</h3>
+
+<p>Záložka <i>Zašifrovat</i> nabízí možnost do jednotlivých šifrovacích tabulek text zakódovat. Možnosti se
+liší podle zvolené šifrovací tabulky:</p>
+
+<p><b>Velký polský kříž</b>: grafická reprezentace (bílá na černém, při exportu do souboru černá na bílém),
+souřadnice v pořadí řádek–sloupec–poloha tečky (v případě alternativního rozložení brány jako
+tabulka–řádek–sloupec) a šifra trifid ve variantách řádek–sloupec–poloha a sloupec–řádek–poloha
+(v alternativním rozložení tabulka–řádek–sloupec a tabulka–sloupec–řádek).</p>
+
+<p><b>Malý polský kříž</b>: grafická reprezentace a textová. Číslice 1 až 9 odpovídají poloze čtverečku
+(číslované z levého horního rohu), písmena A, B, C, D odpovídají čtyřem polohám v natočeném kříži
+(v pořadí, v jakém jsou vyplněny v šifrovací tabulce) a případná hvězdička značí tečku.</p>
+
+<p><b>Polybiův čtverec</b>: grafická reprezentace ve dvou provedeních, \"uvnitř čtverce\" a \"uvnitř či
+na okrajích čtverce 3×3\". Poloha tečky je v obou stejná, liší se jen velikost rámečku, vůči němuž je
+vztažena. Dále se nabízí textová reprezentace souřadnic jako čísel od 1 do 5 a šifra bifid zakódovaná
+v obou možných pořadích zápisu souřadnic.</p>
+
+<p><b>Klávesnice mobilu</b>: <i>Multi-tap</i> – číslice klávesy zopakovaná v potřebném počtu opakování,
+<i>Klávesa + počet</i> – číslice klávesy doplněná o číslici vyjadřující počet opakování.</p> 
+
+
+<h3>Nastavení</h3>
+
+<p>Je možno vybrat, zda máte zájem o zobrazování náhledů znaků pod špičkou prstu s malým posunem, kde
+nebudou zakryty. Tato funkce je určena především pro malé displeje a na tabletech, případně při ovládání
+stylusem, je zbytečná a může působit rušivě.</p>
+
+
+<h3>Tipy a triky</h3>
+
+<p>Aplikace zachovává polohy znaků v tabulkách, ať už vybrané dotykem nebo zadané pomocí souřadnic.
+Při změně varianty tabulky (např. zařazení / vyřazení písmen) je dosavadní vstup okamžitě přepočítán,
+aby odpovídal novému rozložení za zachování graficky stejného zadání.</p>
+
+<p><i>Pozor:</i> Řešení však nemůže být zachováno při změně šifrovací tabulky za tabulku jiných rozměrů
+a je v takové situaci vymazáno.</p>
+]]></string>	
+		
+	
+   	<string-array name="saTDTabulky">
+   		<item>Velký polský kříž</item>
+   		<item>Malý polský kříž</item>
+   		<item>Polybiův čtverec</item>
+   		<item>Klávesnice mobilu</item>
+	</string-array>
+ 	
+   	<array name="iaTDTabulky">
+   		<item>@id/idTDVPolsky</item>
+   		<item>@id/idTDMPolsky</item>
+   		<item>@id/idTDCtverec</item>
+   		<item>@id/idTDMobil</item>
+	</array>
+
+
+ 	<string-array name="saTDVPVar">
+   		<item>klas. +Ch</item>
+   		<item>klas. –Ch</item>
+		<item>alt. +Ch</item>
+		<item>alt. –Ch</item>
+   	</string-array>
+   	
+ 	<array name="iaTDVPVar">
+ 		<item>@id/idTDVPKlas</item>
+ 		<item>@id/idTDVPKlas</item>
+ 		<item>@id/idTDVPAlt</item>
+   		<item>@id/idTDVPAlt</item>
+	</array>
+
+	<string-array name="saTDVPABCVar" tools:ignore="MissingTranslation">
+		<item>+Ch</item>
+		<item>-Ch</item>
+		<item>+Ch</item>
+		<item>-Ch</item>
+	</string-array>
+
+
+   	<string-array name="saTDMPVar">
+   		<item>9 – • – 4</item>
+   		<item>9 – 4 – •</item>
+		<item>• – 9 – 4</item>
+	</string-array>
+	
+   	<array name="iaTDMPVar">
+   		<item>@id/idTDMP9T4</item>
+   		<item>@id/idTDMP94T</item>
+   		<item>@id/idTDMPT94</item>
+	</array>
+	
+   	<string-array name="saTDMPABCVar">
+   	    <item></item>
+   	    <item></item>
+		<item></item>
+	</string-array>
+
+	
+	<string-array name="saTDCtvVar">
+		<item>Bez Q</item>
+		<item>Bez W</item>
+   		<item>Bez X</item>
+   		<item>Bez J (spojit s I)</item>
+   		<!--item>6×6 s číslicemi</item-->
+	</string-array>
+
+	<string-array name="saTDCtvABCVar">
+		<item>Q:5</item>
+		<item>W:5</item>
+		<item>X:5</item>
+		<item>J:5</item>
+		<!--item>dig:6</item-->
+	</string-array>
+	
+	   		
+	<string-array name="saTVVPGroups">
+		<item>Permutace / včetně Ch</item>
+		<item>Permutace + zrcadlení / včetně Ch</item>
+		<item>Šifra Trifid / včetně Ch</item>
+		<item>Permutace / bez Ch</item>
+		<item>Permutace + zrcadlení / bez Ch</item>
+		<item>Šifra Trifid / bez Ch</item>
+	</string-array>
+   	
+ 	<array name="iaTVVPGroups">
+ 		<item>@id/idTVVProt</item>
+ 		<item>@id/idTVVProtzrc</item>
+   		<item>@id/idTVVPtrifid</item>
+ 		<item>@id/idTVVProt</item>
+   		<item>@id/idTVVProtzrc</item>
+   		<item>@id/idTVVPtrifid</item>
+	</array>
+
+	<string-array name="saTVVPABCVar" tools:ignore="MissingTranslation">
+		<item>+Ch</item>
+		<item>+Ch</item>
+		<item>+Ch</item>
+		<item>-Ch</item>
+		<item>-Ch</item>
+		<item>-Ch</item>
+	</string-array>
+	
+	
+	<string-array name="saTCVPItems">
+	    <item>Graficky</item>
+	    <item>Souřadnice (YXZ)</item>
+	    <item>Šifra Trifid (YXZ)</item>
+	    <item>Šifra Trifid (XYZ)</item>
+	</string-array>
+	
+	<array name="iaTCVPItems">
+	    <item>@id/idTCPrimo</item>
+	    <item>@id/idTCSour</item>
+	    <item>@id/idTCVPTrifid931</item>
+	    <item>@id/idTCVPTrifid391</item>
+	</array>
+	
+	<string-array name="saTCVPAltItems">
+	    <item>Graficky</item>
+	    <item>Souřadnice (ZYX)</item>
+	    <item>Šifra Trifid (ZYX)</item>
+	    <item>Šifra Trifid (ZXY)</item>
+	</string-array>
+	
+	<array name="iaTCVPAltItems">
+	    <item>@id/idTCPrimo</item>
+	    <item>@id/idTCSour</item>
+	    <item>@id/idTCVPTrifid931</item>
+	    <item>@id/idTCVPTrifid913</item>
+	</array>
+	
+	<string-array name="saTCMPItems">
+	    <item>Graficky</item>
+	    <item>Textově</item>
+	</string-array>
+	
+	<array name="iaTCMPItems">
+	    <item>@id/idTCPrimo</item>
+	    <item>@id/idTCSour</item>
+	</array>
+	
+	<string-array name="saTCCtvItems">
+	   <item>5×5</item>
+	   <item>3×3 + okraj</item>
+	   <item>Souřadnice (YX)</item>
+	   <item>Šifra Bifid (YX)</item>
+	   <item>Šifra Bifid (XY)</item>
+	</string-array>
+	
+	<array name="iaTCCtvItems">
+	    <item>@id/idTCCtv5x5</item>
+	    <item>@id/idTCCtv3x3</item>
+	    <item>@id/idTCSour</item>
+	    <item>@id/idTCCtvBifidYX</item>
+	    <item>@id/idTCCtvBifidXY</item>
+	</array>
+	
+	<string-array name="saTCMobilItems">
+	    <item>Multi-tap</item>
+	    <item>Klávesa + počet opakování</item>
+	</string-array>
+	
+	<array name="iaTCMobilItems">
+	    <item>@id/idTCMobilMulti</item>
+	    <item>@id/idTCMobilPocet</item>
+	</array>
+
+</resources>

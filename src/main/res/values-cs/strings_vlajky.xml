@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="cptVlajky">Vlajková abeceda</string>
+	<string name="tVDGest">Načrtněte hlavní prvky vlajky:</string>
+	<string name="tVDOdhad">Odhady – zvolte kliknutím:</string>
+	<string name="dscVDOkraj">Okraj vlajky</string>
+	
+	
+<string name="tHelpVlajky"><![CDATA[
+<h1>Vlajková abeceda</h1>
+
+<p>Tato komponenta slouží k rozpoznávání vlajek námořní vlajkové abecedy. Nabízí také referenční
+přehled vlajek používaných pro vyjádření číslic a signalizaci důležitých situací.</p>
+
+
+<h3>Základní ovládání</h3>
+
+<p>Vlajku, kterou chcete vložit, nakreslete špičkou prstu do přiloženého pole. Například, pokud
+vlajka má tvar tří barevných vodorovných pruhů nad sebou, nakreslete dvě čáry dělící obdélník zhruba
+na třetiny. Systém vyhledá a nabídne vlajky, které jsou tvarem náčrtku nejvíce podobné. Kliknutím na
+některou z nich můžete písmenko vložit do pole <i>Řešení</i>.</p>
+
+<p>Obrázky sestávající z více čar jsou podporovány. Nesnažte se spojit oddělené čáry jedním tahem.
+Je však třeba stihnout nakreslit celý obrys, než systém spustí rozpoznávání (možno nastavit).</p>
+
+<p>Komponenta rozpoznává pouze vlajky odpovídající písmenům. Nelze rozpoznávat vlajky odpovídající
+číslicím ani zkratkám či zvláštním symbolům používaným v námořní komunikaci.</p> 
+
+<p>Jestliže máte problémy s rozpoznáním některých tvarů vlajek, zkuste jejich charakteristické
+znaky zvýraznit více, případně až přehnat. Není nutno přesně respektovat relativní rozměry a umístění
+v rámci naznačeného obrysu, pokud by to mělo být na úkor úspěšnosti rozpoznání.</p>
+
+
+<h3>Nastavení</h3>
+
+<p>V nastavení je možno zvolit prodlevu, kterou systém ponechává od dokončení kreslení do začátku
+detekce tvarů. Prodleva je potřeba pro kreslení znaků sestávajících z více čar, ale příliš dlouhá
+může zbytečně zdržovat používání komponenty.</p> 
+
+
+<h3>Šifrování</h3>
+
+<p>Záložka <i>Zašifrovat</i> umožňuje převést text do vlajkové abecedy. Jsou rozpoznávány znaky
+anglické abecedy a číslice, které se zobrazí v systému ICS.</p>
+]]></string>
+
+
+	<string-array name="saVRGroups">
+		<item>Písmena</item>
+		<item>Čísla ICS</item>
+		<item>Čísla NATO</item>
+	</string-array>
+	
+	<array name="iaVRGroups">
+		<item>@id/idVRPismena</item>
+		<item>@id/idVRCislaICS</item>
+		<item>@id/idVRCislaNATO</item>
+	</array>
+
+	<string-array name="saVRPismena">
+		<item>A:Alpha:potápěč ve vodě</item>
+		<item>B:Bravo:nakládám / vykládám</item>
+		<item>C:Charlie:ano</item>
+		<item>D:Delta:nepřibližovat se / manévrování</item>
+		<item>E:Echo:kurz vpravo</item>
+		<item>F:Foxtrot:mám havárii</item>
+		<item>G:Golf:potřebuji lodivoda</item>
+		<item>H:Hotel:mám lodivoda</item>
+		<item>I:India:kurz vlevo</item>
+		<item>J:Juliet:požár / semafor</item>
+		<item>K:Kilo:zastavte okamžitě</item>
+		<item>L:Lima:zastavte pro spojení</item>
+		<item>M:Mike:mám lékaře</item>
+		<item>N:November:ne</item>
+		<item>O:Oscar:muž přes palubu</item>
+		<item>P:Papa:budeme vyplouvat</item>
+		<item>Q:Quebec:žádám povolení</item>
+		<item>R:Romeo:můžete proplout</item>
+		<item>S:Sierra:zpětný chod</item>
+		<item>T:Tango:nepředjíždějte</item>
+		<item>U:Uniform:jste v nebezpečí</item>
+		<item>V:Victor:žádám pomoc</item>
+		<item>W:Whiskey:žádám lékaře</item>
+		<item>X:X-Ray:přerušte manévr</item>
+		<item>Y:Yankee:budu spouštět kotvu</item>
+		<item>Z:Zulu:zpráva na pevninu</item>
+	</string-array>
+	
+	<string-array name="saVRCisla">
+		<item>0:Nada</item>
+		<item>1:Una</item>
+		<item>2:Bisso</item>
+		<item>3:Terra</item>
+		<item>4:Karte</item>
+		<item>5:Panta</item>
+		<item>6:Soxi</item>
+		<item>7:Sette</item>
+		<item>8:Okto</item>
+		<item>9:Nove</item>
+	</string-array>
+
+</resources>

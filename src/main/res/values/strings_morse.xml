@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="cptMorse">Morse Code</string>	
+	<string name="tMDTitle">Enter the signals:</string>
+	<string name="tMDReseni">Plaintext incl. variants:</string>
+
+	<string name="tMTransmit">Transmit</string>
+	<string name="tMTMod">Means of transmit:</string>
+	<string name="tMTSpeed">Speed:</string>
+	<string name="tMTFreq">Pitch:</string>
+	<string name="tMTVol">Volume:</string>
+	
+	<string name="patMTSpeed" translatable="false">%d WPM</string>
+	<string name="patMTFreq" translatable="false">%d Hz</string>
+	<string name="patMTVol" translatable="false">%d %%</string>
+	
+	
+<string name="tHelpMorse"><![CDATA[
+<h1>Morse Code</h1>
+
+<p>This component helps decode or encode the Morse code. The main tab, <i>Decrypt</i>, displays
+the direct interpretation of the entered code along with three variants in case the Morse code
+happens to be obfuscated by using different kinds of symbols or by reversing the whole message.</p>
+
+
+<h3>Basic usage</h3>
+
+<p>Enter the dash, dot, and separator using the buttons provided. Two or more consecutive
+separator marks (/) are interpreted as word separators, displayed as a central dot (·) in the
+output.</p>
+
+
+<h3>Encryption</h3>
+
+<p>The <i>Encrypt</i> tab offers converting an input text into Morse code. Unrecognized characters
+are left out (a warning is issued). For convenience, the Morse code is displayed in several
+encodings:<br/>
+– direct encoding into dashes, dots, and separators,<br/>
+– 1 for a dot, 2 for a dash, 0 for a separator,<br/> 
+– the \"on\" (1) and \"off\" (0) states of a signalling device.</p>
+
+<p>Once encoded into Morse code, the signal can also be actually transmitted using the <i>Transmit</t>
+tab. <i>NB</i> that when sound output is selected, the volume is set relative to the system-wide
+media volume.</p>
+]]></string>
+	
+		
+	<string-array name="saMDVarianty">
+		<item>Original form</item>
+		<item>Dots ↔ dashes</item>
+		<item>Right to left</item>
+		<item>Both</item>
+	</string-array>
+	
+	<string-array name="saMDZnaky">
+		<item>·</item>
+		<item>–</item>
+   		<item>/</item>
+   	</string-array>
+   	
+	<string-array name="saMDGroups">
+		<item>Letters</item>
+		<item>Digits</item>
+		<item>Other symbols</item>
+	</string-array>
+   	
+	<string-array name="saMDPismena">
+		<item>5:A:a-GAIN, a-JAR, a-PART, say AHH</item>
+		<item>24:B:BE a good boy, BOB is the man</item>
+		<item>26:C:CO-ca CO-la, CATCH it CATCH it</item>
+		<item>12:D:DOG did it, DOCK work-er, DRAC-u-la</item>
+		<item>2:E:eek</item>
+		<item>18:F:for the FAIR-est, did i FAIL it?</item>
+		<item>14:G:GOD LOVES it, GOO-GOL-plex</item>
+		<item>16:H:hitting the hip, hippity hop, ha-ha-ha-ha</item>
+		<item>4:I:did it</item>
+		<item>23:J:the JU-LIE JAY, in JAWS JAWS JAWS</item>
+		<item>13:K:KAN-dy KID, KICK the CAN, KANG-a-ROO</item>
+		<item>20:L:a LOST is lit, to \'ELL with it!, he LOST his lid</item>
+		<item>7:M:MA-MA, MMMM-MMMM</item>
+		<item>6:N:NI-gel, NA-vy, NA-zi, NU-dist</item>
+		<item>15:O:O-RE-O, HO-HO-HO</item>
+		<item>22:P:pa-RADE PA-nel, did POP POP id?</item>
+		<item>29:Q:QUEUE OV-er HERE, GOD SAVE the QUEEN</item>
+		<item>10:R:ro-TA-tion, a RABB-it</item>
+		<item>8:S:ts-ts-ts</item>
+		<item>3:T:TALL</item>
+		<item>9:U:kiss a EWE</item>
+		<item>17:V:Beethoven\'s V\'TH = va-va-va-VAH</item>
+		<item>11:W:the WORLD WAR</item>
+		<item>25:X:X marks the SPOT, CROSS at the DOOR</item>
+		<item>27:Y:WHY did I DIE?</item>
+		<item>28:Z:ZSA ZSA did it</item>
+	</string-array>
+
+	<string-array name="saMDCislice">
+		<item>63:0:</item>
+		<item>47:1:</item>
+		<item>39:2:</item>
+		<item>35:3:</item>
+		<item>33:4:</item>
+		<item>32:5:</item>
+		<item>48:6:</item>
+		<item>56:7:</item>
+		<item>60:8:</item>
+		<item>62:9:</item>
+   	</string-array>
+	
+	<string-array name="saMDInterpunkce">
+		<item>85:.:dot</item>
+		<item>115:,:comma</item>
+		<item>76:\?:question mark</item>
+		<item>94:\':apostrophe</item>
+		<item>107:!:exclamation mark</item>
+		<item>50:/:slash, fraction</item>
+		<item>54:(:opening bracket</item>
+		<item>109:):closing bracket</item>
+		<item>40:&amp;:ampersand</item>
+		<item>120:::colon</item>
+		<item>106:;:semicolon</item>
+		<item>49:=:equals sign</item>
+		<item>42:+:plus</item>
+		<item>97:–:minus, dash</item>
+		<item>77:_:underscore</item>
+		<item>82:\":quotation marks</item>
+		<item>137:$:dollar sign</item>
+		<item>90:@:commercial at</item>
+	</string-array>
+
+	
+	<string-array name="saMCItems">
+	    <item>Direct</item>
+	    <item>1 = ·, 2 = –, 0 = /</item>
+	    <item>Binary signal</item>
+	</string-array>
+	
+	<array name="iaMCItems">
+	    <item>@id/idMCPrimo</item>
+	    <item>@id/idMC120</item>
+	    <item>@id/idMCSignal</item>
+	</array>
+
+	
+	<string-array name="saMTMod">
+	    <item>Flash light</item>
+	    <item>Sound</item>
+	</string-array>
+	
+	<array name="iaMTMod">
+	    <item>@id/idMTSvetlo</item>
+	    <item>@id/idMTZvuk</item>
+	</array>
+			
+</resources>

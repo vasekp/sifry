@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+	<string name="cptPolskyTabulky">Pigpen &amp; Grid Ciphers</string>
+	<string name="cptTabulky">Pigpen &amp; Grid Ciphers</string>
+	<string name="tTDTab">Cipher grid:</string>
+	<string name="tTDVar">Variant:</string>
+	<string name="tTDVstup">Visual input:</string>
+	<string name="tTDSour">Coordinate input:</string>
+	
+	<string name="tTDErrMobilVar">Unavailable for this grid.</string>
+	
+	<string name="tTDCtvBifidXY">Bifid cipher, XY</string>
+	<string name="tTDCtvBifidYX">Bifid cipher, YX</string>
+	
+	
+<string name="tHelpTabulky"><![CDATA[
+<h1>Pigpen &amp; Grid Ciphers</h1>
+
+<p>This component helps solving pigpen ciphers (also known as masonic or Rosicrucian ciphers),
+Polybius square, and multi-tap encoding by displaying the appropriate grid as an interactive
+widget. Input once entered can also be re-translated in several variants, e.g., rotations
+of the grid, possibly saving a number of unsuccessful attempts. The bifid and trifid ciphers,
+closely related to grid ciphers, can also be found here.</p>
+
+
+<h3>Basic usage</h3>
+
+<p>Use the two menus in the top to select the overall kind of cipher and one of its usual
+variants. The app will draw the cipher grid annotated by letters at the appropriate positions.
+These can be read directly or stored in the <i>Plaintext</i> field by clicking at them. This
+is not only useful to for easy reading of the decoded message as a whole but also used as
+input when the <i>Variants</i> tab is open.</p>
+
+
+<h5>3×3 + 2×2 layout</h5>
+
+<p>This is the original masonic cipher. Each letter is encoded to a partial frame of a square,
+either straight or tilted by 45 degrees, and either empty or with a dot inside it. All the 26
+combinations can be found in the screen. Their meaning in the alphabet depends on the order
+in which the symbols are assigned. This can be controlled using the <i>Variant</i> menu.</p>
+
+<p>If <i>Variants</i> are requested for this layout, the same input is reinterpreted with
+different assignments f symbols to letters, with a rotation applied on the symbols, in mirror
+image, and/or with the presence of dots reversed.</p>
+
+
+<h5>3×3×3 layout</h5>
+
+<p>This is an alternative layout of the pigpen cipher without the slanted boxes, but with up
+to 2 dots inside the frame. There also could be exactly one dot in each frame but differing
+in position, aligned to the left, right, or centered. The displayed grid adapts to the selected
+layout and displays all the possible combinations in an intuitive manner.</p>
+
+<p>As there are effectively three coordinates assuming values 1, 2, 3, these can also be entered
+numerically using the buttons at the bottom of the screen. Only a complete triple is processed.</p>
+
+<p>The <i>Variants</i> provided for this cipher comprise swapping the order of the coordinates,
+e.g., row number for column number, and mirror reversal of the axes. The <b>trifid</b> cipher
+decoding can also be reached through <i>3×3×3</i> layout variants.</p>
+
+
+<h5>Polybius square</h5>
+
+<p>Polybius (5×5) square-based ciphers can be found either referring directly to the positions within
+the square, or pairs of coordinates of 1 through 5. For this reason the letters can be located in
+the square directly or their coordinates entered by the buttons along the bottom of the screen.
+As the square allows for only 25 positions, one letter must be taken out of the alphabet. It is
+possible to choose J (in which case it becomes represented by I), K (becomes one with C in so-called
+<i>Tap code</i>), Q, or X. Note that this temporary setting does not depend on the global alphabet
+alterations nor does it affect them.</p>
+
+<p>The <i>Variants</i> available for the Polybius square comprise rotations and mirror reflections
+of the whole square, as well as the <b>bifid</b> cipher.</p>
+
+
+<h5>Multi-tap</h5>
+
+<p>A multi-tap encoding, inspired by the 9-key cell phone keypads, represents each letter by a digit
+identifying the key and the number of times it is pressed. The labels on the keys displayed by the
+widget can be read by sight or the keys can be pressed as in an actual multi-tap.</p>
+
+<p>There are no <i>Variants</i> for this layout as the unused \"1\" key and the four possible letters
+on both \"7\" and \"9\" make the correct orientation unambiguous.</p>
+
+
+<h3>Encryption</h3>
+
+<p>The <i>Encrypt</i> tab gives the possibility to encrypt plaintext by the enlisted methods. The details
+depend on the current layout:</p>
+
+<p><b>3×3×3 layout</b>: graphical representation (white on black, in exported bitmaps black on white),
+coordinates in the row–column–dot position (L–C–R dot variant) or grid–row–column (0/1/2 dots variant)
+order and trifid cipher using two possible orderings: row–column–dot and column–row–dot (L–C–R) or
+grid–row–column and grid–column–row (0/1/2).</p>
+
+<p><b>3×3 + 2×2 layout</b>: graphical and textual representation. In the latter, the digits 1 to 9 denote
+the position of the square if upright (ordered like in a numpad with 1 in the upper left corner), letters
+A through D label the four possible tilted squares (in the order they are assigned in the cipher) and
+an optional star appended to the code marks the presence of a dot.</p> 
+ 
+<p><b>Polybius square</b>: graphical representations in two forms, with the marked square inside the 5×5
+working field or inside or on the outer margin of a 3×3 square. The position of the mark is the same in
+both variants, only the referential shape differs. Other options are a textual representation, encoding
+every letter into a pair of coordinates 1 through 5, and the bifid cipher using both row–column and
+column–row orderings in its calculation.</p>
+
+<p><b>Multi-tap</b>: a direct multi-tap representation, showing the actual repetitions of the buttons,
+or pairs of digits composed of button label and repetition count.</p>
+
+
+<h3>Preferences</h3>
+
+<p>The Preferences screen allows to customize whether a visual feedback is shown when the individual
+letters in the grids are selected using a finger. This allows to avoid hitting nearby letters by mistake
+on small displays where they are closely stacked. This feature is useless in tablets or when using
+a stylus so it can be turned off to avoid distraction.</p>
+
+
+<h3>Tips and tricks</h3>
+
+<p>The app remembers the locations of the individual characters (or their coordinates) in the grids at
+the moment they were entered. When a different variant of the layout is selected at a later point,
+the <i>Plaintext</i> field is recomputed to reflect the new layout.</p>
+
+<p><i>NB</i>, however, that for the same reason, the data can not be brought to a different grid type
+and the plaintext is cleared when a different type of the cipher is selected.</p>
+]]></string>	
+
+
+   	<string-array name="saTDTabulky">
+   		<item>3×3+2×2 layout</item>
+   		<item>3×3×3 layout</item>
+   		<item>Polybius square</item>
+   		<item>Multi-tap</item>
+ 	</string-array>
+ 	
+   	<array name="iaTDTabulky">
+   		<item>@id/idTDMPolsky</item>
+   		<item>@id/idTDVPolsky</item>
+   		<item>@id/idTDCtverec</item>
+   		<item>@id/idTDMobil</item>
+	</array>
+
+   	
+ 	<string-array name="saTDVPVar">
+   		<item>L–C–R dot</item>
+		<item tools:ignore="TypographyFractions">0/1/2 dots</item>
+   	</string-array>
+   	
+ 	<array name="iaTDVPVar">
+ 		<item>@id/idTDVPKlas</item>
+ 		<item>@id/idTDVPAlt</item>
+	</array>
+
+	<string-array name="saTDVPABCVar">
+		<item></item>
+		<item></item>
+	</string-array>
+
+
+   	<string-array name="saTDMPVar">
+   		<item>9 – • – 4</item>
+   		<item>9 – 4 – •</item>
+		<item>• – 9 – 4</item>
+	</string-array>
+	
+   	<array name="iaTDMPVar">
+   		<item>@id/idTDMP9T4</item>
+   		<item>@id/idTDMP94T</item>
+   		<item>@id/idTDMPT94</item>
+	</array>
+	
+   	<string-array name="saTDMPABCVar">
+   	    <item></item>
+   	    <item></item>
+		<item></item>
+	</string-array>
+
+   	
+   	<string-array name="saTDCtvVar">
+		<item>– J (Polybius)</item>
+		<item>– K (Tap code)</item>
+		<item>– Q</item>
+   		<item>– X</item>
+   		<!--item>6×6 with digits</item-->
+   	</string-array>
+   		
+	<string-array name="saTDCtvABCVar">
+		<item>J:5</item>
+		<item>K:5</item>
+		<item>Q:5</item>
+		<item>X:5</item>
+		<!--item>dig:6</item-->
+	</string-array>
+
+   	
+	<string-array name="saTVVPGroups">
+		<item>Permutations</item>
+		<item>Permutations and reflections</item>
+		<item>Trifid cipher</item>
+	</string-array>
+   	
+ 	<array name="iaTVVPGroups">
+ 		<item>@id/idTVVProt</item>
+   		<item>@id/idTVVProtzrc</item>
+   		<item>@id/idTVVPtrifid</item>
+	</array>
+	
+ 	<string-array name="saTVVPABCVar">
+		<item></item>
+		<item></item>
+	</string-array>
+	
+	
+	<string-array name="saTVVPPerm" translatable="false">
+	    <item>YXZ</item>
+	    <item>XYZ</item>
+	    <item>ZXY</item>
+	    <item>ZYX</item>
+	    <item>YZX</item>
+	    <item>XZY</item>
+	</string-array>
+
+	<string-array name="saTVVPRefl" translatable="false">
+	    <item>rY</item>
+	    <item>rX</item>
+	    <item>rZ</item>
+	</string-array>
+
+	<string-array name="saTVVPAltPerm" translatable="false">
+	    <item>ZYX</item>
+	    <item>YZX</item>
+	    <item>XYZ</item>
+	    <item>XZY</item>
+	    <item>ZXY</item>
+	    <item>YXZ</item>
+	</string-array>
+	
+	<string-array name="saTVVPAltRefl" translatable="false">
+	    <item>rZ</item>
+	    <item>rY</item>
+	    <item>rX</item>
+	</string-array>
+
+ 	
+	<string-array name="saTCVPItems">
+	    <item>Graphical representation</item>
+	    <item>Coordinates (YXZ)</item>
+	    <item>Trifid cipher (YXZ)</item>
+	    <item>Trifid cipher (XYZ)</item>
+	</string-array>
+	
+	<array name="iaTCVPItems">
+	    <item>@id/idTCPrimo</item>
+	    <item>@id/idTCSour</item>
+	    <item>@id/idTCVPTrifid931</item>
+	    <item>@id/idTCVPTrifid391</item>
+	</array>
+	
+	<string-array name="saTCVPAltItems">
+	    <item>Graphical representation</item>
+	    <item>Coordinates (ZYX)</item>
+	    <item>Trifid cipher (ZYX)</item>
+	    <item>Trifid cipher (ZXY)</item>
+	</string-array>
+	
+	<array name="iaTCVPAltItems">
+	    <item>@id/idTCPrimo</item>
+	    <item>@id/idTCSour</item>
+	    <item>@id/idTCVPTrifid931</item>
+	    <item>@id/idTCVPTrifid913</item>
+	</array>
+	
+	<string-array name="saTCMPItems">
+	    <item>Graphical representation</item>
+	    <item>Textual representation</item>
+	</string-array>
+	
+	<array name="iaTCMPItems">
+	    <item>@id/idTCPrimo</item>
+	    <item>@id/idTCSour</item>
+	</array>
+	
+	<string-array name="saTCCtvItems">
+	   <item>5×5</item>
+	   <item>3×3 + margin</item>
+	   <item>Coordinates (YX)</item>
+	   <item>Bifid cipher (YX)</item>
+	   <item>Bifid cipher (XY)</item>
+	</string-array>
+	
+	<array name="iaTCCtvItems">
+	    <item>@id/idTCCtv5x5</item>
+	    <item>@id/idTCCtv3x3</item>
+	    <item>@id/idTCSour</item>
+	    <item>@id/idTCCtvBifidYX</item>
+	    <item>@id/idTCCtvBifidXY</item>
+	</array>
+	
+	<string-array name="saTCMobilItems">
+	    <item>Multi-tap</item>
+	    <item>Key + repetitions</item>
+	</string-array>
+	
+	<array name="iaTCMobilItems">
+	    <item>@id/idTCMobilMulti</item>
+	    <item>@id/idTCMobilPocet</item>
+	</array> 	
+</resources>

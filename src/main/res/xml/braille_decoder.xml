@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<state-decoder entrypoint="@+id/ruleBDDefault" format_flag="pref_brl_fmt" code_desc="@array/saBRPrefixes" >
+
+    <rule-array id="@+id/ruleBDDefault" state="" >
+        <rules
+            ref="@+id/ruleBDWordBeginning"
+            after="@+id/ruleBDMidWord" />
+        <rules ref="@+id/ruleBDLetterExtra" />
+    </rule-array>
+    
+	<rule-array id="@+id/ruleBDReset" state="" >
+        <rules
+            ref="@+id/ruleBDDefault"
+            format="@id/idFormatDefault"
+            state="" />
+    </rule-array>
+    
+    <rule-array id="@+id/ruleBDLetterExtra" >
+        <rules
+            code="60"
+            access="pref_brl_num"
+            access_def="true"
+            format="@id/idFormatDefault"
+            ref="@array/saBRDigits"
+            tmp_state="Num"
+            after="@+id/ruleBDNumbers" />
+        <strings
+            access="pref_brl_itp"
+            access_def="false"
+            ref="@array/saBRPunctuation"
+            state=""
+            after="@+id/ruleBDReset" />
+        <strings
+            access="pref_brl_spc"
+            access_def="false"
+            ref="@array/saBRSpace"
+            state=""
+            after="@+id/ruleBDReset" />
+        <rules
+            access="pref_brl_fmt"
+            access_def="false"
+            ref="@+id/ruleBDFormat" />
+    </rule-array>
+    
+    <rule-array id="@+id/ruleBDWordBeginning" temp="true" >
+        <strings ref="@array/saBRLetters" />
+        <strings
+            access="pref_brl_lig"
+            access_def="false"
+            ref="@array/saBRLigaturesStart" />
+        <strings
+            access="pref_brl_lig"
+            access_def="false"
+            ref="@array/saBRLigatures" />
+        <strings
+            code="16"
+            access="pref_brl_lig"
+            access_def="false"
+            tmp_state="Abbr"
+            ref="@array/saBRIni1" />
+        <strings
+            code="24"
+            access="pref_brl_lig"
+            access_def="false"
+            tmp_state="Abbr"
+            ref="@array/saBRIni2" />
+        <strings
+            code="56"
+            access="pref_brl_lig"
+            access_def="false"
+            tmp_state="Abbr"
+            ref="@array/saBRIni3" />
+    </rule-array>
+    
+    <rule-array id="@+id/ruleBDMidWord" >
+        <strings ref="@array/saBRLetters" />
+        <strings
+            access="pref_brl_lig"
+            access_def="false"
+            ref="@array/saBRLigaturesMid" />
+        <strings
+            access="pref_brl_lig"
+            access_def="false"
+            ref="@array/saBRLigatures" />
+        <strings
+            code="40"
+            access="pref_brl_lig"
+            access_def="false"
+            tmp_state="Abbr"
+            ref="@array/saBRFin1"
+            after="@+id/ruleBDReset" />
+        <strings
+            code="48"
+            access="pref_brl_lig"
+            access_def="false"
+            tmp_state="Abbr"
+            ref="@array/saBRFin2"
+            after="@+id/ruleBDReset" />
+        <rules
+            code="32"
+            access="pref_brl_lig"
+            access_def="false"
+            tmp_state="Abbr"
+            ref="@+id/ruleBDFin3"
+            after="@+id/ruleBDReset" />
+        <rules ref="@+id/ruleBDLetterExtra" />
+	</rule-array>
+    
+    <rule-array id="@+id/ruleBDNumbers" state="Num" >
+        <strings ref="@array/saBRDigits" />
+        <strings ref="@array/saBRNumberExtra" />
+        <rules
+            code="48"
+            state=""
+            format="@id/idFormatDefault"
+            ref="@+id/ruleBDWordBeginning"
+            after="@+id/ruleBDMidWord" />
+		<rules ref="@+id/ruleBDReset" />
+	</rule-array>
+    
+    <rule-array id="@+id/ruleBDFormat" >
+        <rules
+            code="48"
+            state=""
+            format="@id/idFormatLowerCase"
+            ref="@+id/ruleBDWordBeginning"
+            after="@+id/ruleBDMidWord" />
+        <rules
+            code="32"
+            state="Abc"
+            format="@id/idFormatSentence"
+            ref="@+id/ruleBDCapitals" />
+	</rule-array>
+    
+    <rule-array id="@+id/ruleBDCapitals" >
+        <rules
+            code="32"
+            state="ABC"
+            format="@id/idFormatUpperCase"
+            ref="@+id/ruleBDWordBeginning"
+            after="@+id/ruleBDMidWord" />
+        <rules
+            ref="@+id/ruleBDWordBeginning"
+            after="@+id/ruleBDMidWord" />
+    </rule-array>
+    
+    <rule-array id="@+id/ruleBDFin3" temp="true" >
+        <strings ref="@array/saBRFin3" />
+        <rules
+            code="32"
+            state="ABC"
+            access="pref_brl_fmt"
+            access_def="false"
+            format="@id/idFormatUpperCase"
+            ref="@+id/ruleBDWordBeginning"
+            after="@+id/ruleBDMidWord" />
+        <rules
+            access="pref_brl_fmt"
+            access_def="false"
+            state="Abc"
+            format="@id/idFormatSentence"
+            ref="@+id/ruleBDWordBeginning"
+            after="@+id/ruleBDMidWord" />
+    </rule-array>
+
+</state-decoder>

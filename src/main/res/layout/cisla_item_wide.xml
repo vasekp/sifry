@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/crItemOrd"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/pis"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="5dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />    
+
+    <TextView
+        android:id="@+id/s10"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.10"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceLarge" />    
+    
+    <TextView
+        android:id="@+id/s2"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.20"        
+        android:gravity="center"
+        android:textColor="@color/secColor"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <TextView
+        android:id="@+id/s3"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.15"
+        android:gravity="center"
+        android:textColor="@color/secColor"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+            
+    <TextView
+        android:id="@+id/s8"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.10"
+        android:gravity="center"
+        android:textColor="@color/secColor"
+        android:textAppearance="?android:attr/textAppearanceMedium" />        
+        
+    <TextView
+        android:id="@+id/s16"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.10"
+        android:gravity="center"
+        android:textColor="@color/secColor"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <TextView
+        android:id="@+id/rim"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.15"        
+        android:gravity="center"
+        android:textColor="@color/secColor"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <TextView
+        android:id="@+id/perm"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.20"
+        android:gravity="center"
+        android:textColor="@color/secColor"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+</LinearLayout>

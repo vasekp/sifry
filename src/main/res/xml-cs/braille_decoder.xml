@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<state-decoder entrypoint="@+id/ruleBDDefault" format_flag="pref_brl_fmt" code_desc="@array/saBRPrefixy" >
+    
+    <rule-array id="@+id/ruleBDDefault" state="" >
+        <rules ref="@+id/ruleBDPismena" />
+    </rule-array>
+    
+    <rule-array id="@+id/ruleBDReset" state="" >
+        <rules
+            ref="@+id/ruleBDDefault"
+            format="@id/idFormatDefault"
+            state="" />
+    </rule-array>
+
+    <rule-array id="@+id/ruleBDPismena" >
+        <rules ref="@+id/ruleBDJenPismena" />
+        <rules
+            code="60"
+            access="pref_brl_num"
+            access_def="true"
+            format="@id/idFormatDefault"
+            ref="@+id/ruleBDCislice" />
+        <strings
+            access="pref_brl_itp"
+            access_def="false"
+            ref="@array/saBRInterpunkce"
+            state=""
+            after="@+id/ruleBDReset" />
+        <strings
+            access="pref_brl_spc"
+            access_def="false"
+            ref="@array/saBRMezera"
+            state=""
+            after="@+id/ruleBDReset" />
+        <rules
+            access="pref_brl_fmt"
+            access_def="false"
+            ref="@+id/ruleBDFormat" />
+    </rule-array>
+    
+    <rule-array id="@+id/ruleBDJenPismena" temp="true">
+        <strings ref="@array/saBRPismena" />
+        <strings
+            access="pref_brl_dia"
+            access_def="false"
+            ref="@array/saBRDiakritika" />
+        <strings ref="@array/saBRPismenaFallback" />
+	</rule-array>
+    
+    <rule-array id="@+id/ruleBDCislice" state="Num" temp="true" >
+        <strings
+            access="pref_brl_num_pers"
+            access_def="true"
+            ref="@array/saBRCislice"
+            after="@+id/ruleBDCisla" />
+        <strings ref="@array/saBRCislice" />
+        <strings ref="@array/saBRCisliceSym" />
+	</rule-array>
+    
+    <rule-array id="@+id/ruleBDCisla" state="Num" >
+        <strings ref="@array/saBRCislice" />
+        <strings ref="@array/saBRCislaSym" />
+        <rules
+            code="16"
+            state=""
+            format="@id/idFormatDefault"
+            ref="@+id/ruleBDJenPismena"
+            after="@+id/ruleBDPismena" />
+        <rules ref="@id/ruleBDReset" />
+	</rule-array>
+    
+    <rule-array id="@+id/ruleBDFormat" temp="true" >
+        <rules
+            code="16"
+            state=""
+            format="@id/idFormatLowerCase"
+            ref="@+id/ruleBDJenPismena"
+            after="@+id/ruleBDPismena" />
+        <rules
+            code="32"
+            state="Abc"
+            format="@id/idFormatSentence"
+            ref="@+id/ruleBDJenPismena"
+            after="@+id/ruleBDPismena" />
+        <rules
+            code="48"
+            state="ABC"
+            format="@id/idFormatUpperCase"
+            ref="@+id/ruleBDJenPismena"
+            after="@+id/ruleBDPismena" />
+        <strings
+            code="24"
+            format="@id/idFormatLowerCase"
+            tmp_state="αβγ"
+            ref="@array/saBRRecka"
+            after="@+id/ruleBDPismena" />
+        <strings
+            code="40"
+            format="@id/idFormatSentence"
+            tmp_state="ΑΒΓ"
+            ref="@array/saBRRecka"
+            after="@+id/ruleBDPismena" />
+    </rule-array>
+
+</state-decoder>

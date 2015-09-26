@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="cptTrans">Transpoziční šifry</string>	
+	<string name="tTTitle">Zadejte šifru:</string>
+	<string name="tTTvar">Uspořádání:</string>
+	<string name="tTTab">Pracovní prostor (manipulujte jedním až třemi prsty):</string>
+	<string name="tTClearSol">Smazat řešení</string>
+	<string name="tTClearTrf">Vrátit pohled</string>
+		
+	<string-array name="saTTvary">
+	    <item>Žádné</item>
+	    <item>Obdélník</item>
+	    <item>Trojúhelník (od vrcholu)</item>
+	    <item>Trojúhelník (od základny)</item>
+	</string-array>
+	
+	<array name="iaTTvary">
+	    <item>@id/idTNic</item>
+	    <item>@id/idTObdelnik</item>
+	    <item>@id/idTTrojuhelnik</item>
+	    <item>@id/idTRTrojuhelnik</item>
+	</array>
+	
+	
+<string name="tHelpTrans"><![CDATA[
+<h1>Transpoziční šifry</h1>
+
+<p>Tato komponenta slouží jako pomůcka při řešení či návrhu transpozičních šifer, tj. takových,
+ve kterých se mají písmena zadání přečíst nezměněná, jen v jiném pořadí.</p>
+
+
+<h3>Základní ovládání</h3>
+
+<p>Do vstupního pole zadejte zašifrovaný text či vstup k zašifrování. Zvolte z nabídky, jak mají
+být písmena uspořádána pro přečtení v jiném pořadí. Nabízí se uspořádání bez formátu (pouze
+usnadňující výběr znaků a označení již jednou použitých), zarovnání do obdélníku nebo trojúhelníku.
+Způsob čtení vstupu záleží silně na nastavení (viz níže). Vstup potvrďte tlačítkem se šipkou nebo
+klávesou Enter.</p>
+
+<p>Po přijetí se vstup zobrazí v <i>Pracovním prostoru</i>. V závislosti na druhu uspořádání je
+možné zobrazení upravit pro snazší používání. V případě zobrazení bez formátování je možné zvětšit
+či zmenšit font, aby se písmena snáz trefovala při dotyku. V ostatních možnostech se nabízí
+zobrazení jako celek <i>posouvat po obrazovce</i> (dotykem a tažením jedním prstem), <i>zvětšovat,
+zmenšovat a natáčet</i> (dvěma prsty) a <i>deformovat</i> (současnou manipulací tří prstů).</p>
+
+<p>V případě zarovnání do obdélníku je také možné vybrat počet sloupců nebo řádků. Abyste toho
+docílili, dotkněte se prstem <i>za hranicí</i> zobrazené oblasti (více vlevo nebo vpravo, než
+obdélník tvořený nyní písmenky začíná / končí) a místo chvíli podržte, než se zobrazí ohraničení
+bloku písmenek. Poté můžete pohybem prstu učinit obdélník užší či širší. Vstup se automaticky
+přeuspořádá do nového počtu písmen na řádek. Stejně je možné měnit požadovaný počet řádků, do
+kolika se má text rozlít. <i>Pozor:</i> pokud obdélník není vyplněn zcela, tj. zbývá v něm nějaké
+volné místo, rozložení písmen závisí na tom, zda je požadován daný počet sloupců nebo řádků.
+V prvním případě se zaplňují všechny řádky zleva doprava až na poslední. Ve druhém se aplikace
+snaží o co nejrovnoměrnější vyplnění všech řádků.</p>
+
+<p>Některé běžné operace, kterých lze manipulací pomocí prstů dosáhnout, jsou reprezentována
+rychlými tlačítky v rohu obrazovky. Tyto jsou následující: navrácení pohledu do původního natočení
+a velikosti, zrcadlení kolem svislé, vodorovné osy a kolem diagonály.</p>
+
+<p>Jakmile dosáhnete uspořádání, ve kterém jde text číst, nebo si chcete vypsat výsledek transpozice,
+můžete začít jednotlivá písmena vybírat dotykem. Každé vybrané písmeno se přenese do pole <i>Řešení</i>
+a obarví se zelenou barvou. Postupně je tak možné přečíst dle zavedeného principu celou tabulku
+a sledovat, která písmena už byla použita.</p>
+
+<p>Při každém výběru se také označí žlutě všechny ostatní výskyty stejného písmene (označení
+zmizí při výběru nového znaku). To je vhodné u šifer, které ve skutečnosti nejsou transpoziční, ale
+grafické, a ve vhodném uspořádání polohy stejných písmen vykreslí nějaký tvar. </p>
+
+<p>V současné verzi aplikace není možné písmeno zaznamenané omylem smazat. Kliknutí na tlačítko
+<i>BackSpace</i> vymaže celé řešení a obarví všechna písmena v tabulce zpět na bílo (nepoužité).
+Tvar rozložení zůstane zachovaný.</p>
+
+
+<h3>Příklad použití</h3>
+
+<p>Předpokládejme, že princip šifry je takový, že se má přečíst každé třetí písmeno. Komponentu
+<i>Transpoziční šifry</i> můžeme použít následovně: zadáme celý vstup a zvolíme uspořádání do obdélníka.
+Zadání se rozdělí standardně po osmi znacích na řádek. My si přejeme pouze tři znaky na řádek, aby
+každý třetí znak šel snadno číst po sloupcích. Proto přidržíme krátce prst na pravém nebo levém kraji
+obrazovky a přetáhneme směrem ke středu, čímž se obdélník zúží a protáhne do výšky. Pravděpodobně bude
+nyní zasahovat mimo hranice obrazovky telefonu, proto dvěma prsty můžeme celý pohled zmenšit, aby se
+vešel. Nakonec můžeme použít tlačítko označené <i>X ↔ Y</i>, abychom nemuseli číst po sloupcích –
+řešení je nyní zarovnané zleva doprava do řádků a lze přečíst jako běžný text.</p>
+
+
+<h3>Nastavení</h3>
+
+<p>V rámci nastavení lze ovlivnit, jakým způsobem aplikace čte jednotlivá písmena vstupu. Je možné
+zvolit, zda se má zachovat diakritika nebo převést všechna písmena na základní anglickou abecedu,
+a rovněž, zda spřežka <b>ch</b> má být brána jako jedno písmeno nebo dvě (aplikace ji však nemůže
+rozlišit od náhodného shluku písmen C a H). Rovněž lze nastavit, zda mezery a interpunkční znaménka
+ve vstupu mají být přeskočena nebo zarovnána do tabulky mezi ostatními znaky. <i>Pozor:</i> V různých
+kombinacích nastavení se vstupní text bude dělit různým způsobem, protože se změní pořadí i počet písmen
+v jeho rámci.</p>
+
+<p>Nastavení dělení textu na písmena je globální, ovlivňuje i komponentu <i>Frekvenční analýza</i>.</p>
+]]></string>
+	
+</resources>

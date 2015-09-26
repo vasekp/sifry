@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="80dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:clickable="true" >
+
+    <TextView
+        android:id="@+id/puv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tESPuv"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/proc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tESZast"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/priColor" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/nove"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tESNove"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <ImageView
+            android:id="@+id/smaz"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="top|right"
+            android:src="@drawable/ic_delete"
+            android:contentDescription="@string/tESSmaz"
+            android:clickable="true" />
+
+    </FrameLayout>
+
+</LinearLayout>

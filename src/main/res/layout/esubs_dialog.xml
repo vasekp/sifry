@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tvESDPuv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/tESDSipka"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <GridView
+        android:id="@+id/gvESDialog"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0"
+        android:columnWidth="@dimen/butSize"
+        android:numColumns="auto_fit" />
+
+    <LinearLayout
+        android:id="@+id/llESDJine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/tvESDBack"
+            android:layout_width="@dimen/butSize"
+            android:layout_height="@dimen/butSize"
+            android:text="@string/tESDZpet"
+            android:gravity="center"
+            android:clickable="true"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/etESDJine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:imeOptions="flagNoExtractUi"
+            android:gravity="center"
+            android:inputType="textNoSuggestions" >
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:id="@+id/tvESDOK"
+            android:layout_width="@dimen/butSize"
+            android:layout_height="@dimen/butSize"
+            android:text="@string/tESDOK"
+            android:gravity="center"
+            android:clickable="true"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    </LinearLayout>
+
+</LinearLayout>

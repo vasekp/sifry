@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:gravity="fill" >
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:fillViewport="false" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tSDTyp" />
+
+            <Spinner
+                android:id="@+id/spSDTyp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/saSDTypy"
+                tools:listitem="@android:layout/simple_spinner_item" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tSDSifra" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <EditText
+                    android:id="@+id/etSDSifra"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="textNoSuggestions|textMultiLine"
+                    android:maxLines="5" />
+
+                <ImageView
+                    android:id="@+id/ivGo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:clickable="true"
+                    android:contentDescription="@string/tGo"
+                    android:src="@drawable/ic_menu_send" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llSDHeslo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tSDHeslo" />
+
+                <EditText
+                    android:id="@+id/etSDHeslo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="textNoSuggestions" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llSDAfinni"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tSDAKoef" />
+
+                <Spinner
+                    android:id="@+id/spSDAKoef"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@android:layout/simple_spinner_item" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llSDKlic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tSDKlic" />
+
+                <EditText
+                    android:id="@+id/etSDKlic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="textNoSuggestions" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tSDKPokr" />
+
+                <Spinner
+                    android:id="@+id/spSDKPokr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/saSDKPokr"
+                    tools:listitem="@android:layout/simple_spinner_item" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llSDVlastni"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tSDVlastni" />
+
+                <cz.absolutno.sifry.common.widget.FixedGridLayout
+                    android:id="@+id/fglSDVlastni"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+                </cz.absolutno.sifry.common.widget.FixedGridLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:orientation="vertical"
+        android:paddingLeft="10dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tRes" />
+
+        <ListView
+            android:id="@+id/lvSDRes"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.0"
+            tools:ignore="NestedWeights"
+            tools:listitem="@layout/simple_list_item" >
+        </ListView>
+    </LinearLayout>
+
+    <!--
+    LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="fill_vertical" >
+
+        <Button
+            android:id="@+id/btGo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:onClick="onGo"
+            android:text="@string/tRDHledej" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:onClick="onClear"
+            android:text="@string/tClear" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:onClick="onInfo"
+            android:text="@string/tRDInfo" />
+    </LinearLayout
+    -->
+
+</LinearLayout>

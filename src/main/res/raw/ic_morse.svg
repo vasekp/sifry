@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Copyright (c) 2012 Vašek Potoček -->
+
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="512"
+   height="512">
+  <path
+     d="M 126,51.2 h 100 m 60,0 h 100 M 46,153.6 h 100 m 60,0 h 100 m 60,0 h 100 M 144,256 h 2 m 60,0 h 100 m 60,0 h 2 M 193,358.4 h 2 m 60,0 h 2 m 60,0 h 2 M 255,460.8 h 2"
+     style="fill:none;stroke:#c0c0c0;stroke-width:21.6;stroke-linecap:round" />
+</svg>

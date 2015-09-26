@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp" >
+
+	    <LinearLayout
+	        android:id="@+id/llZDPrichod1"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical" >
+	        
+			<TextView
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="@string/tZDNazev" />
+			
+			<EditText
+			    android:id="@+id/etZDNazev"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:imeOptions="flagNoExtractUi"
+			    android:inputType="text"
+			    android:singleLine="true" >
+			
+			    <requestFocus />
+			</EditText>
+			
+			<TextView
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="@string/tZDHeslo" />
+			
+			<EditText
+			    android:id="@+id/etZDHeslo"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:imeOptions="flagNoExtractUi"
+			    android:inputType="text|textNoSuggestions"
+			    android:singleLine="true" />
+			
+		</LinearLayout>
+
+		<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false" >
+	
+	        <LinearLayout
+	            android:id="@+id/llZDPrichod2"
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="0.5"
+	            android:orientation="vertical" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="@string/tZDPrichod" />
+	
+                <CheckBox
+                    android:id="@+id/cbZDPrichod"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/tZDZobr" />
+
+                <TextView
+                    android:id="@+id/tvZDPrichodDatum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:clickable="true"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <DatePicker
+                    android:id="@+id/dpZDPrichod"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+	                android:calendarViewShown="false"
+                    android:visibility="gone" />
+
+                <TimePicker
+                    android:id="@+id/tpZDPrichod"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+	        </LinearLayout>
+
+	        <Button
+	            android:id="@+id/btZDSipkaOdchod"
+	            style="?android:attr/buttonStyleSmall"
+	            android:layout_width="@dimen/butSize"
+	            android:layout_height="match_parent"
+	            android:text="@string/tSipkaP" />
+	        <Button
+	            android:id="@+id/btZDSipkaPrichod"
+	            style="?android:attr/buttonStyleSmall"
+	            android:layout_width="@dimen/butSize"
+	            android:layout_height="match_parent"
+	            android:text="@string/tSipkaL" />
+	
+	        <LinearLayout
+	            android:id="@+id/llZDOdchod2"
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="0.5"
+	            android:orientation="vertical" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="@string/tZDOdchod" />
+	                
+	            <CheckBox
+	                android:id="@+id/cbZDOdchod"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:checked="true"
+	                android:text="@string/tZDZobr" />
+
+                <TextView
+                    android:id="@+id/tvZDOdchodDatum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:clickable="true"
+					android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <DatePicker
+                    android:id="@+id/dpZDOdchod"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+	                android:calendarViewShown="false"
+                    android:visibility="gone" />
+                
+                <TimePicker
+                    android:id="@+id/tpZDOdchod"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+	
+	        </LinearLayout>
+	        
+        </LinearLayout>
+        
+	    <LinearLayout
+	        android:id="@+id/llZDOdchod1"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical" >
+		
+	        <TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/tZDRes" />
+	
+	        <EditText
+	            android:id="@+id/etZDRes"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:imeOptions="flagNoExtractUi"
+	            android:inputType="text|textNoSuggestions"
+	            android:singleLine="true" />
+	
+	        <TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/tZDUpres" />
+	
+	        <EditText
+	            android:id="@+id/etZDUpres"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:imeOptions="flagNoExtractUi"
+	            android:inputType="text"
+	            android:singleLine="true" />
+	        
+	    </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tZDPozn" />
+
+        <EditText
+            android:id="@+id/etZDPozn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="flagNoExtractUi"
+            android:inputType="text"
+            android:singleLine="true" />
+    </LinearLayout>
+
+</ScrollView>

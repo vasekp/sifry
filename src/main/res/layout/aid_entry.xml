@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/butSize"
+    android:layout_height="@dimen/butSize"
+    android:width="@dimen/butSize"
+    android:height="@dimen/butSize"
+    android:gravity="center"
+    android:padding="0dp"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:textColor="?android:attr/textColorPrimaryInverse" />

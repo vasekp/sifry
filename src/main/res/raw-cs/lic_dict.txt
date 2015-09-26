@@ -1,0 +1,33 @@
+This dictionary is based on the Czech ispell dictionary version 20040229
+
+From czech.aff:
+
+# $Id: czech.aff,v 0.80 2004/02/29  23:55:03 $
+# Czech affix table for ispell
+# Copyright (C) 1998-2004 Petr Kolář <Petr.Kolar@vslib.cz>
+# Copyright (C) 1996-1997 Tomáš Čermák <Cermak@fsv.cvut.cz>
+# UTF-8 support Copyright (C) 2003 Jiri Hladky, hladky.jiri@seznam.cz
+#
+# Contributors to the Czech dictionary:
+#   1996-1997  Tomáš Čermák <Cermak@fsv.cvut.cz> (original author)
+#   1997       Petr Prenghy <Petr.Prenghy@cesnet.cz>
+#   1997/02/02 Hanuš Adler <had@pdas.cz>
+#   1998-2004  Petr Kolář <Petr.Kolar@vslib.cz>
+#   and many others that sent unknown words
+#
+# Current version ftp://ftp.vslib.cz/pub/unix/ispell/czech/
+# Older version http://hlava22.fsv.cvut.cz/~cermak/ispell/
+#
+#    This data file and the enclosed Czech dictionary files for
+#    ispell are free software; you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License version 2
+#    as published by the Free Software Foundation.
+#
+#    These files are distributed in the hope that they will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program; if not, write to the Free Software Foundation, 
+#    Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA

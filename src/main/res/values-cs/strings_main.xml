@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+	<string name="app_name">Šifrovací pomůcky</string>
+	<string name="tExportDir">Šifry</string>
+	
+	<string name="tVstup">Vstup:</string>
+	<string name="tVystup">Výstup:</string>
+	<string name="tRes">Řešení:</string>
+	<string name="tBsp">BackSpace</string>
+	<string name="tClear">Smazat vše</string>
+	<string name="tEncode">Zašifrovat</string>
+	<string name="tDecode">Dešifrovat</string>
+	<string name="tCopy">Kopírovat</string>
+	<string name="tSave">Uložit</string>
+	<string name="tSend">Odeslat</string>
+	<string name="tExport">Exportovat</string>
+	<string name="tFilename">Uložit jako:</string>
+	<string name="tCtxCopy">Kopírovat</string>
+	<string name="tCtxPaste">Vložit</string>
+	<string name="tRef">Reference</string>
+	<string name="tVar">Varianty</string>
+	<string name="tClose">Zavřít</string>
+	<string name="tGo">Zpracovat</string>
+	<string name="tStart">Start</string>
+	<string name="tStop">Stop</string>
+	
+	<string name="patCopyCap">Text: \"%s\"</string>
+	<string name="patBitmapCap">Obrázek: %1$d × %2$d, %3$d B</string>
+	<string name="tNotFound">Nenalezeno!</string>	
+	<string name="icon">ikona</string>
+
+	<string name="cptMain">Šifrovací pomůcky</string>
+	<string name="cptLicence">Licenční podmínky</string>
+		
+	<string name="tSettings">Nastavení</string>
+	<string name="tHelp">Nápověda</string>
+	<string name="tAbout">O aplikaci</string>
+	<string name="tNews">Novinky</string>
+	<string name="tLicence">Licence</string>
+	
+	<string name="tErrCopy">Žádný text</string>
+	<string name="tErrPaste">Schránka je prázdná</string>
+	<string name="tErrEncode">Některé znaky nebyly rozpoznány a byly přeskočeny.</string>
+	<string name="tErrFile">Chyba přístupu k souboru.</string>
+	<string name="tErrVar">Je třeba nejprve zadat vstup.</string>
+	
+	<!-- string name="tHelpNotTranslated">Omlouvám se, tato položka nápovědy nemá český překlad.</string -->	
+
+	
+<string name="tHelpMain"><![CDATA[
+<h1>Šifrovací pomůcky </i>Absolutno</i></h1>
+
+<p>Tato aplikace slouží k urychlení rutinní práce při řešení textů zašifrovaných mnoha obvyklými
+způsoby. Díky snadnému zadávání a automatickému vyhodnocení různých druhů vstupů a přehlednému
+prozkoumání množství variant zbývá více času na vlastní přemýšlení a invenci. Mějte na paměti,
+že účelem Šifrovacích pomůcek není a ani nebude nahrazovat vymýšlení správného postupu, pouze
+zdlouhavou technickou práci.</p>
+
+<p>Od verze 2.0 nabízejí Šifrovací pomůcky možnost text libovolným z dostupných šifrovacích
+mechanismů také zašifrovat. Obvykle je zobrazeno pouze přímé použití šifry. Případné další
+zkomplikování šifry je ponecháno na uživateli.</p>
+
+
+<h3>Základní ovládání</h3>
+
+<p>Aplikace je rozdělena do sady nezávislých komponent, z nichž každá je navržena pro pomoc
+s řešením určitého druhu šifer. Jednotlivé komponenty mají nejsou propojeny a až na výjimky
+nezachovávají svůj stav po opuštění. Pro případný přenos dat mezi součástmi je možno
+využít schránku (viz níže).</p>
+
+<p>U většiny komponent se nabízí několik akcí – dešifrovat, zašifrovat, zobrazit přehled
+daného kódování (označeno <i>Reference</i>) apod. Tyto akce jsou tématicky rozděleny pomocí
+záložek, které se objeví ve spodním proužku obrazovky. Mezi záložkami je možno přepínat
+\"přetažením\" tohoto proužku doprava nebo doleva či klepnutím na požadovanou akci.</p>
+
+<p>Tlačítko <i>Zpět</i> vrátí uživatele na předchozí záložku, případně do hlavního menu.
+U některých přechodů mezi záložkami (například <i>Zašifrovat</i> → <i>Dešifrovat</i> může
+dojít k přenosu textu, který byl zadán v předchozí záložce, pro jeho další zpracování. Při
+pouhém pohledu na referenční tabulku nebo varianty řešení se zadaný text neztratí,
+po návratu lze v luštění pokračovat.</p>
+
+<p>Každá komponenta má vlastní více specifickou nápovědu, kterou je možno vyvolat tlačítkem
+<i>Menu</i> (na novějších verzích systému Android v akčním řádku v horním rohu obrazovky)
+stejně jako toto okno. Akční menu dále nabízí vstup do nastavení dané komponenty. Všechna
+nastavení pohromadě jsou dostupná i z hlavního menu.</p>
+
+<p>Tlačítko s obrázkem odpadkového koše, případně položka menu s nápisem <i>Smazat vše</i>,
+navrátí komponentu do původního stavu: smaže veškerý vstup a jakékoli změny, které byly na
+aktuální obrazovce provedeny. Nakonec se u většiny komponent nabízí možnosti vstup zkopírovat
+do schránky nebo jeho kopii vložit. Tyto příkazy najdete v nabídce tlačítka <i>Menu</i> na
+Androidu libovolné verze.</p>
+
+<p>Zkopírovat řešení šifry nebo některou variantu z dlouhého seznamu lze pohotověji také
+kliknutím na danou položku. Kromě kopírování se také nabízí text odeslat do jiné aplikace;
+pokud se nejedná o text, ale o obrázek, také uložit jako soubor PNG.</p>
+
+
+<h3>Nastavení</h3>
+
+<p>Nastavení různých parametrů a chování jednotlivých komponent je možno nalézt buď v centrálním
+ovládacím panelu (<i>Nastavení</i> na tlačítku <i>Menu</i> či ikona nastavení v záhlaví aplikace) nebo
+v jednotlivých nástrojích. Nastavené hodnoty se zachovávají i po vypnutí aplikace. Některé volby
+jsou specifické jen pro danou komponentu, jiné, týkající se zpracování textu (například přítomnost
+spřežky <b>ch</b> v abecedě) jsou typicky vlastností dané šifrovací hry a tak ovlivňují aplikaci
+globálně. Všechny komponenty, které pracují s očíslováním písmen abecedy, ve výchozím nastavení
+používají 26-písmennou anglickou abecedu, ale pomocí tohoto nastavení je možné číslování abecedy
+upravit pro účely konkrétní hry.</p>
+
+<p>Některé šifrovací principy jsou závislé na použití české či mezinárodní varianty dané šifry.
+Pomocí první položky menu lze jazyk aplikace a tím i specifické detaily všech těchto kódování
+změnit.</p>
+
+
+<h3>Tipy a triky</h3>
+
+<h5>Postupné zpracování dat</h5>
+
+<p>Jestliže si přejete výsledek některé komponenty zadat jako vstup jiné, například zápis textu
+dekódovaný dle Morseovy abecedy předat ke zpracování frekvenční analýzou, můžete využít
+schránku. Každé z políček <i>Řešení</i> a každá řádka variant u komponent, které varianty nabízejí,
+poskytuje možnost svůj obsah vložit do schránky. Jednoduše klikněte na pole, které Vás zajímá,
+jeho obsah se zobrazí zvýrazněný a nabídne se možnost kopie. Kopírovat také lze pomocí tlačítka
+<i>Menu</i> nebo standardním postupem operačního systému. Text pak stejnými postupy lze v jiné
+komponentě ze schránky vložit.</p>
+
+<h5>Nástroje druhé úrovně</h5>
+
+<p>Některé užitečné nástroje jsou v rámci vizuální a logické kompaktnosti zahrnuty pod obecnější
+skupinu, kde může být méně očividné je hledat. Především se jedná o <i>klávesnici mobilu</i>
+nabízenou pod <i>Šifrovacími tabulkami</i> a <i>1:1 náhradu písmen</i> pod <i>Frekvenční
+analýzou</i>.</p>
+
+<h5>Zobrazení na malých displejích</h5>
+
+<p>Aplikace se snaží přizpůsobit displejům různých velikostí, ale občas se na obrazovku nevejdou
+všechny prvky, které by chtěla nabídnout. Občas je nevyhnutelné používat posuvníky k dosažení celého
+obsahu okna. Jestliže jsou ovládací prvky příliš malé na pohodlné použití, zkuste přejít do zobrazení
+na šířku. Jestliže polovinu displeje zakrývá klávesnice, přestože už ji nepotřebujete, lze ji odvolat
+tlačítkem <i>Zpět</i>.</p>
+
+
+<h3>Upozornění</h3>
+
+<p>I když nabídka variant řešení šifer, referenční tabulky i databáze českých slov byly tvořeny
+s cílem co největší úplnosti a přesnosti, rozhodně stále nemohou být považovány za definitivní.
+Podklady pro méně obvyklé oblasti využití Braillovy či Morseovy abecedy byly získávány
+z různých zdrojů a mohou být nepřesné. U šifrování platí dvojnásob, důvěřuj, ale prověřuj.</p>
+
+
+<h3>Závěrem</h3>
+
+<p>Pomohly Vám Šifrovací pomůcky <i>Absolutno</i> v praxi? Chtěli byste oplatit malou pomocí projektu?
+Důkladné testování všech nabízených možností, upozornění na nalezené chyby a nápady na vylepšení
+(v rámci zachování ducha aplikace) jsou vždy nedocenitelnou výpomocí, kterou může dát kdokoli.
+Stejně tak hodnocení a komentáře na službě Google Play či doporučení známým. Pokud byste byli
+ochotni nabídnout větší pomoc ve formě překladu či korektury cizojazyčných lokalizací či jiným
+způsobem podpořit další vývoj, kontaktujte autora projektu na adrese <tt>vasek.potocek@gmail.com</tt>.</p>
+]]></string>
+
+
+<string name="patAbout"><![CDATA[
+<h5>Šifrovací pomůcky <i>Absolutno</i></h5>
+
+<p>Verze %s</p>
+
+<p>© 2012–2013 Vašek Potoček</p>
+
+<p>Hlavní testeři:<br/>
+– Martin Polívka<br/>
+– Vítězslav Plachý<br/>
+– Michal Přibyl</p>
+]]></string>
+
+
+<string name="patNewV2"><![CDATA[
+<h5><i>Vítejte ve verzi %s!</i></h5>
+
+<p>Nastavení aplikace a nápovědu nově naleznete v systémovém menu. Pro jejich vyvolání použijte
+systémové tlačítko <i>Menu</i> v hlavní nabídce nebo v jednotlivých nástrojích.</p>  
+]]></string>
+
+
+<string name="tHelpNews"><![CDATA[
+<h1>Novinky ve verzi 2.0</h1>
+
+– Nápověda ke všem položkám<br/>
+– Možnost text zašifrovat<br/>
+– Možnost výberu jazyka aplikace (česky / anglicky)<br/>
+– Nová koncepce nastavení aplikace<br/>
+– Nové uživatelské rozhraní (záložky, akční tlačítka, kontextové menu)<br/>
+– Nová komponenta <i>Transpoziční šifry</i><br/>
+– <i>Morseova abeceda</i>: možnost odvysílat zakódovaný text<br/>
+– <i>Braillovo písmo</i>: lepší respektování standardu, podpora formátovacích značek<br/>
+– <i>Substituce a posuny</i>: mnoho nových šifrovacích principů<br/>
+– <i>Frekvenční analýza</i>: množství nových možností, empirická substituce<br/>
+– <i>Kalendář</i>: nové možnosti údajů o dnech a pohybu v kalendáři<br/>
+– <i>Zápisník stanovišť</i>: možnost exportu záznamů do souboru<br/>
+– Oprava nedostupnosti slovníku ke stažení<br/>
+– Opravy známých chyb<br/>
+
+<h3>Starší verze</h3>
+
+<h5>Verze 1.3 (6.12.2012)</h5>
+– Rozšířené a přeskupené možnosti v Nastavení<br/>
+– Pokusný provoz anglické lokalizace<br/>
+– <i>Braillovo písmo</i>: možnost přijímání číslic, znaků s diakritikou a interpunkce<br/>
+– <i>Semafor</i>: náhledy vlaječek, zpracování číselného a písmenného znaku<br/>
+– <i>Frekvenční analýza</i>: volba abecedy (zařazení Ch, zařazení diakritiky)<br/>
+
+<h5>Verze 1.2 (1.12.2012)</h5>
+– Ikony hlavního menu nahrazeny vektorovou grafikou<br/>
+– Další přizpůsobení velkým i malým displejům<br/>
+– <i>Čísla písmen</i>: Záhlaví sloupců v tabulce očíslování písmen<br/>
+– <i>Tabulkové šifry</i>: Nové varianty polského kříže<br/>
+– <i>Frekvenční analýza</i>: výrazné rozšíření statistik<br/>
+
+<h5>Verze 1.1 (28.11.2012)</h5>
+– Zpřístupnění pro Android 1.6<br/>
+– Lepší přizpůsobení velkým i malým displejům<br/>
+– <i>Databáze slov</i>: možnost použití interního místo externího úložiště<br/>
+– <i>Čísla písmen</i>: referenční tabulka včetně ASCII a permutací<br/>
+]]></string>
+
+
+	<string name="tLicDict">Databáze českých slov (z balíčku aspell-cs v0.60)</string>
+
+</resources>

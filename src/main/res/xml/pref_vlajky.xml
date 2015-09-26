@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sifry="http://schemas.android.com/apk/res-auto" >
+
+	<cz.absolutno.sifry.common.preference.SeekBarPreference
+	    android:key="pref_vlajky_delay"
+		android:title="@string/prefVDelayTitle"
+		android:summary="@string/prefVDelaySummary"
+		android:defaultValue="@integer/pref_vlajky_delay_default"
+		sifry:min="200"
+		sifry:max="1000"
+		sifry:showHiLo="true"
+		sifry:showVal="false"
+		sifry:hi="@string/prefVDelayHi"
+		sifry:lo="@string/prefVDelayLo" />
+
+</PreferenceScreen>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="cptSemafor">Semaphore</string>
+	<string name="tSmDTitul">Mark two directions:</string>
+	<string name="tSmDNavrhy">Suggestions:</string>
+	
+	<string name="patSmVPosun" translatable="false">%1$s+ %2$d (– %3$d)</string>
+	<string name="tSmVInv">inv </string>
+	
+	
+<string name="tHelpSemafor"><![CDATA[
+<h1>Semaphore</h1>
+
+<p>This components helps decode or encode the Flag semaphore telegraphy system.</p>
+
+
+<h3>Basic usage</h3>
+
+<p>Any semaphore character is represented by the position of a pair of flags, each in one of eight
+possible directions. These eight directions correspond to the eight highlighted areas of screen.
+A pair can be entered by tapping two appropriate circles /////, simultaneously using two fingers,
+or in a swipe.</p>
+
+<p>As long as just one circle has been highlighted, all the characters having one of their flags
+in that direction are listed as suggestions. Aside from tapping the second circle, a character
+can be selected from these suggestions.</p>  
+
+
+<h3>Variants</h3>
+
+<p>If the decoded string makes little sense, it has been perhaps obfuscated by the author of the
+puzzle by turning or reflecting the semaphore signs (this may also be the result of representing
+the directions by numbers in incompatible ways as there is no standard numbering). For these
+situations, <i>Semaphore</i> offers the <i>Variants</i> tab, where the previously entered input
+is reconsidered in a rotated and/or mirrored coordinate system. All possible transformations of
+this kind are listed.</p>
+
+<p><i>NB</i> that the occurence of the number sign (see below) may result in a different lengths
+of the variants.</p>
+
+
+<h3>Encryption</h3>
+
+<p>The <i>Encrypt</i> tab can be used to encode an input string into the semaphore alphabet.
+The output can be obtained in a graphical or numeric representation. The former can be exported
+to a PNG file (in black on white background), the latter in plain text, which might be more
+useful if further processed. In the numeric representation, each character is converted to
+a pair of digits in the range 1 through 8 where the numbering is chosen so that A, B, C, …, G
+correspond to 12, 13, 14, …, 18.</p>
+
+
+<h3>Preferences</h3>
+
+<p>By default the component is set up to recognize the 26 English letters and a number sign.
+This leaves only one unassigned combination. The number sign switches the interpretation of the
+first 11 combinations (originally letters A through K) to digits 1–9 and 0 (K), J becoming the
+\"character sign\" which reverses the assignments to normal. The number sign can be disabled
+in the preferences so that it stays unrecognized and the switching to numeric mode never occurs.</p>
+
+
+<h3>Tips and tricks</h3>
+
+<p>If the numeric mode is entered by mistake and you wish to exit it promptly instead of
+remembering the character sign, use <i>BackSpace</i>.</p>
+]]></string>
+	
+
+	<string-array name="saSmRGroups">
+		<item>Letters</item>
+		<item>Digits</item>
+		<item>Control</item>
+	</string-array>
+	
+	<array name="iaSmRGroups">
+		<item>@array/saSmDPismena</item>
+		<item>@array/saSmDCislice</item>
+		<item>@array/saSmDPrefixy</item>
+	</array>
+
+	
+	<string-array name="saSmDPismena">
+		<item>3:A</item>
+		<item>5:B</item>
+		<item>9:C</item>
+		<item>17:D</item>
+		<item>33:E</item>
+		<item>65:F</item>
+		<item>129:G</item>
+		<item>6:H</item>
+		<item>10:I</item>
+		<item>80:J</item>
+		<item>18:K</item>
+		<item>34:L</item>
+		<item>66:M</item>
+		<item>130:N</item>
+		<item>12:O</item>
+		<item>20:P</item>
+		<item>36:Q</item>
+		<item>68:R</item>
+		<item>132:S</item>
+		<item>24:T</item>
+		<item>40:U</item>
+		<item>144:V</item>
+		<item>96:W</item>
+		<item>160:X</item>
+		<item>72:Y</item>
+		<item>192:Z</item>
+	</string-array>
+
+	<string-array name="saSmDCislice">
+		<item>3:1</item>
+		<item>5:2</item>
+		<item>9:3</item>
+		<item>17:4</item>
+		<item>33:5</item>
+		<item>65:6</item>
+		<item>129:7</item>
+		<item>6:8</item>
+		<item>10:9</item>
+		<item>18:0</item>
+	</string-array>
+
+	<string-array name="saSmDPrefixy">
+		<item>48:digits:</item>
+		<item>80:letters:</item>
+		<item>136:cancel:</item>
+	</string-array>
+
+	
+	<string-array name="saSCItems">
+	    <item>Graphical representation</item>
+	    <item>Pairs of 1–8 (1 = down, then CW)</item>
+	</string-array>
+	
+	<array name="iaSCItems">
+	    <item>@id/idSCPrimo</item>
+	    <item>@id/idSCDvoj</item>
+	</array>
+	    	
+</resources>

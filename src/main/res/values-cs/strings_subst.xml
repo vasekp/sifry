@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="cptSubst">Substituce\na posuny</string>
+	<string name="tSDSifra">Šifra:</string>	
+	<string name="tSDTyp">Typ šifry:</string>
+	<string name="tSDHeslo">Heslo:</string>
+	<string name="tSDAKoef">Koeficient:</string>
+	<string name="tSDKPokr">Doplnit:</string>
+	<string name="tSDKlic">Klíč:</string>
+	<string name="tSDVlastni">Překladová tabulka:</string>
+	
+	<string name="tSDEnc">Zašifrovat</string>
+	<string name="tSDDec">Dešifrovat</string>
+
+	<string name="tSDChybaHesla">Heslo musí být složené pouze z písmen!</string>
+	
+<string name="tHelpSubst"><![CDATA[
+<h1>Substituce a posuny</h1>
+
+<p>Pomocí tohoto nástroje můžete luštit Caesarovu šifru (konstantní posun v abecedě včetně ROT-13),
+posun podle hesla (Vigenèrovu šifru a příbuzné), převrácení abecedy (Atbaš), zašifrování textu pomocí
+sama sebe (např. součty sousedních písmen) a podobné systematické substituční šifry.</p>
+
+
+<h3>Základní ovládání</h3>
+
+<p>Zadávání šifry se liší podle jejího typu. Překlad se spustí po zadání všech potřebných údajů
+tlačítkem se symbolem šipky (<i>Přijmout</i>), případně klávesou Enter.</p>
+
+<p>V zadání šifry <b>není třeba</b> vynechávat mezery, interpunkci, diakritiku, ani převádět vše na
+stejnou velikost písmen. Aplikace sama provede odstranění diakritiky a normalizaci písmen. Nepísmenné
+znaky šifry jsou přepsány do řešení beze změny. V případě šifer s heslem se nový znak hesla použije
+až s příštím písmenem. Nepísmenné znaky v hesle nejsou tolerovány.</p>
+
+
+<h5>Monoalfabetické šifry vycházející z očíslování abecedy</h5>
+
+<p>Nejjednodušší systematická substituce je <i>Caesarova šifra</i>, ve které se každé písmeno vstupu
+posouvá v abecedě o stejný počet písmen. U Caesarovy šifry stačí zadat vstup, všechny posuny se
+zobrazí v seznamu, ve kterém se snadno dohledá řádek, který dává smysl.</p>
+
+<p>Samotný vstup postačí také u šifry <i>Atbaš</i>, jejímž základem je otočení abecedy (A ↔ Z, B ↔ Y, …).
+Pro pohodlnost se také zobrazí všechny posuny získaného řešení.</p>
+
+<p>Zobecněním předchozích dvou možností jsou <i>afinní šifry</i>. Jestliže si Caesarovu šifru můžeme
+představit jako matematickou operaci <i>f(x) = x + k</i> a šifru Atbaš jako <i>f(x) = -x</i>,
+afinní šifra je vyjádřena vzorcem <i>f(x) = a*x + b</i>. Kromě kódového textu je potřeba zvolit
+koeficient <i>a</i>, všechny posuny dané hodnotami <i>b</i> se zobrazí najednou. Nejsou nabízeny
+všechny možnosti, jen takové, ve kterých lze transformace i obrátit (text muselo být možno nejprve
+zašifrovat, aby mohl být dešifrován). Speciální hodnoty <i>a = 1</i> a <i>a = -1</i> by odpovídaly
+Caesarově šifře a Atbaši a nejsou tedy znovu nabízeny.</p> 
+
+
+<h5>Polyalfabetické šifry</h5>
+
+<p>V případě šifer s heslem je potřeba zadat kódový text i heslo. Pod záložkou <i>Vigenèrova šifra</i>
+se kromě sčítání písmen nabízí odčítání hesla od šifry (reverzní Vigenèrovo šifrování), šifry od hesla
+(Beaufortova šifra) a další podobné transformace. Protože pro účely očíslování znaků v abecedě je
+obvyklé číslovat od jedničky i od nuly, ukazují se výsledky obou možností. Další nabízené možnosti
+souvisí s tím, jakým způsobem pokračovat v případě, že heslo je kratší než šifra – nabízí se začít
+brát písmenka hesla znovu od začátku (nejčastější možnost, označeno jako B), pokračovat písmenky
+z šifry (označeno jako BA), či dokonce začít brát od začátku písmena získaná během řešení (označeno
+jako BV).</p>
+
+<p>Pokud heslo není součástí zadání, může se pořád jednat o nějaký předem dohodnutý kód, kód vycházející
+z podmínek, ve kterých bylo zadání získáno apod. Myšlenky podobné Vigenèrově šifře je však možné mnohými
+způsoby používat i bez předem dohodnutého hesla. To je předmětem dalších dvou nabízených možností,
+<i>Pomocí sebe sama</i>, kde roli hesla hraje buď kódový text sám nebo průběžně získávaná písmenka řešení,
+a <i>Pomocí polohy písmene</i>, což odpovídá heslu \"ABCDEFGH…\", tj. první písmeno se posune o jednu
+pozici, druhé o dvě atd.</p>
+
+
+<h5>Obecné monoalfabetické šifry</h5>
+
+<p>Kromě šifer vycházejících z nahrazování písmen podle polohy v abecedě (posun, obrácení abecedy apod.)
+nabízí komponenta <i>Substituce a posuny</i> definovat i zcela vlastní přiřazení mezi abecedou šifry a
+řešení. V případě šifry <i>s klíčem</i> je potřeba zadat klíč (například \"KLIC\"), který se dále doplní
+nepoužitými písmeny, tedy \"KLICABDE…\" (nabízí se více možností doplnění). Opakování stejného písmene
+v rámci klíče je ignorováno. V šifře se poté provádí následující substituce: A → K, B → L, C → I, D → C,
+E → A, … Pro úplnost je zobrazen i výsledek opačné transformace.</p>
+
+<p>Poslední možností je definovat zcela volně vlastní překladovou tabulku. Tehdy se zobrazí celá abeceda
+a ke každému písmeni jeho překlad, ve výchozím stavu nastavený na sebe sama (případně podle poslední
+substituce s klíčem, pokud byl nastaven). Přiřazení je možno změnit kliknutím na vybrané písmeno a
+zvolením jeho nového překladu z nabídky. Tabulka je v každý okamžik udržována ve stavu, kdy reprezentuje
+zobrazení celé abecedy na celou abecedu. Každá její změna je tedy ve skutečnosti prováděna jako prohození
+dvou písmen.</p>
+
+<p><i>Tip</i>: Pokud nemáte k přiřazení jednotlivých znaků žádné indicie kromě jejich četnosti, pravděpodobně
+bude užitečnější nástroj <i>Empirická substituce</i> v rámci komponenty <i>Frekvenční analýza</i>.</p>
+
+
+<h3>Nastavení</h3>
+
+<p>Tato komponenta respektuje globální nastavení číslování abecedy. Může tak přijímat spřežku <b>ch</b> jako deváté
+písmeno abecedy (není kontrolováno, zda se skutečně jedná o spřežku a ne o náhodný shluk!) či přeskočit
+v počítání Q, W nebo X. Nastavení je respektováno i při zobrazení posunů. <i>Pozor:</i> změna v nastavení
+číslování abecedy ovlivní i komponentu <i>Čísla písmen</i>.</p>
+
+
+<h3>Šifrování</h3>
+
+Komponenta <i>Substituce a posuny</i> nenabízí záložku <i>Zašifrovat</i>. Libovolná z nabízených možností
+může totiž být chápána jako šifrování i dešifrování a ke každé variantě lze mezi nabízenými možnostmi
+najít obrácenou transformaci. Například u Caesarovy šifry je možno snadno dohledat, který řádek odpovídá
+přičtení či odečtení stejné hodnoty. Některé systémy inverzní transformaci nepotřebují, protože se provádí
+stejnou operací jako dešifrování (Beaufort, 2A-B). U obecných monoalfabetických šifer jsou převody \"tam\"
+a \"zpět\" zobrazeny pod sebou.
+
+
+<h3>Tipy a triky</h3>
+
+<p>Jestliže systém počítá písmena nepředvídaně, či hlásí, že heslo není složeno z písmen, zkontrolujte
+nastavení abecedy. Jestliže například bylo Q vyřazeno z abecedního řazení, nemá přiřazeno žádné číslo,
+a tak nemůže být použito při aritmetických operacích.</p>
+]]></string>
+	
+	
+	<string-array name="saSDTypy">
+	    <item>Posuny (Caesar)</item>
+	    <item>Reverze a posuny (Atbaš)</item>
+	    <item>Násobení a posuny (afinní)</item>
+	    <item>S heslem (Vigenère apod.)</item>
+	    <item>Pomocí sebe sama (Autokey)</item>
+	    <item>Pomocí polohy písmene</item>
+	    <item>Monoalfabetická s klíčem</item>
+	    <item>Vlastní překladová tabulka</item>
+	</string-array>
+	
+	<array name="iaSDTypy">
+	    <item>@id/idSDCaesar</item>
+	    <item>@id/idSDAtbash</item>
+	    <item>@id/idSDAffini</item>
+	    <item>@id/idSDHeslo</item>
+	    <item>@id/idSDAutoKey</item>
+	    <item>@id/idSDPozice</item>
+	    <item>@id/idSDKlic</item>
+	    <item>@id/idSDVlastni</item>
+	</array>
+	
+	<string-array name="saSDbezHesla">
+		<item>A(n) + A(n-1) (od 1)</item>
+		<item>A(n) – A(n-1) (od 1)</item>
+		<item>A(n-1) – A(n) (od 1)</item>
+		<item>A(n) + A(n-1) (od 0)</item>
+		<item>A(n) – A(n-1) (od 0)</item>
+		<item>A(n-1) – A(n) (od 0)</item>
+		<item>A(n) + V(n-1) (od 1)</item>
+		<item>A(n) – V(n-1) (od 1)</item>
+		<item>V(n-1) – A(n) (od 1)</item>
+		<item>A(n) + V(n-1) (od 0)</item>
+		<item>A(n) – V(n-1) (od 0)</item>
+		<item>V(n-1) – A(n) (od 0)</item>
+		<item>2A(n) – A(n-1)</item>
+	</string-array>
+	
+	<string-array name="saSDsHeslem">
+   		<item>A(n) + B(n) (od 1)</item>
+   		<item>A(n) – B(n) (od 1)</item>
+   		<item>B(n) – A(n) (od 1)</item>
+		<item>A(n) + B(n) (od 0)</item>
+		<item>A(n) – B(n) (od 0)</item>
+   		<item>B(n) – A(n) (od 0)</item>
+   		<item>A(n) + [BA](n) (od 1)</item>
+   		<item>A(n) – [BA](n) (od 1)</item>
+   		<item>[BA](n) – A(n) (od 1)</item>
+		<item>A(n) + [BA](n) (od 0)</item>
+		<item>A(n) – [BA](n) (od 0)</item>
+   		<item>[BA](n) – A(n) (od 0)</item>
+   		<item>A(n) + [BV](n) (od 1)</item>
+   		<item>A(n) – [BV](n) (od 1)</item>
+   		<item>[BV](n) – A(n) (od 1)</item>
+		<item>A(n) + [BV](n) (od 0)</item>
+		<item>A(n) – [BV](n) (od 0)</item>
+   		<item>[BV](n) – A(n) (od 0)</item>
+   		<item>2A(n) – B(n)</item>
+   		<item>2B(n) – A(n)</item>
+	</string-array>
+	
+	<string-array name="saSDsPozici">
+   		<item>A(n) + n (od 1)</item>
+   		<item>A(n) – n (od 1)</item>
+   		<item>n – A(n) (od 1)</item>
+		<item>A(n) + n (od 0)</item>
+		<item>A(n) – n (od 0)</item>
+   		<item>n – A(n) (od 0)</item>
+   		<item>2A(n) – n</item>
+   		<item>2n – A(n)</item>
+	</string-array>
+
+	<string-array name="saSDKPokr">
+	    <item>Nepoužitá A–Z</item>
+	    <item>Nepoužitá Z–A</item>
+	    <item>Pokračovat od posledního písmene</item>
+	</string-array>
+
+</resources>

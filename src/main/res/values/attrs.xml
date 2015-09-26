@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="SeekBarPreference">
+        <attr name="min" format="integer" />
+        <attr name="max" format="integer" />
+        <attr name="hi" format="string" />
+        <attr name="lo" format="string" />            
+        <attr name="format" format="string" />            
+        <attr name="showHiLo" format="boolean" />            
+        <attr name="showVal" format="boolean" />            
+    </declare-styleable>
+    
+    <declare-styleable name="FixedGridLayout">
+        <attr name="numColumns" format="integer" />
+        <attr name="alignLeft" format="boolean" />            
+    </declare-styleable>
+    
+    <declare-styleable name="AspectLayout">
+        <attr name="relWidth" format="float" />
+        <attr name="relHeight" format="float" />
+    </declare-styleable>
+        
+</resources>

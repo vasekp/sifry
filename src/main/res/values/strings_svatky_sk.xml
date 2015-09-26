@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+	<array name="svatkySK">
+		<item>@array/saKDsLeden</item>
+		<item>@array/saKDsUnor</item>
+		<item>@array/saKDsBrezen</item>
+		<item>@array/saKDsDuben</item>
+		<item>@array/saKDsKveten</item>
+		<item>@array/saKDsCerven</item>
+		<item>@array/saKDsCervenec</item>
+		<item>@array/saKDsSrpen</item>
+		<item>@array/saKDsZari</item>
+		<item>@array/saKDsRijen</item>
+		<item>@array/saKDsListopad</item>
+		<item>@array/saKDsProsinec</item>
+	</array>
+	
+	<string-array name="saKDsLeden" translatable="false">
+		<item>*Nový rok</item>
+		<item>Karina, Alexandra</item>
+		<item>Daniela</item>
+		<item>Drahoslav</item>
+		<item>Andrea</item>
+		<item>Antónia</item>
+		<item>Bohuslava</item>
+		<item>Severín</item>
+		<item>Alexej</item>
+		<item>Daša</item>
+		<item>Malvína</item>
+		<item>Ernest</item>
+		<item>Rastislav</item>
+		<item>Radovan</item>
+		<item>Dobroslav</item>
+		<item>Kristína</item>
+		<item>Nataša</item>
+		<item>Bohdana</item>
+		<item>Drahomíra, Mário</item>
+		<item>Dalibor</item>
+		<item>Vincent</item>
+		<item>Zora</item>
+		<item>Miloš</item>
+		<item>Timotej</item>
+		<item>Gejza</item>
+		<item>Tamara</item>
+		<item>Bohuš</item>
+		<item>Alfonz</item>
+		<item>Gašpar</item>
+		<item>Ema</item>
+		<item>Emil</item>
+	</string-array>
+
+	<string-array name="saKDsUnor" translatable="false">
+		<item>Tatiana</item>
+		<item>Erika, Erik</item>
+		<item>Blažej</item>
+		<item>Veronika</item>
+		<item>Agáta</item>
+		<item>Dorota</item>
+		<item>Vanda</item>
+		<item>Zoja</item>
+		<item>Zdenko</item>
+		<item>Gabriela</item>
+		<item>Dezider</item>
+		<item>Perla</item>
+		<item>Arpád</item>
+		<item>Valentín</item>
+		<item>Pravoslav</item>
+		<item>Ida, Liana</item>
+		<item>Miloslava</item>
+		<item>Jaromír</item>
+		<item>Vlasta</item>
+		<item>Lívia</item>
+		<item>Eleonóra</item>
+		<item>Etela</item>
+		<item>Roman, Romana</item>
+		<item>Matej</item>
+		<item>Frederika, Frederik</item>
+		<item>Viktor</item>
+		<item>Alexander</item>
+		<item>Zlatica</item>
+	</string-array>
+
+	<string-array name="saKDsBrezen" translatable="false">
+		<item>Albín</item>
+		<item>Anežka</item>
+		<item>Bohumil, Bohumila</item>
+		<item>Kazimír</item>
+		<item>Fridrich</item>
+		<item>Radislav</item>
+		<item>Tomáš</item>
+		<item>Alan, Alana</item>
+		<item>Františka</item>
+		<item>Bruno, Branislav</item>
+		<item>Angela, Angelika</item>
+		<item>Gregor</item>
+		<item>Vlastimil</item>
+		<item>Matilda</item>
+		<item>Svetlana</item>
+		<item>Boleslav</item>
+		<item>Lubica</item>
+		<item>Eduard</item>
+		<item>Jozef</item>
+		<item>Vítazoslav</item>
+		<item>Blahoslav</item>
+		<item>Benadik</item>
+		<item>Adrián</item>
+		<item>Gabriel</item>
+		<item>Marián</item>
+		<item>Emanuel</item>
+		<item>Alena</item>
+		<item>Sona</item>
+		<item>Miroslav</item>
+		<item>Vieroslava</item>
+		<item>Benjamín</item>
+	</string-array>
+
+	<string-array name="saKDsDuben" translatable="false">
+		<item>Hugo</item>
+		<item>Zita</item>
+		<item>Richard</item>
+		<item>Izidor</item>
+		<item>Miroslava</item>
+		<item>Irena</item>
+		<item>Zoltán</item>
+		<item>Albert</item>
+		<item>Milena</item>
+		<item>Igor</item>
+		<item>Július</item>
+		<item>Estera</item>
+		<item>Aleš</item>
+		<item>Justína</item>
+		<item>Fedor</item>
+		<item>Dana, Danica</item>
+		<item>Rudolf</item>
+		<item>Valér</item>
+		<item>Jela</item>
+		<item>Marcel</item>
+		<item>Ervín</item>
+		<item>Slavomír</item>
+		<item>Vojtech</item>
+		<item>Juraj</item>
+		<item>Marek</item>
+		<item>Jaroslava</item>
+		<item>Jaroslav</item>
+		<item>Jarmila</item>
+		<item>Lea</item>
+		<item>Anastázia</item>
+	</string-array>
+
+	<string-array name="saKDsKveten" translatable="false">
+		<item>*Svátek práce</item>
+		<item>Žigmund</item>
+		<item>Galina</item>
+		<item>Florián</item>
+		<item>Lesana</item>
+		<item>Hermína</item>
+		<item>Monika</item>
+		<item>Ingrida</item>
+		<item>Roland</item>
+		<item>Viktória</item>
+		<item>Blažena</item>
+		<item>Pankrác</item>
+		<item>Servác</item>
+		<item>Bonifác</item>
+		<item>Žofia</item>
+		<item>Svetozár</item>
+		<item>Gizela</item>
+		<item>Viola</item>
+		<item>Gertrúda</item>
+		<item>Bernard</item>
+		<item>Zina</item>
+		<item>Juliána, Júlia</item>
+		<item>Želmíra</item>
+		<item>Ela</item>
+		<item>Urban</item>
+		<item>Dušan</item>
+		<item>Iveta</item>
+		<item>Viliam</item>
+		<item>Vilma</item>
+		<item>Ferdinand</item>
+		<item>Petrana</item>
+	</string-array>
+
+	<string-array name="saKDsCerven" translatable="false">
+		<item>Žaneta</item>
+		<item>Oxana, Xénia</item>
+		<item>Karolína</item>
+		<item>Lenka</item>
+		<item>Laura</item>
+		<item>Norbert</item>
+		<item>Róbert</item>
+		<item>Medard</item>
+		<item>Stanislava</item>
+		<item>Margaréta</item>
+		<item>Dobroslava</item>
+		<item>Zlatko</item>
+		<item>Anton</item>
+		<item>Vasil</item>
+		<item>Vít</item>
+		<item>Blanka, Bianka</item>
+		<item>Adolf</item>
+		<item>Vratislav</item>
+		<item>Alfréd</item>
+		<item>Valéria</item>
+		<item>Alojz</item>
+		<item>Paulína</item>
+		<item>Sidónia</item>
+		<item>Ján</item>
+		<item>Tadeáš, Olívia</item>
+		<item>Adriána</item>
+		<item>Ladislav, Ladislava</item>
+		<item>Beáta</item>
+		<item>Petra, Peter, Pavol</item>
+		<item>Melánia</item>
+	</string-array>
+
+	<string-array name="saKDsCervenec" translatable="false">
+		<item>Diana</item>
+		<item>Berta</item>
+		<item>Miloslav</item>
+		<item>Prokop</item>
+		<item>Cyril, Metod</item>
+		<item>Patrik, Patrícia</item>
+		<item>Oliver</item>
+		<item>Ivan</item>
+		<item>Lujza</item>
+		<item>Amália</item>
+		<item>Milota</item>
+		<item>Nina</item>
+		<item>Margita</item>
+		<item>Kamil</item>
+		<item>Henrich</item>
+		<item>Drahomír</item>
+		<item>Bohuslav</item>
+		<item>Kamila</item>
+		<item>Dušana</item>
+		<item>Ilja, Eliáš</item>
+		<item>Daniel</item>
+		<item>Magdaléna</item>
+		<item>Olga</item>
+		<item>Vladimír</item>
+		<item>Jakub</item>
+		<item>Anna, Hana</item>
+		<item>Božena</item>
+		<item>Krištof</item>
+		<item>Marta</item>
+		<item>Libuša</item>
+		<item>Ignác</item>
+	</string-array>
+
+	<string-array name="saKDsSrpen" translatable="false">
+		<item>Božidara</item>
+		<item>Gustáv</item>
+		<item>Jerguš</item>
+		<item>Dominik, Dominika</item>
+		<item>Hortenzia</item>
+		<item>Jozefína</item>
+		<item>Štefánia</item>
+		<item>Oskár</item>
+		<item>Lubomíra</item>
+		<item>Vavrinec</item>
+		<item>Zuzana</item>
+		<item>Darina</item>
+		<item>Lubomír</item>
+		<item>Mojmír</item>
+		<item>Marcela</item>
+		<item>Leonard</item>
+		<item>Milica</item>
+		<item>Elena, Helena</item>
+		<item>Lýdia</item>
+		<item>Anabela</item>
+		<item>Jana</item>
+		<item>Tichomír</item>
+		<item>Filip</item>
+		<item>Bartolomej</item>
+		<item>Ludovít</item>
+		<item>Samuel</item>
+		<item>Silvia</item>
+		<item>Augustín</item>
+		<item>Nikola</item>
+		<item>Ružena</item>
+		<item>Nora</item>
+	</string-array>
+
+	<string-array name="saKDsZari" translatable="false">
+		<item>Drahoslava</item>
+		<item>Linda</item>
+		<item>Belo</item>
+		<item>Rozália</item>
+		<item>Regína</item>
+		<item>Alica</item>
+		<item>Marianna</item>
+		<item>Miriama</item>
+		<item>Martina</item>
+		<item>Oleg</item>
+		<item>Bystrík</item>
+		<item>Mária</item>
+		<item>Ctibor</item>
+		<item>Ludomil</item>
+		<item>Jolana</item>
+		<item>Ludmila</item>
+		<item>Olympia</item>
+		<item>Eugénia</item>
+		<item>Konštantín</item>
+		<item>Luboslav, Luboslava</item>
+		<item>Matúš</item>
+		<item>Móric</item>
+		<item>Zdenka</item>
+		<item>Lubor</item>
+		<item>Vladislav</item>
+		<item>Edita</item>
+		<item>Cyprián</item>
+		<item>Václav</item>
+		<item>Michal, Michaela</item>
+		<item>Jarolím</item>
+	</string-array>
+
+	<string-array name="saKDsRijen" translatable="false">
+		<item>Arnold</item>
+		<item>Levoslav</item>
+		<item>Stela</item>
+		<item>František</item>
+		<item>Viera</item>
+		<item>Natália</item>
+		<item>Eliška</item>
+		<item>Brigita</item>
+		<item>Dionýz</item>
+		<item>Slavomíra</item>
+		<item>Valentína</item>
+		<item>Maximilián</item>
+		<item>Koloman</item>
+		<item>Boris</item>
+		<item>Terézia</item>
+		<item>Vladimíra</item>
+		<item>Hedviga</item>
+		<item>Lukáš</item>
+		<item>Kristián</item>
+		<item>Vendelín</item>
+		<item>Uršula</item>
+		<item>Sergej</item>
+		<item>Alojzia</item>
+		<item>Kvetoslava</item>
+		<item>Aurel</item>
+		<item>Demeter</item>
+		<item>Sabína</item>
+		<item>Dobromila</item>
+		<item>Klára</item>
+		<item>Šimon, Simona</item>
+		<item>Aurélia</item>
+	</string-array>
+
+	<string-array name="saKDsListopad" translatable="false">
+		<item>Denisa, Denis</item>
+		<item>*Svátek všech svatých</item>
+		<item>Hubert</item>
+		<item>Karol</item>
+		<item>Imrich</item>
+		<item>Renáta</item>
+		<item>René</item>
+		<item>Bohumír</item>
+		<item>Teodor</item>
+		<item>Tibor</item>
+		<item>Martin</item>
+		<item>Svätopluk</item>
+		<item>Stanislav</item>
+		<item>Irma</item>
+		<item>Leopold</item>
+		<item>Agnesa</item>
+		<item>Klaudia</item>
+		<item>Eugen</item>
+		<item>Alžbeta</item>
+		<item>Félix</item>
+		<item>Elvíra</item>
+		<item>Cecília</item>
+		<item>Klement</item>
+		<item>Emília</item>
+		<item>Katarína</item>
+		<item>Kornel</item>
+		<item>Milan</item>
+		<item>Henrieta</item>
+		<item>Vratko</item>
+		<item>Andrej, Ondrej</item>
+	</string-array>
+
+	<string-array name="saKDsProsinec" translatable="false">
+		<item>Edmund</item>
+		<item>Bibiána</item>
+		<item>Oldrich</item>
+		<item>Barbora</item>
+		<item>Oto</item>
+		<item>Mikuláš</item>
+		<item>Ambróz</item>
+		<item>Marina</item>
+		<item>Izabela</item>
+		<item>Radúz</item>
+		<item>Hilda</item>
+		<item>Otília</item>
+		<item>Lucia</item>
+		<item>Branislava, Bronislava</item>
+		<item>Ivica</item>
+		<item>Albína</item>
+		<item>Kornélia</item>
+		<item>Sláva</item>
+		<item>Judita</item>
+		<item>Dagmara</item>
+		<item>Bohdan</item>
+		<item>Adela</item>
+		<item>Nadežda</item>
+		<item>Adam, Eva</item>
+		<item>*1. svátek vánoční</item>
+		<item>Štefan</item>
+		<item>Filoména</item>
+		<item>Ivona, Ivana</item>
+		<item>Milada</item>
+		<item>Dávid</item>
+		<item>Silvester</item>
+	</string-array>
+	
+</resources>

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+	<string name="app_name">Puzzlehunt Assistant</string>
+	<string name="tExportDir">Puzzlehunt Assistant</string>
+	
+	<string name="tVstup">Input:</string>
+	<string name="tVystup">Output:</string>
+	<string name="tRes">Plaintext:</string>
+	<string name="tBsp">Backspace</string>
+	<string name="tClear">Clear all</string>
+	<string name="tEncode">Encrypt</string>
+	<string name="tDecode">Decrypt</string>
+	<string name="tCopy">Copy</string>
+	<string name="tSave">Save</string>
+	<string name="tSend">Send</string>
+	<string name="tExport">Export</string>
+	<string name="tFilename">Save as:</string>
+	<string name="tCtxCopy">Copy</string>
+	<string name="tCtxPaste">Paste</string>
+	<string name="tRef">Reference</string>
+	<string name="tVar">Variants</string>
+	<string name="tClose">Close</string>
+	<string name="tGo">Go</string>
+	<string name="tStart">Start</string>
+	<string name="tStop">Stop</string>
+
+	
+	<string name="patCopyCap">Text: \"%s\"</string>
+	<string name="patBitmapCap">Bitmap: %1$d × %2$d, %3$d B</string>
+	<string name="patBitmapFN" translatable="false">%s.png</string>
+	<string name="tNotFound">Not found!</string>	
+	<string name="icon">icon</string>
+	
+	<string name="cptMain">Puzzlehunt Assistant</string>
+	<string name="cptLicence">Licence Terms</string>	
+		
+	<string name="tSettings">Settings</string>
+	<string name="tHelp">Help</string>
+	<string name="tAbout">About…</string>
+	<string name="tNews">Release notes</string>
+	<string name="tLicence">Licence</string>
+		
+	<string name="tErrCopy">No text copied</string>
+	<string name="tErrPaste">Clipboard is empty</string>
+	<string name="tErrEncode">Some characters were not recognized and were omitted.</string>
+	<string name="tErrFile">File access error.</string>
+	<string name="tErrVar">Please enter the input first.</string>
+	
+	<string name="tSipkaL" translatable="false">◀</string>
+	<string name="tSipkaP" translatable="false">▶</string>
+	<string name="tSipkaN" translatable="false">▲</string>
+	<string name="tSipkaD" translatable="false">▼</string>
+		
+	<!-- string name="tHelpNotTranslated">Sorry, this help item has not been translated into English yet.</string -->
+	
+
+<string name="tHelpMain"><![CDATA[
+<h1>Puzzlehunt Assistant</h1>
+
+<p>The purpose of this application is to help with routine tasks used in cipher solving and
+puzzlehunts. Thanks to simple input of the ciphertext, automated translation and many variants
+of the solution shown at once, it leaves more time for your own thinking and invention. 
+Please note that this app is not meant to, and will not, represent any attempt at artificial
+intelligence and provide suggestions on <i>how</i> to solve a problem, but can be of great help
+of doing the hard work once you figure out the trick.</p>
+
+<p>Since version 2.0, Puzzlehunt Assistant also offers the reverse – encryption of a plain text
+using a number of well-known ciphers. Again, only the sole translation is usually provided by
+the respective tools, leaving a potential further obfuscation up to the author.</p>
+
+
+<h3>Basic usage</h3>
+
+<p>The functions provided by the app are divided into a set of mutually independent components,
+each of which deals with a specific kind of ciphers. The components are stand-alone and usually
+stateless. To transfer data between components, the Android clipboard can easily be used (see
+below).</p>  
+
+<p>Most of the components provide several different actions – decryption, encryption, reference
+tables etc. These actions are represented by a set of tabs in the lower row of your screen.
+The tabs can be switched by a fling or a tap.</p>
+
+<p>The <i>Back</i> button returns to a previously opened tab or the main menu. Some transitions
+(e.g. <i>Encrypt</i> → <i>Decrypt</i> induce a transfer of text entered in the tab being closed
+even when using the <i>Back</i> button. However, passive tabs like <i>Reference</i> never alter
+or lose your previously entered data.</p>
+
+<p>Each of the components has a separate specific Help topic which can be opened just like this,
+using the <i>Menu</i> button (Gingerbread and earlier Android releases) or the action bar.
+The menu / action bar also links to the Preferences screen for the active component where
+there is one. All the settings can also be reached from the main screen.</p>
+
+<p>The recycle bin action button, or the <i>Clear all</i> menu item, re-initializes the component:
+any input and user-made changes are reverted to their state when the component was opened.
+Finally, the menu provides shortcuts to Copy and Paste commands.</p> 
+
+<p>Any obtained piece of plaintext or list entry can also be copied by clicking it (a menu
+appears which also offers sharing the text with another app). Where a problems results into
+the generation of a picture, this can be shared with another app or saved in PNG format the
+same way.</p>
+
+
+<h3>Preferences</h3>
+
+<p>All the app preferences are reachable from the main screen (using <i>Menu</i> or the action bar)
+or from the individual components. The settings are kept between app restarts. Some of the
+preference groups are general, affecting more than one component at a time. This is the case
+for preferences which deal with various alphabet tweaks as this is usually specific to the game
+as a whole and should be respected by all components indifferently. The defaults are 26-letter
+plain English alphabet for all purposes.</p>
+
+<p>Some of the encryption techniques display minor differences with the locale (currently English
+and Czech locales are supported). If English is not your preferred locale, you can override the
+system default in the overall preferences. Note that all labels and messages will also be affected.</p>
+
+
+<h3>Tips and tricks</h3>
+
+<h5>Multi-stage processing</h5>
+
+<p>If you wish to feed the result of one component to another, e.g., perform a frequency analysis
+of a text you obtained by decoding some Morse code, you can readily use the system clipboard.
+Each <i>Plaintext</i> field, as well as every line in a list where multiple variants are shown,
+provides a shortcut to copying its contents via a quick context menu. A <i>Copy</i> command
+is also available in the menu in most cases. Pasting the copied text into a different component
+is equally simple; moreover, in text fields, standard Android paste can be used.</p>
+
+<h5>Second-level tools</h5>
+
+<p>For the sake of compactness and logical consistency, multiple tools are often grouped under a
+more general header where they may not seem perfectly intuitive to look for at first sight. Try
+looking for a <i>Multi-tap</i>, <i>Bifid</i>, and <i>Trifid</i> ciphers under <i>Grid Ciphers</i>
+and for <i>1:1 substitution</i> under <i>Frequency Analysis</i>.</p>
+
+<h5>Small displays</h5>
+
+<p>The app has been designed with displays of many sizes in mind. Sometimes the amount of information
+is just too large for the small screen of a smartphone. Often scrolling is inevitable to reach all
+the window contents. If the buttons seem to be too small to be used with ease, try orienting your
+screen in landscape. If the soft keyboard seems to cover some important part of the screen, it can
+be hidden using the <i>Back</i> button.</p>
+
+
+<h3>Disclaimer</h3>
+
+<p>Even though much care has been put into compiling the often encountered variants, reference tables
+and word lists, these can never be considered perfect, complete and/or infallible as all the work has
+been done by a single enthusiast programmer. The sources for marginal or specialized uses of Morse
+code or Braille have been compiled from multiple sources and may be inexact, or defined differently
+in your country. If in some doubt, please always double check the solutions presented to you by the
+app. (In case you find some inconsistencies please contact the author, see below.)</p>
+
+
+<h3>Like the app? Have something to say?</h3>
+
+<p>Do you appreciate help the Puzzlehunt Assistant has given? Care to give some help back? I always
+deeply appreciate thorough tests of the app, its behaviour in unpredicted situations, notices of errors
+or petty annoying behaviour, or just general enhancement ideas (respecting the overall concept of the
+app). Rating and comments in Google Play are also most welcome. If you were willing to offer a more
+involving help like translation into a new language (or corrections of my English, for that matter),
+please do not hesitate to write to the author personally at <tt>vasek.potocek@gmail.com</tt>.</p>
+]]></string>
+
+
+<string name="patAbout"><![CDATA[
+<h5>Puzzlehunt Assistant</h5>
+
+<p>Version %s</p>
+
+<p>© 2012 Vašek Potoček</p>
+
+<p>Special thanks to testers:<br/>
+– Martin Polívka<br/>
+– Vítězslav Plachý<br/>
+– Michal Přibyl</p>
+]]></string>
+
+
+<string name="patNewV2"><![CDATA[
+<h5><i>Welcome to version %s!</i></h5>
+
+<p>The Settings and Help tabs can now be found in the Options menu. To display them,
+press the <i>Menu</i> button in the main menu or in either of the tools.</p>
+]]></string>
+
+
+	<string name="tLicDict">English word list (from aspell-en v7.1)</string>
+	
+	<string-array name="saLicence" translatable="false">
+	    <item>%1$s v%2$s</item>
+	    <item>svg-android v1.1</item>
+	    <item>PCRE library v8.31</item>
+	    <item>%s</item>
+	</string-array>
+	
+	<array name="iaLicence" translatable="false">
+	    <item>@raw/lic_sifry</item>
+	    <item>@raw/lic_svg</item>
+	    <item>@raw/lic_pcre</item>
+	    <item>@raw/lic_dict</item>
+	</array>
+	
+	
+<string name="tHelpNews"><![CDATA[
+<h1>Release Highlights for v2.0</h1>
+
+– Help available for all tools<br/>
+– Enciphering available besides deciphering<br/>
+– Language selection (English / Czech)<br/>
+– New preference system<br/>
+– Redesigned user interface<br/>
+– New component: <i>Transposition ciphers</i><br/>
+– <i>Morse Code</i>: transmit using flashlight or speaker<br/>
+– <i>Braille</i>: better recognition of the standard, formatting support<br/>
+– <i>Substitution Ciphers</i>: many new cipher types<br/>
+– <i>Frequency Analysis</i>: new statistics, Empirical Substitution<br/>
+– <i>Calendar</i>: more calendar information, extended possibilities<br/>
+– <i>Checkpoint Logbook</i>: export<br/>
+– Better mirror for downloading dictionary data<br/>
+– Error corrections<br/>
+
+<h3>Older versions</h3>
+
+<h5>Version 1.3 (6 Dec 2012)</h5>
+– Extended and reorganized Preferences<br/>
+– English localization (trial run)<br/>
+– <i>Braille</i>: allowed parsing digits, interpunction, abbreviations<br/>
+– <i>Semaphore</i>: flag thumbnails, allowed parsing digits<br/>
+
+<h5>Version 1.2 (1 Dec 2012)</h5>
+– Main Menu icons replaced by scalable vector graphics<br/>
+– Further accomodation to large and small screens<br/>
+– <i>Letter Numbers</i>: column headings in Reference<br/>
+– <i>Pigpen Ciphers</i>: new pigpen variants<br/>
+– <i>Frequency Analysis</i>: new character statistics<br/>
+
+<h5>Version 1.1 (28 Nov 2012)</h5>
+– Android 1.6 support<br/>
+– Better layout for large and small screens<br/>
+– <i>Dictionary Search</i>: allowed using internal storage if external is unreachble<br/>
+– <i>Letter Numbers</i>: reference table including ASCII and permutation indexing<br/>
+]]></string>
+
+		
+</resources>

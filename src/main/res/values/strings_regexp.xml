@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="cptRegExp">Dictionary Search</string>
+	<string name="tRDFiltry">Filters:</string>
+	<string name="tRDPocet">Words found:</string>
+	<string name="tRDVysledky">Search results:</string>
+	<string name="tRDHledej">Go</string>
+	<string name="tRDStop">Stop</string>
+	<string name="tRDObsahuje">Contains</string>
+	<string name="tRDNeobsahuje">Exclude</string>
+
+		
+	<!--string name="tRDDownloadDirURL" translatable="false">http://niebelung.fjfi.cvut.cz/~vasek/sifry/</string-->
+	<string name="tRDDownloadDirURL" translatable="false">http://sifry.martasdx.cz/</string>
+	
+	<string name="tRDFilename">en.canon.gz</string>
+	<integer name="iRDFilesize">364866</integer>
+	<string name="tRDStahnout">This component provides a regular expression–based search in a dictionary
+		of ca. 90k English words and their variants. It is intended for users experienced in working
+		with regular expressions. To open access to the functionality, the application needs to download
+		the dictionary data (approx. 400 kB). Download now?</string>
+	<string name="tRDStahnoutInterni">This component provides a regular expression–based search in a dictionary
+		of ca. 90k English words and their variants. It is intended for users experienced in working
+		with regular expressions. To open access to the functionality, the application needs to download
+		the dictionary data (approx. 400 kB).\n\
+		External storage not accessible at this moment. Download into the device\'s internal memory?</string>
+	<string name="tRDAktualizace">An actualized dictionary is available. Download now (approx. 400 kB)?</string>
+	<string name="tRDStahovani">Downloading dictionary data…</string>
+	<string name="tRDZruseno">Download cancelled.</string>
+	<string name="tRDChybaStahovani">Download failed.</string>
+
+
+<string name="tHelpRegExp"><![CDATA[
+<h1>Dictionary Search</h1>
+
+<p>This component offers searching for words matching a set of criteria, given by regular
+expressions. A prior knowledge of regular expression syntax is expected of the user.</p>
+
+
+<h3>Basic usage</h3>
+
+<p>There can be up to three concurrent criteria set to filter the overall database counting ca.
+90 thousand English words. Words matching all of the expressions simultaneously will be sought.
+The regular expressions should <i>not</i> be enclosed between a pair of slashes (as is usual in
+some contexts). A toggle button next to each filter can be used to negate the action of the
+regular expression (i.e. to search for words not matching it). In order to remove a filter,
+clear it.</p> 
+
+
+<h3>Regexp implementation</h3>
+
+<p>The regexp parser uses the PCRE (Perl-compatible regular expressions, see <tt>www.pcre.org</tt>)
+syntax. The options <tt>PCRE_UTF8</tt> and <tt>PCRE_UCP</tt> are activated to allow for possible
+Unicode national characters and alter the behaviour of the <tt>[[:lower:]]</tt>, <tt>[[:upper:]]</tt>
+etc. characters classes accordingly.</p>
+
+<p>If the number of results is too large, only the first 10000 matches are shown in the list.</p>
+
+
+<h3>Format of the dictionary</h3>
+
+<p>Every entry of the dictionary follows the pattern:<br/>
+ <tt>oneill:O\'Neill</tt><br/>
+The part preceding the colon is a word in a normalized form, i.e., containing only lowercase
+English letters. On the right-hand side of the colon, the same word is found in its full
+original form, which may contain capitals and/or apostrophes. It is possible to impose search criteria
+on either part, however, only the full form will be displayed in the search results.</p>
+
+
+<h3>Regular expression tips and tricks</h3>
+
+To match the whole normalized form against an expression <tt>expr</tt>, use:<br/>
+ <tt>^expr:</tt><br/>
+To match the full form:<br/>
+ <tt>:expr$</tt><br/>
+To search for a pattern within the normalized form:<br/>
+ <tt>expr.*:</tt><br/>
+To search for a pattern within the full form:<br/>
+ <tt>:.*expr</tt><br/>
+
+<h4>Examples of search criteria:</h4>
+Words containing \"hey\":<br/>
+ <tt>hey</tt><br/>
+Five-letter words whose first letter is K and fourth letter T:<br/>
+ <tt>:k..t.$</tt><br/>
+Words beginning as well as ending with an \"ing\":<br/>
+ <tt>^ing.*ing:</tt><br/>
+Words composed of letters in the first row of a computer keyboard only:<br/>
+ <tt>^[qwertyuiop]*:</tt><br/>
+Words containing H at least three times:<br/>
+ <tt>(h.*){3}:</tt><br/>
+Five-letter palindromes:<br/>
+ <tt>:(.)(.).\\2\\1$</tt><br/>
+Textonyms of \"home\":<br/>
+ <tt>^[ghi][mno][mno][def]:</tt>
+
+<h4>Examples of filters:</h4>
+Exactly 7-letter words:<br/>
+ <tt>^.{7}:</tt><br/>
+Words at least 7 letters long:<br/>
+ <tt>^.{7,}:</tt> or <tt>.{7}:</tt><br/>
+Words beginning with a lowercase letter (excluding surnames, acronyms, etc.):<br/>
+ <tt>:[a-z]</tt><br/>
+Only all-lowercase words, no apostrophe:<br/>
+ <tt>:[a-z]*$</tt> or (exclude) <tt>[[:upper:]\']</tt><br/>
+Words with no repeating letters:<br/>
+ (exclude) <tt>(.).*\\1.*: </tt>
+]]></string>
+
+</resources>

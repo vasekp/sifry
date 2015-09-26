@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="cptRegExp">Databáze slov</string>
+	<string name="tRDFiltry">Filtry:</string>
+	<string name="tRDPocet">Počet výsledků:</string>
+	<string name="tRDVysledky">Výsledky hledání:</string>
+	<string name="tRDHledej">Hledat</string>
+	<string name="tRDStop">Stop</string>
+	<string name="tRDObsahuje">Obsahuje</string>
+	<string name="tRDNeobsahuje">Neobsahuje</string>
+
+		
+	<string name="tRDFilename">cs.canon.gz</string>
+	<integer name="iRDFilesize">16963039</integer>
+	<string name="tRDStahnout">Tato část aplikace umožňuje vyhledávání ve speciálním slovníku zhruba
+		4 milionů českých slov pomocí regulárních výrazů. Je určena pro uživatele se zkušenostmi
+		v jejich používání. Pro funkčnost je třeba slovník stáhnout jako externí soubor (velikost
+		asi 16 MB). Stáhnout nyní?</string>
+	<string name="tRDStahnoutInterni">Tato část aplikace umožňuje vyhledávání ve speciálním slovníku zhruba
+		4 milionů českých slov pomocí regulárních výrazů. Je určena pro uživatele se zkušenostmi
+		v jejich používání. Pro funkčnost je třeba slovník stáhnout jako externí soubor (velikost
+		asi 16 MB).\nExterní úložiště není připojeno. Stáhnout do interní paměti telefonu?</string>
+		<string name="tRDStahovani">Probíhá stahování slovníku…</string>
+	<string name="tRDAktualizace">Je dostupná aktualizace slovníku. Stáhnout nyní (velikost 17 MB)?</string>
+	<string name="tRDZruseno">Stahování zrušeno.</string>
+	<string name="tRDChybaStahovani">Chyba při stahování.</string>
+
+		
+<string name="tHelpRegExp"><![CDATA[
+<h1>Databáze slov</h1>
+
+<p>Tato komponenta umožňuje vyhledávání ve speciálním slovníku zhruba 4 milionů českých slov pomocí
+regulárních výrazů. Je určena pro uživatele se zkušenostmi v jejich používání. Pro informace
+o formátu a významu regulárních výrazů doporučuji libovolný internetový zdroj.</p>
+
+
+<h3>Základní ovládání</h3>
+
+<p>Aplikace umožňuje v seznamu vyhledávat pomocí až tří filtrů. Každý filtr má tvar regulárního výrazu,
+v nejjednodušší situaci tedy podřetězce, který vyhledáváme. Regulární výrazy neuzavírejte mezi
+lomítka. Tlačítkem vedle každého z filtrů je možno zvolit, jestli vyhledávaná slova daný výraz
+obsahovat mají nebo nemají. Jestliže chcete filtr deaktivovat, jeho pole vyprázdněte.</p>
+
+<p>V případě příliš velkého počtu nalezených slov se vypíše pouze prvních 10000 shod.</p>
+
+
+<h3>Implementace regulárních výrazů</h3>
+
+<p>Regulární výrazy používají syntaxi PCRE (Perl-compatible regular expressions, viz <tt>www.pcre.org</tt>).
+Jsou aktivovány volby <tt>PCRE_UTF8</tt> a <tt>PCRE_UCP</tt>, takže znaky s diakritikou odpovídají
+tečce i třídám <tt>[:lower:]</tt>, <tt>[:upper:]</tt> apod. Spřežka <b>ch</b> tečce neodpovídá
+ani není pokryta rozsahem <tt>[h-i]</tt>. Stejně tak rozsahy nepokrývají znaky s diakritikou.</p>
+
+
+<h3>Formát slovníku</h3>
+
+<p>Každý záznam má následující strukturu:<br/>
+ <tt>stepeni:štěpení</tt><br/>
+Před dvojtečkou se vyskytuje slovo přepsané v normalizovaném tvaru, tj. složené pouze z malých
+písmen a–z bez diakritiky. Za dvojtečkou je původní tvar slova, který může obsahovat diakritiku
+a velká písmena. Je možno vyhledávat podle obou částí, ale ve výsledcích se bude zobrazovat jen
+plný tvar slova.</p>
+
+
+<h3>Tipy k sestavování regulárních výrazů</h3>
+
+Pokrytí celého normalizovaného tvaru:<br/>
+ <tt>^výraz:</tt><br/>
+Pokrytí celého původního tvaru:<br/>
+ <tt>:výraz$</tt><br/>
+Vyhledávání výrazu v normalizovaném tvaru:<br/>
+ <tt>výraz.*:</tt><br/>
+Vyhledávání výrazu v původním tvaru:<br/>
+ <tt>:.*výraz</tt>
+
+<h5>Příklady vyhledávacích kritérií:</h5>
+Slova obsahující \"ahoj\":<br/>
+ <tt>ahoj</tt><br/>
+Pětipísmenná slova mající K na prvním a Č na předposledním místě:<br/>
+ <tt>:k..č.$</tt><br/>
+Slova začínající i končící na \"kou\":<br/>
+ <tt>^kou.*kou:</tt><br/>
+Slova složená pouze ze souhlásek:<br/>
+ <tt>^[bcdfghjklmnpqrstvwxz]*:</tt><br/>
+Slova obsahující alespoň čtyřikrát H:<br/>
+ <tt>(h.*){4}:</tt><br/>
+Dokonalé sedmipísmenné palindromy:<br/>
+ <tt>:(.)(.)(.).\\3\\2\\1$</tt><br/>
+Palindromy až na diakritiku:<br/>
+ <tt>^(.)(.)(.).\\3\\2\\1:</tt>
+
+<h5>Příklady filtrů:</h5>
+Pouze sedmipísmenná slova:<br/>
+ <tt>^.{7}:</tt><br/>
+Slova o alespoň sedmi písmenech:<br/>
+ <tt>^.{7,}:</tt> nebo <tt>.{7}:</tt><br/>
+Odfiltrování slov začínajících velkým písmenem (příjmení, zkratek apod.):<br/>
+ <tt>:[[:lower:]]</tt><br/>
+Slova jen malými písmeny:<br/>
+ <tt>:[[:lower:]]*$</tt> nebo (neobsahuje) <tt>[[:upper:]]</tt><br/>
+Slova bez diakritiky:<br/>
+ <tt>:[a-z]*$</tt><br/>
+Slova ze samých různých písmen:<br/>
+ (neobsahuje) <tt>(.).*\\1.*: </tt>
+]]></string>
+
+</resources>

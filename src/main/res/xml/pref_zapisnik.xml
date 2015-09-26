@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+	
+	<CheckBoxPreference
+		android:key="pref_zap_auto"
+		android:title="@string/prefZAutoTitle"
+		android:summary="@string/prefZAutoSummary"
+		android:defaultValue="true" />
+
+</PreferenceScreen>

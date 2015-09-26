@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<state-decoder entrypoint="@+id/ruleSmDPismena" >
+
+    <rule-array id="@+id/ruleSmDPismena" state="" >
+        <strings ref="@array/saSmDPismena" />
+        <rules
+            code="48"
+            access="pref_sem_num"
+            access_def="true"
+            ref="@+id/ruleSmDCislice" />
+        <strings ref="@array/saSmDPrefixy" />
+    </rule-array>
+    
+    <rule-array id="@+id/ruleSmDCislice" state="Num" >
+        <strings ref="@array/saSmDCislice" />
+        <rules
+            code="80"
+            ref="@+id/ruleSmDPismena" />
+        <strings ref="@array/saSmDPrefixy" />
+    </rule-array>
+
+</state-decoder>

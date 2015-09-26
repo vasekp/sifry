@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tRDFiltry" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical" >
+
+            <ToggleButton
+                android:id="@+id/cbRDFiltr1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:checked="true"
+                android:textOn="@string/tRDObsahuje"
+                android:textOff="@string/tRDNeobsahuje" />
+
+            <EditText
+                android:id="@+id/etRDFiltr1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:layout_gravity="center_vertical"
+                android:imeOptions="flagNoExtractUi"
+                android:typeface="monospace"
+                android:inputType="textNoSuggestions" >
+
+                <requestFocus />
+            </EditText>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical" >
+
+            <ToggleButton
+                android:id="@+id/cbRDFiltr2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:checked="true"
+                android:textOn="@string/tRDObsahuje"
+                android:textOff="@string/tRDNeobsahuje" />
+            
+            <EditText
+                android:id="@+id/etRDFiltr2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:layout_gravity="center_vertical"
+                android:imeOptions="flagNoExtractUi"
+                android:typeface="monospace"
+                android:inputType="textNoSuggestions" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical" >
+
+            <ToggleButton
+                android:id="@+id/cbRDFiltr3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:checked="true"
+                android:textOn="@string/tRDObsahuje"
+                android:textOff="@string/tRDNeobsahuje" />
+            
+            <EditText
+                android:id="@+id/etRDFiltr3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:layout_gravity="center_vertical"
+                android:imeOptions="flagNoExtractUi"
+                android:typeface="monospace"
+                android:inputType="textNoSuggestions" />
+
+        </TableRow>
+        
+    </TableLayout>
+
+    <Button
+        android:id="@+id/btRDGo"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/tRDHledej" />
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tRDPocet" />
+
+    <TextView
+        android:id="@+id/tvRDPocet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ProgressBar
+        android:id="@+id/pbRDProgress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="1000"
+        android:visibility="gone" />
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tRDVysledky" />
+
+    <ExpandableListView
+        android:id="@+id/elRDResults"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0" >
+    </ExpandableListView>
+
+</LinearLayout>

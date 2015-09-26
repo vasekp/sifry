@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/crHeaderOrd"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/tCRPismeno"
+        android:textAppearance="?android:attr/textAppearanceLarge" />    
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.10"
+        android:gravity="center"
+        android:text="@string/tCRs10"
+        android:textAppearance="?android:attr/textAppearanceLarge" />    
+    
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.20"        
+        android:gravity="center"
+        android:text="@string/tCRs2"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.15"
+        android:gravity="center"
+        android:text="@string/tCRs3"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+            
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.10"
+        android:gravity="center"
+        android:text="@string/tCRs8"
+        android:textAppearance="?android:attr/textAppearanceLarge" />        
+        
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.10"
+        android:gravity="center"
+        android:text="@string/tCRs16"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.15"        
+        android:gravity="center"
+        android:text="@string/tCRRim"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.20"
+        android:gravity="center"
+        android:text="@string/tCRPerm"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+</LinearLayout>

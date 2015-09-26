@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tZENazev" />
+
+        <EditText
+            android:id="@+id/etZENazev"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textNoSuggestions"
+            android:singleLine="true"
+            android:imeOptions="flagNoExtractUi" >
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tZEPole" />
+
+        <LinearLayout
+            android:id="@+id/llZEPole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <CheckBox
+                android:id="@+id/cbZENazev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:enabled="false"
+                android:singleLine="true"
+                android:text="@string/tZDNazev" />
+
+            <CheckBox
+                android:id="@+id/cbZEHeslo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:singleLine="true"
+                android:text="@string/tZDHeslo" />
+
+            <CheckBox
+                android:id="@+id/cbZEPrichod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:enabled="false"
+                android:singleLine="true"
+                android:text="@string/tZDPrichod" />
+
+            <CheckBox
+                android:id="@+id/cbZEOdchod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:singleLine="true"
+                android:text="@string/tZDOdchod" />
+
+            <CheckBox
+                android:id="@+id/cbZERes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:singleLine="true"
+                android:text="@string/tZDRes" />
+
+            <CheckBox
+                android:id="@+id/cbZEUpres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:singleLine="true"
+                android:text="@string/tZDUpres" />
+
+            <CheckBox
+                android:id="@+id/cbZEPozn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:singleLine="true"
+                android:text="@string/tZDPozn" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tZEJak" />
+
+        <CheckBox
+            android:id="@+id/cbZEExt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tZEExt" />
+
+        <Button
+            android:id="@+id/btZEGo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/tExport" />
+
+    </LinearLayout>
+
+</ScrollView>

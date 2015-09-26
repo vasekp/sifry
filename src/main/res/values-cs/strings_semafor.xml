@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="cptSemafor">Semaforová abeceda</string>
+	<string name="tSmDTitul">Zadejte znak označením dvou směrů:</string>
+	<string name="tSmDNavrhy">Návrhy:</string>
+	
+	<string name="tSmVInv">inv </string>
+	
+	
+<string name="tHelpSemafor"><![CDATA[
+<h1>Semaforová abeceda</h1>
+
+<p>Tato komponenta nabízí pomoc při dekódování signalizace pomocí semaforu (dvojice vlajek).</p>
+
+
+<h3>Základní ovládání</h3>
+
+<p>Každý znak semaforové abecedy je určen držením dvou vlajek, každé v jednom z osmi různých směrů.
+Těmto osmi směrům odpovídá osm vyznačených oblastí. Dvojici je možno označit buď postupným kliknutím
+na dvě z oblastí, současným kliknutím pomocí dvou prstů nebo přejetím od jedné oblasti ke druhé.</p>
+
+<p>Jakmile je označena první ze dvou oblastí, aplikace zobrazí množinu všech semaforových znaků,
+které mají jednu z vlajek v tomto směru. Čtvrtou možností zadání vstupu je vybrat kliknutím z této
+nabídky.</p>
+
+
+<h3>Varianty</h3>
+
+<p>Pokud vstup nedává smysl, je možné, že znaky v zadání byly záměrně natočeny do některé jiné z osmi
+možností. <i>Semaforová abeceda</i> nabízí již jednou vložené zadání interpretovat ve všech osmi
+natočeních. Další variantou interpretace je vyměnění významu pravé a levé strany (tj. přechod mezi
+pohledem vysílajícího a přijímajícího člověka), opět ve všech osmi možných natočeních.</p>
+
+<p>Jestliže je zapnuto zpracování číselného znaku, jednotlivé varianty se mohou lišit délkou.</p>
+
+
+<h3>Šifrování</h3>
+
+<p>V záložce <i>Zašifrovat</i> můžete text do semaforové abecedy zašifrovat. Nabízí se grafická
+reprezentace pomocí obrázků postavičky s vlajkami. Na černém pozadí obrazovky aplikace jsou bílé,
+ale při exportu do obrázkového souboru se vykreslí jako černá na bílém. Aplikace dále nabízí
+reprezentaci pomocí dvojic číslic 1 až 8, kde 1 odpovídá směru dolů a další čísla postupují po
+směru hodinových ručiček (takže semaforovým znakům pro písmena A, B, C, …, G je přiřazeno označení
+12, 13, 14, …, 18).</p>
+
+
+<h3>Nastavení</h3>
+
+<p>V základním nastavení aplikace přijímá znaky anglické abecedy (26 z celkem 28 možných kombinací)
+a číselný znak, který dočasně přepíná význam písmen A až I a K na číslice. Číslice platí až do přijetí
+písmenného znaku, který se shoduje se znakem pro písmeno J. Toto chování je možno změnit v nastavení
+komponenty. Pokud je zadávání číslic zakázáno, číselný znak nebude interpretován a jeho použití se
+zobrazí jako otazník.</p>
+
+
+<h3>Tipy a triky</h3>
+
+<p>Jestliže se přepnete do číselného módu omylem a obtěžuje Vás jej deaktivovat prostřednictvím nastavení,
+použijte tlačítko <i>BackSpace</i>.</p>
+]]></string>
+	
+
+	<string-array name="saSmRGroups">
+		<item>Písmena</item>
+		<item>Číslice</item>
+		<item>Řídicí znaky</item>
+	</string-array>
+	
+	<array name="iaSmRGroups">
+		<item>@array/saSmDPismena</item>
+		<item>@array/saSmDCislice</item>
+		<item>@array/saSmDPrefixy</item>
+	</array>
+
+
+	<string-array name="saSmDPismena">
+		<item>3:A</item>
+		<item>5:B</item>
+		<item>9:C</item>
+		<item>17:D</item>
+		<item>33:E</item>
+		<item>65:F</item>
+		<item>129:G</item>
+		<item>6:H</item>
+		<item>10:I</item>
+		<item>80:J</item>
+		<item>18:K</item>
+		<item>34:L</item>
+		<item>66:M</item>
+		<item>130:N</item>
+		<item>12:O</item>
+		<item>20:P</item>
+		<item>36:Q</item>
+		<item>68:R</item>
+		<item>132:S</item>
+		<item>24:T</item>
+		<item>40:U</item>
+		<item>144:V</item>
+		<item>96:W</item>
+		<item>160:X</item>
+		<item>72:Y</item>
+		<item>192:Z</item>
+	</string-array>
+
+	<string-array name="saSmDCislice">
+		<item>3:1</item>
+		<item>5:2</item>
+		<item>9:3</item>
+		<item>17:4</item>
+		<item>33:5</item>
+		<item>65:6</item>
+		<item>129:7</item>
+		<item>6:8</item>
+		<item>10:9</item>
+		<item>18:0</item>
+	</string-array>
+
+	<string-array name="saSmDPrefixy">
+		<item>48:číslice:</item>
+		<item>80:písmena:</item>
+		<item>136:chyba:</item>
+	</string-array>
+
+	
+	<string-array name="saSCItems">
+	    <item>Graficky</item>
+	    <item>Dvojice 1–8 (číslování zdola doleva)</item>
+	</string-array>
+	
+	<array name="iaSCItems">
+	    <item>@id/idSCPrimo</item>
+	    <item>@id/idSCDvoj</item>
+	</array>
+
+</resources>

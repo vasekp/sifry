@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sifry="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:gravity="fill" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="@string/tTDTab" />
+
+            <TextView
+                android:id="@+id/tvTDVar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:text="@string/tTDVar" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical" >
+
+            <Spinner
+                android:id="@+id/spTDTab"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:entries="@array/saTDTabulky"
+                tools:listitem="@android:layout/simple_spinner_item" />
+
+            <Spinner
+                android:id="@+id/spTDVPVar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:entries="@array/saTDVPVar" />
+
+            <Spinner
+                android:id="@+id/spTDMPVar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:entries="@array/saTDMPVar"
+                android:visibility="gone" />
+
+            <Spinner
+                android:id="@+id/spTDCtvAbeceda"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:entries="@array/saTDCtvVar"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tTDVstup" />
+
+        <cz.absolutno.sifry.common.widget.AspectLayout
+            android:id="@+id/alTDPolskyKlas"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.0"
+            android:visibility="gone"
+            sifry:relHeight="1.0"
+            sifry:relWidth="3.0" >
+
+            <cz.absolutno.sifry.tabulky.polsky.PolskyKlasView
+                android:id="@+id/avTDPolskyKlas"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layerType="software" />
+        </cz.absolutno.sifry.common.widget.AspectLayout>
+
+        <cz.absolutno.sifry.common.widget.AspectLayout
+            android:id="@+id/alTDPolskyTrans"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.0"
+            android:visibility="visible"
+            sifry:relHeight="2.0"
+            sifry:relWidth="5.0" >
+
+            <cz.absolutno.sifry.tabulky.polsky.PolskyTransView
+                android:id="@+id/avTDPolskyTrans"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layerType="software"
+                android:minHeight="140dp" />
+        </cz.absolutno.sifry.common.widget.AspectLayout>
+
+        <cz.absolutno.sifry.common.widget.AspectLayout
+            android:id="@+id/alTDMobil"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.0"
+            android:visibility="gone"
+            sifry:relHeight="2.0"
+            sifry:relWidth="5.0" >
+
+            <cz.absolutno.sifry.tabulky.mobil.MobilView
+                android:id="@+id/avTDMobil"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </cz.absolutno.sifry.common.widget.AspectLayout>
+
+        <cz.absolutno.sifry.common.widget.AspectLayout
+            android:id="@+id/alTDMaly"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.0"
+            android:visibility="gone"
+            sifry:relHeight="1.0"
+            sifry:relWidth="1.0" >
+
+            <cz.absolutno.sifry.tabulky.malypolsky.MalyPolskyView
+                android:id="@+id/avTDMaly"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layerType="software"
+                android:minHeight="200dp" />
+        </cz.absolutno.sifry.common.widget.AspectLayout>
+
+        <cz.absolutno.sifry.common.widget.AspectLayout
+            android:id="@+id/alTDCtverec"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.0"
+            android:visibility="gone"
+            sifry:relHeight="1.0"
+            sifry:relWidth="1.0" >
+
+            <cz.absolutno.sifry.tabulky.ctverec.CtverecView
+                android:id="@+id/avTDCtverec"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:minHeight="200dp" />
+        </cz.absolutno.sifry.common.widget.AspectLayout>
+
+        <LinearLayout
+            android:id="@+id/llTVSour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tTDSour" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp" >
+
+                <cz.absolutno.sifry.common.widget.ButtonView
+                    android:id="@+id/bvTDSour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tvTDSour"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:clickable="true"
+                    android:gravity="right|center_vertical"
+                    android:paddingRight="5dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tRes" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            tools:ignore="UseCompoundDrawables" >
+
+            <TextView
+                android:id="@+id/tvRes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:padding="10dp"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <ImageView
+                android:id="@+id/ivBsp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:contentDescription="@string/tBsp"
+                android:src="@drawable/ic_input_delete" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

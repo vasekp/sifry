@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Copyright (c) 2012 Vašek Potoček -->
+
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="512"
+   height="512">
+  <defs>
+    <radialGradient
+       cx="169.75287"
+       cy="84.420876"
+       r="48.266998"
+       fx="169.75287"
+       fy="84.420876"
+       id="radialGradient7148"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.48040041,0,0,0.48040041,163.07343,204.06696)">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="0" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1" />
+    </radialGradient>
+  </defs>
+  <circle
+     cx="256"
+     cy="256"
+     r="45"
+     fill="#c0c0c0" />
+  <circle
+     cx="256"
+     cy="256"
+     r="45"
+     fill="url(#radialGradient7148)" />
+  <path
+     d="m 448,170.667 h -384 v 170.667 h 384"
+     style="fill:none;stroke:#c0c0c0;stroke-width:14.4;stroke-linecap:round;stroke-linejoin:round" />
+</svg>

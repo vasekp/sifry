@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sifry="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tVDGest" />
+
+    <cz.absolutno.sifry.common.widget.AspectLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0"
+        android:paddingTop="15dp"
+        sifry:relHeight="2.0"
+        sifry:relWidth="3.0" >
+
+        <android.gesture.GestureOverlayView
+            android:id="@+id/gestVD"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fadeOffset="@integer/pref_vlajky_delay_default"
+            android:gestureColor="@color/mainColor"
+            android:gestureStrokeAngleThreshold="0"
+            android:gestureStrokeSquarenessThreshold="0"
+            android:gestureStrokeType="multiple"
+            android:gestureStrokeWidth="10" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/dscVDOkraj"
+                android:padding="30dp"
+                android:src="@drawable/shape_okraj" />
+        </android.gesture.GestureOverlayView>
+    </cz.absolutno.sifry.common.widget.AspectLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tVDOdhad" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.0" >
+
+        <LinearLayout
+            android:id="@+id/listVDOdhady"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/butSize"
+            android:orientation="horizontal" >
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tRes" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        tools:ignore="UseCompoundDrawables" >
+
+        <TextView
+            android:id="@+id/tvRes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:padding="10dp"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <ImageView
+            android:id="@+id/ivBsp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:contentDescription="@string/tBsp"
+            android:src="@drawable/ic_input_delete" />
+    </LinearLayout>
+
+</LinearLayout>

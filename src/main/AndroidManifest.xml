@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cz.absolutno.sifry"
+    android:versionCode="2011"
+    android:versionName="2.0.1" >
+
+    <uses-sdk
+        android:minSdkVersion="7"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="18" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false" />
+
+    <application
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/MainTheme"
+        android:allowBackup="true"
+        android:name="cz.absolutno.sifry.App" >
+        
+        <uses-library android:required="false" android:name="com.sec.android.app.multiwindow" />
+        <meta-data android:name="com.sec.android.support.multiwindow" android:value="true" />
+        
+        <activity
+            android:name="cz.absolutno.sifry.mainscreen.SplashActivity"
+            android:label="@string/app_name"
+            android:noHistory="false"
+            android:theme="@style/MainTheme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+
+        <activity
+            android:name="cz.absolutno.sifry.mainscreen.MainActivity"
+            android:icon="@drawable/ic_mainmenu"
+            android:label="@string/cptMain" />
+        <activity
+            android:name="cz.absolutno.sifry.mainscreen.LicenceActivity"
+            android:icon="@drawable/ic_menu_help"
+            android:label="@string/cptLicence" />
+                
+        <activity
+            android:name="cz.absolutno.sifry.common.activity.HelpActivity"
+            android:icon="@drawable/ic_menu_help"
+            android:label="@string/tHelp" />
+        <activity
+            android:name="cz.absolutno.sifry.common.activity.SettingsActivity"
+            android:icon="@drawable/ic_menu_preferences"
+            android:label="@string/tSettings" />
+
+        
+        <activity
+            android:name="cz.absolutno.sifry.morse.MorseActivity"
+            android:icon="@drawable/ic_morse"
+            android:label="@string/cptMorse"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="cz.absolutno.sifry.braille.BrailleActivity"
+            android:icon="@drawable/ic_braille"
+            android:label="@string/cptBraille" />
+        <activity
+            android:name="cz.absolutno.sifry.cisla.CislaActivity"
+            android:icon="@drawable/ic_cisla"
+            android:label="@string/cptCisla" />
+        <activity
+            android:name="cz.absolutno.sifry.semafor.SemaforActivity"
+            android:icon="@drawable/ic_semafor"
+            android:label="@string/cptSemafor" />
+        <activity
+            android:name="cz.absolutno.sifry.tabulky.TabulkyActivity"
+            android:icon="@drawable/ic_polsky"
+            android:label="@string/cptTabulky" />
+        <activity
+            android:name="cz.absolutno.sifry.vlajky.VlajkyActivity"
+            android:icon="@drawable/ic_vlajky"
+            android:label="@string/cptVlajky" />
+        <activity
+            android:name="cz.absolutno.sifry.substituce.SubstActivity"
+            android:icon="@drawable/ic_subst"
+            android:label="@string/cptSubst" />
+        <activity
+            android:name="cz.absolutno.sifry.transpozice.TransActivity"
+            android:icon="@drawable/ic_trans"
+            android:label="@string/cptTrans" />
+        <activity
+            android:name="cz.absolutno.sifry.frekvence.FrekvActivity"
+            android:icon="@drawable/ic_frekv"
+            android:label="@string/cptFrekv" />
+        <activity
+            android:name="cz.absolutno.sifry.kalendar.KalendarActivity"
+            android:icon="@drawable/ic_kalendar"
+            android:label="@string/cptKalendar" />
+        <activity
+            android:name="cz.absolutno.sifry.zapisnik.ZapisnikActivity"
+            android:icon="@drawable/ic_zapisnik"
+            android:label="@string/cptZapisnik" />
+        <activity
+            android:name="cz.absolutno.sifry.regexp.RegExpActivity"
+            android:icon="@drawable/ic_regexp"
+            android:label="@string/cptRegExp" />
+    </application>
+
+</manifest>

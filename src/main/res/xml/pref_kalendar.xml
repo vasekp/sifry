@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+	<ListPreference
+		android:key="pref_kal_namedays"
+		android:title="@string/prefKalNamedaysTitle"
+		android:entries="@array/saKDKalendare"
+		android:entryValues="@array/saKDKalendareKody"
+		android:defaultValue="@string/pref_kal_namedays_default" />
+
+</PreferenceScreen>

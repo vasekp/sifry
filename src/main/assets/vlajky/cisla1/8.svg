@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="600" height="300">
+  <path fill="#ffffff" d="M 0 0 L 0 300 L 600 225 L 600 75 L 0 0 z " />
+  <path fill="#ff0000" d="M 200 25 L 200 125 L 0 125 L 0 175 L 200 175 L 200 275 L 250 268.75 L 250 175 L 600 175 L 600 125 L 250 125 L 250 31.25 L 200 25 z " />
+</svg>
