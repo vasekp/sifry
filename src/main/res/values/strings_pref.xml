@@ -48,6 +48,8 @@
 	
 	<string name="prefZAutoTitle">Automatic numbering</string>
 	<string name="prefZAutoSummary">New entries will have preset title "Checkpoint 1, 2, …"</string>
+
+	<string name="prefREDictionaryTitle">Dictionary data</string>
 	
 	<string name="prefClearTitle">Reset all preferences</string>
 	<string name="prefClearSummary">Revert all settings to their default values</string>

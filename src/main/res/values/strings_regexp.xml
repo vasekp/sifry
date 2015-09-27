@@ -10,8 +10,6 @@
 	<string name="tRDObsahuje">Contains</string>
 	<string name="tRDNeobsahuje">Exclude</string>
 
-	<string name="tRDFilename">en.canon</string>
-
 
 <string name="tHelpRegExp"><![CDATA[
 <h1>Dictionary Search</h1>
@@ -89,5 +87,20 @@ Only all-lowercase words, no apostrophe:<br/>
 Words with no repeating letters:<br/>
  (exclude) <tt>(.).*\\1.*: </tt>
 ]]></string>
+
+
+	<string-array name="saREDictionaries">
+		<item>Automatic (English)</item>
+		<item>English</item>
+		<item>Czech</item>
+	</string-array>
+
+	<string-array name="saREDictionaryFilenames">
+		<item></item>
+		<item>en.canon</item>
+		<item>cs.canon</item>
+	</string-array>
+
+	<string name="pref_re_dictionary_default">en.canon</string>
 
 </resources>

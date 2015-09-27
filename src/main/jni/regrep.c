@@ -43,15 +43,24 @@ char *res[MAXRES] = {0};
 
 void startThread(void*);
 void stopThread();
+void setFN(JNIEnv*, jstring);
 void *thr(void*);
 
 
 JNIEXPORT void JNICALL Java_cz_absolutno_sifry_regexp_RegExpNative_init(JNIEnv *env, jobject obj, jobject jmgr, jstring jfn) {
+	setFN(env, jfn);
+	mgr = AAssetManager_fromJava(env, jmgr);
+	refcount++;
+}
+
+JNIEXPORT void JNICALL Java_cz_absolutno_sifry_regexp_RegExpNative_swtch(JNIEnv *env, jobject obj, jstring jfn) {
+	setFN(env, jfn);
+}
+
+void setFN(JNIEnv *env, jstring jfn) {
 	const char *cfn = (*env)->GetStringUTFChars(env, jfn, 0);
 	strcpy(fn, cfn);
 	(*env)->ReleaseStringUTFChars(env, jfn, cfn);
-	mgr = AAssetManager_fromJava(env, jmgr);
-	refcount++;
 }
 
 JNIEXPORT void JNICALL Java_cz_absolutno_sifry_regexp_RegExpNative_free(JNIEnv *env, jobject obj) {

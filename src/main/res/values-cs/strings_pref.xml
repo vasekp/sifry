@@ -54,6 +54,8 @@
 						
 	<string name="prefZAutoTitle">Číslovat automaticky</string>
 	<string name="prefZAutoSummary">Nová stanoviště nazývat "Stanoviště 1, 2, …"</string>
+
+	<string name="prefREDictionaryTitle">Slovník</string>
 		
 	<string name="prefClearTitle">Obnovit výchozí hodnoty</string>
 	<string name="prefClearSummary">Vrátit výchozí hodnoty všech nastavení</string>

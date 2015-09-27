@@ -22,6 +22,7 @@ public final class RegExpNative {
 	private AssetManager mgr;
 
 	private native void init(AssetManager mgr, String fn);
+	private native void swtch(String fn);
 	public native int free();
 	private native void nativeFinalize();
 
@@ -36,6 +37,10 @@ public final class RegExpNative {
 	public RegExpNative(String filename) {
 		mgr = App.getContext().getAssets();
 		init(mgr, "raw/" + filename);
+	}
+
+	public void switchFilename(String filename) {
+		swtch("raw/" + filename);
 	}
 	
 	@Override

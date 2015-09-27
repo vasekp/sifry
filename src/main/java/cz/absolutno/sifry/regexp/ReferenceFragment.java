@@ -1,12 +1,12 @@
 package cz.absolutno.sifry.regexp;
 
-import java.io.File;
-
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Environment;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
-import cz.absolutno.sifry.App;
+
 import cz.absolutno.sifry.R;
+import cz.absolutno.sifry.Utils;
 
 public final class ReferenceFragment extends Fragment {
 	
@@ -16,11 +16,23 @@ public final class ReferenceFragment extends Fragment {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setRetainInstance(true);
-		
-		String filename = getString(R.string.tRDFilename);
-		re = new RegExpNative(filename);
+		re = new RegExpNative(getFilename());
 	}
-	
+
+    public void updateFilename() {
+        re.switchFilename(getFilename());
+    }
+
+    private String getFilename() {
+        String filename = "";
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        if(sp != null)
+            filename = sp.getString("pref_re_dictionary", filename);
+        if(filename.length() == 0)
+            filename = getString(R.string.pref_re_dictionary_default);
+        return filename;
+    }
+
 	@Override
 	public void onResume() {
 		super.onResume();

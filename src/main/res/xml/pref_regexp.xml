@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <ListPreference
+        android:key="pref_re_dictionary"
+        android:title="@string/prefREDictionaryTitle"
+        android:entries="@array/saREDictionaries"
+        android:entryValues="@array/saREDictionaryFilenames"
+        android:defaultValue="@string/pref_re_dictionary_default" />
+
+</PreferenceScreen>

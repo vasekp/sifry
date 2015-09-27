@@ -1,8 +1,8 @@
 package cz.absolutno.sifry.regexp;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+
 import cz.absolutno.sifry.R;
 import cz.absolutno.sifry.common.activity.BottomBarActivity;
 
@@ -24,14 +24,14 @@ public final class RegExpActivity extends BottomBarActivity {
 	
 	@Override
 	protected int getPrefID() {
-		return 0;
+		return R.xml.pref_regexp;
 	}
 	
 	@Override
 	protected int getHelpID() {
 		return R.string.tHelpRegExp;
 	}
-	
+
 	@Override
 	protected void onBottomBarChange(int curIx, int lastIx) {
 	}
@@ -42,24 +42,12 @@ public final class RegExpActivity extends BottomBarActivity {
     		frag.loadRE(re);
 	}
 
-	public void reloadRE() {
-		FragmentManager fm = getSupportFragmentManager();
-		FragmentTransaction trans = fm.beginTransaction();
-		trans.remove(fm.findFragmentByTag("ref"));
-		trans.commit();
-		fm.executePendingTransactions();
-		ReferenceFragment ref = new ReferenceFragment();
-		trans = fm.beginTransaction();
-		trans.add(ref, "ref");
-		trans.commit();
-		fm.executePendingTransactions();
-		loadRE(ref.getRE());
-	}
-	
 	@Override
 	protected void onPreferencesChanged() {
 		super.onPreferencesChanged();
-		reloadRE();
+        ReferenceFragment frag = (ReferenceFragment)getSupportFragmentManager().findFragmentByTag("ref");
+        if(frag != null)
+            frag.updateFilename();
 	}
 	
 }

@@ -10,8 +10,6 @@
 	<string name="tRDObsahuje">Obsahuje</string>
 	<string name="tRDNeobsahuje">Neobsahuje</string>
 
-	<string name="tRDFilename">cs.canon</string>
-
 		
 <string name="tHelpRegExp"><![CDATA[
 <h1>Databáze slov</h1>
@@ -90,5 +88,20 @@ Slova bez diakritiky:<br/>
 Slova ze samých různých písmen:<br/>
  (neobsahuje) <tt>(.).*\\1.*: </tt>
 ]]></string>
+
+
+	<string-array name="saREDictionaries">
+		<item>Automaticky (český)</item>
+		<item>Český</item>
+		<item>Anglický</item>
+	</string-array>
+
+	<string-array name="saREDictionaryFilenames">
+		<item></item>
+		<item>cs.canon</item>
+		<item>en.canon</item>
+	</string-array>
+
+	<string name="pref_re_dictionary_default">cs.canon</string>
 
 </resources>
