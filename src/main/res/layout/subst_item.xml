@@ -4,7 +4,7 @@
     android:minWidth="30dp"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:clickable="true" >
+    android:clickable="true">
 
     <TextView
         android:id="@+id/puv"

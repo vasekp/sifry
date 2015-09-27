@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<string name="cptMorse">Morseovka</string>	
-	<string name="tMDTitle">Zadejte kód:</string>
-	<string name="tMDReseni">Řešení a varianty:</string>
-	
-	<string name="tMTransmit">Odvysílat</string>
-	<string name="tMTMod">Odvysílat pomocí:</string>
-	<string name="tMTSpeed">Rychlost:</string>
-	<string name="tMTFreq">Výška tónu:</string>
-	<string name="tMTVol">Hlasitost:</string>
+    <string name="cptMorse">Morseovka</string>
+    <string name="tMDTitle">Zadejte kód:</string>
+    <string name="tMDReseni">Řešení a varianty:</string>
+
+    <string name="tMTransmit">Odvysílat</string>
+    <string name="tMTMod">Odvysílat pomocí:</string>
+    <string name="tMTSpeed">Rychlost:</string>
+    <string name="tMTFreq">Výška tónu:</string>
+    <string name="tMTVol">Hlasitost:</string>
 	
 	
 <string name="tHelpMorse"><![CDATA[
@@ -40,113 +40,113 @@ Morseovy abecedy je zobrazováno v několika variantách:<br/>
 <i>Poznámka:</i> nastavení hlasitosti zvukového výstupu podléhá systémové hlasitosti médií.
 Nejvyšší hlasitost nabízená aplikací je tedy stále omezena nastavením hlasitosti v Androidu.</p>  
 ]]></string>
-	
-			
-	<string-array name="saMDVarianty">
-		<item>Přímo</item>
-		<item>Prohozené tečky a čárky</item>
-		<item>Znaky čteny odzadu</item>
-		<item>Opačné pořadí i znaky</item>
-	</string-array>
-	
-	<string-array name="saMDZnaky">
-		<item>·</item>
-		<item>–</item>
-   		<item>/</item>
-   	</string-array>
-   	
-	<string-array name="saMDGroups">
-		<item>Písmena</item>
-		<item>Číslice</item>
-		<item>Ostatní</item>
-	</string-array>
-   	
-	<string-array name="saMDPismena">
-		<item>5:A:akát</item>
-		<item>24:B:blýskavice</item>
-		<item>26:C:cílovníci</item>
-		<item>12:D:dálnice, dálava</item>
-		<item>2:E:erb</item>
-		<item>18:F:Filipíny</item>
-		<item>14:G:Grónská zem, gnómóny</item>
-		<item>16:H:hrachovina, holubice, harmonika</item>
-		<item>31:Ch:chléb nám dává, chvátá k nám sám</item>
-		<item>4:I:ibis, Ivan</item>
-		<item>23:J:jasmín bílý, junácká hůl</item>
-		<item>13:K:krákorá, království</item>
-		<item>20:L:lupíneček</item>
-		<item>7:M:mává, mlází</item>
-		<item>6:N:národ, nástup, náves</item>
-		<item>15:O:ó, náš pán</item>
-		<item>22:P:papírníci</item>
-		<item>29:Q:kvílí orkán, kváká žabák</item>
-		<item>10:R:rarášek</item>
-		<item>8:S:sekera, silnice, sobota</item>
-		<item>3:T:tón, trám, té</item>
-		<item>9:U:učený, uragán</item>
-		<item>17:V:vyučený, vyvolený</item>
-		<item>11:W:wagón klád, Waltrův vůz</item>
-		<item>25:X:Xénokratés, Xénie má</item>
-		<item>27:Y:Ý se krátí/ztrácí, Ýgar mává</item>
-		<item>28:Z:známá žena, zpíváme jen</item>
-	</string-array>
 
-	<string-array name="saMDCislice">
-		<item>63:0:</item>
-	    <item>47:1:</item>
-		<item>39:2:</item>
-		<item>35:3:</item>
-		<item>33:4:</item>
-		<item>32:5:</item>
-		<item>48:6:</item>
-		<item>56:7:</item>
-		<item>60:8:</item>
-		<item>62:9:</item>
-   	</string-array>
-	
-	<string-array name="saMDInterpunkce">
-		<item>85:.:tečka</item>
-		<item>115:,:čárka</item>
-		<item>76:\?:otazník</item>
-		<item>94:\':apostrof</item>
-		<item>107:!:vykřičník</item>
-		<item>50:/:lomítko, zlomek</item>
-		<item>54:(:otevírací závorka</item>
-		<item>109:):uzavírací závorka</item>
-		<item>40:&amp;:ampersand</item>
-		<item>120:::dvojtečka</item>
-		<item>106:;:středník</item>
-		<item>49:=:rovnítko</item>
-		<item>42:+:plus</item>
-		<item>97:–:mínus, pomlčka</item>
-		<item>77:_:podtržítko</item>
-		<item>82:\":uvozovky</item>
-		<item>137:$:dolar</item>
-		<item>90:\@:zavináč</item>
-	</string-array>
-	
-	
-	<string-array name="saMCItems">
-	    <item>Přímo</item>
-	    <item>1 = ·, 2 = –, 0 = /</item>
-	    <item>Binární signál</item>
-	</string-array>
-	
-	<array name="iaMCItems">
-	    <item>@id/idMCPrimo</item>
-	    <item>@id/idMC120</item>
-	    <item>@id/idMCSignal</item>
-	</array>
-	
-	
-	<string-array name="saMTMod">
-	    <item>Světlo blesku</item>
-	    <item>Zvuk</item>
-	</string-array>
-	
-	<array name="iaMTMod">
-	    <item>@id/idMTSvetlo</item>
-	    <item>@id/idMTZvuk</item>
-	</array>
-	
+
+    <string-array name="saMDVarianty">
+        <item>Přímo</item>
+        <item>Prohozené tečky a čárky</item>
+        <item>Znaky čteny odzadu</item>
+        <item>Opačné pořadí i znaky</item>
+    </string-array>
+
+    <string-array name="saMDZnaky">
+        <item>·</item>
+        <item>–</item>
+        <item>/</item>
+    </string-array>
+
+    <string-array name="saMDGroups">
+        <item>Písmena</item>
+        <item>Číslice</item>
+        <item>Ostatní</item>
+    </string-array>
+
+    <string-array name="saMDPismena">
+        <item>5:A:akát</item>
+        <item>24:B:blýskavice</item>
+        <item>26:C:cílovníci</item>
+        <item>12:D:dálnice, dálava</item>
+        <item>2:E:erb</item>
+        <item>18:F:Filipíny</item>
+        <item>14:G:Grónská zem, gnómóny</item>
+        <item>16:H:hrachovina, holubice, harmonika</item>
+        <item>31:Ch:chléb nám dává, chvátá k nám sám</item>
+        <item>4:I:ibis, Ivan</item>
+        <item>23:J:jasmín bílý, junácká hůl</item>
+        <item>13:K:krákorá, království</item>
+        <item>20:L:lupíneček</item>
+        <item>7:M:mává, mlází</item>
+        <item>6:N:národ, nástup, náves</item>
+        <item>15:O:ó, náš pán</item>
+        <item>22:P:papírníci</item>
+        <item>29:Q:kvílí orkán, kváká žabák</item>
+        <item>10:R:rarášek</item>
+        <item>8:S:sekera, silnice, sobota</item>
+        <item>3:T:tón, trám, té</item>
+        <item>9:U:učený, uragán</item>
+        <item>17:V:vyučený, vyvolený</item>
+        <item>11:W:wagón klád, Waltrův vůz</item>
+        <item>25:X:Xénokratés, Xénie má</item>
+        <item>27:Y:Ý se krátí/ztrácí, Ýgar mává</item>
+        <item>28:Z:známá žena, zpíváme jen</item>
+    </string-array>
+
+    <string-array name="saMDCislice">
+        <item>63:0:</item>
+        <item>47:1:</item>
+        <item>39:2:</item>
+        <item>35:3:</item>
+        <item>33:4:</item>
+        <item>32:5:</item>
+        <item>48:6:</item>
+        <item>56:7:</item>
+        <item>60:8:</item>
+        <item>62:9:</item>
+    </string-array>
+
+    <string-array name="saMDInterpunkce">
+        <item>85:.:tečka</item>
+        <item>115:,:čárka</item>
+        <item>76:\?:otazník</item>
+        <item>94:\':apostrof</item>
+        <item>107:!:vykřičník</item>
+        <item>50:/:lomítko, zlomek</item>
+        <item>54:(:otevírací závorka</item>
+        <item>109:):uzavírací závorka</item>
+        <item>40:&amp;:ampersand</item>
+        <item>120:::dvojtečka</item>
+        <item>106:;:středník</item>
+        <item>49:=:rovnítko</item>
+        <item>42:+:plus</item>
+        <item>97:–:mínus, pomlčka</item>
+        <item>77:_:podtržítko</item>
+        <item>82:\":uvozovky</item>
+        <item>137:$:dolar</item>
+        <item>90:\@:zavináč</item>
+    </string-array>
+
+
+    <string-array name="saMCItems">
+        <item>Přímo</item>
+        <item>1 = ·, 2 = –, 0 = /</item>
+        <item>Binární signál</item>
+    </string-array>
+
+    <array name="iaMCItems">
+        <item>@id/idMCPrimo</item>
+        <item>@id/idMC120</item>
+        <item>@id/idMCSignal</item>
+    </array>
+
+
+    <string-array name="saMTMod">
+        <item>Světlo blesku</item>
+        <item>Zvuk</item>
+    </string-array>
+
+    <array name="iaMTMod">
+        <item>@id/idMTSvetlo</item>
+        <item>@id/idMTZvuk</item>
+    </array>
+
 </resources>

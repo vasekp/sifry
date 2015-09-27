@@ -4,28 +4,28 @@
     <color name="mainColor">#FFC0C0FF</color>
     <color name="tintColor">#FFD8D8FF</color>
     <color name="vlajkyFillColor">#FF404040</color>
-    
+
     <color name="semaforB1Color">#FFC0C0C0</color>
     <color name="semaforB2Color">#FFFFFFFF</color>
     <color name="semaforV1Color">#FFFF0000</color>
     <color name="semaforV2Color">#FFFFFF00</color>
-    
+
     <color name="transUsedColor">#FF80FF80</color>
     <color name="transSelColor">#FFFFFF00</color>
     <color name="transBothColor">#FFC0FF40</color>
-    
+
     <color name="esubsNTColor">#FF808080</color>
     <color name="esubsOKColor">#FF80FF80</color>
     <color name="esubsCollColor">#FFFF8080</color>
-    
+
     <color name="kalendarAnchorColor">#FFFF0000</color>
     <color name="kalendarHistColor">#FFFFFF00</color>
     <color name="kalendarBothColor">#FFFF8000</color>
-    
+
     <color name="morseActiveColor">#FFFF8080</color>
-    
+
     <color name="priColor">@android:color/primary_text_dark</color>
     <color name="secColor">@android:color/tertiary_text_dark</color>
     <color name="terColor">#FFC0C0C0</color>
-    
+
 </resources>

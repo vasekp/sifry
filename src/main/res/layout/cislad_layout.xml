@@ -3,16 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true" >
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content">
 
             <TextView
                 android:layout_width="0dp"
@@ -30,7 +30,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content">
 
             <Spinner
                 android:id="@+id/spCDSoust"
@@ -78,29 +78,29 @@
             android:layout_height="wrap_content"
             android:text="@string/tRes" />
 
-	    <LinearLayout
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:gravity="center_vertical"
-	        tools:ignore="UseCompoundDrawables" >
-	
-	        <TextView
-	            android:id="@+id/tvRes"
-	            android:layout_width="0dp"
-	            android:layout_height="wrap_content"
-	            android:layout_weight="1.0"
-	            android:padding="10dp"
-	            android:textAppearance="?android:attr/textAppearanceLarge" />
-	
-	        <ImageView
-	            android:id="@+id/ivBsp"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:src="@drawable/ic_input_delete"
-	            android:contentDescription="@string/tBsp"
-	            android:clickable="true" />
-	
-	    </LinearLayout>
-	</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            tools:ignore="UseCompoundDrawables">
+
+            <TextView
+                android:id="@+id/tvRes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:padding="10dp"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <ImageView
+                android:id="@+id/ivBsp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_input_delete"
+                android:contentDescription="@string/tBsp"
+                android:clickable="true" />
+
+        </LinearLayout>
+    </LinearLayout>
 
 </ScrollView>

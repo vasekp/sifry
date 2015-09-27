@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
         android:id="@+id/mCtxSettings"
         android:title="@string/tSettings"
         android:icon="@drawable/ic_menu_preferences"
         android:showAsAction="ifRoom" />
-    
+
     <item
         android:id="@+id/mCtxCopy"
         android:title="@string/tCtxCopy"
         android:icon="@drawable/ic_menu_copy"
         android:showAsAction="never" />
-    
+
     <item
         android:id="@+id/mCtxPaste"
         android:title="@string/tCtxPaste"
         android:icon="@drawable/ic_menu_paste"
         android:showAsAction="never" />
-    
+
     <item
         android:id="@+id/mCtxClear"
         android:title="@string/tClear"
         android:icon="@drawable/ic_menu_delete"
         android:showAsAction="ifRoom" />
-    
+
     <item
         android:id="@+id/mCtxHelp"
         android:title="@string/tHelp"

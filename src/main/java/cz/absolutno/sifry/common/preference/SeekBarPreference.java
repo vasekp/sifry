@@ -10,24 +10,25 @@ import android.view.View;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
+
 import cz.absolutno.sifry.R;
 
 public final class SeekBarPreference extends DialogPreference {
-	
-	private SeekBar input;
-	private TextView tVal;
-	private String hi, lo, fmt;
-	private int min, max;
-	private int value;
-	private boolean showHiLo, showVal; 
-	
-	public SeekBarPreference(Context ctx, AttributeSet as) {
-		super(ctx, as);
 
-		setDialogLayoutResource(R.layout.seekbar_dialog);
+    private SeekBar input;
+    private TextView tVal;
+    private String hi, lo, fmt;
+    private int min, max;
+    private int value;
+    private boolean showHiLo, showVal;
+
+    public SeekBarPreference(Context ctx, AttributeSet as) {
+        super(ctx, as);
+
+        setDialogLayoutResource(R.layout.seekbar_dialog);
         setPositiveButtonText(android.R.string.ok);
         setNegativeButtonText(android.R.string.cancel);
-        
+
         TypedArray ta = getContext().obtainStyledAttributes(as, R.styleable.SeekBarPreference);
         min = ta.getInt(R.styleable.SeekBarPreference_min, 1);
         max = ta.getInt(R.styleable.SeekBarPreference_max, 10);
@@ -37,121 +38,123 @@ public final class SeekBarPreference extends DialogPreference {
         showHiLo = ta.getBoolean(R.styleable.SeekBarPreference_showHiLo, false);
         showVal = ta.getBoolean(R.styleable.SeekBarPreference_showVal, true);
         ta.recycle();
-        
+
         setDialogIcon(null);
-	}
-	
-	@Override
-	protected void onBindDialogView(View view) {
-		super.onBindDialogView(view);
+    }
 
-		tVal = (TextView)view.findViewById(R.id.tvSbDVal);
-		if(!showVal)
-			tVal.setVisibility(View.GONE);
+    @Override
+    protected void onBindDialogView(View view) {
+        super.onBindDialogView(view);
 
-		input = (SeekBar)view.findViewById(R.id.sbSbDVstup);
-		input.setMax(max-min);
-		input.setOnSeekBarChangeListener(listener);
-	    input.setProgress(value-min);
-		
-		TextView hi = (TextView)view.findViewById(R.id.tvSbDHi);
-		TextView lo = (TextView)view.findViewById(R.id.tvSbDLo);
-		if(showHiLo) {
-			hi.setText(this.hi);
-			lo.setText(this.lo);
-		} else {
-			hi.setVisibility(View.GONE);
-			lo.setVisibility(View.GONE);
-		}
-	}
-	
-	private final OnSeekBarChangeListener listener = new OnSeekBarChangeListener() {
-		
-		public void onStopTrackingTouch(SeekBar seekBar) { }
-		
-		public void onStartTrackingTouch(SeekBar seekBar) { }
-		
-		public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-			value = progress + min;
-			tVal.setText(fmt != null ? String.format(fmt, value) : Integer.toString(value));
-		}
-	};
+        tVal = (TextView) view.findViewById(R.id.tvSbDVal);
+        if (!showVal)
+            tVal.setVisibility(View.GONE);
 
-	@Override
-	protected void onDialogClosed(boolean positiveResult) {
-		if(positiveResult)
-			persistInt(value);
-	}
-	
-	@Override
-	protected void onSetInitialValue(boolean restorePersistedValue, Object defaultValue) {
-	    if (restorePersistedValue) {
-	        value = getPersistedInt(0);
-	    } else {
-	        value = (Integer) defaultValue;
-	        persistInt(value);
-	    }
-	}
-	
-	@Override
-	protected Object onGetDefaultValue(TypedArray a, int index) {
-	    return a.getInteger(index, 0);
-	}
-	
-	@Override
-	protected Parcelable onSaveInstanceState() {
-	    final Parcelable superState = super.onSaveInstanceState();
-	    if (isPersistent())
-	        return superState;
+        input = (SeekBar) view.findViewById(R.id.sbSbDVstup);
+        input.setMax(max - min);
+        input.setOnSeekBarChangeListener(listener);
+        input.setProgress(value - min);
 
-	    final SavedState myState = new SavedState(superState);
-	    myState.value = value;
-	    return myState;
-	}
+        TextView hi = (TextView) view.findViewById(R.id.tvSbDHi);
+        TextView lo = (TextView) view.findViewById(R.id.tvSbDLo);
+        if (showHiLo) {
+            hi.setText(this.hi);
+            lo.setText(this.lo);
+        } else {
+            hi.setVisibility(View.GONE);
+            lo.setVisibility(View.GONE);
+        }
+    }
 
-	@Override
-	protected void onRestoreInstanceState(Parcelable state) {
-	    if (state == null || !state.getClass().equals(SavedState.class)) {
-	        super.onRestoreInstanceState(state);
-	        return;
-	    }
+    private final OnSeekBarChangeListener listener = new OnSeekBarChangeListener() {
 
-	    SavedState myState = (SavedState) state;
-	    super.onRestoreInstanceState(myState.getSuperState());
-	    input.setProgress(myState.value);
-	}
-	
-	
-	private static final class SavedState extends BaseSavedState {
-	    int value;
+        public void onStopTrackingTouch(SeekBar seekBar) {
+        }
 
-	    public SavedState(Parcelable superState) {
-	        super(superState);
-	    }
+        public void onStartTrackingTouch(SeekBar seekBar) {
+        }
 
-	    public SavedState(Parcel source) {
-	        super(source);
-	        value = source.readInt();
-	    }
+        public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+            value = progress + min;
+            tVal.setText(fmt != null ? String.format(fmt, value) : Integer.toString(value));
+        }
+    };
 
-	    @Override
-	    public void writeToParcel(Parcel dest, int flags) {
-	        super.writeToParcel(dest, flags);
-	        dest.writeInt(value);
-	    }
+    @Override
+    protected void onDialogClosed(boolean positiveResult) {
+        if (positiveResult)
+            persistInt(value);
+    }
 
-	    @SuppressWarnings("unused")
-		public static final Parcelable.Creator<SavedState> CREATOR =
-	            new Parcelable.Creator<SavedState>() {
+    @Override
+    protected void onSetInitialValue(boolean restorePersistedValue, Object defaultValue) {
+        if (restorePersistedValue) {
+            value = getPersistedInt(0);
+        } else {
+            value = (Integer) defaultValue;
+            persistInt(value);
+        }
+    }
 
-	        public SavedState createFromParcel(Parcel in) {
-	            return new SavedState(in);
-	        }
+    @Override
+    protected Object onGetDefaultValue(TypedArray a, int index) {
+        return a.getInteger(index, 0);
+    }
 
-	        public SavedState[] newArray(int size) {
-	            return new SavedState[size];
-	        }
-	    };
-	}
-	
+    @Override
+    protected Parcelable onSaveInstanceState() {
+        final Parcelable superState = super.onSaveInstanceState();
+        if (isPersistent())
+            return superState;
+
+        final SavedState myState = new SavedState(superState);
+        myState.value = value;
+        return myState;
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Parcelable state) {
+        if (state == null || !state.getClass().equals(SavedState.class)) {
+            super.onRestoreInstanceState(state);
+            return;
+        }
+
+        SavedState myState = (SavedState) state;
+        super.onRestoreInstanceState(myState.getSuperState());
+        input.setProgress(myState.value);
+    }
+
+
+    private static final class SavedState extends BaseSavedState {
+        int value;
+
+        public SavedState(Parcelable superState) {
+            super(superState);
+        }
+
+        public SavedState(Parcel source) {
+            super(source);
+            value = source.readInt();
+        }
+
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+            super.writeToParcel(dest, flags);
+            dest.writeInt(value);
+        }
+
+        @SuppressWarnings("unused")
+        public static final Parcelable.Creator<SavedState> CREATOR =
+                new Parcelable.Creator<SavedState>() {
+
+                    public SavedState createFromParcel(Parcel in) {
+                        return new SavedState(in);
+                    }
+
+                    public SavedState[] newArray(int size) {
+                        return new SavedState[size];
+                    }
+                };
+    }
+
 }

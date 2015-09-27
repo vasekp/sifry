@@ -2,21 +2,27 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cz.absolutno.sifry"
     android:versionCode="2011"
-    android:versionName="2.0.1" >
+    android:versionName="2.0.1">
 
     <uses-sdk
-        android:minSdkVersion="7"
-        android:targetSdkVersion="19" />
+        android:minSdkVersion="9"
+        android:targetSdkVersion="23" />
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="18" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
-    
-    <uses-feature android:name="android.hardware.camera" android:required="false" />
-    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
-    <uses-feature android:name="android.hardware.camera.flash" android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
 
     <application
         android:hardwareAccelerated="true"
@@ -24,23 +30,28 @@
         android:label="@string/app_name"
         android:theme="@style/MainTheme"
         android:allowBackup="true"
-        android:name="cz.absolutno.sifry.App" >
-        
-        <uses-library android:required="false" android:name="com.sec.android.app.multiwindow" />
-        <meta-data android:name="com.sec.android.support.multiwindow" android:value="true" />
-        
+        android:name="cz.absolutno.sifry.App">
+
+        <uses-library
+            android:required="false"
+            android:name="com.sec.android.app.multiwindow" />
+        <meta-data
+            android:name="com.sec.android.support.multiwindow"
+            android:value="true" />
+
         <activity
             android:name="cz.absolutno.sifry.mainscreen.SplashActivity"
             android:label="@string/app_name"
             android:noHistory="false"
-            android:theme="@style/MainTheme.NoTitleBar" >
+            android:theme="@style/MainTheme.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
                 <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
             </intent-filter>
         </activity>
-        
+
 
         <activity
             android:name="cz.absolutno.sifry.mainscreen.MainActivity"
@@ -50,7 +61,7 @@
             android:name="cz.absolutno.sifry.mainscreen.LicenceActivity"
             android:icon="@drawable/ic_menu_help"
             android:label="@string/cptLicence" />
-                
+
         <activity
             android:name="cz.absolutno.sifry.common.activity.HelpActivity"
             android:icon="@drawable/ic_menu_help"
@@ -60,7 +71,7 @@
             android:icon="@drawable/ic_menu_preferences"
             android:label="@string/tSettings" />
 
-        
+
         <activity
             android:name="cz.absolutno.sifry.morse.MorseActivity"
             android:icon="@drawable/ic_morse"

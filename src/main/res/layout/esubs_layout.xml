@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
@@ -22,7 +22,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
 
         <include
             android:layout_width="64dp"
@@ -32,14 +32,13 @@
         <HorizontalScrollView
             android:layout_width="0dp"
             android:layout_weight="1.0"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:id="@+id/llESTabulka"
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent" >
-            </LinearLayout>
+                android:layout_height="match_parent"></LinearLayout>
         </HorizontalScrollView>
 
         <ToggleButton

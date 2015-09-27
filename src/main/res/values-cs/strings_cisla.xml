@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<string name="cptCisla">Čísla písmen</string>
-	<string name="tCDSoust">Soustava:</string>
-	<string name="tCDInterp">Interpretace:</string>
-	<string name="tCDVstup">Vstup – potvrďte kliknutím:</string>
-	<string name="tCDKlav">Číselník:</string>
-	
-	<string name="tCRSeznam">Tabulka:</string>
-	<string name="tCRPismeno">Pís.</string>
-	<string name="tCRs2">bin</string>
-	<string name="tCRs3">ter</string>
-	<string name="tCRs8">oct</string>
-	<string name="tCRs10">dec</string>
-	<string name="tCRs16">hex</string>
-	<string name="tCRRim">řím</string>
-	<string name="tCRPerm">perm.</string>
+    <string name="cptCisla">Čísla písmen</string>
+    <string name="tCDSoust">Soustava:</string>
+    <string name="tCDInterp">Interpretace:</string>
+    <string name="tCDVstup">Vstup – potvrďte kliknutím:</string>
+    <string name="tCDKlav">Číselník:</string>
+
+    <string name="tCRSeznam">Tabulka:</string>
+    <string name="tCRPismeno">Pís.</string>
+    <string name="tCRs2">bin</string>
+    <string name="tCRs3">ter</string>
+    <string name="tCRs8">oct</string>
+    <string name="tCRs10">dec</string>
+    <string name="tCRs16">hex</string>
+    <string name="tCRRim">řím</string>
+    <string name="tCRPerm">perm.</string>
 
 	
 <string name="tHelpCisla"><![CDATA[
@@ -32,8 +32,8 @@ Je také možné zadat, zda se má hodnota interpretovat jako pořadí písmene 
 přetečením …-Y-Z-A-B-C-… nebo jako hodnota kódu ASCII. Těmto volbám se přizpůsobí vzhled
 číselníku, pomocí nějž se čísla zadávají. Ve spodní části obrazovky se zobrazuje hodnota
 aktuálně zadaného čísla v abecedě. Kliknutím na ni se přidá na konec pole <i>Řešení</i>
-a vstup se vynuluje. K jednou zadaným hodnotám se program již nevrací, ani je nevymaže při
-změně číselné soustavy nebo interpretace v průběhu zadávání.</p>
+a vstup se vynuluje. K jednou zadaným písmenům se program již nevrací, ani je nevymaže či
+nepřepočítá při změně číselné soustavy nebo interpretace v průběhu zadávání.</p>
 
 
 <h3>Vysvětlivky nabízených variant</h3>
@@ -60,7 +60,7 @@ Znaky s diakritikou jsou v rámci ASCII nedosažitelné. Tato interpretace je ne
 <p>V této variantě vstupu je abeceda \"očíslována\" pomocí permutací čtyř symbolů. Vstup jednoho
 písmene je tedy platný, pokud se v nějakém pořadí použijí všechny čtyři symboly A, B, C, D, každý
 právě jednou. Základní pořadí ABCD odpovídá písmeni A. Další možné pořadí (ve smyslu slovníkového
-řazení) ABDC kóduje B. Takto lze pokračovat až k nejvyšší možné permutaci DCBA.</p>
+řazení) AB<b>DC</b> kóduje B. Takto lze pokračovat až k nejvyšší možné permutaci DCBA.</p>
 
 <p>Počet možných permutací čtyř symbolů je roven 4! = 24, což je méně než počet písmen anglické
 abecedy. Proto je potřeba zvolit dvě písmena, která budou vyřazena, aby se dosáhlo stejného počtu.
@@ -84,136 +84,136 @@ jako deváté písmeno abecedy či přeskočit v počítání Q, W nebo X. <i>Po
 <p>Referenční tabulka nabízí velké množství informací. Jestliže aplikaci spouštíte na mobilním
 telefonu, bude zkrácena, aby se šířkou vešla na displej. Otočte přístroj displejem na šířku, aby
 se zobrazily všechny dostupné sloupce.</p>
-]]></string>	
-		
-				
-	<string-array name="pataCDInterp">
-		<item>Čísla 1 – %d</item>
-		<item>Čísla 0 – %d</item>
-		<item>Modulo %d (od 1)</item>
-		<item>Modulo %d (od 0)</item>
-		<item>ASCII</item>
-	</string-array>
-	
-	<array name="iaCDInterp">
-		<item>@id/idCDPrimo1</item>
-		<item>@id/idCDPrimo0</item>
-		<item>@id/idCDModulo1</item>
-		<item>@id/idCDModulo0</item>
-		<item>@id/idCDASCII</item>
-	</array>
+]]></string>
 
-	
-   	<string-array name="saCDSoustavy">
-		<item>Dvojková</item>
-		<item>Trojková</item>
-		<item>Osmičková</item>
-		<item>Desítková</item>
-		<item>Šestnáctková</item>
-		<item>Římské číslice</item>
-		<item>Permutace (-QW)</item>
-		<item>Permutace inv.</item>
-	</string-array>
-	
-   	<array name="iaCDSoustavyMody">
-   		<item>@id/idCDCisla</item>
-   		<item>@id/idCDCisla</item>
-   		<item>@id/idCDCisla</item>
-   		<item>@id/idCDCisla</item>
-   		<item>@id/idCDCisla</item>
-   		<item>@id/idCDRim</item>
-   		<item>@id/idCDPerm1</item>
-   		<item>@id/idCDPerm2</item>
-   	</array>
-   	
-   	<integer-array name="iaCDSoustavyZaklady">
-   		<item>2</item>
-   		<item>3</item>
-   		<item>8</item>
-   		<item>10</item>
-   		<item>16</item>
-   		<item>0</item>
-   		<item>0</item>
-   		<item>0</item>
-   	</integer-array>
 
-	
-   	<string-array name="saCRGroups">
-   		<item>Čísla písmen v abecedě (od 1)</item>
-   		<item>Čísla písmen v abecedě (od 0)</item>
-   		<item>ASCII velká písmena</item>
-   		<item>ASCII malá písmena</item>
-   	</string-array>
-   	
-   	<array name="iaCRGroups">
-   		<item>@id/idCRAbeceda1</item>
-   		<item>@id/idCRAbeceda0</item>
-   		<item>@id/idCRASCIIVelke</item>
-   		<item>@id/idCRASCIIMale</item>
-   	</array>
+    <string-array name="pataCDInterp">
+        <item>Čísla 1 – %d</item>
+        <item>Čísla 0 – %d</item>
+        <item>Modulo %d (od 1)</item>
+        <item>Modulo %d (od 0)</item>
+        <item>ASCII</item>
+    </string-array>
 
-   		
-	<string-array name="saCCGroups">
-   		<item>Číslování od 1</item>
-   		<item>Číslování od 0</item>
-   		<item>ASCII kódy</item>
-   	</string-array>
-   	
-   	<array name="iaCCGroups">
-   		<item>@id/idCCOd1</item>
-   		<item>@id/idCCOd0</item>
-   		<item>@id/idCCASCII</item>
-   	</array>
-   	
-	<string-array name="saCCSoustavyPrimo">
-		<item>Decimálně</item>
-		<item>Binárně</item>
-		<item>Ternárně</item>
-		<item>Oktálně</item>
-		<item>Hexadecimálně</item>
-		<item>Římské číslice</item>
-		<item>Permutace</item>
-	</string-array>
-	
-   	<array name="iaCCSoustavyPrimoMody">
-   		<item>@id/idCDCisla</item>
-   		<item>@id/idCDCisla</item>
-   		<item>@id/idCDCisla</item>
-   		<item>@id/idCDCisla</item>
-   		<item>@id/idCDCisla</item>
-   		<item>@id/idCDRim</item>
-   		<item>@id/idCDPerm1</item>
-   	</array>
-   	
-   	<integer-array name="iaCCSoustavyPrimoZaklady">
-   		<item>10</item>
-   	    <item>2</item>
-   		<item>3</item>
-   		<item>8</item>
-   		<item>16</item>
-   		<item>0</item>
-   		<item>0</item>
-   	</integer-array>
+    <array name="iaCDInterp">
+        <item>@id/idCDPrimo1</item>
+        <item>@id/idCDPrimo0</item>
+        <item>@id/idCDModulo1</item>
+        <item>@id/idCDModulo0</item>
+        <item>@id/idCDASCII</item>
+    </array>
 
-	<string-array name="saCCSoustavyASCII">
-		<item>Decimálně</item>
-		<item>Binárně</item>
-		<item>Oktálně</item>
-		<item>Hexadecimálně</item>
-	</string-array>
-	
-   	<array name="iaCCSoustavyASCIIMody">
-   		<item>@id/idCDCisla</item>
-   		<item>@id/idCDCisla</item>
-   		<item>@id/idCDCisla</item>
-   		<item>@id/idCDCisla</item>
-   	</array>
-   	
-   	<integer-array name="iaCCSoustavyASCIIZaklady">
-   		<item>10</item>
-   	    <item>2</item>
-   		<item>8</item>
-   		<item>16</item>
-   	</integer-array>
-   	
+
+    <string-array name="saCDSoustavy">
+        <item>Dvojková</item>
+        <item>Trojková</item>
+        <item>Osmičková</item>
+        <item>Desítková</item>
+        <item>Šestnáctková</item>
+        <item>Římské číslice</item>
+        <item>Permutace (-QW)</item>
+        <item>Permutace inv.</item>
+    </string-array>
+
+    <array name="iaCDSoustavyMody">
+        <item>@id/idCDCisla</item>
+        <item>@id/idCDCisla</item>
+        <item>@id/idCDCisla</item>
+        <item>@id/idCDCisla</item>
+        <item>@id/idCDCisla</item>
+        <item>@id/idCDRim</item>
+        <item>@id/idCDPerm1</item>
+        <item>@id/idCDPerm2</item>
+    </array>
+
+    <integer-array name="iaCDSoustavyZaklady">
+        <item>2</item>
+        <item>3</item>
+        <item>8</item>
+        <item>10</item>
+        <item>16</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </integer-array>
+
+
+    <string-array name="saCRGroups">
+        <item>Čísla písmen v abecedě (od 1)</item>
+        <item>Čísla písmen v abecedě (od 0)</item>
+        <item>ASCII velká písmena</item>
+        <item>ASCII malá písmena</item>
+    </string-array>
+
+    <array name="iaCRGroups">
+        <item>@id/idCRAbeceda1</item>
+        <item>@id/idCRAbeceda0</item>
+        <item>@id/idCRASCIIVelke</item>
+        <item>@id/idCRASCIIMale</item>
+    </array>
+
+
+    <string-array name="saCCGroups">
+        <item>Číslování od 1</item>
+        <item>Číslování od 0</item>
+        <item>ASCII kódy</item>
+    </string-array>
+
+    <array name="iaCCGroups">
+        <item>@id/idCCOd1</item>
+        <item>@id/idCCOd0</item>
+        <item>@id/idCCASCII</item>
+    </array>
+
+    <string-array name="saCCSoustavyPrimo">
+        <item>Decimálně</item>
+        <item>Binárně</item>
+        <item>Ternárně</item>
+        <item>Oktálně</item>
+        <item>Hexadecimálně</item>
+        <item>Římské číslice</item>
+        <item>Permutace</item>
+    </string-array>
+
+    <array name="iaCCSoustavyPrimoMody">
+        <item>@id/idCDCisla</item>
+        <item>@id/idCDCisla</item>
+        <item>@id/idCDCisla</item>
+        <item>@id/idCDCisla</item>
+        <item>@id/idCDCisla</item>
+        <item>@id/idCDRim</item>
+        <item>@id/idCDPerm1</item>
+    </array>
+
+    <integer-array name="iaCCSoustavyPrimoZaklady">
+        <item>10</item>
+        <item>2</item>
+        <item>3</item>
+        <item>8</item>
+        <item>16</item>
+        <item>0</item>
+        <item>0</item>
+    </integer-array>
+
+    <string-array name="saCCSoustavyASCII">
+        <item>Decimálně</item>
+        <item>Binárně</item>
+        <item>Oktálně</item>
+        <item>Hexadecimálně</item>
+    </string-array>
+
+    <array name="iaCCSoustavyASCIIMody">
+        <item>@id/idCDCisla</item>
+        <item>@id/idCDCisla</item>
+        <item>@id/idCDCisla</item>
+        <item>@id/idCDCisla</item>
+    </array>
+
+    <integer-array name="iaCCSoustavyASCIIZaklady">
+        <item>10</item>
+        <item>2</item>
+        <item>8</item>
+        <item>16</item>
+    </integer-array>
+
 </resources>

@@ -5,5 +5,4 @@
     android:minHeight="46dp"
     android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft"
     android:textAppearance="?android:attr/textAppearanceMedium"
-    android:gravity="center_vertical|left"
-/>
+    android:gravity="center_vertical|left" />

@@ -4,19 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:baselineAligned="false"
-    android:orientation="horizontal" >
+    android:orientation="horizontal">
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.5"
         android:gravity="fill"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical" >
+            android:gravity="center_vertical">
 
             <TextView
                 android:layout_width="0dp"
@@ -36,7 +36,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <EditText
                 android:id="@+id/etFDVstup"
@@ -45,7 +45,7 @@
                 android:layout_weight="1.0"
                 android:imeOptions="flagNoExtractUi"
                 android:inputType="textMultiLine"
-                android:maxLines="5" >
+                android:maxLines="5">
 
                 <requestFocus />
             </EditText>
@@ -65,7 +65,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.5"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
@@ -77,8 +77,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1.0"
-            tools:ignore="NestedWeights" >
-        </ExpandableListView>
+            tools:ignore="NestedWeights"></ExpandableListView>
     </LinearLayout>
 
 </LinearLayout>

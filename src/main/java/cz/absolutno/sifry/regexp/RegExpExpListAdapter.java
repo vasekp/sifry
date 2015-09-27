@@ -4,39 +4,40 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
+
 import cz.absolutno.sifry.App;
 import cz.absolutno.sifry.R;
 
 public final class RegExpExpListAdapter extends BaseExpandableListAdapter {
-	
-	private int matches = 0;
-	private RegExpNative re;
-	
-	public RegExpExpListAdapter(RegExpNative re) {
-		this.re = re;
-	}
-	
-	public void update(int matches) {
-		this.matches = matches;
-		notifyDataSetChanged();
-	}
-	
-	public void clear() {
-		matches = 0;
-		notifyDataSetChanged();
-	}
+
+    private int matches = 0;
+    private RegExpNative re;
+
+    public RegExpExpListAdapter(RegExpNative re) {
+        this.re = re;
+    }
+
+    public void update(int matches) {
+        this.matches = matches;
+        notifyDataSetChanged();
+    }
+
+    public void clear() {
+        matches = 0;
+        notifyDataSetChanged();
+    }
 
     public int getGroupCount() {
-    	if(re != null)
-    		return (matches+99)/100;
-    	else
-    		return 0;
+        if (re != null)
+            return (matches + 99) / 100;
+        else
+            return 0;
     }
 
     public String getGroup(int groupPosition) {
-    	int ub = groupPosition*100 + 99;
-    	if(ub >= matches) ub = matches-1;
-        return String.format("%s – %s", re.getResult(groupPosition*100), re.getResult(ub));
+        int ub = groupPosition * 100 + 99;
+        if (ub >= matches) ub = matches - 1;
+        return String.format("%s – %s", re.getResult(groupPosition * 100), re.getResult(ub));
     }
 
     public long getGroupId(int groupPosition) {
@@ -44,29 +45,29 @@ public final class RegExpExpListAdapter extends BaseExpandableListAdapter {
     }
 
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
-    	if(convertView == null)
-    		convertView = App.getInflater().inflate(R.layout.gen_group_item, null);
-        ((TextView)convertView).setText(getGroup(groupPosition));
+        if (convertView == null)
+            convertView = App.getInflater().inflate(R.layout.gen_group_item, null);
+        ((TextView) convertView).setText(getGroup(groupPosition));
         return convertView;
     }
 
     public int getChildrenCount(int groupPosition) {
-    	if(groupPosition >= getGroupCount()) return 0;
-    	return (groupPosition < getGroupCount() - 1)?100:(((matches-1) % 100)+1);
+        if (groupPosition >= getGroupCount()) return 0;
+        return (groupPosition < getGroupCount() - 1) ? 100 : (((matches - 1) % 100) + 1);
     }
 
-	 public String getChild(int groupPosition, int childPosition) {
-    	return re.getResult(groupPosition*100 + childPosition);
+    public String getChild(int groupPosition, int childPosition) {
+        return re.getResult(groupPosition * 100 + childPosition);
     }
 
     public long getChildId(int groupPosition, int childPosition) {
         return childPosition;
     }
-    
+
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-    	if(convertView == null)
-    		convertView = App.getInflater().inflate(R.layout.simple_list_item, null);
-        ((TextView)convertView).setText(getChild(groupPosition, childPosition));
+        if (convertView == null)
+            convertView = App.getInflater().inflate(R.layout.simple_list_item, null);
+        ((TextView) convertView).setText(getChild(groupPosition, childPosition));
         return convertView;
     }
 

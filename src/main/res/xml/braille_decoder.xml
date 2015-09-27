@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<state-decoder entrypoint="@+id/ruleBDDefault" format_flag="pref_brl_fmt" code_desc="@array/saBRPrefixes" >
+<state-decoder
+    entrypoint="@+id/ruleBDDefault"
+    format_flag="pref_brl_fmt"
+    code_desc="@array/saBRPrefixes">
 
-    <rule-array id="@+id/ruleBDDefault" state="" >
+    <rule-array
+        id="@+id/ruleBDDefault"
+        state="">
         <rules
             ref="@+id/ruleBDWordBeginning"
             after="@+id/ruleBDMidWord" />
         <rules ref="@+id/ruleBDLetterExtra" />
     </rule-array>
-    
-	<rule-array id="@+id/ruleBDReset" state="" >
+
+    <rule-array
+        id="@+id/ruleBDReset"
+        state="">
         <rules
             ref="@+id/ruleBDDefault"
             format="@id/idFormatDefault"
             state="" />
     </rule-array>
-    
-    <rule-array id="@+id/ruleBDLetterExtra" >
+
+    <rule-array id="@+id/ruleBDLetterExtra">
         <rules
             code="60"
             access="pref_brl_num"
@@ -41,8 +48,10 @@
             access_def="false"
             ref="@+id/ruleBDFormat" />
     </rule-array>
-    
-    <rule-array id="@+id/ruleBDWordBeginning" temp="true" >
+
+    <rule-array
+        id="@+id/ruleBDWordBeginning"
+        temp="true">
         <strings ref="@array/saBRLetters" />
         <strings
             access="pref_brl_lig"
@@ -71,8 +80,8 @@
             tmp_state="Abbr"
             ref="@array/saBRIni3" />
     </rule-array>
-    
-    <rule-array id="@+id/ruleBDMidWord" >
+
+    <rule-array id="@+id/ruleBDMidWord">
         <strings ref="@array/saBRLetters" />
         <strings
             access="pref_brl_lig"
@@ -104,9 +113,11 @@
             ref="@+id/ruleBDFin3"
             after="@+id/ruleBDReset" />
         <rules ref="@+id/ruleBDLetterExtra" />
-	</rule-array>
-    
-    <rule-array id="@+id/ruleBDNumbers" state="Num" >
+    </rule-array>
+
+    <rule-array
+        id="@+id/ruleBDNumbers"
+        state="Num">
         <strings ref="@array/saBRDigits" />
         <strings ref="@array/saBRNumberExtra" />
         <rules
@@ -115,10 +126,10 @@
             format="@id/idFormatDefault"
             ref="@+id/ruleBDWordBeginning"
             after="@+id/ruleBDMidWord" />
-		<rules ref="@+id/ruleBDReset" />
-	</rule-array>
-    
-    <rule-array id="@+id/ruleBDFormat" >
+        <rules ref="@+id/ruleBDReset" />
+    </rule-array>
+
+    <rule-array id="@+id/ruleBDFormat">
         <rules
             code="48"
             state=""
@@ -130,9 +141,9 @@
             state="Abc"
             format="@id/idFormatSentence"
             ref="@+id/ruleBDCapitals" />
-	</rule-array>
-    
-    <rule-array id="@+id/ruleBDCapitals" >
+    </rule-array>
+
+    <rule-array id="@+id/ruleBDCapitals">
         <rules
             code="32"
             state="ABC"
@@ -143,8 +154,10 @@
             ref="@+id/ruleBDWordBeginning"
             after="@+id/ruleBDMidWord" />
     </rule-array>
-    
-    <rule-array id="@+id/ruleBDFin3" temp="true" >
+
+    <rule-array
+        id="@+id/ruleBDFin3"
+        temp="true">
         <strings ref="@array/saBRFin3" />
         <rules
             code="32"

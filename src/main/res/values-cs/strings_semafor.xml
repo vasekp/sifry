@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<string name="cptSemafor">Semaforová abeceda</string>
-	<string name="tSmDTitul">Zadejte znak označením dvou směrů:</string>
-	<string name="tSmDNavrhy">Návrhy:</string>
-	
-	<string name="tSmVInv">inv </string>
+    <string name="cptSemafor">Semaforová abeceda</string>
+    <string name="tSmDTitul">Zadejte znak označením dvou směrů:</string>
+    <string name="tSmDNavrhy">Návrhy:</string>
+
+    <string name="tSmVInv">inv </string>
 	
 	
 <string name="tHelpSemafor"><![CDATA[
@@ -59,78 +59,78 @@ zobrazí jako otazník.</p>
 <p>Jestliže se přepnete do číselného módu omylem a obtěžuje Vás jej deaktivovat prostřednictvím nastavení,
 použijte tlačítko <i>BackSpace</i>.</p>
 ]]></string>
-	
-
-	<string-array name="saSmRGroups">
-		<item>Písmena</item>
-		<item>Číslice</item>
-		<item>Řídicí znaky</item>
-	</string-array>
-	
-	<array name="iaSmRGroups">
-		<item>@array/saSmDPismena</item>
-		<item>@array/saSmDCislice</item>
-		<item>@array/saSmDPrefixy</item>
-	</array>
 
 
-	<string-array name="saSmDPismena">
-		<item>3:A</item>
-		<item>5:B</item>
-		<item>9:C</item>
-		<item>17:D</item>
-		<item>33:E</item>
-		<item>65:F</item>
-		<item>129:G</item>
-		<item>6:H</item>
-		<item>10:I</item>
-		<item>80:J</item>
-		<item>18:K</item>
-		<item>34:L</item>
-		<item>66:M</item>
-		<item>130:N</item>
-		<item>12:O</item>
-		<item>20:P</item>
-		<item>36:Q</item>
-		<item>68:R</item>
-		<item>132:S</item>
-		<item>24:T</item>
-		<item>40:U</item>
-		<item>144:V</item>
-		<item>96:W</item>
-		<item>160:X</item>
-		<item>72:Y</item>
-		<item>192:Z</item>
-	</string-array>
+    <string-array name="saSmRGroups">
+        <item>Písmena</item>
+        <item>Číslice</item>
+        <item>Řídicí znaky</item>
+    </string-array>
 
-	<string-array name="saSmDCislice">
-		<item>3:1</item>
-		<item>5:2</item>
-		<item>9:3</item>
-		<item>17:4</item>
-		<item>33:5</item>
-		<item>65:6</item>
-		<item>129:7</item>
-		<item>6:8</item>
-		<item>10:9</item>
-		<item>18:0</item>
-	</string-array>
+    <array name="iaSmRGroups">
+        <item>@array/saSmDPismena</item>
+        <item>@array/saSmDCislice</item>
+        <item>@array/saSmDPrefixy</item>
+    </array>
 
-	<string-array name="saSmDPrefixy">
-		<item>48:číslice:</item>
-		<item>80:písmena:</item>
-		<item>136:chyba:</item>
-	</string-array>
 
-	
-	<string-array name="saSCItems">
-	    <item>Graficky</item>
-	    <item>Dvojice 1–8 (číslování zdola doleva)</item>
-	</string-array>
-	
-	<array name="iaSCItems">
-	    <item>@id/idSCPrimo</item>
-	    <item>@id/idSCDvoj</item>
-	</array>
+    <string-array name="saSmDPismena">
+        <item>3:A</item>
+        <item>5:B</item>
+        <item>9:C</item>
+        <item>17:D</item>
+        <item>33:E</item>
+        <item>65:F</item>
+        <item>129:G</item>
+        <item>6:H</item>
+        <item>10:I</item>
+        <item>80:J</item>
+        <item>18:K</item>
+        <item>34:L</item>
+        <item>66:M</item>
+        <item>130:N</item>
+        <item>12:O</item>
+        <item>20:P</item>
+        <item>36:Q</item>
+        <item>68:R</item>
+        <item>132:S</item>
+        <item>24:T</item>
+        <item>40:U</item>
+        <item>144:V</item>
+        <item>96:W</item>
+        <item>160:X</item>
+        <item>72:Y</item>
+        <item>192:Z</item>
+    </string-array>
+
+    <string-array name="saSmDCislice">
+        <item>3:1</item>
+        <item>5:2</item>
+        <item>9:3</item>
+        <item>17:4</item>
+        <item>33:5</item>
+        <item>65:6</item>
+        <item>129:7</item>
+        <item>6:8</item>
+        <item>10:9</item>
+        <item>18:0</item>
+    </string-array>
+
+    <string-array name="saSmDPrefixy">
+        <item>48:číslice:</item>
+        <item>80:písmena:</item>
+        <item>136:chyba:</item>
+    </string-array>
+
+
+    <string-array name="saSCItems">
+        <item>Graficky</item>
+        <item>Dvojice 1–8 (číslování zdola doleva)</item>
+    </string-array>
+
+    <array name="iaSCItems">
+        <item>@id/idSCPrimo</item>
+        <item>@id/idSCDvoj</item>
+    </array>
 
 </resources>

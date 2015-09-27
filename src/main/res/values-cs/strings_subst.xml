@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<string name="cptSubst">Substituce\na posuny</string>
-	<string name="tSDSifra">Šifra:</string>	
-	<string name="tSDTyp">Typ šifry:</string>
-	<string name="tSDHeslo">Heslo:</string>
-	<string name="tSDAKoef">Koeficient:</string>
-	<string name="tSDKPokr">Doplnit:</string>
-	<string name="tSDKlic">Klíč:</string>
-	<string name="tSDVlastni">Překladová tabulka:</string>
-	
-	<string name="tSDEnc">Zašifrovat</string>
-	<string name="tSDDec">Dešifrovat</string>
+    <string name="cptSubst">Substituce\na posuny</string>
+    <string name="tSDSifra">Šifra:</string>
+    <string name="tSDTyp">Typ šifry:</string>
+    <string name="tSDHeslo">Heslo:</string>
+    <string name="tSDAKoef">Koeficient:</string>
+    <string name="tSDKPokr">Doplnit:</string>
+    <string name="tSDKlic">Klíč:</string>
+    <string name="tSDVlastni">Překladová tabulka:</string>
 
-	<string name="tSDChybaHesla">Heslo musí být složené pouze z písmen!</string>
+    <string name="tSDEnc">Zašifrovat</string>
+    <string name="tSDDec">Dešifrovat</string>
+
+    <string name="tSDChybaHesla">Heslo musí být složené pouze z písmen!</string>
 	
 <string name="tHelpSubst"><![CDATA[
 <h1>Substituce a posuny</h1>
@@ -44,11 +44,11 @@ zobrazí v seznamu, ve kterém se snadno dohledá řádek, který dává smysl.<
 Pro pohodlnost se také zobrazí všechny posuny získaného řešení.</p>
 
 <p>Zobecněním předchozích dvou možností jsou <i>afinní šifry</i>. Jestliže si Caesarovu šifru můžeme
-představit jako matematickou operaci <i>f(x) = x + k</i> a šifru Atbaš jako <i>f(x) = -x</i>,
+představit jako matematickou operaci <i>f(x) = x + k</i> a šifru Atbaš jako <i>f(x) = –x</i>,
 afinní šifra je vyjádřena vzorcem <i>f(x) = a*x + b</i>. Kromě kódového textu je potřeba zvolit
 koeficient <i>a</i>, všechny posuny dané hodnotami <i>b</i> se zobrazí najednou. Nejsou nabízeny
 všechny možnosti, jen takové, ve kterých lze transformace i obrátit (text muselo být možno nejprve
-zašifrovat, aby mohl být dešifrován). Speciální hodnoty <i>a = 1</i> a <i>a = -1</i> by odpovídaly
+zašifrovat, aby mohl být dešifrován). Speciální hodnoty <i>a = 1</i> a <i>a = –1</i> by odpovídaly
 Caesarově šifře a Atbaši a nejsou tedy znovu nabízeny.</p> 
 
 
@@ -85,7 +85,7 @@ a ke každému písmeni jeho překlad, ve výchozím stavu nastavený na sebe sa
 substituce s klíčem, pokud byl nastaven). Přiřazení je možno změnit kliknutím na vybrané písmeno a
 zvolením jeho nového překladu z nabídky. Tabulka je v každý okamžik udržována ve stavu, kdy reprezentuje
 zobrazení celé abecedy na celou abecedu. Každá její změna je tedy ve skutečnosti prováděna jako prohození
-dvou písmen.</p>
+přiřazení dvou písmen.</p>
 
 <p><i>Tip</i>: Pokud nemáte k přiřazení jednotlivých znaků žádné indicie kromě jejich četnosti, pravděpodobně
 bude užitečnější nástroj <i>Empirická substituce</i> v rámci komponenty <i>Frekvenční analýza</i>.</p>
@@ -105,7 +105,7 @@ Komponenta <i>Substituce a posuny</i> nenabízí záložku <i>Zašifrovat</i>. L
 může totiž být chápána jako šifrování i dešifrování a ke každé variantě lze mezi nabízenými možnostmi
 najít obrácenou transformaci. Například u Caesarovy šifry je možno snadno dohledat, který řádek odpovídá
 přičtení či odečtení stejné hodnoty. Některé systémy inverzní transformaci nepotřebují, protože se provádí
-stejnou operací jako dešifrování (Beaufort, 2A-B). U obecných monoalfabetických šifer jsou převody \"tam\"
+stejnou operací jako dešifrování (Beaufort, 2A–B). U obecných monoalfabetických šifer jsou převody \"tam\"
 a \"zpět\" zobrazeny pod sebou.
 
 
@@ -115,84 +115,84 @@ a \"zpět\" zobrazeny pod sebou.
 nastavení abecedy. Jestliže například bylo Q vyřazeno z abecedního řazení, nemá přiřazeno žádné číslo,
 a tak nemůže být použito při aritmetických operacích.</p>
 ]]></string>
-	
-	
-	<string-array name="saSDTypy">
-	    <item>Posuny (Caesar)</item>
-	    <item>Reverze a posuny (Atbaš)</item>
-	    <item>Násobení a posuny (afinní)</item>
-	    <item>S heslem (Vigenère apod.)</item>
-	    <item>Pomocí sebe sama (Autokey)</item>
-	    <item>Pomocí polohy písmene</item>
-	    <item>Monoalfabetická s klíčem</item>
-	    <item>Vlastní překladová tabulka</item>
-	</string-array>
-	
-	<array name="iaSDTypy">
-	    <item>@id/idSDCaesar</item>
-	    <item>@id/idSDAtbash</item>
-	    <item>@id/idSDAffini</item>
-	    <item>@id/idSDHeslo</item>
-	    <item>@id/idSDAutoKey</item>
-	    <item>@id/idSDPozice</item>
-	    <item>@id/idSDKlic</item>
-	    <item>@id/idSDVlastni</item>
-	</array>
-	
-	<string-array name="saSDbezHesla">
-		<item>A(n) + A(n-1) (od 1)</item>
-		<item>A(n) – A(n-1) (od 1)</item>
-		<item>A(n-1) – A(n) (od 1)</item>
-		<item>A(n) + A(n-1) (od 0)</item>
-		<item>A(n) – A(n-1) (od 0)</item>
-		<item>A(n-1) – A(n) (od 0)</item>
-		<item>A(n) + V(n-1) (od 1)</item>
-		<item>A(n) – V(n-1) (od 1)</item>
-		<item>V(n-1) – A(n) (od 1)</item>
-		<item>A(n) + V(n-1) (od 0)</item>
-		<item>A(n) – V(n-1) (od 0)</item>
-		<item>V(n-1) – A(n) (od 0)</item>
-		<item>2A(n) – A(n-1)</item>
-	</string-array>
-	
-	<string-array name="saSDsHeslem">
-   		<item>A(n) + B(n) (od 1)</item>
-   		<item>A(n) – B(n) (od 1)</item>
-   		<item>B(n) – A(n) (od 1)</item>
-		<item>A(n) + B(n) (od 0)</item>
-		<item>A(n) – B(n) (od 0)</item>
-   		<item>B(n) – A(n) (od 0)</item>
-   		<item>A(n) + [BA](n) (od 1)</item>
-   		<item>A(n) – [BA](n) (od 1)</item>
-   		<item>[BA](n) – A(n) (od 1)</item>
-		<item>A(n) + [BA](n) (od 0)</item>
-		<item>A(n) – [BA](n) (od 0)</item>
-   		<item>[BA](n) – A(n) (od 0)</item>
-   		<item>A(n) + [BV](n) (od 1)</item>
-   		<item>A(n) – [BV](n) (od 1)</item>
-   		<item>[BV](n) – A(n) (od 1)</item>
-		<item>A(n) + [BV](n) (od 0)</item>
-		<item>A(n) – [BV](n) (od 0)</item>
-   		<item>[BV](n) – A(n) (od 0)</item>
-   		<item>2A(n) – B(n)</item>
-   		<item>2B(n) – A(n)</item>
-	</string-array>
-	
-	<string-array name="saSDsPozici">
-   		<item>A(n) + n (od 1)</item>
-   		<item>A(n) – n (od 1)</item>
-   		<item>n – A(n) (od 1)</item>
-		<item>A(n) + n (od 0)</item>
-		<item>A(n) – n (od 0)</item>
-   		<item>n – A(n) (od 0)</item>
-   		<item>2A(n) – n</item>
-   		<item>2n – A(n)</item>
-	</string-array>
 
-	<string-array name="saSDKPokr">
-	    <item>Nepoužitá A–Z</item>
-	    <item>Nepoužitá Z–A</item>
-	    <item>Pokračovat od posledního písmene</item>
-	</string-array>
+
+    <string-array name="saSDTypy">
+        <item>Posuny (Caesar)</item>
+        <item>Reverze a posuny (Atbaš)</item>
+        <item>Násobení a posuny (afinní)</item>
+        <item>S heslem (Vigenère apod.)</item>
+        <item>Pomocí sebe sama (Autokey)</item>
+        <item>Pomocí polohy písmene</item>
+        <item>Monoalfabetická s klíčem</item>
+        <item>Vlastní překladová tabulka</item>
+    </string-array>
+
+    <array name="iaSDTypy">
+        <item>@id/idSDCaesar</item>
+        <item>@id/idSDAtbash</item>
+        <item>@id/idSDAffini</item>
+        <item>@id/idSDHeslo</item>
+        <item>@id/idSDAutoKey</item>
+        <item>@id/idSDPozice</item>
+        <item>@id/idSDKlic</item>
+        <item>@id/idSDVlastni</item>
+    </array>
+
+    <string-array name="saSDbezHesla">
+        <item>A(n) + A(n-1) (od 1)</item>
+        <item>A(n) – A(n-1) (od 1)</item>
+        <item>A(n-1) – A(n) (od 1)</item>
+        <item>A(n) + A(n-1) (od 0)</item>
+        <item>A(n) – A(n-1) (od 0)</item>
+        <item>A(n-1) – A(n) (od 0)</item>
+        <item>A(n) + V(n-1) (od 1)</item>
+        <item>A(n) – V(n-1) (od 1)</item>
+        <item>V(n-1) – A(n) (od 1)</item>
+        <item>A(n) + V(n-1) (od 0)</item>
+        <item>A(n) – V(n-1) (od 0)</item>
+        <item>V(n-1) – A(n) (od 0)</item>
+        <item>2A(n) – A(n-1)</item>
+    </string-array>
+
+    <string-array name="saSDsHeslem">
+        <item>A(n) + B(n) (od 1)</item>
+        <item>A(n) – B(n) (od 1)</item>
+        <item>B(n) – A(n) (od 1)</item>
+        <item>A(n) + B(n) (od 0)</item>
+        <item>A(n) – B(n) (od 0)</item>
+        <item>B(n) – A(n) (od 0)</item>
+        <item>A(n) + [BA](n) (od 1)</item>
+        <item>A(n) – [BA](n) (od 1)</item>
+        <item>[BA](n) – A(n) (od 1)</item>
+        <item>A(n) + [BA](n) (od 0)</item>
+        <item>A(n) – [BA](n) (od 0)</item>
+        <item>[BA](n) – A(n) (od 0)</item>
+        <item>A(n) + [BV](n) (od 1)</item>
+        <item>A(n) – [BV](n) (od 1)</item>
+        <item>[BV](n) – A(n) (od 1)</item>
+        <item>A(n) + [BV](n) (od 0)</item>
+        <item>A(n) – [BV](n) (od 0)</item>
+        <item>[BV](n) – A(n) (od 0)</item>
+        <item>2A(n) – B(n)</item>
+        <item>2B(n) – A(n)</item>
+    </string-array>
+
+    <string-array name="saSDsPozici">
+        <item>A(n) + n (od 1)</item>
+        <item>A(n) – n (od 1)</item>
+        <item>n – A(n) (od 1)</item>
+        <item>A(n) + n (od 0)</item>
+        <item>A(n) – n (od 0)</item>
+        <item>n – A(n) (od 0)</item>
+        <item>2A(n) – n</item>
+        <item>2n – A(n)</item>
+    </string-array>
+
+    <string-array name="saSDKPokr">
+        <item>Nepoužitá A–Z</item>
+        <item>Nepoužitá Z–A</item>
+        <item>Pokračovat od posledního písmene</item>
+    </string-array>
 
 </resources>

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<string name="cptRegExp">Dictionary Search</string>
-	<string name="tRDFiltry">Filters:</string>
-	<string name="tRDPocet">Words found:</string>
-	<string name="tRDVysledky">Search results:</string>
-	<string name="tRDHledej">Go</string>
-	<string name="tRDStop">Stop</string>
-	<string name="tRDObsahuje">Contains</string>
-	<string name="tRDNeobsahuje">Exclude</string>
+    <string name="cptRegExp">Dictionary Search</string>
+    <string name="tRDFiltry">Filters:</string>
+    <string name="tRDPocet">Words found:</string>
+    <string name="tRDVysledky">Search results:</string>
+    <string name="tRDHledej">Go</string>
+    <string name="tRDStop">Stop</string>
+    <string name="tRDObsahuje">Contains</string>
+    <string name="tRDNeobsahuje">Exclude</string>
 
 
 <string name="tHelpRegExp"><![CDATA[
 <h1>Dictionary Search</h1>
 
 <p>This component offers searching for words matching a set of criteria, given by regular
-expressions. A prior knowledge of regular expression syntax is expected of the user.</p>
+expressions. Some prior knowledge of regular expression syntax is expected of the user.</p>
 
 
 <h3>Basic usage</h3>
@@ -35,7 +35,7 @@ syntax. The options <tt>PCRE_UTF8</tt> and <tt>PCRE_UCP</tt> are activated to al
 Unicode national characters and alter the behaviour of the <tt>[[:lower:]]</tt>, <tt>[[:upper:]]</tt>
 etc. characters classes accordingly.</p>
 
-<p>If the number of results is too large, only the first 10000 matches are shown in the list.</p>
+<p>If the number of results is too large, only the first 10000 matches will be shown in the list.</p>
 
 
 <h3>Format of the dictionary</h3>
@@ -89,18 +89,18 @@ Words with no repeating letters:<br/>
 ]]></string>
 
 
-	<string-array name="saREDictionaries">
-		<item>Automatic (English)</item>
-		<item>English</item>
-		<item>Czech</item>
-	</string-array>
+    <string-array name="saREDictionaries">
+        <item>Automatic (English)</item>
+        <item>English</item>
+        <item>Czech</item>
+    </string-array>
 
-	<string-array name="saREDictionaryFilenames">
-		<item></item>
-		<item>en.canon</item>
-		<item>cs.canon</item>
-	</string-array>
+    <string-array name="saREDictionaryFilenames">
+        <item></item>
+        <item>en.canon</item>
+        <item>cs.canon</item>
+    </string-array>
 
-	<string name="pref_re_dictionary_default">en.canon</string>
+    <string name="pref_re_dictionary_default">en.canon</string>
 
 </resources>

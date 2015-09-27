@@ -4,14 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res/cz.absolutno.sifry"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:baselineAligned="false" >
+    android:baselineAligned="false">
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.5"
         android:orientation="vertical"
-        tools:ignore="NestedWeights" >
+        tools:ignore="NestedWeights">
 
         <TextView
             android:layout_width="match_parent"
@@ -21,7 +21,7 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1.0" >
+            android:layout_weight="1.0">
 
             <cz.absolutno.sifry.braille.BrailleView
                 android:id="@+id/bvBDVstup"
@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right|bottom"
                 android:visibility="invisible"
-                tools:ignore="UseCompoundDrawables" >
+                tools:ignore="UseCompoundDrawables">
 
                 <ImageView
                     android:layout_width="20dp"
@@ -58,13 +58,13 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="0.5" >
+        android:layout_weight="0.5">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingLeft="10dp" >
+            android:paddingLeft="10dp">
 
             <TextView
                 android:id="@+id/tvBDVse"
@@ -80,7 +80,7 @@
                 android:gravity="center_vertical"
                 android:paddingBottom="10dp"
                 android:paddingLeft="10dp"
-                android:paddingTop="10dp" >
+                android:paddingTop="10dp">
 
                 <cz.absolutno.sifry.braille.BrailleTView
                     android:id="@+id/btBDVstup"
@@ -112,7 +112,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical" >
+                android:gravity="center_vertical">
 
                 <cz.absolutno.sifry.common.widget.FixedGridLayout
                     android:id="@+id/fglBDVstup"

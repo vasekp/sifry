@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-	<CheckBoxPreference
-		android:key="pref_brl_tah"
-		android:title="@string/prefBGestureTitle"
-		android:summary="@string/prefBGestureSummary"
-		android:defaultValue="false" />
+    <CheckBoxPreference
+        android:key="pref_brl_tah"
+        android:title="@string/prefBGestureTitle"
+        android:summary="@string/prefBGestureSummary"
+        android:defaultValue="false" />
 
-	<CheckBoxPreference
-		android:key="pref_brl_spc"
-		android:title="@string/prefBSpaceTitle"
-		android:summary="@string/prefBSpaceSummary"
-		android:defaultValue="false" />
+    <CheckBoxPreference
+        android:key="pref_brl_spc"
+        android:title="@string/prefBSpaceTitle"
+        android:summary="@string/prefBSpaceSummary"
+        android:defaultValue="false" />
 
-	<CheckBoxPreference
-		android:key="pref_brl_num"
-		android:title="@string/prefBNumberTitle"
-		android:summary="@string/prefBNumberSummary"
-		android:defaultValue="true" />
+    <CheckBoxPreference
+        android:key="pref_brl_num"
+        android:title="@string/prefBNumberTitle"
+        android:summary="@string/prefBNumberSummary"
+        android:defaultValue="true" />
 
-	<CheckBoxPreference
-		android:key="pref_brl_num_pers"
-		android:dependency="pref_brl_num"
-		android:title="@string/prefBNumPersTitle"
-		android:summary="@string/prefBNumPersSummary"
-		android:defaultValue="true" />
-	
-	<CheckBoxPreference
-		android:key="pref_brl_dia"
-		android:title="@string/prefBDiaTitle"
-		android:summary="@string/prefBDiaSummary"
-		android:defaultValue="false" />
+    <CheckBoxPreference
+        android:key="pref_brl_num_pers"
+        android:dependency="pref_brl_num"
+        android:title="@string/prefBNumPersTitle"
+        android:summary="@string/prefBNumPersSummary"
+        android:defaultValue="true" />
 
-	<CheckBoxPreference
-		android:key="pref_brl_itp"
-		android:title="@string/prefBItpTitle"
-		android:summary="@string/prefBItpSummary"
-		android:defaultValue="false" />
+    <CheckBoxPreference
+        android:key="pref_brl_dia"
+        android:title="@string/prefBDiaTitle"
+        android:summary="@string/prefBDiaSummary"
+        android:defaultValue="false" />
 
-	<CheckBoxPreference
-		android:key="pref_brl_fmt"
-		android:title="@string/prefBFmtTitle"
-		android:summary="@string/prefBFmtSummary"
-		android:defaultValue="false" />
+    <CheckBoxPreference
+        android:key="pref_brl_itp"
+        android:title="@string/prefBItpTitle"
+        android:summary="@string/prefBItpSummary"
+        android:defaultValue="false" />
+
+    <CheckBoxPreference
+        android:key="pref_brl_fmt"
+        android:title="@string/prefBFmtTitle"
+        android:summary="@string/prefBFmtSummary"
+        android:defaultValue="false" />
 
 </PreferenceScreen>

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<string name="cptSubst">Substitution Ciphers</string>
-	<string name="tSDSifra">Ciphertext:</string>	
-	<string name="tSDTyp">Cipher type:</string>
-	<string name="tSDHeslo">Keyword:</string>
-	<string name="tSDAKoef">Coefficient:</string>
-	<string name="tSDKPokr">Specification:</string>
-	<string name="tSDKlic">Keyword:</string>
-	<string name="tSDVlastni">Translation table:</string>
-	
-	<string name="tSDEnc">Encrypt</string>
-	<string name="tSDDec">Decrypt</string>
+    <string name="cptSubst">Substitution Ciphers</string>
+    <string name="tSDSifra">Ciphertext:</string>
+    <string name="tSDTyp">Cipher type:</string>
+    <string name="tSDHeslo">Keyword:</string>
+    <string name="tSDAKoef">Coefficient:</string>
+    <string name="tSDKPokr">Specification:</string>
+    <string name="tSDKlic">Keyword:</string>
+    <string name="tSDVlastni">Translation table:</string>
 
-	<string name="tSDChybaHesla">Only letters allowed in the key!</string>
+    <string name="tSDEnc">Encrypt</string>
+    <string name="tSDDec">Decrypt</string>
 
-	<string name="patSDKoef" translatable="false">× %1$d (÷ %2$d)</string>
-	<string name="patSDList" translatable="false">A ↦ %1$s (+ %2$d / – %3$d)</string>
+    <string name="tSDChybaHesla">Only letters allowed in the key!</string>
+
+    <string name="patSDKoef" translatable="false">× %1$d (÷ %2$d)</string>
+    <string name="patSDList" translatable="false">A ↦ %1$s (+ %2$d / – %3$d)</string>
 	
 	
 <string name="tHelpSubst"><![CDATA[
@@ -34,11 +34,11 @@ with some of the options, additional input (e.g., a keyword) is required. After 
 the necessary fields, the input can be processed using the <i>Enter</i> button or <i>Enter</i>
 key.</p>
 
-<p>There is no need to leave out interpunction and spaces from the ciphertext if present, or to
-convert all letters to an equal cases. The application will automatically perform the normalization
-and omit nonalphabetic characters in the ciphertext (copying them unchanged into the plaintext).
+<p>There is no need to leave out punctuation and spaces from the ciphertext if present, or to
+convert all letters to a common case. The application will automatically perform the normalization
+and omit non-alphabetic characters in the ciphertext (copying them unchanged into the plaintext).
 In Vigenère-like ciphers, this is done without taking a character from the keyword. To avoid
-ambiguity, nonalphabetic characters in the keyword are not permitted.</p>
+ambiguity, non-alphabetic characters in the keyword are not permitted.</p>
 
 
 <h5>Monoalphabetic ciphers using alphabet numbering</h5>
@@ -46,19 +46,19 @@ ambiguity, nonalphabetic characters in the keyword are not permitted.</p>
 <p>The simplest systematic substitution cipher is the <i>Caesar cipher</i>, where each letter of
 the plaintext is shifted in the alphabet by a constant offset. Given a ciphertext in the Caesar
 cipher, the app will display all the shifts in a single list so it is simple to browse through
-it quickly to see which entry is a legible plaintext even if the shift amount is not known with
-certainty.</p>
+it quickly to see which entry is a legible plaintext even if the shift amount is not known in
+advance.</p>
 
 <p>Similarly, the ciphertext alone suffices for the <i>Atbash cipher</i>, which is a simple reversal
 of the alphabetic order (A ↔ Z, B ↔ Y, …). For your convenience, all the Caesar shifts of the result
 are also presented in case a more intricate reversal has been used.</p>
 
 <p>The previous two ciphers can both be perceived as special cases of <i>Affine ciphers</i>. Indeed,
-if the Caesar cipher was described by the formula <i>f(x) = x + c</i> and Atbash by <i>f(x) = -x</i>,
+if the Caesar cipher was described by the formula <i>f(x) = x + c</i> and Atbash by <i>f(x) = –x</i>,
 a generic affine cipher would use <i>f(x) = a*x + b</i>. As there are too many options to be displayed
 simultaneously, the value of <i>a</i> needs to be selected by the user (<i>b</i> simply represents
 Caesar shifts, all of which will be shown in a list). Only those values of <i>a</i> which result
-in reversible transforms are listed in the menu. Special values <i>a = 1</i> and <i>a = -1</i> would
+in reversible transforms are listed in the menu. Special values <i>a = 1</i> and <i>a = –1</i> would
 correspond to Caesar and Atbash ciphers, covered separately, so they are not found in the list.</p>
 
 
@@ -74,7 +74,7 @@ starting over with the first character of the keyword (denoted B), starting to t
 the beginning of the ciphertext (denoted BA), or even from the already deciphered plaintext (denoted
 BR).</p>
 
-<p>If the keyword is not found along with the cipher, bear in mind that it could be some a priori
+<p>If the keyword is not found along with the cipher, bear in mind that it could be some <i>a priori</i>
 exchanged secret keyword, some property of the cipher, a word found in some public label found in
 its vicinity… There are, however, a lot of ciphers inspired by the Vigenère cipher which actually
 need no keyword as its role is taken by the ciphertext itself (option <i>Autokey ciphers</i>)
@@ -95,9 +95,9 @@ reverse direction is shown.</p>
 <p>The last option makes it possible to define a fully custom translation table by defining the translations
 for each letter freely. By default, the full alphabet appears with each letter initially mapped to itself,
 or according to the last keyword substitution if applicable. Change the assignments by clicking at a letter
-and choosing its value in the plaintext from the displayed list. Note that the translation table is always
-kept in a state where it represents a 1:1 map, thus every change is actually done by swapping two letters.
-The transformation is again performed in both directions.</p> 
+and choosing its mapping in the plaintext from the displayed list. Note that the translation table is always
+kept in a state where it represents a 1:1 map, thus every change is actually done by swapping the replacements
+of two letters. The transformation is again performed in both directions.</p>
 
 <p><i>Tip</i>: If the translation table is unavailable and your only source of guess is the relative frequency
 of letters in the ciphertext, consider using <i>Empirical substitution</i>, found in <i>Frequency Analysis</i>,
@@ -117,95 +117,95 @@ substitution ciphers. Please note that the same setting is shared with the <i>Le
 <p>There is no <i>Encrypt</i> tab in <i>Substitution Ciphers</i>. This is because for every single one of the
 different ciphers provided by the component, an inverse transform can be found which is already listed.
 For example, the encryption and decryption in Caesar cipher differ only in a shift in the opposite direction
-and for each magnitude <i>x</i> of the shift, you can easily find both <i>+x</i> and <i>-x</i> in the list
+and for each magnitude <i>x</i> of the shift, you can easily find both <i>+x</i> and <i>–x</i> in the list
 of all shifts. Some of the ciphers do not need an inverse transform as this would be done using the very same
-operation (Beaufort, 2A-B). In keyword and custom translation tables, both directions are displayed.</p>
+operation (Beaufort, 2A–B). In keyword and custom translation tables, both directions are displayed.</p>
 
 
 <h3>Tips and tricks</h3>
 
 <p>If the substitution gives unexpected results please refer to the Preferences. If the alphabet is altered
 by skipping some letters, the numbering will change and this will effect any shift within the alphabet. Also,
-the skipped letters are considered nonalphabetic characters as they do not have a numerical values.</p>
+the skipped letters are considered non-alphabetic characters as they do not have a numerical values.</p>
 ]]></string>
-	
 
-	<string-array name="saSDTypy">
-	    <item>Shifts (Caesar)</item>
-	    <item>Reverse and shifts (Atbash)</item>
-	    <item>Affine ciphers</item>
-	    <item>Polyalphabetic (Vigenère etc.)</item>
-	    <item>Autokey ciphers</item>
-	    <item>Key = position</item>
-	    <item>Keyword ciphers</item>
-	    <item>Custom translation table</item>
-	</string-array>
-	
-	<array name="iaSDTypy">
-	    <item>@id/idSDCaesar</item>
-	    <item>@id/idSDAtbash</item>
-	    <item>@id/idSDAffini</item>
-	    <item>@id/idSDHeslo</item>
-	    <item>@id/idSDAutoKey</item>
-	    <item>@id/idSDPozice</item>
-	    <item>@id/idSDKlic</item>
-	    <item>@id/idSDVlastni</item>
-	</array>
-	
-	<string-array name="saSDbezHesla">
-		<item>A(n) + A(n-1) (1-based)</item>
-		<item>A(n) – A(n-1) (1-based)</item>
-		<item>A(n-1) – A(n) (1-based)</item>
-		<item>A(n) + A(n-1) (0-based)</item>
-		<item>A(n) – A(n-1) (0-based)</item>
-		<item>A(n-1) – A(n) (0-based)</item>
-		<item>A(n) + R(n-1) (1-based)</item>
-		<item>A(n) – R(n-1) (1-based)</item>
-		<item>R(n-1) – A(n) (1-based)</item>
-		<item>A(n) + R(n-1) (0-based)</item>
-		<item>A(n) – R(n-1) (0-based)</item>
-		<item>R(n-1) – A(n) (0-based)</item>
-		<item>2A(n) – A(n-1)</item>
-	</string-array>
-	
-	<string-array name="saSDsHeslem">
-   		<item>A(n) + B(n) (od 1)</item>
-   		<item>A(n) – B(n) (od 1)</item>
-   		<item>B(n) – A(n) (od 1)</item>
-		<item>A(n) + B(n) (od 0)</item>
-		<item>A(n) – B(n) (od 0)</item>
-   		<item>B(n) – A(n) (od 0)</item>
-   		<item>A(n) + [BA](n) (od 1)</item>
-   		<item>A(n) – [BA](n) (od 1)</item>
-   		<item>[BA](n) – A(n) (od 1)</item>
-		<item>A(n) + [BA](n) (od 0)</item>
-		<item>A(n) – [BA](n) (od 0)</item>
-   		<item>[BA](n) – A(n) (od 0)</item>
-   		<item>A(n) + [BR](n) (od 1)</item>
-   		<item>A(n) – [BR](n) (od 1)</item>
-   		<item>[BR](n) – A(n) (od 1)</item>
-		<item>A(n) + [BR](n) (od 0)</item>
-		<item>A(n) – [BR](n) (od 0)</item>
-   		<item>[BR](n) – A(n) (od 0)</item>
-   		<item>2A(n) – B(n)</item>
-   		<item>2B(n) – A(n)</item>
-	</string-array>
-	
-	<string-array name="saSDsPozici">
-   		<item>A(n) + n (od 1)</item>
-   		<item>A(n) – n (od 1)</item>
-   		<item>n – A(n) (od 1)</item>
-		<item>A(n) + n (od 0)</item>
-		<item>A(n) – n (od 0)</item>
-   		<item>n – A(n) (od 0)</item>
-   		<item>2A(n) – n</item>
-   		<item>2n – A(n)</item>
-	</string-array>
 
-	<string-array name="saSDKPokr">
-	    <item>Keyword + unused A–Z</item>
-	    <item>Keyword + unused Z–A</item>
-	    <item>Keyword + continue from last</item>
-	</string-array>
-	
+    <string-array name="saSDTypy">
+        <item>Shifts (Caesar)</item>
+        <item>Reverse and shifts (Atbash)</item>
+        <item>Affine ciphers</item>
+        <item>Polyalphabetic (Vigenère etc.)</item>
+        <item>Autokey ciphers</item>
+        <item>Key = position</item>
+        <item>Keyword ciphers</item>
+        <item>Custom translation table</item>
+    </string-array>
+
+    <array name="iaSDTypy">
+        <item>@id/idSDCaesar</item>
+        <item>@id/idSDAtbash</item>
+        <item>@id/idSDAffini</item>
+        <item>@id/idSDHeslo</item>
+        <item>@id/idSDAutoKey</item>
+        <item>@id/idSDPozice</item>
+        <item>@id/idSDKlic</item>
+        <item>@id/idSDVlastni</item>
+    </array>
+
+    <string-array name="saSDbezHesla">
+        <item>A(n) + A(n-1) (1-based)</item>
+        <item>A(n) – A(n-1) (1-based)</item>
+        <item>A(n-1) – A(n) (1-based)</item>
+        <item>A(n) + A(n-1) (0-based)</item>
+        <item>A(n) – A(n-1) (0-based)</item>
+        <item>A(n-1) – A(n) (0-based)</item>
+        <item>A(n) + R(n-1) (1-based)</item>
+        <item>A(n) – R(n-1) (1-based)</item>
+        <item>R(n-1) – A(n) (1-based)</item>
+        <item>A(n) + R(n-1) (0-based)</item>
+        <item>A(n) – R(n-1) (0-based)</item>
+        <item>R(n-1) – A(n) (0-based)</item>
+        <item>2A(n) – A(n-1)</item>
+    </string-array>
+
+    <string-array name="saSDsHeslem">
+        <item>A(n) + B(n) (od 1)</item>
+        <item>A(n) – B(n) (od 1)</item>
+        <item>B(n) – A(n) (od 1)</item>
+        <item>A(n) + B(n) (od 0)</item>
+        <item>A(n) – B(n) (od 0)</item>
+        <item>B(n) – A(n) (od 0)</item>
+        <item>A(n) + [BA](n) (od 1)</item>
+        <item>A(n) – [BA](n) (od 1)</item>
+        <item>[BA](n) – A(n) (od 1)</item>
+        <item>A(n) + [BA](n) (od 0)</item>
+        <item>A(n) – [BA](n) (od 0)</item>
+        <item>[BA](n) – A(n) (od 0)</item>
+        <item>A(n) + [BR](n) (od 1)</item>
+        <item>A(n) – [BR](n) (od 1)</item>
+        <item>[BR](n) – A(n) (od 1)</item>
+        <item>A(n) + [BR](n) (od 0)</item>
+        <item>A(n) – [BR](n) (od 0)</item>
+        <item>[BR](n) – A(n) (od 0)</item>
+        <item>2A(n) – B(n)</item>
+        <item>2B(n) – A(n)</item>
+    </string-array>
+
+    <string-array name="saSDsPozici">
+        <item>A(n) + n (od 1)</item>
+        <item>A(n) – n (od 1)</item>
+        <item>n – A(n) (od 1)</item>
+        <item>A(n) + n (od 0)</item>
+        <item>A(n) – n (od 0)</item>
+        <item>n – A(n) (od 0)</item>
+        <item>2A(n) – n</item>
+        <item>2n – A(n)</item>
+    </string-array>
+
+    <string-array name="saSDKPokr">
+        <item>Keyword + unused A–Z</item>
+        <item>Keyword + unused Z–A</item>
+        <item>Keyword + continue from last</item>
+    </string-array>
+
 </resources>

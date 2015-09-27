@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<string name="cptFrekv">Frequency Analysis</string>
-	<string name="tFDVstup">Input:</string>
-	<string name="tFDAutoOn">Words</string>
-	<string name="tFDAutoOff">Letters</string>
-	<string name="tFDFrekv">Frequency analysis results:</string>
-	<string name="tFDAnalyza">Analysis</string>
-	<string name="tFDESubs">Substitution</string>
-	
-	<string name="patFDRes" translatable="false">%1$d (%2$.2f %%)</string>
-	<string name="tFDInter" translatable="false">.,;:!?-\'\"()/</string>
-	<string name="tFDMezera">spc.</string>
-	
-	<string name="tFRAbcVar"></string>
-	<string name="tFRSort">Sort:</string>
-	<string name="tFRTab">Table:</string>
-	
-	<string name="patFRProc" translatable="false">%s %%</string>
-	<string name="patFRRel" translatable="false">r. %s</string>
-	
-	<string name="tESTabulka">Translation table</string>
-	<string name="tESPuv">orig.</string>
-	<string name="tESZast">freq.</string>
-	<string name="tESNove">subs.</string>
-	<string name="tESSmaz">remove</string>
-	<string name="tESDNic">clr</string>
-	<string name="tESDJine">…</string>
-	<string name="tESSortAbc" translatable="false">Abc</string>
-	<string name="tESSortFreq" translatable="false">%</string>
-	
-	<string name="tESDSipka" translatable="false">↓</string>
-	<string name="tESDOK" translatable="false">✓</string>
-	<string name="tESDZpet" translatable="false">↩</string>
+    <string name="cptFrekv">Frequency Analysis</string>
+    <string name="tFDVstup">Input:</string>
+    <string name="tFDAutoOn">Words</string>
+    <string name="tFDAutoOff">Letters</string>
+    <string name="tFDFrekv">Frequency analysis results:</string>
+    <string name="tFDAnalyza">Analysis</string>
+    <string name="tFDESubs">Substitution</string>
+
+    <string name="patFDRes" translatable="false">%1$d (%2$.2f %%)</string>
+    <string name="tFDInter" translatable="false">.,;:!?-\'\"()/</string>
+    <string name="tFDMezera">spc.</string>
+
+    <string name="tFRAbcVar"></string>
+    <string name="tFRSort">Sort:</string>
+    <string name="tFRTab">Table:</string>
+
+    <string name="patFRProc" translatable="false">%s %%</string>
+    <string name="patFRRel" translatable="false">r. %s</string>
+
+    <string name="tESTabulka">Translation table</string>
+    <string name="tESPuv">orig.</string>
+    <string name="tESZast">freq.</string>
+    <string name="tESNove">subs.</string>
+    <string name="tESSmaz">remove</string>
+    <string name="tESDNic">clr</string>
+    <string name="tESDJine">…</string>
+    <string name="tESSortAbc" translatable="false">Abc</string>
+    <string name="tESSortFreq" translatable="false">%</string>
+
+    <string name="tESDSipka" translatable="false">↓</string>
+    <string name="tESDOK" translatable="false">✓</string>
+    <string name="tESDZpet" translatable="false">↩</string>
 	
 	
 <string name="tHelpFrekv"><![CDATA[
@@ -44,14 +44,14 @@ word lengths, and further text statistics. It can also be used to count other ki
 
 <h3>Basic usage</h3>
 
-<p>Enter the text to be analyzed into the <i>Input</i> field and click the arrow-like <i>Enter</i>
-button (or <i>Enter</i> on the keyboard). The lower part of the screen will display a multitude
+<p>Enter the text to be analyzed into the <i>Input</i> field and tap the arrow-like <i>Enter</i>
+button (or press <i>Enter</i> on the keyboard). The lower part of the screen will display a multitude
 of numerical data collected from the text. The information displayed varies with the input text,
 e.g., the counts of digits 0 to 9 will not be displayed if there are no digits in the text
 whatsoever.</p>
 
-<p>When altering the input text please make sure to hit the <i>Enter</i> button, otherwise the
-statistical information presented to you may not be up to date.</p>
+<p>When altering the input text please make sure to finish by using the <i>Enter</i> button again,
+otherwise the statistical information presented to you may not be up to date.</p>
 
 
 <h3>Empirical substitution</h3>
@@ -91,7 +91,7 @@ and auto-correction features of your soft keyboard. These may be undesirable, or
 an actual ciphertext having no meaning in English needs to be entered. In these cases please switch
 to <i>Letters</i> which disables all the disruptive interventions of the system. (Some soft keyboards
 may continue listing possible auto-corrections but will cease to push them unless said so.) There is
-no impact of this toggle button to the analysis results.</p>     
+no impact of this toggle button on the analysis results.</p>
 
 <p>The persistent preferences for <i>Frequency Analysis</i> do not affect the main tab but do change
 the behaviour of the <i>Substitution</i> tab. Here you can specify whether non-alphabetic characters
@@ -107,201 +107,201 @@ in a graphical puzzle, <i>Frequency Analysis</i> can still be used for this goal
 letters or digits to the objects (e.g., initial letters of their names) and entering this instead
 of the input text.</p>
 ]]></string>
-	
-		
-	<string-array name="saFDGroups">
-		<item>Letters</item>
-		<item>Digits</item>
-		<item>Alphanumerical</item>
-		<item>All characters</item>
-		<item>Letters (alphabetically)</item>
-		<item>Digits (0 through 9)</item>
-		<item>Punctuation marks</item>
-		<item>Unidentified characters</item>
-		<item>Word lengths (by frequency)</item>
-		<item>Word lengths (asc. order)</item>
-		<item>Initial letters</item>
-		<item>Final letters</item>
-		<item>Text statistics</item>
-	</string-array>
-	
-	<array name="iaFDGroups">
-		<item>@id/idFDGPismenaC</item>
-		<item>@id/idFDGCisliceC</item>
-		<item>@id/idFDGAlnumC</item>
-		<item>@id/idFDGVseC</item>
-		<item>@id/idFDGPismenaP</item>
-		<item>@id/idFDGCisliceP</item>
-		<item>@id/idFDGInterp</item>
-		<item>@id/idFDGNezname</item>
-		<item>@id/idFDGDelkyC</item>
-		<item>@id/idFDGDelkyP</item>
-		<item>@id/idFDGPrvni</item>
-		<item>@id/idFDGPosledni</item>
-		<item>@id/idFDGText</item>
-	</array>
 
 
-	<string-array name="saFDStat">
-		<item>Letters</item>
-		<item>Digits</item>
-		<item>Spaces</item>
-		<item>Punctuation marks</item>
-		<item>Unidentified characters</item>
-		<item>Characters total</item>
-		<item>Words</item>
-		<item>Clauses (delimited by interpunction)</item>
-		<item>Sentences (delimited by ., ?, !, parentheses)</item>
-	</string-array>
-	
-	<array name="iaFDStat">
-		<item>@id/idFDSPismen</item>
-		<item>@id/idFDSCislic</item>
-		<item>@id/idFDSMezer</item>
-		<item>@id/idFDSInterp</item>
-		<item>@id/idFDSNeznamych</item>
-		<item>@id/idFDSVsech</item>
-		<item>@id/idFDSSlov</item>
-		<item>@id/idFDSVet</item>
-		<item>@id/idFDSSouveti</item>		
-	</array>
-	
-	<array name="iaFDStatRuzne">
-	    <item>@plurals/plRuzne</item>
-	    <item>@plurals/plRuzne</item>
-	    <item>@id/idNull</item>
-	    <item>@id/idNull</item>
-	    <item>@plurals/plRuzne</item>
-	    <item>@plurals/plRuzne</item>
-	    <item>@plurals/plRuzneDelky</item>
-	    <item>@id/idNull</item>
-	    <item>@id/idNull</item>
-	</array>
-	
-	<plurals name="plRuzne">
-	    <item quantity="one">%1$d (%2$d different)</item>
-	    <item quantity="other">%1$d (%2$d different)</item>
-	</plurals>
-	
-	<plurals name="plRuzneDelky">
-	    <item quantity="one">%1$d (all of length %3$d)</item>
-	    <item quantity="other">%1$d (%2$d different lengths)</item>
-	</plurals>
-	
-		
-	<string-array name="saFRSort">
-	    <item>Alphabetically</item>
-	    <item>By frequency</item>
-	</string-array>
-			
-	<array name="iaFRSort">
-	    <item>@id/idFRSortAbc</item>
-	    <item>@id/idFRSortFreq</item>
-	</array>
-
-	<string-array name="saFRGroups">
-	    <item>Letters</item>
-	    <item>Bigraphs</item>
-	    <item>Trigraphs</item>
-	    <item>Beginning of word letters</item>
-	    <item>End of word letters</item>
-	</string-array>
-	
-	<array name="iaFRGroups">
-	    <item>@array/saFRFrekvencePis</item>
-	    <item>@array/saFRFrekvenceBi</item>
-	    <item>@array/saFRFrekvenceTri</item>
-	    <item>@array/saFRFrekvenceZac</item>
-	    <item>@array/saFRFrekvenceKon</item>
-	</array>
-	
-		
-	<!-- http://www.cryptograms.org/letter-frequencies.php -->
-	<string-array name="saFRFrekvencePis">
-	    <item>a:8.000</item>
-		<item>b:1.536</item>
-		<item>c:2.576</item>
-		<item>d:4.318</item>
-		<item>e:12.576</item>
-		<item>f:2.350</item>
-		<item>g:1.983</item>
-		<item>h:6.237</item>
-		<item>i:6.920</item>
-		<item>j:0.145</item>
-		<item>k:0.740</item>
-		<item>l:4.057</item>
-		<item>m:2.561</item>
-		<item>n:6.904</item>
-		<item>o:7.591</item>
-		<item>p:1.796</item>
-		<item>q:0.118</item>
-		<item>r:5.959</item>
-		<item>s:6.341</item>
-		<item>t:9.085</item>
-		<item>u:2.842</item>
-		<item>v:0.982</item>
-		<item>w:2.225</item>
-		<item>x:0.180</item>
-		<item>y:1.901</item>
-		<item>z:0.079</item>
-	</string-array>
-	
-	<!-- http://www.cryptograms.org/letter-frequencies.php -->
-	<string-array name="saFRFrekvenceBi">
-	    <item>th:3.9</item>
-		<item>he:3.7</item>
-		<item>in:2.3</item>
-		<item>er:2.2</item>
-		<item>an:2.1</item>
-		<item>re:1.7</item>
-		<item>nd:1.6</item>
-		<item>on:1.4</item>
-		<item>en:1.4</item>
-		<item>at:1.3</item>
-		<item>ou:1.3</item>
-		<item>ed:1.3</item>
-		<item>ha:1.3</item>
-	</string-array>
-	
-	<!-- http://www.cryptograms.org/letter-frequencies.php -->
-	<string-array name="saFRFrekvenceTri">
-		<item>the:3.5</item>
-		<item>and:1.6</item>
-		<item>ing:1.1</item>
-		<item>her:0.8</item>
-		<item>hat:0.7</item>
-		<item>his:0.6</item>
-		<item>tha:0.6</item>
-		<item>ere:0.6</item>
-		<item>for:0.6</item>
+    <string-array name="saFDGroups">
+        <item>Letters</item>
+        <item>Digits</item>
+        <item>Alphanumerical</item>
+        <item>All characters</item>
+        <item>Letters (alphabetically)</item>
+        <item>Digits (0 through 9)</item>
+        <item>Punctuation marks</item>
+        <item>Unidentified characters</item>
+        <item>Word lengths (by frequency)</item>
+        <item>Word lengths (asc. order)</item>
+        <item>Initial letters</item>
+        <item>Final letters</item>
+        <item>Text statistics</item>
     </string-array>
-    
-	<!-- http://www.cryptograms.org/letter-frequencies.php -->
-	<string-array name="saFRFrekvenceZac">
-	    <item>t:15.94</item>
-		<item>a:15.50</item>
-		<item>i:8.23</item>
-		<item>s:7.75</item>
-		<item>o:7.12</item>
-		<item>c:5.97</item>
-		<item>m:4.26</item>
-		<item>f:4.08</item>
-		<item>p:4.00</item>
-		<item>w:3.82</item>
-	</string-array>
-	
-	<!-- http://www.cryptograms.org/letter-frequencies.php -->
-	<string-array name="saFRFrekvenceKon">
-		<item>e:19.17</item>
-		<item>s:14.35</item>
-		<item>d:9.23</item>
-		<item>t:8.64</item>
-		<item>n:7.86</item>
-		<item>y:7.30</item>
-		<item>r:6.93</item>
-		<item>o:4.67</item>
-		<item>l:4.56</item>
-		<item>f:4.08</item>
-	</string-array>
+
+    <array name="iaFDGroups">
+        <item>@id/idFDGPismenaC</item>
+        <item>@id/idFDGCisliceC</item>
+        <item>@id/idFDGAlnumC</item>
+        <item>@id/idFDGVseC</item>
+        <item>@id/idFDGPismenaP</item>
+        <item>@id/idFDGCisliceP</item>
+        <item>@id/idFDGInterp</item>
+        <item>@id/idFDGNezname</item>
+        <item>@id/idFDGDelkyC</item>
+        <item>@id/idFDGDelkyP</item>
+        <item>@id/idFDGPrvni</item>
+        <item>@id/idFDGPosledni</item>
+        <item>@id/idFDGText</item>
+    </array>
+
+
+    <string-array name="saFDStat">
+        <item>Letters</item>
+        <item>Digits</item>
+        <item>Spaces</item>
+        <item>Punctuation marks</item>
+        <item>Unidentified characters</item>
+        <item>Characters total</item>
+        <item>Words</item>
+        <item>Clauses (delimited by interpunction)</item>
+        <item>Sentences (delimited by ., ?, !, parentheses)</item>
+    </string-array>
+
+    <array name="iaFDStat">
+        <item>@id/idFDSPismen</item>
+        <item>@id/idFDSCislic</item>
+        <item>@id/idFDSMezer</item>
+        <item>@id/idFDSInterp</item>
+        <item>@id/idFDSNeznamych</item>
+        <item>@id/idFDSVsech</item>
+        <item>@id/idFDSSlov</item>
+        <item>@id/idFDSVet</item>
+        <item>@id/idFDSSouveti</item>
+    </array>
+
+    <array name="iaFDStatRuzne">
+        <item>@plurals/plRuzne</item>
+        <item>@plurals/plRuzne</item>
+        <item>@id/idNull</item>
+        <item>@id/idNull</item>
+        <item>@plurals/plRuzne</item>
+        <item>@plurals/plRuzne</item>
+        <item>@plurals/plRuzneDelky</item>
+        <item>@id/idNull</item>
+        <item>@id/idNull</item>
+    </array>
+
+    <plurals name="plRuzne">
+        <item quantity="one">%1$d (%2$d different)</item>
+        <item quantity="other">%1$d (%2$d different)</item>
+    </plurals>
+
+    <plurals name="plRuzneDelky">
+        <item quantity="one">%1$d (all of length %3$d)</item>
+        <item quantity="other">%1$d (%2$d different lengths)</item>
+    </plurals>
+
+
+    <string-array name="saFRSort">
+        <item>Alphabetically</item>
+        <item>By frequency</item>
+    </string-array>
+
+    <array name="iaFRSort">
+        <item>@id/idFRSortAbc</item>
+        <item>@id/idFRSortFreq</item>
+    </array>
+
+    <string-array name="saFRGroups">
+        <item>Letters</item>
+        <item>Bigraphs</item>
+        <item>Trigraphs</item>
+        <item>Beginning of word letters</item>
+        <item>End of word letters</item>
+    </string-array>
+
+    <array name="iaFRGroups">
+        <item>@array/saFRFrekvencePis</item>
+        <item>@array/saFRFrekvenceBi</item>
+        <item>@array/saFRFrekvenceTri</item>
+        <item>@array/saFRFrekvenceZac</item>
+        <item>@array/saFRFrekvenceKon</item>
+    </array>
+
+
+    <!-- http://www.cryptograms.org/letter-frequencies.php -->
+    <string-array name="saFRFrekvencePis">
+        <item>a:8.000</item>
+        <item>b:1.536</item>
+        <item>c:2.576</item>
+        <item>d:4.318</item>
+        <item>e:12.576</item>
+        <item>f:2.350</item>
+        <item>g:1.983</item>
+        <item>h:6.237</item>
+        <item>i:6.920</item>
+        <item>j:0.145</item>
+        <item>k:0.740</item>
+        <item>l:4.057</item>
+        <item>m:2.561</item>
+        <item>n:6.904</item>
+        <item>o:7.591</item>
+        <item>p:1.796</item>
+        <item>q:0.118</item>
+        <item>r:5.959</item>
+        <item>s:6.341</item>
+        <item>t:9.085</item>
+        <item>u:2.842</item>
+        <item>v:0.982</item>
+        <item>w:2.225</item>
+        <item>x:0.180</item>
+        <item>y:1.901</item>
+        <item>z:0.079</item>
+    </string-array>
+
+    <!-- http://www.cryptograms.org/letter-frequencies.php -->
+    <string-array name="saFRFrekvenceBi">
+        <item>th:3.9</item>
+        <item>he:3.7</item>
+        <item>in:2.3</item>
+        <item>er:2.2</item>
+        <item>an:2.1</item>
+        <item>re:1.7</item>
+        <item>nd:1.6</item>
+        <item>on:1.4</item>
+        <item>en:1.4</item>
+        <item>at:1.3</item>
+        <item>ou:1.3</item>
+        <item>ed:1.3</item>
+        <item>ha:1.3</item>
+    </string-array>
+
+    <!-- http://www.cryptograms.org/letter-frequencies.php -->
+    <string-array name="saFRFrekvenceTri">
+        <item>the:3.5</item>
+        <item>and:1.6</item>
+        <item>ing:1.1</item>
+        <item>her:0.8</item>
+        <item>hat:0.7</item>
+        <item>his:0.6</item>
+        <item>tha:0.6</item>
+        <item>ere:0.6</item>
+        <item>for:0.6</item>
+    </string-array>
+
+    <!-- http://www.cryptograms.org/letter-frequencies.php -->
+    <string-array name="saFRFrekvenceZac">
+        <item>t:15.94</item>
+        <item>a:15.50</item>
+        <item>i:8.23</item>
+        <item>s:7.75</item>
+        <item>o:7.12</item>
+        <item>c:5.97</item>
+        <item>m:4.26</item>
+        <item>f:4.08</item>
+        <item>p:4.00</item>
+        <item>w:3.82</item>
+    </string-array>
+
+    <!-- http://www.cryptograms.org/letter-frequencies.php -->
+    <string-array name="saFRFrekvenceKon">
+        <item>e:19.17</item>
+        <item>s:14.35</item>
+        <item>d:9.23</item>
+        <item>t:8.64</item>
+        <item>n:7.86</item>
+        <item>y:7.30</item>
+        <item>r:6.93</item>
+        <item>o:4.67</item>
+        <item>l:4.56</item>
+        <item>f:4.08</item>
+    </string-array>
 
 </resources>

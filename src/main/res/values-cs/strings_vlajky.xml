@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<string name="cptVlajky">Vlajková abeceda</string>
-	<string name="tVDGest">Načrtněte hlavní prvky vlajky:</string>
-	<string name="tVDOdhad">Odhady – zvolte kliknutím:</string>
-	<string name="dscVDOkraj">Okraj vlajky</string>
+    <string name="cptVlajky">Vlajková abeceda</string>
+    <string name="tVDGest">Načrtněte hlavní prvky vlajky:</string>
+    <string name="tVDOdhad">Odhady – zvolte kliknutím:</string>
+    <string name="dscVDOkraj">Okraj vlajky</string>
 	
 	
 <string name="tHelpVlajky"><![CDATA[
@@ -46,58 +46,58 @@ anglické abecedy a číslice, které se zobrazí v systému ICS.</p>
 ]]></string>
 
 
-	<string-array name="saVRGroups">
-		<item>Písmena</item>
-		<item>Čísla ICS</item>
-		<item>Čísla NATO</item>
-	</string-array>
-	
-	<array name="iaVRGroups">
-		<item>@id/idVRPismena</item>
-		<item>@id/idVRCislaICS</item>
-		<item>@id/idVRCislaNATO</item>
-	</array>
+    <string-array name="saVRGroups">
+        <item>Písmena</item>
+        <item>Čísla ICS</item>
+        <item>Čísla NATO</item>
+    </string-array>
 
-	<string-array name="saVRPismena">
-		<item>A:Alpha:potápěč ve vodě</item>
-		<item>B:Bravo:nakládám / vykládám</item>
-		<item>C:Charlie:ano</item>
-		<item>D:Delta:nepřibližovat se / manévrování</item>
-		<item>E:Echo:kurz vpravo</item>
-		<item>F:Foxtrot:mám havárii</item>
-		<item>G:Golf:potřebuji lodivoda</item>
-		<item>H:Hotel:mám lodivoda</item>
-		<item>I:India:kurz vlevo</item>
-		<item>J:Juliet:požár / semafor</item>
-		<item>K:Kilo:zastavte okamžitě</item>
-		<item>L:Lima:zastavte pro spojení</item>
-		<item>M:Mike:mám lékaře</item>
-		<item>N:November:ne</item>
-		<item>O:Oscar:muž přes palubu</item>
-		<item>P:Papa:budeme vyplouvat</item>
-		<item>Q:Quebec:žádám povolení</item>
-		<item>R:Romeo:můžete proplout</item>
-		<item>S:Sierra:zpětný chod</item>
-		<item>T:Tango:nepředjíždějte</item>
-		<item>U:Uniform:jste v nebezpečí</item>
-		<item>V:Victor:žádám pomoc</item>
-		<item>W:Whiskey:žádám lékaře</item>
-		<item>X:X-Ray:přerušte manévr</item>
-		<item>Y:Yankee:budu spouštět kotvu</item>
-		<item>Z:Zulu:zpráva na pevninu</item>
-	</string-array>
-	
-	<string-array name="saVRCisla">
-		<item>0:Nada</item>
-		<item>1:Una</item>
-		<item>2:Bisso</item>
-		<item>3:Terra</item>
-		<item>4:Karte</item>
-		<item>5:Panta</item>
-		<item>6:Soxi</item>
-		<item>7:Sette</item>
-		<item>8:Okto</item>
-		<item>9:Nove</item>
-	</string-array>
+    <array name="iaVRGroups">
+        <item>@id/idVRPismena</item>
+        <item>@id/idVRCislaICS</item>
+        <item>@id/idVRCislaNATO</item>
+    </array>
+
+    <string-array name="saVRPismena">
+        <item>A:Alpha:potápěč ve vodě</item>
+        <item>B:Bravo:nakládám / vykládám</item>
+        <item>C:Charlie:ano</item>
+        <item>D:Delta:nepřibližovat se / manévrování</item>
+        <item>E:Echo:kurz vpravo</item>
+        <item>F:Foxtrot:mám havárii</item>
+        <item>G:Golf:potřebuji lodivoda</item>
+        <item>H:Hotel:mám lodivoda</item>
+        <item>I:India:kurz vlevo</item>
+        <item>J:Juliet:požár / semafor</item>
+        <item>K:Kilo:zastavte okamžitě</item>
+        <item>L:Lima:zastavte pro spojení</item>
+        <item>M:Mike:mám lékaře</item>
+        <item>N:November:ne</item>
+        <item>O:Oscar:muž přes palubu</item>
+        <item>P:Papa:budeme vyplouvat</item>
+        <item>Q:Quebec:žádám povolení</item>
+        <item>R:Romeo:můžete proplout</item>
+        <item>S:Sierra:zpětný chod</item>
+        <item>T:Tango:nepředjíždějte</item>
+        <item>U:Uniform:jste v nebezpečí</item>
+        <item>V:Victor:žádám pomoc</item>
+        <item>W:Whiskey:žádám lékaře</item>
+        <item>X:X-Ray:přerušte manévr</item>
+        <item>Y:Yankee:budu spouštět kotvu</item>
+        <item>Z:Zulu:zpráva na pevninu</item>
+    </string-array>
+
+    <string-array name="saVRCisla">
+        <item>0:Nada</item>
+        <item>1:Una</item>
+        <item>2:Bisso</item>
+        <item>3:Terra</item>
+        <item>4:Karte</item>
+        <item>5:Panta</item>
+        <item>6:Soxi</item>
+        <item>7:Sette</item>
+        <item>8:Okto</item>
+        <item>9:Nove</item>
+    </string-array>
 
 </resources>

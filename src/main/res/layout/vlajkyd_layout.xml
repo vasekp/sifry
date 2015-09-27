@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
         android:layout_weight="1.0"
         android:paddingTop="15dp"
         sifry:relHeight="2.0"
-        sifry:relWidth="3.0" >
+        sifry:relWidth="3.0">
 
         <android.gesture.GestureOverlayView
             android:id="@+id/gestVD"
@@ -28,7 +28,7 @@
             android:gestureStrokeAngleThreshold="0"
             android:gestureStrokeSquarenessThreshold="0"
             android:gestureStrokeType="multiple"
-            android:gestureStrokeWidth="10" >
+            android:gestureStrokeWidth="10">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -47,14 +47,13 @@
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.0" >
+        android:layout_weight="0.0">
 
         <LinearLayout
             android:id="@+id/listVDOdhady"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/butSize"
-            android:orientation="horizontal" >
-        </LinearLayout>
+            android:orientation="horizontal"></LinearLayout>
     </HorizontalScrollView>
 
     <TextView
@@ -66,7 +65,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        tools:ignore="UseCompoundDrawables" >
+        tools:ignore="UseCompoundDrawables">
 
         <TextView
             android:id="@+id/tvRes"

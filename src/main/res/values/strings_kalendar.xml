@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<string name="cptKalendar">Calendar</string>
-	<string name="tKDMesicRok">Month, year:</string>
-	<string name="tKDDny">Calendar:</string>
-	<string name="tKDDenRoku">Day of year:</string>
-	<string name="patKDDniOd">Days since %s:</string>
-	<string name="tKDJmeno">Name:</string>
-	
-	<string name="tKDDef">Calendar</string>
-	<string name="tKDRefJD">Name → Date</string>
-	<string name="tKDRefDJ">Date → Name</string>
+    <string name="cptKalendar">Calendar</string>
+    <string name="tKDMesicRok">Month, year:</string>
+    <string name="tKDDny">Calendar:</string>
+    <string name="tKDDenRoku">Day of year:</string>
+    <string name="patKDDniOd">Days since %s:</string>
+    <string name="tKDJmeno">Name:</string>
+
+    <string name="tKDDef">Calendar</string>
+    <string name="tKDRefJD">Name → Date</string>
+    <string name="tKDRefDJ">Date → Name</string>
 
 	
 <string name="tHelpKalendar"><![CDATA[
@@ -18,8 +18,8 @@
 
 <p>Use this component to navigate in the calendar, using various combinations of data (month
 number, day of month, day of year, weekday etc.) and retrieving the full set of such values
-for each day. You can also use it to compute the differences between two dates in days
-easily.</p>
+for each day. You can also use it to compute the differences between two dates in nnumber of
+days easily.</p>
 
 
 <h3>Basic usage</h3>
@@ -58,36 +58,36 @@ the name you would like to enter, they can be omitted.</p>
 <p>The layout of the component also changes to offer two new tabs, allowing to browse all
 name days either alphabetically or in the order they appear during the year, respectively.</p>  
 ]]></string>
-		
 
-	<string-array name="saKDKalendare">
-	    <item>Don\'t display</item>
-	    <item>Czech</item>
-	    <item>Slovak</item>
-	</string-array>
-	
-	<string-array name="saKDKalendareKody">
-	    <item></item>
-		<item>svatkyCZ</item>
-		<item>svatkySK</item>
-	</string-array>
-	
-	<string name="pref_kal_namedays_default"></string>
-	
-			
-	<string-array name="saKDMesice">
-		<item>January</item>
-		<item>February</item>
-		<item>March</item>
-		<item>April</item>
-		<item>May</item>
-		<item>June</item>
-		<item>July</item>
-		<item>August</item>
-		<item>September</item>
-		<item>October</item>
-		<item>November</item>
-		<item>December</item>
-	</string-array>
+
+    <string-array name="saKDKalendare">
+        <item>Don\'t display</item>
+        <item>Czech</item>
+        <item>Slovak</item>
+    </string-array>
+
+    <string-array name="saKDKalendareKody">
+        <item></item>
+        <item>svatkyCZ</item>
+        <item>svatkySK</item>
+    </string-array>
+
+    <string name="pref_kal_namedays_default"></string>
+
+
+    <string-array name="saKDMesice">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
 
 </resources>

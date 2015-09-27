@@ -20,7 +20,7 @@ android {
          */
         /*ndk {
             moduleName "regrep"
-            ldLibs "z" "pcre"
+            ldLibs "android" "pcre"
         }*/
 
         sourceSets.main {
@@ -29,13 +29,7 @@ android {
         }
     }
 
-    //aaptOptions.useNewCruncher = false
-
     buildTypes {
-        debug {
-            debuggable  true
-        }
-
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'

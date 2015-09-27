@@ -3,12 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:gravity="fill" >
+    android:gravity="fill">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
@@ -18,7 +18,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical" >
+            android:gravity="center_vertical">
 
             <android.support.v7.widget.Space
                 android:layout_width="0dp"
@@ -108,7 +108,7 @@
             android:layout_weight="1.0"
             android:longClickable="true"
             android:focusable="true"
-            android:focusableInTouchMode="true" >
+            android:focusableInTouchMode="true">
 
             <requestFocus />
         </cz.absolutno.sifry.kalendar.KalendarView>
@@ -117,12 +117,12 @@
             android:id="@+id/llKDSvatky"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical" >
+                android:gravity="center_vertical">
 
                 <TextView
                     android:layout_width="0dp"
@@ -146,15 +146,15 @@
                 android:inputType="textCapWords|textNoSuggestions"
                 android:singleLine="true" />
         </LinearLayout>
-        
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -176,7 +176,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <EditText
                     android:id="@+id/etKDDenRoku"
@@ -202,7 +202,7 @@
             </LinearLayout>
 
         </LinearLayout>
-        
+
     </LinearLayout>
 
 </ScrollView>

@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<string name="cptTrans">Transposition Ciphers</string>	
-	<string name="tTTitle">Ciphertext:</string>
-	<string name="tTTvar">Shape:</string>
-	<string name="tTTab">Use up to three fingers to manipulate:</string>
-	<string name="tTClearSol">Clear plaintext</string>
-	<string name="tTClearTrf">Clear transform</string>
-	
-	<string name="tTRevX" translatable="false"><b>↔</b></string>
-	<string name="tTRevY" translatable="false"><b>↕</b></string>
-	<string name="tTRevDiag" translatable="false"><b>X↔Y</b></string>
-		
-	<string-array name="saTTvary">
-	    <item>None</item>
-	    <item>Rectangle</item>
-	    <item>Triangle (vertex first)</item>
-	    <item>Triangle (base first)</item>
-	</string-array>
-	
-	<array name="iaTTvary">
-	    <item>@id/idTNic</item>
-	    <item>@id/idTObdelnik</item>
-	    <item>@id/idTTrojuhelnik</item>
-	    <item>@id/idTRTrojuhelnik</item>
-	</array>	
+    <string name="cptTrans">Transposition Ciphers</string>
+    <string name="tTTitle">Ciphertext:</string>
+    <string name="tTTvar">Shape:</string>
+    <string name="tTTab">Use up to three fingers to manipulate:</string>
+    <string name="tTClearSol">Clear plaintext</string>
+    <string name="tTClearTrf">Clear transform</string>
+
+    <string name="tTRevX" translatable="false"><b>↔</b></string>
+    <string name="tTRevY" translatable="false"><b>↕</b></string>
+    <string name="tTRevDiag" translatable="false"><b>X↔Y</b></string>
+
+    <string-array name="saTTvary">
+        <item>None</item>
+        <item>Rectangle</item>
+        <item>Triangle (vertex first)</item>
+        <item>Triangle (base first)</item>
+    </string-array>
+
+    <array name="iaTTvary">
+        <item>@id/idTNic</item>
+        <item>@id/idTObdelnik</item>
+        <item>@id/idTTrojuhelnik</item>
+        <item>@id/idTRTrojuhelnik</item>
+    </array>
 	
 	
 <string name="tHelpTrans"><![CDATA[
@@ -36,13 +36,13 @@ the letters forming the ciphertext only need to be read in a different order.</p
 
 <h3>Basic usage</h3>
 
-<p>Enter the ciphertext in the equally labeled field; if intending to create a transposition cipher,
+<p>Enter the ciphertext in the equally labeled field; if intending to <i>create</i> a transposition cipher,
 put the plaintext there. Select from the menu how the letters should initially be laid out on the
-screen. The options are no formatting (the app only allows to hand–pick the letters in any order
-and displays which ones have already been used) or aligning the letters into a rectangle or triangle.
-Finally, confirm your input using Enter key or the arrow-shaped button.</p>    
+screen. The options are no formatting (the app only allows to hand-pick the letters in any order
+and displays which ones have already been used) or aligning the letters in a rectangle or a triangle.
+Finally, confirm your input using the Enter key or the arrow-shaped button.</p>
 
-<p>Upon entering, the input is split into single letters and displayed in the <i>Working surface</i>.
+<p>Upon entering, the input is split into single letters and displayed in the <i>Working area</i>.
 <i>NB</i> that the parsing may depend on the preferences (see below). Depending on the layout selected
 in the <i>Shape</i> field, this can be further processed for an easier reading. In the case of unformatted
 display, the font size can be changed using pinch zoom for a more comfortable addressing of single
@@ -51,11 +51,11 @@ single finger touch and drag), <i>zoomed and/or rotated</i> (using two fingers) 
 (dragging three points at a time).</p>
 
 <p>If <i>Rectangle</i> is chosen as the shape, you can further change the required count of columns
-or rows. To do so, touch a point <i>beyond the edge</i> of the current rectangle and hold a borderline
-appears around the text. Keeping your finger down and moving it closer to the centre of the rectangle,
-you can adjust the column count (if the motion started to the left or right of the rectangle) or the
-row count (if it was initiated above or below the rectangle). The borderline will continually reflect
-these changes and the contents will be realigned when the resizing is done.</p>
+or rows. To do so, touch a point <i>beyond the edge</i> of the current rectangle and hold until a borderline
+appears around the text. Moving your finger closer to or farther from the centre of the rectangle without
+interrupting the contact, you can adjust the column count (if the motion started to the left or right
+of the rectangle) or the row count (if it was initiated above or below the rectangle). The borderline will
+continually reflect these changes and the actual contents will be realigned when the resizing is done.</p>
 
 <p><i>NB</i> that if the letter count is not a multiple of the given column or row count, i.e.,
 unless the input fills the rectangle evenly, the layout will be slightly different depending on
@@ -64,21 +64,21 @@ rectangle is filled by rows, when reaching the end of one row, a new one starts.
 the app also uses the letters left to right, top to bottom, but tries to fill the rows as evenly
 as possible, perhaps leaving more than just the last one row shorter than the others.</p> 
 
-<p>Some common actions in the working surface have shortcuts in its lower right corner: reverting
+<p>Some common actions in the working area have shortcuts in its lower right corner: reverting
 the view to its original size, rotation and position, horizontal, vertical mirror image and a
 matrix-like transposition along a diagonal axis.</p> 
 
-<p>Manipulate the working space so that the letters that belong after each other get next to one another.
+<p>Manipulate the working area so that the letters that belong in a row get next to one another.
 After you reach a state in which the plaintext stands out, you can either read it already or use the
-app to collect the letters one by one in the correct order. Any letter clicked in the working surface
+app to collect the letters one by one in the correct order. Any letter clicked in the working area
 appears in the <i>Plaintext</i> field and is drawn in green from then on to distinguish it as already
 used. Other letters of the same kind get temporarily drawn in yellow. This is very useful when solving
 certain kinds of graphical ciphers which rely on the correct realignment of the letters.</p>
 
 <p>It is not yet possible to delete letters picked by mistake. The <i>BackSpace</i> button clears
 the whole plaintext (redrawing all letters in the working surface in white) so you can start anew.
-All the geometric transformations remain. To revert them as well, use the <i>Clear all</i> menu item
-/ action button.</p>
+All the geometric transformations remain. To revert them as well, use the <i>Clear all</i> action
+button / menu item.</p>
 
 
 <h3>Example</h3>
@@ -90,7 +90,7 @@ and choose a rectangle for shape. By default, the letters are aligned into 8 col
 change column count, touch and hold your finger beyond the left or right edge of the current rectangle
 (making it smaller using pinch zoom first, if necessary) and drag it towards the centre. The rectangle
 will get narrower and longer, most probably exceeding screen size at this point. Another use of pinch
-zoom can make it fit. Finally, a click on the <i>X ↔ Y</i> button reverses the image so every third
+zoom can make it fit. Finally, a tap on the <i>X ↔ Y</i> button reverses the image so every third
 letter now forms a horizontal line instead of a vertical one and can readily be read.</p>
 
 
@@ -98,10 +98,10 @@ letter now forms a horizontal line instead of a vertical one and can readily be 
 
 <p>The preferences can be used to fine-tune the way splitting text into single letters is done, namely
 whether non-alphabetical characters should be ignored or treated as single characters, too. This affects
-digits, spaces, interpunction etc. <i>NB</i> that changing the parsing options generally causes changes
+digits, spaces, punctuation, etc. <i>NB</i> that changing the parsing options generally causes changes
 to the alignment as the total effective character count is affected.</p>
 
 <p>These settings are shared with <i>Frequency analysis</i>.</p>
 ]]></string>
-	
+
 </resources>

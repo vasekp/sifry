@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
         android:id="@+id/mMainSettings"
         android:title="@string/tSettings"
         android:icon="@drawable/ic_menu_preferences"
         android:showAsAction="ifRoom" />
-    
+
     <item
         android:id="@+id/mMainHelp"
         android:title="@string/tHelp"
         android:icon="@drawable/ic_menu_help"
         android:showAsAction="ifRoom" />
-    
+
     <item
         android:id="@+id/mMainAbout"
         android:title="@string/tAbout"
         android:icon="@drawable/ic_menu_info_details"
         android:showAsAction="ifRoom" />
-    
+
 </menu>

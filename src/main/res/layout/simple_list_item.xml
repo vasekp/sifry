@@ -4,6 +4,6 @@
     android:layout_height="match_parent"
     android:padding="5dp"
     android:textAppearance="?android:attr/textAppearanceMedium"
-    android:gravity="center_vertical|left" >
-    
+    android:gravity="center_vertical|left">
+
 </TextView>

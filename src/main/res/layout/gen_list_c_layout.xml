@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
@@ -12,7 +12,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
 
         <EditText
             android:id="@+id/etCVstup"
@@ -21,7 +21,7 @@
             android:layout_weight="1.0"
             android:imeOptions="flagNoExtractUi"
             android:inputType="textNoSuggestions"
-            android:singleLine="false" >
+            android:singleLine="false">
 
             <requestFocus />
         </EditText>
@@ -33,7 +33,7 @@
             android:src="@drawable/ic_menu_send"
             android:contentDescription="@string/tGo"
             android:clickable="true" />
-       
+
     </LinearLayout>
 
     <TextView
@@ -45,7 +45,6 @@
         android:id="@+id/lvCVystup"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.0" >
-    </ListView>
+        android:layout_weight="1.0"></ListView>
 
 </LinearLayout>

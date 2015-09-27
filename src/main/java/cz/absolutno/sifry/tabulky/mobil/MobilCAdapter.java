@@ -1,10 +1,11 @@
 package cz.absolutno.sifry.tabulky.mobil;
 
+import android.view.View;
+import android.view.ViewGroup;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import android.view.View;
-import android.view.ViewGroup;
 import cz.absolutno.sifry.App;
 import cz.absolutno.sifry.R;
 import cz.absolutno.sifry.Utils;
@@ -13,81 +14,81 @@ import cz.absolutno.sifry.tabulky.TabulkyCListAdapter;
 
 public final class MobilCAdapter extends TabulkyCListAdapter {
 
-	private MobilDecoder md;
-	private int[][] sour;
-	private String[] items;
-	private int[] itemIDs;
-	private String input;
-	
-	public MobilCAdapter() {
-		md = new MobilDecoder();
-		items = App.getContext().getResources().getStringArray(R.array.saTCMobilItems);
-		itemIDs = Utils.getIdArray(R.array.iaTCMobilItems);
-	}
+    private MobilDecoder md;
+    private int[][] sour;
+    private String[] items;
+    private int[] itemIDs;
+    private String input;
 
-	@Override
-	protected boolean encode(String input, ArrayList<Integer> raw) {
-		this.input = input;
-		boolean err = md.encode(input, raw);
-		int sz = raw.size();
-		sour = new int[sz][2];
-		for(int i = 0; i < sz; i++) {
-			int x = raw.get(i);
-			sour[i][0] = ((x & MobilDecoder.KEY_MASK) >> MobilDecoder.KEY_SHIFT) + 1;
-			sour[i][1] = ((x & MobilDecoder.REP_MASK) >> MobilDecoder.REP_SHIFT) + 1;
-		}
-		return err;
-	}
-	
-	public String getInputProcessed() {
-		return new PlainEnglishAlphabet().filter(input);
-	}
+    public MobilCAdapter() {
+        md = new MobilDecoder();
+        items = App.getContext().getResources().getStringArray(R.array.saTCMobilItems);
+        itemIDs = Utils.getIdArray(R.array.iaTCMobilItems);
+    }
 
-	public int getCount() {
-		if(anyData())
-			return items.length;
-		else
-			return 0;
-	}
+    @Override
+    protected boolean encode(String input, ArrayList<Integer> raw) {
+        this.input = input;
+        boolean err = md.encode(input, raw);
+        int sz = raw.size();
+        sour = new int[sz][2];
+        for (int i = 0; i < sz; i++) {
+            int x = raw.get(i);
+            sour[i][0] = ((x & MobilDecoder.KEY_MASK) >> MobilDecoder.KEY_SHIFT) + 1;
+            sour[i][1] = ((x & MobilDecoder.REP_MASK) >> MobilDecoder.REP_SHIFT) + 1;
+        }
+        return err;
+    }
 
-	public long getItemId(int position) {
-		return itemIDs[position];
-	}
+    public String getInputProcessed() {
+        return new PlainEnglishAlphabet().filter(input);
+    }
 
-	@Override
-	public String getItem(int position) {
-		StringBuilder sb = new StringBuilder();
-		switch((int)getItemId(position)) {
-		case R.id.idTCMobilPocet:				
-			for(int i = 0; i < sour.length; i++) {
-				if(i > 0) sb.append(", ");
-				sb.append(sour[i][0]).append(sour[i][1]);
-			}
-			return sb.toString();
-		case R.id.idTCMobilMulti:
-			for(int i = 0; i < sour.length; i++) {
-				if(i > 0) sb.append(", ");
-				char[] arr = new char[sour[i][1]];
-				Arrays.fill(arr, (char)('0' + sour[i][0]));
-				sb.append(arr);
-			}
-			return sb.toString();
-		}
-		return null;
-	}
-	
-	@Override
-	protected String getItemDesc(int position) {
-		return items[position];
-	}
-	
-	@Override
-	public int getItemViewType(int position) {
-		return TYPE_TEXT;
-	}
+    public int getCount() {
+        if (anyData())
+            return items.length;
+        else
+            return 0;
+    }
 
-	public View getView(int position, View convertView, ViewGroup parent) {
-		return getViewHelper(convertView, position);
-	}
+    public long getItemId(int position) {
+        return itemIDs[position];
+    }
+
+    @Override
+    public String getItem(int position) {
+        StringBuilder sb = new StringBuilder();
+        switch ((int) getItemId(position)) {
+            case R.id.idTCMobilPocet:
+                for (int i = 0; i < sour.length; i++) {
+                    if (i > 0) sb.append(", ");
+                    sb.append(sour[i][0]).append(sour[i][1]);
+                }
+                return sb.toString();
+            case R.id.idTCMobilMulti:
+                for (int i = 0; i < sour.length; i++) {
+                    if (i > 0) sb.append(", ");
+                    char[] arr = new char[sour[i][1]];
+                    Arrays.fill(arr, (char) ('0' + sour[i][0]));
+                    sb.append(arr);
+                }
+                return sb.toString();
+        }
+        return null;
+    }
+
+    @Override
+    protected String getItemDesc(int position) {
+        return items[position];
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return TYPE_TEXT;
+    }
+
+    public View getView(int position, View convertView, ViewGroup parent) {
+        return getViewHelper(convertView, position);
+    }
 
 }

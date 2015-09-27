@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<state-decoder entrypoint="@+id/ruleBDDefault" format_flag="pref_brl_fmt" code_desc="@array/saBRPrefixy" >
-    
-    <rule-array id="@+id/ruleBDDefault" state="" >
+<state-decoder
+    entrypoint="@+id/ruleBDDefault"
+    format_flag="pref_brl_fmt"
+    code_desc="@array/saBRPrefixy">
+
+    <rule-array
+        id="@+id/ruleBDDefault"
+        state="">
         <rules ref="@+id/ruleBDPismena" />
     </rule-array>
-    
-    <rule-array id="@+id/ruleBDReset" state="" >
+
+    <rule-array
+        id="@+id/ruleBDReset"
+        state="">
         <rules
             ref="@+id/ruleBDDefault"
             format="@id/idFormatDefault"
             state="" />
     </rule-array>
 
-    <rule-array id="@+id/ruleBDPismena" >
+    <rule-array id="@+id/ruleBDPismena">
         <rules ref="@+id/ruleBDJenPismena" />
         <rules
             code="60"
@@ -37,17 +44,22 @@
             access_def="false"
             ref="@+id/ruleBDFormat" />
     </rule-array>
-    
-    <rule-array id="@+id/ruleBDJenPismena" temp="true">
+
+    <rule-array
+        id="@+id/ruleBDJenPismena"
+        temp="true">
         <strings ref="@array/saBRPismena" />
         <strings
             access="pref_brl_dia"
             access_def="false"
             ref="@array/saBRDiakritika" />
         <strings ref="@array/saBRPismenaFallback" />
-	</rule-array>
-    
-    <rule-array id="@+id/ruleBDCislice" state="Num" temp="true" >
+    </rule-array>
+
+    <rule-array
+        id="@+id/ruleBDCislice"
+        state="Num"
+        temp="true">
         <strings
             access="pref_brl_num_pers"
             access_def="true"
@@ -55,9 +67,11 @@
             after="@+id/ruleBDCisla" />
         <strings ref="@array/saBRCislice" />
         <strings ref="@array/saBRCisliceSym" />
-	</rule-array>
-    
-    <rule-array id="@+id/ruleBDCisla" state="Num" >
+    </rule-array>
+
+    <rule-array
+        id="@+id/ruleBDCisla"
+        state="Num">
         <strings ref="@array/saBRCislice" />
         <strings ref="@array/saBRCislaSym" />
         <rules
@@ -67,9 +81,11 @@
             ref="@+id/ruleBDJenPismena"
             after="@+id/ruleBDPismena" />
         <rules ref="@id/ruleBDReset" />
-	</rule-array>
-    
-    <rule-array id="@+id/ruleBDFormat" temp="true" >
+    </rule-array>
+
+    <rule-array
+        id="@+id/ruleBDFormat"
+        temp="true">
         <rules
             code="16"
             state=""

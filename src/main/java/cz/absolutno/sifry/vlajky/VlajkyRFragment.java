@@ -9,6 +9,7 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import cz.absolutno.sifry.App;
 import cz.absolutno.sifry.R;
 import cz.absolutno.sifry.Utils;
@@ -16,30 +17,30 @@ import cz.absolutno.sifry.common.activity.AbstractRFragment;
 
 public final class VlajkyRFragment extends AbstractRFragment {
 
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.gen_exp_list_layout, null);
-        ((ExpandableListView)v.findViewById(R.id.main)).setAdapter(new VlajkyELA());
+        ((ExpandableListView) v.findViewById(R.id.main)).setAdapter(new VlajkyELA());
         return v;
     }
 
     private static final class VlajkyELA extends BaseExpandableListAdapter {
-    	
-    	private VlajkySVGs svgs;
-    	private String[] groups;
-    	private int[] groupIDs;
-    	private String[] pismena;
-    	private String[] cisla;
 
-    	public VlajkyELA() {
-    		Resources res = App.getContext().getResources();
-    		groups = res.getStringArray(R.array.saVRGroups);
-    		groupIDs = Utils.getIdArray(R.array.iaVRGroups);
-    		pismena = res.getStringArray(R.array.saVRPismena);
-    		cisla = res.getStringArray(R.array.saVRCisla);
-    		svgs = VlajkySVGs.getInstance();
-    	}
-    	
+        private VlajkySVGs svgs;
+        private String[] groups;
+        private int[] groupIDs;
+        private String[] pismena;
+        private String[] cisla;
+
+        public VlajkyELA() {
+            Resources res = App.getContext().getResources();
+            groups = res.getStringArray(R.array.saVRGroups);
+            groupIDs = Utils.getIdArray(R.array.iaVRGroups);
+            pismena = res.getStringArray(R.array.saVRPismena);
+            cisla = res.getStringArray(R.array.saVRCisla);
+            svgs = VlajkySVGs.getInstance();
+        }
+
         public int getGroupCount() {
             return groups.length;
         }
@@ -53,16 +54,16 @@ public final class VlajkyRFragment extends AbstractRFragment {
         }
 
         public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
-        	if(convertView == null)
-        		convertView = App.getInflater().inflate(R.layout.gen_group_item, null);
-        	((TextView)convertView).setText(getGroup(groupPosition));
+            if (convertView == null)
+                convertView = App.getInflater().inflate(R.layout.gen_group_item, null);
+            ((TextView) convertView).setText(getGroup(groupPosition));
             return convertView;
         }
 
         public int getChildrenCount(int groupPosition) {
             return (getGroupId(groupPosition) == R.id.idVRPismena ? pismena : cisla).length;
         }
-        
+
         public long getChildId(int groupPosition, int childPosition) {
             return childPosition;
         }
@@ -72,26 +73,26 @@ public final class VlajkyRFragment extends AbstractRFragment {
         }
 
         public View getChildView(int groupPosition, int childPosition, boolean isLastChild,
-                View convertView, ViewGroup parent) {
-        	if(convertView == null)
-        		convertView = App.getInflater().inflate(R.layout.vlajkyr_item, null);
-        	int id = (int)getGroupId(groupPosition); 
-        	ImageView iw = ((ImageView)convertView.findViewById(R.id.image));
-        	iw.setImageDrawable(svgs.get(id, childPosition).getDrawable());
-        	
-        	String s = getChild(groupPosition, childPosition);
-        	int i1 = s.indexOf(':', 1);
-            int i2 = s.indexOf(':', i1+1);
+                                 View convertView, ViewGroup parent) {
+            if (convertView == null)
+                convertView = App.getInflater().inflate(R.layout.vlajkyr_item, null);
+            int id = (int) getGroupId(groupPosition);
+            ImageView iw = ((ImageView) convertView.findViewById(R.id.image));
+            iw.setImageDrawable(svgs.get(id, childPosition).getDrawable());
 
-            if(i2 > 0) {
-            	convertView.findViewById(R.id.vyznam).setVisibility(View.VISIBLE);
-	        	((TextView)convertView.findViewById(R.id.pis)).setText(s.substring(0, i1));
-	            ((TextView)convertView.findViewById(R.id.slovo)).setText(s.substring(i1+1, i2));
-	        	((TextView)convertView.findViewById(R.id.vyznam)).setText(s.substring(i2+1));
+            String s = getChild(groupPosition, childPosition);
+            int i1 = s.indexOf(':', 1);
+            int i2 = s.indexOf(':', i1 + 1);
+
+            if (i2 > 0) {
+                convertView.findViewById(R.id.vyznam).setVisibility(View.VISIBLE);
+                ((TextView) convertView.findViewById(R.id.pis)).setText(s.substring(0, i1));
+                ((TextView) convertView.findViewById(R.id.slovo)).setText(s.substring(i1 + 1, i2));
+                ((TextView) convertView.findViewById(R.id.vyznam)).setText(s.substring(i2 + 1));
             } else {
-            	convertView.findViewById(R.id.vyznam).setVisibility(View.GONE);
-	        	((TextView)convertView.findViewById(R.id.pis)).setText(s.substring(0, i1));
-	            ((TextView)convertView.findViewById(R.id.slovo)).setText(s.substring(i1+1));
+                convertView.findViewById(R.id.vyznam).setVisibility(View.GONE);
+                ((TextView) convertView.findViewById(R.id.pis)).setText(s.substring(0, i1));
+                ((TextView) convertView.findViewById(R.id.slovo)).setText(s.substring(i1 + 1));
             }
             return convertView;
         }

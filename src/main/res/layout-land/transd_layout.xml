@@ -3,50 +3,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:baselineAligned="false" >
+    android:baselineAligned="false">
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.5"
         android:orientation="vertical"
-        tools:ignore="NestedWeights" >
+        tools:ignore="NestedWeights">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/tTTitle" />
 
-	    <LinearLayout
-	        android:orientation="horizontal"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content" >
-	
-		    <EditText
-		        android:id="@+id/etTVstup"
-		        android:layout_width="0dp"
-		        android:layout_height="wrap_content"
-		        android:layout_weight="1.0"
-		        android:layout_gravity="center_vertical"
-		        android:maxLines="5"
-		        android:imeOptions="flagNoExtractUi"
-		        android:inputType="textMultiLine|textNoSuggestions"
-		        android:singleLine="true" >
-		        
-		        <requestFocus/>
-		    </EditText>
-	
-	        <ImageView
-	            android:id="@+id/ivGo"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:layout_gravity="center_vertical"
-	            android:src="@drawable/ic_menu_send"
-	            android:contentDescription="@string/tGo"
-	            android:clickable="true" />
-	       
-	    </LinearLayout>
-	    
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/etTVstup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:layout_gravity="center_vertical"
+                android:maxLines="5"
+                android:imeOptions="flagNoExtractUi"
+                android:inputType="textMultiLine|textNoSuggestions"
+                android:singleLine="true">
+
+                <requestFocus />
+            </EditText>
+
+            <ImageView
+                android:id="@+id/ivGo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_menu_send"
+                android:contentDescription="@string/tGo"
+                android:clickable="true" />
+
+        </LinearLayout>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -68,7 +68,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            tools:ignore="UseCompoundDrawables" >
+            tools:ignore="UseCompoundDrawables">
 
             <TextView
                 android:id="@+id/tvRes"
@@ -92,7 +92,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.5"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
@@ -107,7 +107,7 @@
             android:layout_weight="1.0"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            tools:ignore="NestedWeights" >
+            tools:ignore="NestedWeights">
 
             <cz.absolutno.sifry.transpozice.LineTransView
                 android:id="@+id/trvTVstupLine"
@@ -145,7 +145,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|right"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/ivTButClearTrf"

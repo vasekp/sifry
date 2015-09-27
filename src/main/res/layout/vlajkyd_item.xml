@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:gravity="center_vertical|left"
     android:orientation="horizontal"
-    tools:ignore="UseCompoundDrawables" >
+    tools:ignore="UseCompoundDrawables">
 
     <ImageView
         android:id="@+id/image"

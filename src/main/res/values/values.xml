@@ -5,20 +5,20 @@
     <dimen name="cislaPadding">5dp</dimen>
     <dimen name="aidOffset">30dp</dimen>
     <dimen name="vlajkyOkraj">5dp</dimen>
-    
+
     <dimen name="mainTextSize">14dp</dimen>
     <dimen name="defTextSize">22sp</dimen>
-    
+
     <dimen name="maxTextSize">100sp</dimen>
-    
+
     <dimen name="butSize">40dp</dimen>
     <dimen name="butSizeSmaller">30dp</dimen>
     <dimen name="gradSize">60dp</dimen>
-    
+
     <bool name="pref_tbl_aid_default">true</bool>
-    
+
     <integer name="pref_vlajky_delay_default">500</integer>
-    
+
     <integer name="mtSpeedMin">1</integer>
     <integer name="mtSpeedDef">5</integer>
     <integer name="mtSpeedSpan">9</integer>
@@ -28,5 +28,5 @@
     <integer name="mtVolMin">1</integer>
     <integer name="mtVolDef">50</integer>
     <integer name="mtVolSpan">99</integer>
-    
+
 </resources>

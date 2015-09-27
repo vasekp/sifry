@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    
+
     <dimen name="mainTextSize">20dp</dimen>
     <dimen name="defTextSize">32sp</dimen>
-    
+
     <item name="vlajkyr_item" type="layout">@layout/vlajkyr_item_wide</item>
     <item name="cisla_item" type="layout">@layout/cisla_item_wide</item>
     <item name="cisla_header" type="layout">@layout/cisla_header_wide</item>
-    
-	<bool name="pref_tbl_aid_default">false</bool>
-    
+
+    <bool name="pref_tbl_aid_default">false</bool>
+
 </resources>

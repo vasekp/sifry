@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<string name="cptRegExp">Databáze slov</string>
-	<string name="tRDFiltry">Filtry:</string>
-	<string name="tRDPocet">Počet výsledků:</string>
-	<string name="tRDVysledky">Výsledky hledání:</string>
-	<string name="tRDHledej">Hledat</string>
-	<string name="tRDStop">Stop</string>
-	<string name="tRDObsahuje">Obsahuje</string>
-	<string name="tRDNeobsahuje">Neobsahuje</string>
+    <string name="cptRegExp">Databáze slov</string>
+    <string name="tRDFiltry">Filtry:</string>
+    <string name="tRDPocet">Počet výsledků:</string>
+    <string name="tRDVysledky">Výsledky hledání:</string>
+    <string name="tRDHledej">Hledat</string>
+    <string name="tRDStop">Stop</string>
+    <string name="tRDObsahuje">Obsahuje</string>
+    <string name="tRDNeobsahuje">Neobsahuje</string>
 
 		
 <string name="tHelpRegExp"><![CDATA[
@@ -22,7 +22,7 @@ o formátu a významu regulárních výrazů doporučuji libovolný internetový
 <h3>Základní ovládání</h3>
 
 <p>Aplikace umožňuje v seznamu vyhledávat pomocí až tří filtrů. Každý filtr má tvar regulárního výrazu,
-v nejjednodušší situaci tedy podřetězce, který vyhledáváme. Regulární výrazy neuzavírejte mezi
+v nejjednodušší situaci tedy podřetězce, který se má hledat. Regulární výrazy neuzavírejte mezi
 lomítka. Tlačítkem vedle každého z filtrů je možno zvolit, jestli vyhledávaná slova daný výraz
 obsahovat mají nebo nemají. Jestliže chcete filtr deaktivovat, jeho pole vyprázdněte.</p>
 
@@ -33,7 +33,7 @@ obsahovat mají nebo nemají. Jestliže chcete filtr deaktivovat, jeho pole vypr
 
 <p>Regulární výrazy používají syntaxi PCRE (Perl-compatible regular expressions, viz <tt>www.pcre.org</tt>).
 Jsou aktivovány volby <tt>PCRE_UTF8</tt> a <tt>PCRE_UCP</tt>, takže znaky s diakritikou odpovídají
-tečce i třídám <tt>[:lower:]</tt>, <tt>[:upper:]</tt> apod. Spřežka <b>ch</b> tečce neodpovídá
+tečce i třídám <tt>[[:lower:]]</tt>, <tt>[[:upper:]]</tt> apod. Spřežka <b>ch</b> tečce neodpovídá
 ani není pokryta rozsahem <tt>[h-i]</tt>. Stejně tak rozsahy nepokrývají znaky s diakritikou.</p>
 
 
@@ -90,18 +90,18 @@ Slova ze samých různých písmen:<br/>
 ]]></string>
 
 
-	<string-array name="saREDictionaries">
-		<item>Automaticky (český)</item>
-		<item>Český</item>
-		<item>Anglický</item>
-	</string-array>
+    <string-array name="saREDictionaries">
+        <item>Automaticky (český)</item>
+        <item>Český</item>
+        <item>Anglický</item>
+    </string-array>
 
-	<string-array name="saREDictionaryFilenames">
-		<item></item>
-		<item>cs.canon</item>
-		<item>en.canon</item>
-	</string-array>
+    <string-array name="saREDictionaryFilenames">
+        <item></item>
+        <item>cs.canon</item>
+        <item>en.canon</item>
+    </string-array>
 
-	<string name="pref_re_dictionary_default">cs.canon</string>
+    <string name="pref_re_dictionary_default">cs.canon</string>
 
 </resources>

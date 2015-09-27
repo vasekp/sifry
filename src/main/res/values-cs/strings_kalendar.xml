@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
-	<string name="cptKalendar">Kalendář, svátky</string>
-	<string name="tKDMesicRok">Měsíc, rok:</string>
-	<string name="tKDDny">Kalendář:</string>
-	<string name="tKDDenRoku">Den v roce:</string>
-	<string name="patKDDniOd">Dní od %s:</string>
-	<string name="tKDJmeno">Svátek:</string>
+    <string name="cptKalendar">Kalendář, svátky</string>
+    <string name="tKDMesicRok">Měsíc, rok:</string>
+    <string name="tKDDny">Kalendář:</string>
+    <string name="tKDDenRoku">Den v roce:</string>
+    <string name="patKDDniOd">Dní od %s:</string>
+    <string name="tKDJmeno">Svátek:</string>
 
-	<string name="tKDDef">Kalendář</string>
-	<string name="tKDRefJD">Svátky dle jména</string>
-	<string name="tKDRefDJ">Svátky dle data</string>
+    <string name="tKDDef">Kalendář</string>
+    <string name="tKDRefJD">Svátky dle jména</string>
+    <string name="tKDRefDJ">Svátky dle data</string>
 	
 	
 <string name="tHelpKalendar"><![CDATA[
@@ -62,34 +62,34 @@ se nemá zobrazovat vůbec. Změny se projeví okamžitě.</p>
 ]]></string>
 
 
-	<string-array name="saKDKalendare">
-		<item>Český</item>
-		<item>Slovenský</item>
-		<item>Nezobrazovat</item>
-	</string-array>
-	
-	<string-array name="saKDKalendareKody">
-		<item>svatkyCZ</item>
-		<item>svatkySK</item>
-		<item></item>
-	</string-array>
-	
-	<string name="pref_kal_namedays_default">svatkyCZ</string>
+    <string-array name="saKDKalendare">
+        <item>Český</item>
+        <item>Slovenský</item>
+        <item>Nezobrazovat</item>
+    </string-array>
+
+    <string-array name="saKDKalendareKody">
+        <item>svatkyCZ</item>
+        <item>svatkySK</item>
+        <item></item>
+    </string-array>
+
+    <string name="pref_kal_namedays_default">svatkyCZ</string>
 
 
-	<string-array name="saKDMesice">
-		<item>Leden</item>
-		<item>Únor</item>
-		<item>Březen</item>
-		<item>Duben</item>
-		<item>Květen</item>
-		<item>Červen</item>
-		<item>Červenec</item>
-		<item>Srpen</item>
-		<item>Září</item>
-		<item>Říjen</item>
-		<item>Listopad</item>
-		<item>Prosinec</item>
-	</string-array>
-	
+    <string-array name="saKDMesice">
+        <item>Leden</item>
+        <item>Únor</item>
+        <item>Březen</item>
+        <item>Duben</item>
+        <item>Květen</item>
+        <item>Červen</item>
+        <item>Červenec</item>
+        <item>Srpen</item>
+        <item>Září</item>
+        <item>Říjen</item>
+        <item>Listopad</item>
+        <item>Prosinec</item>
+    </string-array>
+
 </resources>

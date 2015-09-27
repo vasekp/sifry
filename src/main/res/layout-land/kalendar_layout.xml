@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:baselineAligned="false"
-    android:gravity="fill" >
+    android:gravity="fill">
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.5"
         android:orientation="vertical"
-        tools:ignore="NestedWeights" >
+        tools:ignore="NestedWeights">
 
         <TextView
             android:layout_width="wrap_content"
@@ -25,7 +25,7 @@
             android:layout_weight="1.0"
             android:longClickable="true"
             android:focusable="true"
-            android:focusableInTouchMode="true" >
+            android:focusableInTouchMode="true">
 
             <requestFocus />
         </cz.absolutno.sifry.kalendar.KalendarView>
@@ -35,12 +35,12 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="0.5"
-        android:paddingLeft="10dp" >
+        android:paddingLeft="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -50,7 +50,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical" >
+                android:gravity="center_vertical">
 
                 <android.support.v7.widget.Space
                     android:layout_width="0dp"
@@ -128,72 +128,72 @@
                     android:layout_weight="0.3" />
             </LinearLayout>
 
-	        <LinearLayout
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content" >
-	
-	            <LinearLayout
-	                android:layout_width="wrap_content"
-	                android:layout_height="match_parent"
-	                android:orientation="vertical" >
-	
-	                <TextView
-	                    android:layout_width="wrap_content"
-	                    android:layout_height="0dp"
-	                    android:layout_weight="0.5"
-	                    android:gravity="center_vertical"
-	                    android:text="@string/tKDDenRoku" />
-	
-	                <TextView
-	                    android:id="@+id/tvKDDniOd"
-	                    android:layout_width="wrap_content"
-	                    android:layout_height="0dp"
-	                    android:layout_weight="0.5"
-	                    android:gravity="center_vertical"
-	                    android:text="@string/patKDDniOd" />
-	
-	            </LinearLayout>
-	
-	            <LinearLayout
-	                android:layout_width="wrap_content"
-	                android:layout_height="match_parent"
-	                android:orientation="vertical" >
-	
-	                <EditText
-	                    android:id="@+id/etKDDenRoku"
-	                    android:layout_width="wrap_content"
-	                    android:layout_height="wrap_content"
-	                    android:layout_marginLeft="5dp"
-	                    android:ems="3"
-	                    android:gravity="right"
-	                    android:inputType="number"
-	                    android:maxLength="3"
-	                    android:textAppearance="?android:attr/textAppearanceMedium" />
-	
-	                <EditText
-	                    android:id="@+id/etKDDniOd"
-	                    android:layout_width="wrap_content"
-	                    android:layout_height="wrap_content"
-	                    android:layout_marginLeft="5dp"
-	                    android:ems="5"
-	                    android:gravity="right"
-	                    android:inputType="number"
-	                    android:textAppearance="?android:attr/textAppearanceMedium" />
-	
-	            </LinearLayout>
-	
-	        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.5"
+                        android:gravity="center_vertical"
+                        android:text="@string/tKDDenRoku" />
+
+                    <TextView
+                        android:id="@+id/tvKDDniOd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.5"
+                        android:gravity="center_vertical"
+                        android:text="@string/patKDDniOd" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/etKDDenRoku"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:ems="3"
+                        android:gravity="right"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    <EditText
+                        android:id="@+id/etKDDniOd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:ems="5"
+                        android:gravity="right"
+                        android:inputType="number"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                </LinearLayout>
+
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/llKDSvatky"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical" >
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="0dp"

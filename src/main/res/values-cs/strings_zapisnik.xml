@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
- 	<string name="cptZapisnik">Zápisník stanovišť</string>
- 	<string name="tZDefault">Zápisník</string>
-	<string name="tZNew">Nové stanoviště…</string>
-	<string name="tZPozn">…</string>
-	<string name="tZClearQ">Smazat všechny záznamy?</string>
-	
-	<string name="tZOdchod">Odchod</string>
-	<string name="tZZmena">Upravit</string>
-	<string name="tZSmaz">Smazat</string>
-	
-	<string name="cptZDAdd">Přidat záznam</string>
-	<string name="cptZDModify">Upravit záznam</string>
-	<string name="tZDNazev">Název stanoviště:</string>
-	<string name="tZDHeslo">Kód stanoviště:</string>
-	<string name="tZDRes">Řešení:</string>
-	<string name="tZDUpres">Upřesnítko:</string>
-	<string name="tZDPozn">Poznámka:</string>
-	<string name="patZDDefault">Stanoviště %d</string>
-	<string name="tZDZobr">Zobrazit</string>
-	<string name="tZDPrichod">Čas příchodu:</string>
-	<string name="tZDOdchod">Čas opuštění:</string>
-	
-	<string name="tZENazev">Název souboru:</string>
-	<string name="tZEPole">Exportovat pole:</string>
-	<string name="tZEJak">Po exportu:</string>
-	<string name="tZEExt">Otevřít v externí aplikaci</string>
-	<string name="tZEErrEmpty">Zápisník je prázdný.</string>
-	<string name="tZEErrStorage">Externí úložiště nedostupné.</string>
-	<string name="patZESuccess">Uloženo jako %s.</string>
+    <string name="cptZapisnik">Zápisník stanovišť</string>
+    <string name="tZDefault">Zápisník</string>
+    <string name="tZNew">Nové stanoviště…</string>
+    <string name="tZPozn">…</string>
+    <string name="tZClearQ">Smazat všechny záznamy?</string>
+
+    <string name="tZOdchod">Odchod</string>
+    <string name="tZZmena">Upravit</string>
+    <string name="tZSmaz">Smazat</string>
+
+    <string name="cptZDAdd">Přidat záznam</string>
+    <string name="cptZDModify">Upravit záznam</string>
+    <string name="tZDNazev">Název stanoviště:</string>
+    <string name="tZDHeslo">Kód stanoviště:</string>
+    <string name="tZDRes">Řešení:</string>
+    <string name="tZDUpres">Upřesnítko:</string>
+    <string name="tZDPozn">Poznámka:</string>
+    <string name="patZDDefault">Stanoviště %d</string>
+    <string name="tZDZobr">Zobrazit</string>
+    <string name="tZDPrichod">Čas příchodu:</string>
+    <string name="tZDOdchod">Čas opuštění:</string>
+
+    <string name="tZENazev">Název souboru:</string>
+    <string name="tZEPole">Exportovat pole:</string>
+    <string name="tZEJak">Po exportu:</string>
+    <string name="tZEExt">Otevřít v externí aplikaci</string>
+    <string name="tZEErrEmpty">Zápisník je prázdný.</string>
+    <string name="tZEErrStorage">Externí úložiště nedostupné.</string>
+    <string name="patZESuccess">Uloženo jako %s.</string>
 
 
 <string name="tHelpZapisnik"><![CDATA[
@@ -82,6 +82,6 @@ větší, než je stanoviště s aktuálně nejvyšší hodnotou podle předepsa
 značka \"…\". Takto je možno si snadno připomenout, že je k dispozici nějaká dodatečná informace,
 která se v seznamu nezobrazuje přímo.</p>
 ]]></string>
-	
-	
+
+
 </resources>

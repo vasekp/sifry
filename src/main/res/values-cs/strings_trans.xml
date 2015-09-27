@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<string name="cptTrans">Transpoziční šifry</string>	
-	<string name="tTTitle">Zadejte šifru:</string>
-	<string name="tTTvar">Uspořádání:</string>
-	<string name="tTTab">Pracovní prostor (manipulujte jedním až třemi prsty):</string>
-	<string name="tTClearSol">Smazat řešení</string>
-	<string name="tTClearTrf">Vrátit pohled</string>
-		
-	<string-array name="saTTvary">
-	    <item>Žádné</item>
-	    <item>Obdélník</item>
-	    <item>Trojúhelník (od vrcholu)</item>
-	    <item>Trojúhelník (od základny)</item>
-	</string-array>
-	
-	<array name="iaTTvary">
-	    <item>@id/idTNic</item>
-	    <item>@id/idTObdelnik</item>
-	    <item>@id/idTTrojuhelnik</item>
-	    <item>@id/idTRTrojuhelnik</item>
-	</array>
+    <string name="cptTrans">Transpoziční šifry</string>
+    <string name="tTTitle">Zadejte šifru:</string>
+    <string name="tTTvar">Uspořádání:</string>
+    <string name="tTTab">Pracovní prostor (manipulujte jedním až třemi prsty):</string>
+    <string name="tTClearSol">Smazat řešení</string>
+    <string name="tTClearTrf">Vrátit pohled</string>
+
+    <string-array name="saTTvary">
+        <item>Žádné</item>
+        <item>Obdélník</item>
+        <item>Trojúhelník (od vrcholu)</item>
+        <item>Trojúhelník (od základny)</item>
+    </string-array>
+
+    <array name="iaTTvary">
+        <item>@id/idTNic</item>
+        <item>@id/idTObdelnik</item>
+        <item>@id/idTTrojuhelnik</item>
+        <item>@id/idTRTrojuhelnik</item>
+    </array>
 	
 	
 <string name="tHelpTrans"><![CDATA[
@@ -47,16 +47,16 @@ zmenšovat a natáčet</i> (dvěma prsty) a <i>deformovat</i> (současnou manipu
 <p>V případě zarovnání do obdélníku je také možné vybrat počet sloupců nebo řádků. Abyste toho
 docílili, dotkněte se prstem <i>za hranicí</i> zobrazené oblasti (více vlevo nebo vpravo, než
 obdélník tvořený nyní písmenky začíná / končí) a místo chvíli podržte, než se zobrazí ohraničení
-bloku písmenek. Poté můžete pohybem prstu učinit obdélník užší či širší. Vstup se automaticky
-přeuspořádá do nového počtu písmen na řádek. Stejně je možné měnit požadovaný počet řádků, do
-kolika se má text rozlít. <i>Pozor:</i> pokud obdélník není vyplněn zcela, tj. zbývá v něm nějaké
-volné místo, rozložení písmen závisí na tom, zda je požadován daný počet sloupců nebo řádků.
+bloku písmenek. Poté můžete pohybem prstu (bez přerušení dotyku) učinit obdélník užší či širší. Vstup
+se automaticky přeuspořádá do nového počtu písmen na řádek. Stejně je možné měnit požadovaný počet
+řádků, do kolika se má text rozlít. <i>Pozor:</i> pokud obdélník není vyplněn zcela, tj. zbývá v něm
+nějaké volné místo, rozložení písmen závisí na tom, zda je požadován daný počet sloupců nebo řádků.
 V prvním případě se zaplňují všechny řádky zleva doprava až na poslední. Ve druhém se aplikace
 snaží o co nejrovnoměrnější vyplnění všech řádků.</p>
 
 <p>Některé běžné operace, kterých lze manipulací pomocí prstů dosáhnout, jsou reprezentována
 rychlými tlačítky v rohu obrazovky. Tyto jsou následující: navrácení pohledu do původního natočení
-a velikosti, zrcadlení kolem svislé, vodorovné osy a kolem diagonály.</p>
+a velikosti, zrcadlení kolem svislé osy, kolem vodorovné osy a kolem diagonály.</p>
 
 <p>Jakmile dosáhnete uspořádání, ve kterém jde text číst, nebo si chcete vypsat výsledek transpozice,
 můžete začít jednotlivá písmena vybírat dotykem. Každé vybrané písmeno se přenese do pole <i>Řešení</i>
@@ -87,7 +87,7 @@ vešel. Nakonec můžeme použít tlačítko označené <i>X ↔ Y</i>, abychom 
 <h3>Nastavení</h3>
 
 <p>V rámci nastavení lze ovlivnit, jakým způsobem aplikace čte jednotlivá písmena vstupu. Je možné
-zvolit, zda se má zachovat diakritika nebo převést všechna písmena na základní anglickou abecedu,
+zvolit, zda se má zachovat diakritika nebo převést všechna písmena na základní anglickou abecedu
 a rovněž, zda spřežka <b>ch</b> má být brána jako jedno písmeno nebo dvě (aplikace ji však nemůže
 rozlišit od náhodného shluku písmen C a H). Rovněž lze nastavit, zda mezery a interpunkční znaménka
 ve vstupu mají být přeskočena nebo zarovnána do tabulky mezi ostatními znaky. <i>Pozor:</i> V různých
@@ -96,5 +96,5 @@ v jeho rámci.</p>
 
 <p>Nastavení dělení textu na písmena je globální, ovlivňuje i komponentu <i>Frekvenční analýza</i>.</p>
 ]]></string>
-	
+
 </resources>

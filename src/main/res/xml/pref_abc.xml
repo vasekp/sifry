@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-	<CheckBoxPreference
-		android:key="pref_abc_j"
-		android:title="@string/prefAbcJTitle"
-		android:summary="@string/prefAbcJSummary"
-		android:defaultValue="true" />
+    <CheckBoxPreference
+        android:key="pref_abc_j"
+        android:title="@string/prefAbcJTitle"
+        android:summary="@string/prefAbcJSummary"
+        android:defaultValue="true" />
 
-	<CheckBoxPreference
-		android:key="pref_abc_q"
-		android:title="@string/prefAbcQTitle"
-		android:summary="@string/prefAbcQSummary"
-		android:defaultValue="true" />
+    <CheckBoxPreference
+        android:key="pref_abc_q"
+        android:title="@string/prefAbcQTitle"
+        android:summary="@string/prefAbcQSummary"
+        android:defaultValue="true" />
 
-	<CheckBoxPreference
-		android:key="pref_abc_x"
-		android:title="@string/prefAbcXTitle"
-		android:summary="@string/prefAbcXSummary"
-		android:defaultValue="true" />
+    <CheckBoxPreference
+        android:key="pref_abc_x"
+        android:title="@string/prefAbcXTitle"
+        android:summary="@string/prefAbcXSummary"
+        android:defaultValue="true" />
 
 </PreferenceScreen>

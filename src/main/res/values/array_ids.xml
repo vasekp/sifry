@@ -1,119 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:android="http://schemas.android.com/apk/res/android">
-    
+<resources>
+
     <item type="id" name="idNull" />
-    
+
     <item type="id" name="idMCPrimo" />
-	<item type="id" name="idMC120" />
-	<item type="id" name="idMCSignal" />
+    <item type="id" name="idMC120" />
+    <item type="id" name="idMCSignal" />
 
     <item type="id" name="idMTSvetlo" />
-	<item type="id" name="idMTZvuk" />
-	
+    <item type="id" name="idMTZvuk" />
+
     <item type="id" name="idBCPrimo" />
     <item type="id" name="idBCCisla" />
-	<item type="id" name="idBCBin" />
-	<item type="id" name="idBCDec" />
-	
-	<item type="id" name="idCDCisla" />
-	<item type="id" name="idCDRim" />
-	<item type="id" name="idCDPerm1" />
-	<item type="id" name="idCDPerm2" />
-	
-	<item type="id" name="idCDPrimo1" />
-	<item type="id" name="idCDModulo1" />
-	<item type="id" name="idCDPrimo0" />
-	<item type="id" name="idCDModulo0" />
-	<item type="id" name="idCDASCII" />
-	
-	<item type="id" name="idCRAbeceda1" />
-	<item type="id" name="idCRAbeceda0" />
-	<item type="id" name="idCRASCIIVelke" />
-	<item type="id" name="idCRASCIIMale" />
-	
-	<item type="id" name="idCCOd1" />
-	<item type="id" name="idCCOd0" />
-	<item type="id" name="idCCASCII" />
-	
-	<item type="id" name="idSCPrimo" />
-	<item type="id" name="idSCDvoj" />
-	
-	<item type="id" name="idTDVPolsky" />
-	<item type="id" name="idTDMPolsky" />
-	<item type="id" name="idTDMobil" />
-	<item type="id" name="idTDCtverec" />
-	
-	<item type="id" name="idTDVPKlas" />
-	<item type="id" name="idTDVPAlt" />
-	
-	<item type="id" name="idTVVProt" />
-	<item type="id" name="idTVVProtzrc" />
-	<item type="id" name="idTVVPtrifid" />
-		
-	<item type="id" name="idTDMP9T4" />
-	<item type="id" name="idTDMP94T" />
-	<item type="id" name="idTDMPT94" />
-	
-	<item type="id" name="idTCPrimo" />
-	<item type="id" name="idTCSour" />
-	<item type="id" name="idTCVPTrifid931" />
-	<item type="id" name="idTCVPTrifid913" />
-	<item type="id" name="idTCVPTrifid391" />
-	<item type="id" name="idTCCtv5x5" />
-	<item type="id" name="idTCCtv3x3" />
-	<item type="id" name="idTCCtvBifidYX" />
-	<item type="id" name="idTCCtvBifidXY" />
-	<item type="id" name="idTCMobilMulti" />
-	<item type="id" name="idTCMobilPocet" />
-	
-	<item type="id" name="idVRPismena" />
-	<item type="id" name="idVRCislaICS" />
-	<item type="id" name="idVRCislaNATO" />
-	
-	<item type="id" name="idSDHeslo" />
-	<item type="id" name="idSDAutoKey" />
-	<item type="id" name="idSDPozice" />
-	<item type="id" name="idSDCaesar" />
-	<item type="id" name="idSDAtbash" />
-	<item type="id" name="idSDAffini" />
-	<item type="id" name="idSDKlic" />
-	<item type="id" name="idSDVlastni" />
-	
-	<item type="id" name="idFDGPismenaC" />
-	<item type="id" name="idFDGCisliceC" />
-	<item type="id" name="idFDGAlnumC" />
-	<item type="id" name="idFDGVseC" />
-	<item type="id" name="idFDGPismenaP" />
-	<item type="id" name="idFDGCisliceP" />
-	<item type="id" name="idFDGInterp" />
-	<item type="id" name="idFDGNezname" />
-	<item type="id" name="idFDGDelkyC" />
-	<item type="id" name="idFDGDelkyP" />
-	<item type="id" name="idFDGPrvni" />
-	<item type="id" name="idFDGPosledni" />
-	<item type="id" name="idFDGText" />
-	
-	<item type="id" name="idFDSPismen" />
-	<item type="id" name="idFDSCislic" />
-	<item type="id" name="idFDSMezer" />
-	<item type="id" name="idFDSInterp" />
-	<item type="id" name="idFDSNeznamych" />
-	<item type="id" name="idFDSVsech" />
-	<item type="id" name="idFDSSlov" />
-	<item type="id" name="idFDSVet" />
-	<item type="id" name="idFDSSouveti" />
-	
-	<item type="id" name="idFRSortAbc" />
-	<item type="id" name="idFRSortFreq" />
-	
-	<item type="id" name="idTNic" />
-	<item type="id" name="idTObdelnik" />
-	<item type="id" name="idTTrojuhelnik" />
-	<item type="id" name="idTRTrojuhelnik" />
-	
-	<item type="id" name="idFormatUpperCase" />
-	<item type="id" name="idFormatLowerCase" />
-	<item type="id" name="idFormatSentence" />
-	<item type="id" name="idFormatDefault" />
-	
+    <item type="id" name="idBCBin" />
+    <item type="id" name="idBCDec" />
+
+    <item type="id" name="idCDCisla" />
+    <item type="id" name="idCDRim" />
+    <item type="id" name="idCDPerm1" />
+    <item type="id" name="idCDPerm2" />
+
+    <item type="id" name="idCDPrimo1" />
+    <item type="id" name="idCDModulo1" />
+    <item type="id" name="idCDPrimo0" />
+    <item type="id" name="idCDModulo0" />
+    <item type="id" name="idCDASCII" />
+
+    <item type="id" name="idCRAbeceda1" />
+    <item type="id" name="idCRAbeceda0" />
+    <item type="id" name="idCRASCIIVelke" />
+    <item type="id" name="idCRASCIIMale" />
+
+    <item type="id" name="idCCOd1" />
+    <item type="id" name="idCCOd0" />
+    <item type="id" name="idCCASCII" />
+
+    <item type="id" name="idSCPrimo" />
+    <item type="id" name="idSCDvoj" />
+
+    <item type="id" name="idTDVPolsky" />
+    <item type="id" name="idTDMPolsky" />
+    <item type="id" name="idTDMobil" />
+    <item type="id" name="idTDCtverec" />
+
+    <item type="id" name="idTDVPKlas" />
+    <item type="id" name="idTDVPAlt" />
+
+    <item type="id" name="idTVVProt" />
+    <item type="id" name="idTVVProtzrc" />
+    <item type="id" name="idTVVPtrifid" />
+
+    <item type="id" name="idTDMP9T4" />
+    <item type="id" name="idTDMP94T" />
+    <item type="id" name="idTDMPT94" />
+
+    <item type="id" name="idTCPrimo" />
+    <item type="id" name="idTCSour" />
+    <item type="id" name="idTCVPTrifid931" />
+    <item type="id" name="idTCVPTrifid913" />
+    <item type="id" name="idTCVPTrifid391" />
+    <item type="id" name="idTCCtv5x5" />
+    <item type="id" name="idTCCtv3x3" />
+    <item type="id" name="idTCCtvBifidYX" />
+    <item type="id" name="idTCCtvBifidXY" />
+    <item type="id" name="idTCMobilMulti" />
+    <item type="id" name="idTCMobilPocet" />
+
+    <item type="id" name="idVRPismena" />
+    <item type="id" name="idVRCislaICS" />
+    <item type="id" name="idVRCislaNATO" />
+
+    <item type="id" name="idSDHeslo" />
+    <item type="id" name="idSDAutoKey" />
+    <item type="id" name="idSDPozice" />
+    <item type="id" name="idSDCaesar" />
+    <item type="id" name="idSDAtbash" />
+    <item type="id" name="idSDAffini" />
+    <item type="id" name="idSDKlic" />
+    <item type="id" name="idSDVlastni" />
+
+    <item type="id" name="idFDGPismenaC" />
+    <item type="id" name="idFDGCisliceC" />
+    <item type="id" name="idFDGAlnumC" />
+    <item type="id" name="idFDGVseC" />
+    <item type="id" name="idFDGPismenaP" />
+    <item type="id" name="idFDGCisliceP" />
+    <item type="id" name="idFDGInterp" />
+    <item type="id" name="idFDGNezname" />
+    <item type="id" name="idFDGDelkyC" />
+    <item type="id" name="idFDGDelkyP" />
+    <item type="id" name="idFDGPrvni" />
+    <item type="id" name="idFDGPosledni" />
+    <item type="id" name="idFDGText" />
+
+    <item type="id" name="idFDSPismen" />
+    <item type="id" name="idFDSCislic" />
+    <item type="id" name="idFDSMezer" />
+    <item type="id" name="idFDSInterp" />
+    <item type="id" name="idFDSNeznamych" />
+    <item type="id" name="idFDSVsech" />
+    <item type="id" name="idFDSSlov" />
+    <item type="id" name="idFDSVet" />
+    <item type="id" name="idFDSSouveti" />
+
+    <item type="id" name="idFRSortAbc" />
+    <item type="id" name="idFRSortFreq" />
+
+    <item type="id" name="idTNic" />
+    <item type="id" name="idTObdelnik" />
+    <item type="id" name="idTTrojuhelnik" />
+    <item type="id" name="idTRTrojuhelnik" />
+
+    <item type="id" name="idFormatUpperCase" />
+    <item type="id" name="idFormatLowerCase" />
+    <item type="id" name="idFormatSentence" />
+    <item type="id" name="idFormatDefault" />
+
 </resources>

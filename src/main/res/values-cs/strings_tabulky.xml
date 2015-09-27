@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-	<string name="cptPolskyTabulky">Polský kříž,\nšifrovací tabulky</string>
-	<string name="cptTabulky">Šifrovací tabulky</string>
-	<string name="tTDTab">Šifrovací tabulka:</string>
-	<string name="tTDVar">Varianta:</string>
-	<string name="tTDVstup">Zvolte podle zadání:</string>
-	<string name="tTDSour">Po souřadnicích:</string>
-	
-	<string name="tTDErrMobilVar">Nedostupné pro tuto tabulku.</string>
+    <string name="cptPolskyTabulky">Polský kříž,\nšifrovací tabulky</string>
+    <string name="cptTabulky">Šifrovací tabulky</string>
+    <string name="tTDTab">Šifrovací tabulka:</string>
+    <string name="tTDVar">Varianta:</string>
+    <string name="tTDVstup">Zvolte podle zadání:</string>
+    <string name="tTDSour">Po souřadnicích:</string>
 
-	<string name="tTDCtvBifidXY">Šifra Bifid, XY</string>
-	<string name="tTDCtvBifidYX">Šifra Bifid, YX</string>
+    <string name="tTDErrMobilVar">Nedostupné pro tuto tabulku.</string>
+
+    <string name="tTDCtvBifidXY">Šifra Bifid, XY</string>
+    <string name="tTDCtvBifidYX">Šifra Bifid, YX</string>
 
 
 <string name="tHelpTabulky"><![CDATA[
@@ -42,7 +42,7 @@ občas \"hebrejština\". Zde je okraj rámečku doplněn žádnou, jednou či dv
 zvolíme podle počtu teček odpovídající tabulku a v ní snadno dohledáme segment. Vzhledem k tomu, že se
 jedná jen o jiné pořadí tří souřadnic, mezi variantami <i>Velkého polského kříže</i> lze volně přecházet.</p>
 
-<p>Souřadnice X, Y a polohu tečky (klasické rozložení), případně X, Y a počet teček (alternativní
+<p>Souřadnice X, Y a polohu tečky (klasické rozložení), případně X, Y a 1 + počet teček (alternativní
 rozložení) lze zadat i přímo jako trojici čísel 1 až 3.</p>
 
 <p>V záložce <i>Varianty</i> je možno stejný vstup interpretovat mnoha alternativními možnostmi, především
@@ -121,172 +121,172 @@ aby odpovídal novému rozložení za zachování graficky stejného zadání.</
 
 <p><i>Pozor:</i> Řešení však nemůže být zachováno při změně šifrovací tabulky za tabulku jiných rozměrů
 a je v takové situaci vymazáno.</p>
-]]></string>	
-		
-	
-   	<string-array name="saTDTabulky">
-   		<item>Velký polský kříž</item>
-   		<item>Malý polský kříž</item>
-   		<item>Polybiův čtverec</item>
-   		<item>Klávesnice mobilu</item>
-	</string-array>
- 	
-   	<array name="iaTDTabulky">
-   		<item>@id/idTDVPolsky</item>
-   		<item>@id/idTDMPolsky</item>
-   		<item>@id/idTDCtverec</item>
-   		<item>@id/idTDMobil</item>
-	</array>
+]]></string>
 
 
- 	<string-array name="saTDVPVar">
-   		<item>klas. +Ch</item>
-   		<item>klas. –Ch</item>
-		<item>alt. +Ch</item>
-		<item>alt. –Ch</item>
-   	</string-array>
-   	
- 	<array name="iaTDVPVar">
- 		<item>@id/idTDVPKlas</item>
- 		<item>@id/idTDVPKlas</item>
- 		<item>@id/idTDVPAlt</item>
-   		<item>@id/idTDVPAlt</item>
-	</array>
+    <string-array name="saTDTabulky">
+        <item>Velký polský kříž</item>
+        <item>Malý polský kříž</item>
+        <item>Polybiův čtverec</item>
+        <item>Klávesnice mobilu</item>
+    </string-array>
 
-	<string-array name="saTDVPABCVar" tools:ignore="MissingTranslation">
-		<item>+Ch</item>
-		<item>-Ch</item>
-		<item>+Ch</item>
-		<item>-Ch</item>
-	</string-array>
+    <array name="iaTDTabulky">
+        <item>@id/idTDVPolsky</item>
+        <item>@id/idTDMPolsky</item>
+        <item>@id/idTDCtverec</item>
+        <item>@id/idTDMobil</item>
+    </array>
 
 
-   	<string-array name="saTDMPVar">
-   		<item>9 – • – 4</item>
-   		<item>9 – 4 – •</item>
-		<item>• – 9 – 4</item>
-	</string-array>
-	
-   	<array name="iaTDMPVar">
-   		<item>@id/idTDMP9T4</item>
-   		<item>@id/idTDMP94T</item>
-   		<item>@id/idTDMPT94</item>
-	</array>
-	
-   	<string-array name="saTDMPABCVar">
-   	    <item></item>
-   	    <item></item>
-		<item></item>
-	</string-array>
+    <string-array name="saTDVPVar">
+        <item>klas. +Ch</item>
+        <item>klas. –Ch</item>
+        <item>alt. +Ch</item>
+        <item>alt. –Ch</item>
+    </string-array>
 
-	
-	<string-array name="saTDCtvVar">
-		<item>Bez Q</item>
-		<item>Bez W</item>
-   		<item>Bez X</item>
-   		<item>Bez J (spojit s I)</item>
-   		<!--item>6×6 s číslicemi</item-->
-	</string-array>
+    <array name="iaTDVPVar">
+        <item>@id/idTDVPKlas</item>
+        <item>@id/idTDVPKlas</item>
+        <item>@id/idTDVPAlt</item>
+        <item>@id/idTDVPAlt</item>
+    </array>
 
-	<string-array name="saTDCtvABCVar">
-		<item>Q:5</item>
-		<item>W:5</item>
-		<item>X:5</item>
-		<item>J:5</item>
-		<!--item>dig:6</item-->
-	</string-array>
-	
-	   		
-	<string-array name="saTVVPGroups">
-		<item>Permutace / včetně Ch</item>
-		<item>Permutace + zrcadlení / včetně Ch</item>
-		<item>Šifra Trifid / včetně Ch</item>
-		<item>Permutace / bez Ch</item>
-		<item>Permutace + zrcadlení / bez Ch</item>
-		<item>Šifra Trifid / bez Ch</item>
-	</string-array>
-   	
- 	<array name="iaTVVPGroups">
- 		<item>@id/idTVVProt</item>
- 		<item>@id/idTVVProtzrc</item>
-   		<item>@id/idTVVPtrifid</item>
- 		<item>@id/idTVVProt</item>
-   		<item>@id/idTVVProtzrc</item>
-   		<item>@id/idTVVPtrifid</item>
-	</array>
+    <string-array name="saTDVPABCVar" tools:ignore="MissingTranslation">
+        <item>+Ch</item>
+        <item>-Ch</item>
+        <item>+Ch</item>
+        <item>-Ch</item>
+    </string-array>
 
-	<string-array name="saTVVPABCVar" tools:ignore="MissingTranslation">
-		<item>+Ch</item>
-		<item>+Ch</item>
-		<item>+Ch</item>
-		<item>-Ch</item>
-		<item>-Ch</item>
-		<item>-Ch</item>
-	</string-array>
-	
-	
-	<string-array name="saTCVPItems">
-	    <item>Graficky</item>
-	    <item>Souřadnice (YXZ)</item>
-	    <item>Šifra Trifid (YXZ)</item>
-	    <item>Šifra Trifid (XYZ)</item>
-	</string-array>
-	
-	<array name="iaTCVPItems">
-	    <item>@id/idTCPrimo</item>
-	    <item>@id/idTCSour</item>
-	    <item>@id/idTCVPTrifid931</item>
-	    <item>@id/idTCVPTrifid391</item>
-	</array>
-	
-	<string-array name="saTCVPAltItems">
-	    <item>Graficky</item>
-	    <item>Souřadnice (ZYX)</item>
-	    <item>Šifra Trifid (ZYX)</item>
-	    <item>Šifra Trifid (ZXY)</item>
-	</string-array>
-	
-	<array name="iaTCVPAltItems">
-	    <item>@id/idTCPrimo</item>
-	    <item>@id/idTCSour</item>
-	    <item>@id/idTCVPTrifid931</item>
-	    <item>@id/idTCVPTrifid913</item>
-	</array>
-	
-	<string-array name="saTCMPItems">
-	    <item>Graficky</item>
-	    <item>Textově</item>
-	</string-array>
-	
-	<array name="iaTCMPItems">
-	    <item>@id/idTCPrimo</item>
-	    <item>@id/idTCSour</item>
-	</array>
-	
-	<string-array name="saTCCtvItems">
-	   <item>5×5</item>
-	   <item>3×3 + okraj</item>
-	   <item>Souřadnice (YX)</item>
-	   <item>Šifra Bifid (YX)</item>
-	   <item>Šifra Bifid (XY)</item>
-	</string-array>
-	
-	<array name="iaTCCtvItems">
-	    <item>@id/idTCCtv5x5</item>
-	    <item>@id/idTCCtv3x3</item>
-	    <item>@id/idTCSour</item>
-	    <item>@id/idTCCtvBifidYX</item>
-	    <item>@id/idTCCtvBifidXY</item>
-	</array>
-	
-	<string-array name="saTCMobilItems">
-	    <item>Multi-tap</item>
-	    <item>Klávesa + počet opakování</item>
-	</string-array>
-	
-	<array name="iaTCMobilItems">
-	    <item>@id/idTCMobilMulti</item>
-	    <item>@id/idTCMobilPocet</item>
-	</array>
+
+    <string-array name="saTDMPVar">
+        <item>9 – • – 4</item>
+        <item>9 – 4 – •</item>
+        <item>• – 9 – 4</item>
+    </string-array>
+
+    <array name="iaTDMPVar">
+        <item>@id/idTDMP9T4</item>
+        <item>@id/idTDMP94T</item>
+        <item>@id/idTDMPT94</item>
+    </array>
+
+    <string-array name="saTDMPABCVar">
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+
+
+    <string-array name="saTDCtvVar">
+        <item>Bez Q</item>
+        <item>Bez W</item>
+        <item>Bez X</item>
+        <item>Bez J (spojit s I)</item>
+        <!--item>6×6 s číslicemi</item-->
+    </string-array>
+
+    <string-array name="saTDCtvABCVar">
+        <item>Q:5</item>
+        <item>W:5</item>
+        <item>X:5</item>
+        <item>J:5</item>
+        <!--item>dig:6</item-->
+    </string-array>
+
+
+    <string-array name="saTVVPGroups">
+        <item>Permutace / včetně Ch</item>
+        <item>Permutace + zrcadlení / včetně Ch</item>
+        <item>Šifra Trifid / včetně Ch</item>
+        <item>Permutace / bez Ch</item>
+        <item>Permutace + zrcadlení / bez Ch</item>
+        <item>Šifra Trifid / bez Ch</item>
+    </string-array>
+
+    <array name="iaTVVPGroups">
+        <item>@id/idTVVProt</item>
+        <item>@id/idTVVProtzrc</item>
+        <item>@id/idTVVPtrifid</item>
+        <item>@id/idTVVProt</item>
+        <item>@id/idTVVProtzrc</item>
+        <item>@id/idTVVPtrifid</item>
+    </array>
+
+    <string-array name="saTVVPABCVar" tools:ignore="MissingTranslation">
+        <item>+Ch</item>
+        <item>+Ch</item>
+        <item>+Ch</item>
+        <item>-Ch</item>
+        <item>-Ch</item>
+        <item>-Ch</item>
+    </string-array>
+
+
+    <string-array name="saTCVPItems">
+        <item>Graficky</item>
+        <item>Souřadnice (YXZ)</item>
+        <item>Šifra Trifid (YXZ)</item>
+        <item>Šifra Trifid (XYZ)</item>
+    </string-array>
+
+    <array name="iaTCVPItems">
+        <item>@id/idTCPrimo</item>
+        <item>@id/idTCSour</item>
+        <item>@id/idTCVPTrifid931</item>
+        <item>@id/idTCVPTrifid391</item>
+    </array>
+
+    <string-array name="saTCVPAltItems">
+        <item>Graficky</item>
+        <item>Souřadnice (ZYX)</item>
+        <item>Šifra Trifid (ZYX)</item>
+        <item>Šifra Trifid (ZXY)</item>
+    </string-array>
+
+    <array name="iaTCVPAltItems">
+        <item>@id/idTCPrimo</item>
+        <item>@id/idTCSour</item>
+        <item>@id/idTCVPTrifid931</item>
+        <item>@id/idTCVPTrifid913</item>
+    </array>
+
+    <string-array name="saTCMPItems">
+        <item>Graficky</item>
+        <item>Textově</item>
+    </string-array>
+
+    <array name="iaTCMPItems">
+        <item>@id/idTCPrimo</item>
+        <item>@id/idTCSour</item>
+    </array>
+
+    <string-array name="saTCCtvItems">
+        <item>5×5</item>
+        <item>3×3 + okraj</item>
+        <item>Souřadnice (YX)</item>
+        <item>Šifra Bifid (YX)</item>
+        <item>Šifra Bifid (XY)</item>
+    </string-array>
+
+    <array name="iaTCCtvItems">
+        <item>@id/idTCCtv5x5</item>
+        <item>@id/idTCCtv3x3</item>
+        <item>@id/idTCSour</item>
+        <item>@id/idTCCtvBifidYX</item>
+        <item>@id/idTCCtvBifidXY</item>
+    </array>
+
+    <string-array name="saTCMobilItems">
+        <item>Multi-tap</item>
+        <item>Klávesa + počet opakování</item>
+    </string-array>
+
+    <array name="iaTCMobilItems">
+        <item>@id/idTCMobilMulti</item>
+        <item>@id/idTCMobilPocet</item>
+    </array>
 
 </resources>

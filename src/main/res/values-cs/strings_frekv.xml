@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<string name="cptFrekv">Frekvenční analýza</string>
-	<string name="tFDVstup">Vstupní text:</string>
-	<string name="tFDAutoOn">Slova</string>
-	<string name="tFDAutoOff">Písm</string>
-	<string name="tFDFrekv">Frekvenční analýza:</string>
-	<string name="tFDAnalyza">Analýza</string>
-	<string name="tFDESubs">Substituce</string>
-	
-	<string name="tFDMezera">mez.</string>
-			
-	<string name="tFRAbcVar">Pojetí abecedy:</string>
-	<string name="tFRSort">Řadit podle:</string>
-	<string name="tFRTab">Tabulka:</string>
-	
-	<string name="tESTabulka">Substituční tabulka</string>
-	<string name="tESPuv">pův.</string>
-	<string name="tESZast">zast.</string>
-	<string name="tESNove">nahr.</string>
-	<string name="tESSmaz">smaž</string>
-	<string name="tESDNic">nic</string>
-	<string name="tESDJine">…</string>
+    <string name="cptFrekv">Frekvenční analýza</string>
+    <string name="tFDVstup">Vstupní text:</string>
+    <string name="tFDAutoOn">Slova</string>
+    <string name="tFDAutoOff">Písm</string>
+    <string name="tFDFrekv">Frekvenční analýza:</string>
+    <string name="tFDAnalyza">Analýza</string>
+    <string name="tFDESubs">Substituce</string>
+
+    <string name="tFDMezera">mez.</string>
+
+    <string name="tFRAbcVar">Pojetí abecedy:</string>
+    <string name="tFRSort">Řadit podle:</string>
+    <string name="tFRTab">Tabulka:</string>
+
+    <string name="tESTabulka">Substituční tabulka</string>
+    <string name="tESPuv">pův.</string>
+    <string name="tESZast">zast.</string>
+    <string name="tESNove">nahr.</string>
+    <string name="tESSmaz">smaž</string>
+    <string name="tESDNic">nic</string>
+    <string name="tESDJine">…</string>
 			
 	
 <string name="tHelpFrekv"><![CDATA[
@@ -33,7 +33,7 @@ a podobných vlastností textu. Může být použita i pro počítání jiných 
 
 <h3>Základní ovládání</h3>
 
-<p>Text ke zpracování frekvenční analýzou zadáme do pole <i>Vstupní text</i> a stiskneme tlačítko
+<p>Text ke zpracování frekvenční analýzou zadejte do pole <i>Vstupní text</i> a stiskněte tlačítko
 <i>Zpracovat</i> (ve tvaru šipky). Ve spodní části obrazovky se objeví různé statistické informace
 o textu. Nabídka funkcí se liší podle toho, zda text obsahuje či neobsahuje písmena, číslice, mezery,
 interpunkci apod. Zbytečné položky jsou skryty.</p>
@@ -59,7 +59,8 @@ který lze nechat seřadit podle něj (<i>%</i>) nebo abecedně (<i>Abc</i>).</p
 provádí kliknutím na požadované písmeno (v pracovní ploše nebo v seznamu naspod obrazovky) a
 zvolením jeho náhrady z nabídky. Pro pohodlnější trefování se je možno zvětšit velikost písmen
 pomocí dvou prstů. Každé písmeno, které již prošlo náhradou, je přebarveno zeleně. Pokud dva různé
-znaky byly převedeny na stejný, aplikace je obarví červeně, protože to často značí chybu.</p>
+znaky byly převedeny na stejný, aplikace je obarví červeně, protože to často značí chybu. <b>Pozor</b>:
+případné změny jednou načteného textu způsobí ztrátu dříve zavedených substitucí.</p>
 
 <p>Opravy jednou přiřazených písmen lze provádět stejným způsobem jako původní přiřazení. Je také
 možno veškerý přiřazený význam písmeni odebrat, volbou <i>nic</i> z nabídky nebo pomocí červeného
@@ -77,8 +78,8 @@ analýzy, pouze na přívětivost zadávání textu.</p>
 
 <p>V rámci hlavního nastavení lze doladit, jakým způsobem jsou jednotlivá písmena vstupu interpretována.
 Je možné zvolit, zda se má zachovat diakritika nebo převést všechna písmena na základní anglickou abecedu,
-a rovněž, zda spřežka <b>ch</b> má být brána jako jedno písmeno nebo dvě (aplikace ji však nemůže
-rozlišit od náhodného shluku písmen C a H).</p>
+a rovněž, zda spřežka <b>ch</b> má být brána jako jedno písmeno nebo dvě (aplikace ji však v takovém
+případě nemůže rozlišit od náhodného shluku písmen C a H).</p>
 
 <p>Nastavení, zda mezery a interpunkční znaménka mají být počítány za regulární znaky či ignorovány,
 základní frekvenční analýzu neovlivňují. Toto nastavení má vliv na záložku <i>Substituce</i>.</p>
@@ -94,216 +95,216 @@ Vám pak pomůže průběžně kontrolovat, zda je přepis bezchybný.</p>
 ]]></string>
 
 
-	<string-array name="saFDGroups">
-		<item>Písmena</item>
-		<item>Číslice</item>
-		<item>Alfanumerické znaky</item>
-		<item>Všechny znaky</item>
-		<item>Písmena dle abecedy</item>
-		<item>Číslice dle pořadí</item>
-		<item>Interpunkce</item>
-		<item>Neurčené znaky</item>
-		<item>Délky slov dle četnosti</item>
-		<item>Délky slov vzestupně</item>
-		<item>První písmena slov</item>
-		<item>Poslední písmena slov</item>
-		<item>Statistika textu</item>
-	</string-array>
-	
-	<array name="iaFDGroups">
-		<item>@id/idFDGPismenaC</item>
-		<item>@id/idFDGCisliceC</item>
-		<item>@id/idFDGAlnumC</item>
-		<item>@id/idFDGVseC</item>
-		<item>@id/idFDGPismenaP</item>
-		<item>@id/idFDGCisliceP</item>
-		<item>@id/idFDGInterp</item>
-		<item>@id/idFDGNezname</item>
-		<item>@id/idFDGDelkyC</item>
-		<item>@id/idFDGDelkyP</item>
-		<item>@id/idFDGPrvni</item>
-		<item>@id/idFDGPosledni</item>
-		<item>@id/idFDGText</item>
-	</array>
-		
-	<string-array name="saFDStat">
-		<item>Písmen</item>
-		<item>Číslic</item>
-		<item>Mezer</item>
-		<item>Interpunkce</item>
-		<item>Neurčených znaků</item>
-		<item>Veškerých znaků</item>
-		<item>Slov</item>
-		<item>Vět (oddělených veškerou interpunkcí)</item>
-		<item>Souvětí (oddělených ., ?, !, závorkami)</item>
-	</string-array>
-	
-	<array name="iaFDStat">
-		<item>@id/idFDSPismen</item>
-		<item>@id/idFDSCislic</item>
-		<item>@id/idFDSMezer</item>
-		<item>@id/idFDSInterp</item>
-		<item>@id/idFDSNeznamych</item>
-		<item>@id/idFDSVsech</item>
-		<item>@id/idFDSSlov</item>
-		<item>@id/idFDSVet</item>
-		<item>@id/idFDSSouveti</item>		
-	</array>
-	
-	<array name="iaFDStatRuzne">
-	    <item>@plurals/plRuzneN</item>
-	    <item>@plurals/plRuzneF</item>
-	    <item>@id/idNull</item>
-	    <item>@id/idNull</item>
-	    <item>@plurals/plRuzneM</item>
-	    <item>@plurals/plRuzneM</item>
-	    <item>@plurals/plRuzneDelky</item>
-	    <item>@id/idNull</item>
-	    <item>@id/idNull</item>
-	</array>
-	
-	<plurals name="plRuzneM">
-	    <item quantity="one">%1$d (%2$d různý)</item>
-	    <item quantity="few">%1$d (%2$d různé)</item>
-	    <item quantity="other">%1$d (%2$d různých)</item>
-	</plurals>
-
-	<plurals name="plRuzneF">
-	    <item quantity="one">%1$d (%2$d různá)</item>
-	    <item quantity="few">%1$d (%2$d různé)</item>
-	    <item quantity="other">%1$d (%2$d různých)</item>
-	</plurals>
-			
-	<plurals name="plRuzneN">
-	    <item quantity="one">%1$d (%2$d různé)</item>
-	    <item quantity="few">%1$d (%2$d různá)</item>
-	    <item quantity="other">%1$d (%2$d různých)</item>
-	</plurals>
-
-	<plurals name="plRuzneDelky">
-	    <item quantity="one">%1$d (všechna délky %3$d)</item>
-	    <item quantity="few">%1$d (%2$d různé délky)</item>
-	    <item quantity="other">%1$d (%2$d různých délek)</item>
-	</plurals>
-	
-
-	<string-array name="saFRSort">
-	    <item>Abecedy</item>
-	    <item>Četnosti</item>
-	</string-array>
-			
-	<array name="iaFRSort">
-	    <item>@id/idFRSortAbc</item>
-	    <item>@id/idFRSortFreq</item>
-	</array>
-	
-	<string-array name="saFRGroups">
-	    <item>Písmena</item>
-	    <item>Bigramy</item>
-	    <item>Trigramy</item>
-	    <item>Začátky slov</item>
-	    <item>Konce slov</item>
-	</string-array>
-	
-	<array name="iaFRGroups">
-	    <item>@array/saFRFrekvencePis</item>
-	    <item>@array/saFRFrekvenceBi</item>
-	    <item>@array/saFRFrekvenceTri</item>
-	    <item>@array/saFRFrekvenceZac</item>
-	    <item>@array/saFRFrekvenceKon</item>
-	</array>
-	
-
-	<!-- http://nlp.fi.muni.cz/cs/Frekvence_pismen_bigramu_trigramu_delka_slov -->
-	<string-array name="saFRFrekvencePis">
-	    <item>a:6.698</item>
-		<item>á:2.129</item>
-		<item>b:1.665</item>
-		<item>c:1.601</item>
-		<item>č:1.017</item>
-		<item>d:3.613</item>
-		<item>ď:0.019</item>
-		<item>e:7.831</item>
-		<item>é:1.178</item>
-		<item>ě:1.491</item>
-		<item>f:0.394</item>
-		<item>g:0.343</item>
-		<item>h:1.296</item>
-		<item>ch:1.006</item>
-		<item>i:4.571</item>
-		<item>í:3.103</item>
-		<item>j:1.983</item>
-		<item>k:3.752</item>
-		<item>l:4.097</item>
-		<item>m:3.262</item>
-		<item>n:6.676</item>
-		<item>ň:0.073</item>
-		<item>o:8.283</item>
-		<item>ó:0.032</item>
-		<item>p:3.454</item>
-		<item>q:0.006</item>
-		<item>r:3.977</item>
-		<item>ř:1.186</item>
-		<item>s:4.620</item>
-		<item>š:0.817</item>
-		<item>t:5.554</item>
-		<item>ť:0.038</item>
-		<item>u:3.131</item>
-		<item>ú:0.145</item>
-		<item>ů:0.569</item>
-		<item>v:4.378</item>
-		<item>w:0.072</item>
-		<item>x:0.092</item>
-		<item>y:1.752</item>
-		<item>ý:0.942</item>
-		<item>z:2.123</item>
-		<item>ž:1.022</item>
-	</string-array>
-
-	<!-- http://nlp.fi.muni.cz/cs/Frekvence_pismen_bigramu_trigramu_delka_slov -->
-	<string-array name="saFRFrekvenceBi">
-	    <item>st:2.5</item>
-		<item>ní:2.0</item>
-		<item>po:1.9</item>
-		<item>ov:1.8</item>
-		<item>ro:1.7</item>
-		<item>en:1.7</item>
-		<item>na:1.6</item>
-		<item>je:1.4</item>
-		<item>pr:1.4</item>
-		<item>te:1.3</item>
+    <string-array name="saFDGroups">
+        <item>Písmena</item>
+        <item>Číslice</item>
+        <item>Alfanumerické znaky</item>
+        <item>Všechny znaky</item>
+        <item>Písmena dle abecedy</item>
+        <item>Číslice dle pořadí</item>
+        <item>Interpunkce</item>
+        <item>Neurčené znaky</item>
+        <item>Délky slov dle četnosti</item>
+        <item>Délky slov vzestupně</item>
+        <item>První písmena slov</item>
+        <item>Poslední písmena slov</item>
+        <item>Statistika textu</item>
     </string-array>
-	
-	<!-- http://nlp.fi.muni.cz/cs/Frekvence_pismen_bigramu_trigramu_delka_slov -->
-	<string-array name="saFRFrekvenceTri">
-	    <item>pro:2.1</item>
-		<item>ost:1.9</item>
-		<item>sta:1.3</item>
-		<item>pře:1.2</item>
-		<item>ter:1.2</item>
-		<item>ení:1.2</item>
-		<item>ova:1.2</item>
-		<item>pod:1.0</item>
+
+    <array name="iaFDGroups">
+        <item>@id/idFDGPismenaC</item>
+        <item>@id/idFDGCisliceC</item>
+        <item>@id/idFDGAlnumC</item>
+        <item>@id/idFDGVseC</item>
+        <item>@id/idFDGPismenaP</item>
+        <item>@id/idFDGCisliceP</item>
+        <item>@id/idFDGInterp</item>
+        <item>@id/idFDGNezname</item>
+        <item>@id/idFDGDelkyC</item>
+        <item>@id/idFDGDelkyP</item>
+        <item>@id/idFDGPrvni</item>
+        <item>@id/idFDGPosledni</item>
+        <item>@id/idFDGText</item>
+    </array>
+
+    <string-array name="saFDStat">
+        <item>Písmen</item>
+        <item>Číslic</item>
+        <item>Mezer</item>
+        <item>Interpunkce</item>
+        <item>Neurčených znaků</item>
+        <item>Veškerých znaků</item>
+        <item>Slov</item>
+        <item>Vět (oddělených veškerou interpunkcí)</item>
+        <item>Souvětí (oddělených ., ?, !, závorkami)</item>
     </string-array>
-    
-	<!-- www.karlin.mff.cuni.cz/~tuma/nciphers/nciphers2.pdf -->
-	<string-array name="saFRFrekvenceZac">
-	    <item>p:12.50</item>
-	    <item>s:9.72</item>
-	    <item>v:9.19</item>
-	    <item>z:8.95</item>
-	    <item>n:7.64</item>
-	    <item>o:5.56</item>
+
+    <array name="iaFDStat">
+        <item>@id/idFDSPismen</item>
+        <item>@id/idFDSCislic</item>
+        <item>@id/idFDSMezer</item>
+        <item>@id/idFDSInterp</item>
+        <item>@id/idFDSNeznamych</item>
+        <item>@id/idFDSVsech</item>
+        <item>@id/idFDSSlov</item>
+        <item>@id/idFDSVet</item>
+        <item>@id/idFDSSouveti</item>
+    </array>
+
+    <array name="iaFDStatRuzne">
+        <item>@plurals/plRuzneN</item>
+        <item>@plurals/plRuzneF</item>
+        <item>@id/idNull</item>
+        <item>@id/idNull</item>
+        <item>@plurals/plRuzneM</item>
+        <item>@plurals/plRuzneM</item>
+        <item>@plurals/plRuzneDelky</item>
+        <item>@id/idNull</item>
+        <item>@id/idNull</item>
+    </array>
+
+    <plurals name="plRuzneM">
+        <item quantity="one">%1$d (%2$d různý)</item>
+        <item quantity="few">%1$d (%2$d různé)</item>
+        <item quantity="other">%1$d (%2$d různých)</item>
+    </plurals>
+
+    <plurals name="plRuzneF">
+        <item quantity="one">%1$d (%2$d různá)</item>
+        <item quantity="few">%1$d (%2$d různé)</item>
+        <item quantity="other">%1$d (%2$d různých)</item>
+    </plurals>
+
+    <plurals name="plRuzneN">
+        <item quantity="one">%1$d (%2$d různé)</item>
+        <item quantity="few">%1$d (%2$d různá)</item>
+        <item quantity="other">%1$d (%2$d různých)</item>
+    </plurals>
+
+    <plurals name="plRuzneDelky">
+        <item quantity="one">%1$d (všechna délky %3$d)</item>
+        <item quantity="few">%1$d (%2$d různé délky)</item>
+        <item quantity="other">%1$d (%2$d různých délek)</item>
+    </plurals>
+
+
+    <string-array name="saFRSort">
+        <item>Abecedy</item>
+        <item>Četnosti</item>
     </string-array>
-    
-	<!-- www.karlin.mff.cuni.cz/~tuma/nciphers/nciphers2.pdf -->
-	<string-array name="saFRFrekvenceKon">
-	    <item>e:16.67</item>
-	    <item>i:13.96</item>
-	    <item>a:10.94</item>
-	    <item>o:8.93</item>
-	    <item>u:7.94</item>
-	    <item>y:7.03</item>
+
+    <array name="iaFRSort">
+        <item>@id/idFRSortAbc</item>
+        <item>@id/idFRSortFreq</item>
+    </array>
+
+    <string-array name="saFRGroups">
+        <item>Písmena</item>
+        <item>Bigramy</item>
+        <item>Trigramy</item>
+        <item>Začátky slov</item>
+        <item>Konce slov</item>
+    </string-array>
+
+    <array name="iaFRGroups">
+        <item>@array/saFRFrekvencePis</item>
+        <item>@array/saFRFrekvenceBi</item>
+        <item>@array/saFRFrekvenceTri</item>
+        <item>@array/saFRFrekvenceZac</item>
+        <item>@array/saFRFrekvenceKon</item>
+    </array>
+
+
+    <!-- http://nlp.fi.muni.cz/cs/Frekvence_pismen_bigramu_trigramu_delka_slov -->
+    <string-array name="saFRFrekvencePis">
+        <item>a:6.698</item>
+        <item>á:2.129</item>
+        <item>b:1.665</item>
+        <item>c:1.601</item>
+        <item>č:1.017</item>
+        <item>d:3.613</item>
+        <item>ď:0.019</item>
+        <item>e:7.831</item>
+        <item>é:1.178</item>
+        <item>ě:1.491</item>
+        <item>f:0.394</item>
+        <item>g:0.343</item>
+        <item>h:1.296</item>
+        <item>ch:1.006</item>
+        <item>i:4.571</item>
+        <item>í:3.103</item>
+        <item>j:1.983</item>
+        <item>k:3.752</item>
+        <item>l:4.097</item>
+        <item>m:3.262</item>
+        <item>n:6.676</item>
+        <item>ň:0.073</item>
+        <item>o:8.283</item>
+        <item>ó:0.032</item>
+        <item>p:3.454</item>
+        <item>q:0.006</item>
+        <item>r:3.977</item>
+        <item>ř:1.186</item>
+        <item>s:4.620</item>
+        <item>š:0.817</item>
+        <item>t:5.554</item>
+        <item>ť:0.038</item>
+        <item>u:3.131</item>
+        <item>ú:0.145</item>
+        <item>ů:0.569</item>
+        <item>v:4.378</item>
+        <item>w:0.072</item>
+        <item>x:0.092</item>
+        <item>y:1.752</item>
+        <item>ý:0.942</item>
+        <item>z:2.123</item>
+        <item>ž:1.022</item>
+    </string-array>
+
+    <!-- http://nlp.fi.muni.cz/cs/Frekvence_pismen_bigramu_trigramu_delka_slov -->
+    <string-array name="saFRFrekvenceBi">
+        <item>st:2.5</item>
+        <item>ní:2.0</item>
+        <item>po:1.9</item>
+        <item>ov:1.8</item>
+        <item>ro:1.7</item>
+        <item>en:1.7</item>
+        <item>na:1.6</item>
+        <item>je:1.4</item>
+        <item>pr:1.4</item>
+        <item>te:1.3</item>
+    </string-array>
+
+    <!-- http://nlp.fi.muni.cz/cs/Frekvence_pismen_bigramu_trigramu_delka_slov -->
+    <string-array name="saFRFrekvenceTri">
+        <item>pro:2.1</item>
+        <item>ost:1.9</item>
+        <item>sta:1.3</item>
+        <item>pře:1.2</item>
+        <item>ter:1.2</item>
+        <item>ení:1.2</item>
+        <item>ova:1.2</item>
+        <item>pod:1.0</item>
+    </string-array>
+
+    <!-- www.karlin.mff.cuni.cz/~tuma/nciphers/nciphers2.pdf -->
+    <string-array name="saFRFrekvenceZac">
+        <item>p:12.50</item>
+        <item>s:9.72</item>
+        <item>v:9.19</item>
+        <item>z:8.95</item>
+        <item>n:7.64</item>
+        <item>o:5.56</item>
+    </string-array>
+
+    <!-- www.karlin.mff.cuni.cz/~tuma/nciphers/nciphers2.pdf -->
+    <string-array name="saFRFrekvenceKon">
+        <item>e:16.67</item>
+        <item>i:13.96</item>
+        <item>a:10.94</item>
+        <item>o:8.93</item>
+        <item>u:7.94</item>
+        <item>y:7.03</item>
     </string-array>
 
 </resources>

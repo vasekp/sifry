@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<state-decoder entrypoint="@+id/ruleSmDPismena" >
+<state-decoder entrypoint="@+id/ruleSmDPismena">
 
-    <rule-array id="@+id/ruleSmDPismena" state="" >
+    <rule-array
+        id="@+id/ruleSmDPismena"
+        state="">
         <strings ref="@array/saSmDPismena" />
         <rules
             code="48"
@@ -10,8 +12,10 @@
             ref="@+id/ruleSmDCislice" />
         <strings ref="@array/saSmDPrefixy" />
     </rule-array>
-    
-    <rule-array id="@+id/ruleSmDCislice" state="Num" >
+
+    <rule-array
+        id="@+id/ruleSmDCislice"
+        state="Num">
         <strings ref="@array/saSmDCislice" />
         <rules
             code="80"

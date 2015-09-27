@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<string name="cptVlajky">Signal Flags</string>
-	<string name="tVDGest">Sketch the main features:</string>
-	<string name="tVDOdhad">Predictions – click to accept:</string>
-	<string name="dscVDOkraj">Flag border</string>
+    <string name="cptVlajky">Signal Flags</string>
+    <string name="tVDGest">Sketch the main features:</string>
+    <string name="tVDOdhad">Predictions – click to accept:</string>
+    <string name="dscVDOkraj">Flag border</string>
 	
 	
 <string name="tHelpVlajky"><![CDATA[
@@ -22,7 +22,7 @@ draw two separating lines dividing the rectangle roughly in thirds. The app will
 of flags matching the pattern in decreasing amounts of similarity. If you can see the flag you
 meant, click it to record the corresponding letter in the <i>Plaintext</i> field.</p>
 
-<p><i>NB</i> that the app supports multi–line patterns. Please do not attempt to draw disconnected
+<p><i>NB</i> that the app supports multi-line gestures. Please do not attempt to draw disconnected
 line segments using a single stroke as this drastically reduces the detection success rate. However,
 make sure the recognition does not commence in the delay between drawing individual parts of the
 pattern.</p>
@@ -32,16 +32,16 @@ It can not be used to recognize flags signalizing digits, abbreviations or other
 used in actual maritime communication protocols.</p>
 
 <p>If you are experiencing problems in recognizing certain types of flags, consider drawing their
-main features more pronounced or even exaggerated. It is not vital for the recognition algorithm
+main features more pronounced or even exaggerated. It is not crucial for the recognition algorithm
 to stick exactly to the bounds of the indicated flag shape should this be at the expense of comfort
 and/or recognition quality.</p>
 
 
 <h3>Preferences</h3>
 
-<p>It is possible to fine–tune the delay before the app considers the drawing finished and starts
-shape recognition. Some delay is necessary for drawing multi–line patterns, however, too long a delay
-could result in unnecessarily long total input time.</p> 
+<p>It is possible to fine-tune the delay before the app considers the drawing finished and starts
+shape recognition. Some delay is necessary for drawing multi-line gestures, although too long a delay
+could result in an unnecessarily long total input time.</p>
 
 
 <h3>Encryption</h3>
@@ -49,61 +49,61 @@ could result in unnecessarily long total input time.</p>
 <p>Use the <i>Encrypt</i> tab to convert a plaintext into a sequence of signal flags. As opposed to
 decryption, letters as well as digits are accepted. Digits are mapped to signal flags according to
 the International Code of Signals (ICS) standard.</p>
-]]></string>	
+]]></string>
 
 
-	<string-array name="saVRGroups">
-		<item>Letters</item>
-		<item>ICS numerals</item>
-		<item>NATO numerals</item>
-	</string-array>
+    <string-array name="saVRGroups">
+        <item>Letters</item>
+        <item>ICS numerals</item>
+        <item>NATO numerals</item>
+    </string-array>
 
-	<array name="iaVRGroups">
-		<item>@id/idVRPismena</item>
-		<item>@id/idVRCislaICS</item>
-		<item>@id/idVRCislaNATO</item>
-	</array>
+    <array name="iaVRGroups">
+        <item>@id/idVRPismena</item>
+        <item>@id/idVRCislaICS</item>
+        <item>@id/idVRCislaNATO</item>
+    </array>
 
-	<string-array name="saVRPismena">
-		<item>A:Alpha:I have a diver down</item>
-		<item>B:Bravo:loading / discharging</item>
-		<item>C:Charlie:affirmative</item>
-		<item>D:Delta:I am maneuvering with difficulty</item>
-		<item>E:Echo:course to starboard</item>
-		<item>F:Foxtrot:I am disabled</item>
-		<item>G:Golf:I require a pilot</item>
-		<item>H:Hotel:I have a pilot on board</item>
-		<item>I:India:course to port</item>
-		<item>J:Juliet:ship on fire w/dangerous cargo</item>
-		<item>K:Kilo:I wish to communicate with you</item>
-		<item>L:Lima:quarantined / stop instantly</item>
-		<item>M:Mike:my vessel is stopped</item>
-		<item>N:November:negative</item>
-		<item>O:Oscar:man overboard</item>
-		<item>P:Papa:about to proceed to sea</item>
-		<item>Q:Quebec:I request free platique</item>
-		<item>R:Romeo:the way is off my ship</item>
-		<item>S:Sierra:I am operating astern propulsion</item>
-		<item>T:Tango:I am engaged in pair trawling</item>
-		<item>U:Uniform:you are running into danger</item>
-		<item>V:Victor:I require assistance</item>
-		<item>W:Whiskey:I require medical assistance</item>
-		<item>X:X-Ray:stop &amp; watch for my signals</item>
-		<item>Y:Yankee:I am dragging my anchor</item>
-		<item>Z:Zulu:I require a tug</item>
-	</string-array>
-	
-	<string-array name="saVRCisla">
-		<item>0:Nada</item>
-		<item>1:Una</item>
-		<item>2:Bisso</item>
-		<item>3:Terra</item>
-		<item>4:Karte</item>
-		<item>5:Panta</item>
-		<item>6:Soxi</item>
-		<item>7:Sette</item>
-		<item>8:Octo</item>
-		<item>9:Nove</item>
-	</string-array>
+    <string-array name="saVRPismena">
+        <item>A:Alpha:I have a diver down</item>
+        <item>B:Bravo:loading / discharging</item>
+        <item>C:Charlie:affirmative</item>
+        <item>D:Delta:I am maneuvering with difficulty</item>
+        <item>E:Echo:course to starboard</item>
+        <item>F:Foxtrot:I am disabled</item>
+        <item>G:Golf:I require a pilot</item>
+        <item>H:Hotel:I have a pilot on board</item>
+        <item>I:India:course to port</item>
+        <item>J:Juliet:ship on fire w/dangerous cargo</item>
+        <item>K:Kilo:I wish to communicate with you</item>
+        <item>L:Lima:quarantined / stop instantly</item>
+        <item>M:Mike:my vessel is stopped</item>
+        <item>N:November:negative</item>
+        <item>O:Oscar:man overboard</item>
+        <item>P:Papa:about to proceed to sea</item>
+        <item>Q:Quebec:I request free platique</item>
+        <item>R:Romeo:the way is off my ship</item>
+        <item>S:Sierra:I am operating astern propulsion</item>
+        <item>T:Tango:I am engaged in pair trawling</item>
+        <item>U:Uniform:you are running into danger</item>
+        <item>V:Victor:I require assistance</item>
+        <item>W:Whiskey:I require medical assistance</item>
+        <item>X:X-Ray:stop &amp; watch for my signals</item>
+        <item>Y:Yankee:I am dragging my anchor</item>
+        <item>Z:Zulu:I require a tug</item>
+    </string-array>
+
+    <string-array name="saVRCisla">
+        <item>0:Nada</item>
+        <item>1:Una</item>
+        <item>2:Bisso</item>
+        <item>3:Terra</item>
+        <item>4:Karte</item>
+        <item>5:Panta</item>
+        <item>6:Soxi</item>
+        <item>7:Sette</item>
+        <item>8:Octo</item>
+        <item>9:Nove</item>
+    </string-array>
 
 </resources>

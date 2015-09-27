@@ -1,66 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<preference-headers xmlns:android="http://schemas.android.com/apk/res/android" >
-    
-    <header
-        android:fragment="cz.absolutno.sifry.common.activity.SettingsFragment"
-        android:title="@string/prefLocale" >
-        <extra android:name="action" android:value="cz.absolutno.sifry.R.xml.pref_locale" />
-	</header>
-    
-    <header
-        android:fragment="cz.absolutno.sifry.common.activity.SettingsFragment"
-        android:title="@string/prefAbcTitle"
-        android:summary="@string/prefAbcSummary" >
-        <extra android:name="action" android:value="cz.absolutno.sifry.R.xml.pref_abc" />
-	</header>
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
 
     <header
         android:fragment="cz.absolutno.sifry.common.activity.SettingsFragment"
-        android:title="@string/prefParseTitle"
-        android:summary="@string/prefParseSummary" >
-        <extra android:name="action" android:value="cz.absolutno.sifry.R.xml.pref_parse" />
-	</header>
-
-    <header
-        android:fragment="cz.absolutno.sifry.common.activity.SettingsFragment"
-        android:title="@string/cptBraille" >
-        <extra android:name="action" android:value="cz.absolutno.sifry.R.xml.pref_braille" />
-	</header>
-
-    <header
-        android:fragment="cz.absolutno.sifry.common.activity.SettingsFragment"
-        android:title="@string/cptSemafor" >
-        <extra android:name="action" android:value="cz.absolutno.sifry.R.xml.pref_semafor" />
-	</header>
-
-    <header
-        android:fragment="cz.absolutno.sifry.common.activity.SettingsFragment"
-        android:title="@string/cptTabulky" >
-        <extra android:name="action" android:value="cz.absolutno.sifry.R.xml.pref_tabulky" />
-	</header>
-	
-    <header
-        android:fragment="cz.absolutno.sifry.common.activity.SettingsFragment"
-        android:title="@string/cptVlajky" >
-        <extra android:name="action" android:value="cz.absolutno.sifry.R.xml.pref_vlajky" />
-	</header>
-	
-    <header
-        android:fragment="cz.absolutno.sifry.common.activity.SettingsFragment"
-        android:title="@string/cptKalendar" >
-        <extra android:name="action" android:value="cz.absolutno.sifry.R.xml.pref_kalendar" />
+        android:title="@string/prefLocale">
+        <extra
+            android:name="action"
+            android:value="cz.absolutno.sifry.R.xml.pref_locale" />
     </header>
 
     <header
         android:fragment="cz.absolutno.sifry.common.activity.SettingsFragment"
-        android:title="@string/cptZapisnik" >
-        <extra android:name="action" android:value="cz.absolutno.sifry.R.xml.pref_zapisnik" />
-	</header>
+        android:title="@string/prefAbcTitle"
+        android:summary="@string/prefAbcSummary">
+        <extra
+            android:name="action"
+            android:value="cz.absolutno.sifry.R.xml.pref_abc" />
+    </header>
 
     <header
         android:fragment="cz.absolutno.sifry.common.activity.SettingsFragment"
-        android:title="@string/prefClearTitle" >
-        <extra android:name="action" android:value="cz.absolutno.sifry.R.xml.pref_clear" />
-	</header>
-    
+        android:title="@string/prefParseTitle"
+        android:summary="@string/prefParseSummary">
+        <extra
+            android:name="action"
+            android:value="cz.absolutno.sifry.R.xml.pref_parse" />
+    </header>
+
+    <header
+        android:fragment="cz.absolutno.sifry.common.activity.SettingsFragment"
+        android:title="@string/cptBraille">
+        <extra
+            android:name="action"
+            android:value="cz.absolutno.sifry.R.xml.pref_braille" />
+    </header>
+
+    <header
+        android:fragment="cz.absolutno.sifry.common.activity.SettingsFragment"
+        android:title="@string/cptSemafor">
+        <extra
+            android:name="action"
+            android:value="cz.absolutno.sifry.R.xml.pref_semafor" />
+    </header>
+
+    <header
+        android:fragment="cz.absolutno.sifry.common.activity.SettingsFragment"
+        android:title="@string/cptTabulky">
+        <extra
+            android:name="action"
+            android:value="cz.absolutno.sifry.R.xml.pref_tabulky" />
+    </header>
+
+    <header
+        android:fragment="cz.absolutno.sifry.common.activity.SettingsFragment"
+        android:title="@string/cptVlajky">
+        <extra
+            android:name="action"
+            android:value="cz.absolutno.sifry.R.xml.pref_vlajky" />
+    </header>
+
+    <header
+        android:fragment="cz.absolutno.sifry.common.activity.SettingsFragment"
+        android:title="@string/cptKalendar">
+        <extra
+            android:name="action"
+            android:value="cz.absolutno.sifry.R.xml.pref_kalendar" />
+    </header>
+
+    <header
+        android:fragment="cz.absolutno.sifry.common.activity.SettingsFragment"
+        android:title="@string/cptZapisnik">
+        <extra
+            android:name="action"
+            android:value="cz.absolutno.sifry.R.xml.pref_zapisnik" />
+    </header>
+
+    <header
+        android:fragment="cz.absolutno.sifry.common.activity.SettingsFragment"
+        android:title="@string/cptRegExp">
+        <extra
+            android:name="action"
+            android:value="cz.absolutno.sifry.R.xml.pref_regexp" />
+    </header>
+
+    <header
+        android:fragment="cz.absolutno.sifry.common.activity.SettingsFragment"
+        android:title="@string/prefClearTitle">
+        <extra
+            android:name="action"
+            android:value="cz.absolutno.sifry.R.xml.pref_clear" />
+    </header>
+
 </preference-headers>

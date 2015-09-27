@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
@@ -25,19 +25,19 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
 
-	    <EditText
-	        android:id="@+id/etSDSifra"
-	        android:layout_width="0dp"
-	        android:layout_height="wrap_content"
-	        android:layout_weight="1.0"
-	        android:maxLines="5"
-	        android:imeOptions="flagNoExtractUi"
-	        android:inputType="textMultiLine|textNoSuggestions" >
-	
-	        <requestFocus />
-	    </EditText>
+        <EditText
+            android:id="@+id/etSDSifra"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:maxLines="5"
+            android:imeOptions="flagNoExtractUi"
+            android:inputType="textMultiLine|textNoSuggestions">
+
+            <requestFocus />
+        </EditText>
 
         <ImageView
             android:id="@+id/ivGo"
@@ -47,14 +47,14 @@
             android:src="@drawable/ic_menu_send"
             android:contentDescription="@string/tGo"
             android:clickable="true" />
-       
+
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/llSDHeslo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
@@ -73,7 +73,7 @@
         android:id="@+id/llSDAfinni"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
@@ -91,7 +91,7 @@
         android:id="@+id/llSDKlic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
@@ -122,7 +122,7 @@
         android:id="@+id/llSDVlastni"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
@@ -132,8 +132,7 @@
         <cz.absolutno.sifry.common.widget.FixedGridLayout
             android:id="@+id/fglSDVlastni"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-        </cz.absolutno.sifry.common.widget.FixedGridLayout>
+            android:layout_height="wrap_content"></cz.absolutno.sifry.common.widget.FixedGridLayout>
     </LinearLayout>
 
     <TextView
@@ -146,7 +145,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.0"
-        tools:listitem="@layout/simple_list_item" >
-    </ListView>
+        tools:listitem="@layout/simple_list_item"></ListView>
 
 </LinearLayout>

@@ -6,6 +6,6 @@
     android:background="@drawable/keyboard_key_feedback_background"
     android:gravity="bottom"
     android:orientation="horizontal"
-    tools:ignore="Overdraw" >
+    tools:ignore="Overdraw">
 
 </LinearLayout>

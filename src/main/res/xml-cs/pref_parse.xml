@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
-    
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
     <ListPreference
         android:key="pref_parse_abc"
         android:title="@string/prefParseAbcTitle"
@@ -9,9 +9,9 @@
         android:defaultValue="@string/prefParseAbcDefault" />
 
     <CheckBoxPreference
-		android:key="pref_parse_np"
-		android:title="@string/prefParseNPTitle"
-		android:summary="@string/prefParseNPSummary"
-		android:defaultValue="false" />
-	
+        android:key="pref_parse_np"
+        android:title="@string/prefParseNPTitle"
+        android:summary="@string/prefParseNPSummary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>

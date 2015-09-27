@@ -1,78 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
-    
+<resources>
+
     <string name="prefLocale">Locale</string>
-	
-	<string name="prefAbcTitle">Alphabet customization</string>
-	<string name="prefAbcSummary">Letter Numbers, Substitutions, Shifts</string>
 
-	<string name="prefAbcJTitle">Include J in the alphabet</string>
-	<string name="prefAbcJSummary">Uncheck to combine J with I</string>
+    <string name="prefAbcTitle">Alphabet customization</string>
+    <string name="prefAbcSummary">Letter Numbers, Substitutions, Shifts</string>
 
-	<string name="prefAbcQTitle">Include Q in the alphabet</string>
-	<string name="prefAbcQSummary">Uncheck to skip Q (…NOPRST…)</string>
-	
-	<string name="prefAbcXTitle">Include X in the alphabet</string>
-	<string name="prefAbcXSummary">Uncheck to skip X (…UVWYZ)</string>
+    <string name="prefAbcJTitle">Include J in the alphabet</string>
+    <string name="prefAbcJSummary">Uncheck to combine J with I</string>
 
-	<string name="prefBGestureTitle">Swipe input</string>
-	<string name="prefBGestureSummary">Enter the Braille letter by swiping over the positions</string>
+    <string name="prefAbcQTitle">Include Q in the alphabet</string>
+    <string name="prefAbcQSummary">Uncheck to skip Q (…NOPRST…)</string>
 
-	<string name="prefBSpaceTitle">Accept space</string>
-	<string name="prefBSpaceSummary">Allow inserting a space in the output by clicking on the empty thumbnail</string>
+    <string name="prefAbcXTitle">Include X in the alphabet</string>
+    <string name="prefAbcXSummary">Uncheck to skip X (…UVWYZ)</string>
 
-	<string name="prefBNumberTitle">Accept number sign</string>
-	<string name="prefBNumberSummary">Allow switching between letter and digit input</string>
-	
-	<string name="prefBItpTitle">Accept punctuation marks</string>
-	<string name="prefBItpSummary">Allow adding punctuation marks to the output</string>
-	
-	<string name="prefBLigTitle">Accept multi-character input</string>
-	<string name="prefBLigSummary">Allow processing ligatures and abbreviations</string>
-	
-	<string name="prefBFmtTitle">Allow formatting</string>
-	<string name="prefBFmtSummary">Accept and process formatting marks</string>
+    <string name="prefBGestureTitle">Swipe input</string>
+    <string name="prefBGestureSummary">Enter the Braille letter by swiping over the positions</string>
 
-	<string name="prefSmNumberTitle">Allow number &amp; letter signs</string>
-	<string name="prefSmNumberSummary">Allow switching between letter and digit input</string>
-	
-	<string name="prefTAidTitle">Display key feedback</string>
-	<string name="prefTAidSummary">Prevents mistypes due to occlusion</string>
-	
-	<string name="prefVDelayTitle">Recognition delay</string>
-	<string name="prefVDelaySummary">Delay before the graphic recognition starts</string>
-	<string name="prefVDelayHi">Long</string>
-	<string name="prefVDelayLo">Short</string>
-	
-	<string name="prefKalNamedaysTitle">Namedays</string>
-	
-	<string name="prefZAutoTitle">Automatic numbering</string>
-	<string name="prefZAutoSummary">New entries will have preset title "Checkpoint 1, 2, …"</string>
+    <string name="prefBSpaceTitle">Accept space</string>
+    <string name="prefBSpaceSummary">Allow inserting a space in the output by tapping on the empty thumbnail</string>
 
-	<string name="prefREDictionaryTitle">Dictionary data</string>
-	
-	<string name="prefClearTitle">Reset all preferences</string>
-	<string name="prefClearSummary">Revert all settings to their default values</string>
-	
-	<string name="prefParseTitle">Parsing options</string>
-	<string name="prefParseSummary">Frequency analysis, Transposition ciphers</string>
-	
-	<string name="prefParseNPTitle">Ignore non-letter characters</string>
-	<string name="prefParseNPSummary">Skip (Transposition Ciphers) or don\'t list (Empirical Substitution)</string>
+    <string name="prefBNumberTitle">Accept number sign</string>
+    <string name="prefBNumberSummary">Allow switching between letter and digit input</string>
 
-	<string-array name="saJazyky">
-	    <item>Automatic</item>
-	    <item>English</item>
-	    <item>Czech</item>
-	</string-array>
-	
-	<string-array name="saLocale">
-	    <item></item>
-	    <item>en</item>
-	    <item>cs</item>
-	</string-array>
-	
-	<string-array name="saAbcVarNazvy" />
-	<string-array name="saAbcVarKody" />
+    <string name="prefBItpTitle">Accept punctuation marks</string>
+    <string name="prefBItpSummary">Allow adding punctuation marks to the output</string>
+
+    <string name="prefBLigTitle">Accept multi-character input</string>
+    <string name="prefBLigSummary">Allow processing ligatures and abbreviations</string>
+
+    <string name="prefBFmtTitle">Allow formatting</string>
+    <string name="prefBFmtSummary">Accept and process formatting marks</string>
+
+    <string name="prefSmNumberTitle">Allow number &amp; letter signs</string>
+    <string name="prefSmNumberSummary">Allow switching between letter and digit input</string>
+
+    <string name="prefTAidTitle">Display key feedback</string>
+    <string name="prefTAidSummary">Prevents mistypes due to occlusion</string>
+
+    <string name="prefVDelayTitle">Recognition delay</string>
+    <string name="prefVDelaySummary">Delay before the graphic recognition starts</string>
+    <string name="prefVDelayHi">Long</string>
+    <string name="prefVDelayLo">Short</string>
+
+    <string name="prefKalNamedaysTitle">Namedays</string>
+
+    <string name="prefZAutoTitle">Automatic numbering</string>
+    <string name="prefZAutoSummary">New entries will have preset title "Checkpoint 1, 2, …"</string>
+
+    <string name="prefREDictionaryTitle">Dictionary data</string>
+
+    <string name="prefClearTitle">Reset all preferences</string>
+    <string name="prefClearSummary">Revert all settings to their default values</string>
+
+    <string name="prefParseTitle">Parsing options</string>
+    <string name="prefParseSummary">Frequency analysis, Transposition ciphers</string>
+
+    <string name="prefParseNPTitle">Ignore non-letter characters</string>
+    <string name="prefParseNPSummary">Skip (Transposition Ciphers) or don\'t list (Empirical Substitution)</string>
+
+    <string-array name="saJazyky">
+        <item>Automatic</item>
+        <item>English</item>
+        <item>Czech</item>
+    </string-array>
+
+    <string-array name="saLocale">
+        <item></item>
+        <item>en</item>
+        <item>cs</item>
+    </string-array>
+
+    <string-array name="saAbcVarNazvy" />
+    <string-array name="saAbcVarKody" />
 
 </resources>
