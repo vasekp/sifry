@@ -50,22 +50,15 @@ public final class EmpirSubstFragment extends AbstractDFragment {
         return HAS_CLEAR | HAS_COPY;
     }
 
-    @SuppressWarnings("unchecked")
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.esubs_layout, null);
-        v.findViewById(R.id.smaz).setVisibility(View.GONE);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
         colPrimary = getResources().getColor(R.color.priColor);
         colNT = getResources().getColor(R.color.esubsNTColor);
         colOK = getResources().getColor(R.color.esubsOKColor);
         colColl = getResources().getColor(R.color.esubsCollColor);
 
-        ctv = ((ColorChunkTextView) v.findViewById(R.id.ctvESMain));
-        ctv.setOnChunkClickListener(chunkListener);
-        v.findViewById(R.id.tbESSort).setOnClickListener(sortListener);
-
-        llTabulka = (LinearLayout) v.findViewById(R.id.llESTabulka);
         format = getString(R.string.patFDRes);
         mezera = getString(R.string.tFDMezera);
 
@@ -79,6 +72,19 @@ public final class EmpirSubstFragment extends AbstractDFragment {
             sort = savedInstanceState.getInt(App.SPEC);
         } else
             sort = SORT_FREQ;
+    }
+
+    @SuppressWarnings("unchecked")
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.esubs_layout, null);
+        v.findViewById(R.id.smaz).setVisibility(View.GONE);
+
+        ctv = ((ColorChunkTextView) v.findViewById(R.id.ctvESMain));
+        ctv.setOnChunkClickListener(chunkListener);
+        v.findViewById(R.id.tbESSort).setOnClickListener(sortListener);
+
+        llTabulka = (LinearLayout) v.findViewById(R.id.llESTabulka);
 
         return v;
     }
