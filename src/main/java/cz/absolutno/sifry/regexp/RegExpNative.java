@@ -7,7 +7,6 @@ import cz.absolutno.sifry.App;
 public final class RegExpNative {
 
     static {
-        System.loadLibrary("pcre");
         System.loadLibrary("regrep");
     }
 
