@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -37,6 +38,7 @@
             android:inputType="textMultiLine|textNoSuggestions">
 
             <requestFocus />
+
         </EditText>
 
         <ImageView
@@ -67,6 +69,7 @@
             android:layout_height="wrap_content"
             android:imeOptions="flagNoExtractUi"
             android:inputType="textNoSuggestions" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -85,6 +88,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:listitem="@android:layout/simple_spinner_item" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -116,6 +120,7 @@
             android:layout_height="wrap_content"
             android:entries="@array/saSDKPokr"
             tools:listitem="@android:layout/simple_spinner_item" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -132,7 +137,8 @@
         <cz.absolutno.sifry.common.widget.FixedGridLayout
             android:id="@+id/fglSDVlastni"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"></cz.absolutno.sifry.common.widget.FixedGridLayout>
+            android:layout_height="wrap_content" />
+
     </LinearLayout>
 
     <TextView
@@ -145,6 +151,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.0"
-        tools:listitem="@layout/simple_list_item"></ListView>
+        tools:listitem="@layout/simple_list_item" />
 
 </LinearLayout>

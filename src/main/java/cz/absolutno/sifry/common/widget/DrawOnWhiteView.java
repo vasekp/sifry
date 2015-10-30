@@ -4,6 +4,6 @@ import android.graphics.Canvas;
 
 public interface DrawOnWhiteView {
 
-    public void drawOnWhite(Canvas c);
+    void drawOnWhite(Canvas c);
 
 }

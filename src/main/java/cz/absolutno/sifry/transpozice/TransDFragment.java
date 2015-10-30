@@ -42,6 +42,7 @@ public final class TransDFragment extends AbstractDFragment {
 
         text = (EditText) v.findViewById(R.id.etTVstup);
         text.setOnEditorActionListener(new OnEditorActionListener() {
+            @SuppressWarnings("ConstantConditions")
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 zpracuj();
                 getView().findViewById(R.id.flTFocus).requestFocus();
@@ -50,6 +51,7 @@ public final class TransDFragment extends AbstractDFragment {
         });
 
         v.findViewById(R.id.ivGo).setOnClickListener(new OnClickListener() {
+            @SuppressWarnings("ConstantConditions")
             public void onClick(View v) {
                 zpracuj();
                 getView().findViewById(R.id.flTFocus).requestFocus();
@@ -107,6 +109,7 @@ public final class TransDFragment extends AbstractDFragment {
         return v;
     }
 
+    @SuppressWarnings("ConstantConditions")
     private void setVstup(int id) {
         getView().findViewById(R.id.ctvTLine).setVisibility(id == R.id.idTNic ? View.VISIBLE : View.GONE);
         getView().findViewById(R.id.trvTVstupObdelnik).setVisibility(id == R.id.idTObdelnik ? View.VISIBLE : View.GONE);

@@ -43,7 +43,7 @@ public final class TabulkyDFragment extends AbstractDFragment {
 
     private int[] tabulkyID, vpVarID, mpVarID;
     private String[] vpVarABC, mpVarABC, ctvVarABC;
-    private Handler h = new Handler();
+    private final Handler h = new Handler();
 
     @Override
     protected int getMenuCaps() {
@@ -128,6 +128,7 @@ public final class TabulkyDFragment extends AbstractDFragment {
         }
     };
 
+    @SuppressWarnings("ConstantConditions")
     private void updateLayout() {
         if (tabulkyID[spVar.getSelectedItemPosition()] != selLayout) {
             onClear();
@@ -150,8 +151,7 @@ public final class TabulkyDFragment extends AbstractDFragment {
         getView().findViewById(R.id.alTDMaly).setVisibility(selLayout == R.id.idTDMPolsky ? View.VISIBLE : View.GONE);
         getView().findViewById(R.id.alTDMobil).setVisibility(selLayout == R.id.idTDMobil ? View.VISIBLE : View.GONE);
         getView().findViewById(R.id.alTDCtverec).setVisibility(selLayout == R.id.idTDCtverec ? View.VISIBLE : View.GONE);
-
-        ((TextView) getView().findViewById(R.id.tvTDVar)).setVisibility(selLayout != R.id.idTDMobil ? View.VISIBLE : View.GONE);
+        getView().findViewById(R.id.tvTDVar).setVisibility(selLayout != R.id.idTDMobil ? View.VISIBLE : View.GONE);
 
         switch (selLayout) {
             case R.id.idTDVPolsky:

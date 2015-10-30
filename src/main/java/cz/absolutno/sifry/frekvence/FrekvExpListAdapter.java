@@ -1,6 +1,8 @@
 package cz.absolutno.sifry.frekvence;
 
+import android.content.Context;
 import android.content.res.Resources;
+import android.support.v4.content.ContextCompat;
 import android.util.SparseIntArray;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,37 +27,38 @@ public final class FrekvExpListAdapter extends BaseExpandableListAdapter {
     private int[] pism, prvni, posledni, cisl, ip;
     private int pismen, cislic, mezer, itp, znaku, slov, vet, souveti, nerozp, maxNum;
     private int ruzPismen, ruzCislic;
-    private SparseIntArray delky = new SparseIntArray();
-    private SparseIntArray nezn = new SparseIntArray();
-    private SparseIntArray vse = new SparseIntArray();
+    private final SparseIntArray delky = new SparseIntArray();
+    private final SparseIntArray nezn = new SparseIntArray();
+    private final SparseIntArray vse = new SparseIntArray();
 
-    private String[] groups;
-    private String[] stat;
-    private int[] groupIDs;
-    private int[] statIDs;
-    private int[] statPluralIDs;
+    private final String[] groups;
+    private final String[] stat;
+    private final int[] groupIDs;
+    private final int[] statIDs;
+    private final int[] statPluralIDs;
 
-    private ArrayList<Integer> groupsFiltered = new ArrayList<Integer>();
-    private ArrayList<Integer> statFiltered = new ArrayList<Integer>();
+    private final ArrayList<Integer> groupsFiltered = new ArrayList<Integer>();
+    private final ArrayList<Integer> statFiltered = new ArrayList<Integer>();
 
-    private String formatString;
-    private String mezera;
-    private String inter;
+    private final String formatString;
+    private final String mezera;
+    private final String inter;
 
     private SortItem[] sortedPismena, sortedCislice, sortedAlnum, sortedVse,
             sortedDelky, sortedPrvni, sortedPosledni, sortedNezname;
 
-    private int priColor, secColor;
+    private final int priColor, secColor;
 
     public FrekvExpListAdapter() {
-        Resources res = App.getContext().getResources();
+        Context ctx = App.getContext();
+        Resources res = ctx.getResources();
         groups = res.getStringArray(R.array.saFDGroups);
         stat = res.getStringArray(R.array.saFDStat);
         groupIDs = Utils.getIdArray(R.array.iaFDGroups);
         statIDs = Utils.getIdArray(R.array.iaFDStat);
         statPluralIDs = Utils.getIdArray(R.array.iaFDStatRuzne);
-        priColor = res.getColor(R.color.priColor);
-        secColor = res.getColor(R.color.secColor);
+        priColor = ContextCompat.getColor(ctx, R.color.priColor);
+        secColor = ContextCompat.getColor(ctx, R.color.secColor);
         formatString = res.getString(R.string.patFDRes);
         mezera = res.getString(R.string.tFDMezera);
         inter = res.getString(R.string.tFDInter);
@@ -100,6 +103,7 @@ public final class FrekvExpListAdapter extends BaseExpandableListAdapter {
         notifyDataSetChanged();
     }
 
+    @SuppressWarnings("ConstantConditions") // "too complex to analyze by data flow algorithm" :-)
     public void go(String vstup) {
         int ad = 0;
         boolean av = false;
@@ -166,7 +170,7 @@ public final class FrekvExpListAdapter extends BaseExpandableListAdapter {
                     slov++;
                     ad = 0;
                 }
-                vse.put(Integer.valueOf(c), vse.get(c) + 1);
+                vse.put(c, vse.get(c) + 1);
             }
         }
         if (ad != 0) {
@@ -177,15 +181,15 @@ public final class FrekvExpListAdapter extends BaseExpandableListAdapter {
             }
             posledni[lastOrd]++;
             slov++;
-            ad = 0;
+            //ad = 0;
         }
         if (av) {
             vet++;
-            av = false;
+            //av = false;
         }
         if (as) {
             souveti++;
-            as = false;
+            //as = false;
         }
 
         ArrayList<SortItem> sort;
@@ -521,6 +525,7 @@ public final class FrekvExpListAdapter extends BaseExpandableListAdapter {
         TextView tvCont = (TextView) convertView.findViewById(R.id.cont);
         tvDesc.setText(getChildDesc(groupPosition, childPosition));
         Ret r = getChild(groupPosition, childPosition);
+        assert r != null;
         tvCont.setText(r.s);
         if (r.zero)
             tvCont.setTextColor(secColor);
@@ -539,8 +544,8 @@ public final class FrekvExpListAdapter extends BaseExpandableListAdapter {
 
 
     private static final class SortItem {
-        public int pocet;
-        public int ord;
+        public final int pocet;
+        public final int ord;
         public String pismena;
 
         public SortItem(String pismena, int ord, int pocet) {
@@ -565,7 +570,7 @@ public final class FrekvExpListAdapter extends BaseExpandableListAdapter {
 
     private class Ret {
         public String s;
-        public boolean zero;
+        public final boolean zero;
 
         public Ret(String s, boolean z) {
             this.s = s;

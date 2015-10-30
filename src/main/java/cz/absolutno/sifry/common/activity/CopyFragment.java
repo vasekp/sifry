@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 import android.text.ClipboardManager;
 
@@ -16,6 +17,7 @@ import cz.absolutno.sifry.R;
 @SuppressWarnings("deprecation")
 public final class CopyFragment extends DialogFragment {
 
+    @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         final String str = getArguments().getString(App.VSTUP);

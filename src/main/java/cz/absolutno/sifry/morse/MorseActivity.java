@@ -6,7 +6,6 @@ import android.support.v4.app.FragmentTransaction;
 
 import cz.absolutno.sifry.R;
 import cz.absolutno.sifry.Utils;
-import cz.absolutno.sifry.common.activity.AbstractCFragment;
 import cz.absolutno.sifry.common.activity.AbstractDFragment;
 import cz.absolutno.sifry.common.activity.BottomBarActivity;
 
@@ -41,7 +40,7 @@ public final class MorseActivity extends BottomBarActivity {
                 if (frag.getTag().equals("D")) {
                     args = new Bundle();
                     frag = new MorseCFragment();
-                    if (((MorseDFragment) getCurrFragment()).saveData(args))
+                    if (getCurrFragment().saveData(args))
                         frag.setArguments(args);
                     trans.replace(R.id.content, frag, "C");
                     trans.addToBackStack(null);
@@ -53,7 +52,7 @@ public final class MorseActivity extends BottomBarActivity {
                 frag = getCurrFragment();
                 args = new Bundle();
                 if (frag.getTag().equals("C"))
-                    if (((AbstractCFragment) frag).saveData(args))
+                    if (frag.saveData(args))
                         ((AbstractDFragment) fm.findFragmentByTag("D")).loadData(args);
                 fm.popBackStack();
                 break;
@@ -65,7 +64,7 @@ public final class MorseActivity extends BottomBarActivity {
                 break;
             case TRANSMIT:
                 args = new Bundle();
-                if (((MorseCFragment) getCurrFragment()).saveData(args)) {
+                if (getCurrFragment().saveData(args)) {
                     frag = new MorseTFragment();
                     frag.setArguments(args);
                     trans.replace(R.id.content, frag, "T");

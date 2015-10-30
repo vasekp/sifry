@@ -50,10 +50,10 @@ public final class BrailleCFragment extends AbstractCFragment {
     private static final class BrailleCLA extends BaseAdapter {
 
         private String input;
-        private ArrayList<Integer> raw;
-        StatefulDecoder bd;
-        private String[] items;
-        private int[] itemIDs;
+        private final ArrayList<Integer> raw;
+        private final String[] items;
+        private final int[] itemIDs;
+        private StatefulDecoder bd;
 
         public BrailleCLA() {
             items = App.getContext().getResources().getStringArray(R.array.saBCItems);

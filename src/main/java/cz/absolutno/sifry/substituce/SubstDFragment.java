@@ -64,14 +64,15 @@ public final class SubstDFragment extends AbstractDFragment {
         return v;
     }
 
-    private OnTouchListener interceptListener = new OnTouchListener() {
+    private final OnTouchListener interceptListener = new OnTouchListener() {
         public boolean onTouch(View v, MotionEvent event) {
             v.getParent().requestDisallowInterceptTouchEvent(MotionEventCompat.getActionMasked(event) != MotionEvent.ACTION_UP);
             return false;
         }
     };
 
-    private OnItemSelectedListener itemSelectedListener = new OnItemSelectedListener() {
+    private final OnItemSelectedListener itemSelectedListener = new OnItemSelectedListener() {
+        @SuppressWarnings("ConstantConditions")
         public void onItemSelected(AdapterView<?> parentView, View childView, int position, long id) {
             switch (parentView.getId()) {
                 case R.id.spSDTyp:
@@ -92,19 +93,20 @@ public final class SubstDFragment extends AbstractDFragment {
         }
     };
 
-    private OnEditorActionListener editorActionListener = new OnEditorActionListener() {
+    private final OnEditorActionListener editorActionListener = new OnEditorActionListener() {
         public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
             zpracuj();
             return true;
         }
     };
 
-    private OnClickListener goListener = new OnClickListener() {
+    private final OnClickListener goListener = new OnClickListener() {
         public void onClick(View v) {
             zpracuj();
         }
     };
 
+    @SuppressWarnings("ConstantConditions")
     private void zpracuj() {
         if (adapter != null)
             adapter.setInput(((TextView) getView().findViewById(R.id.etSDSifra)).getText().toString());
@@ -115,17 +117,20 @@ public final class SubstDFragment extends AbstractDFragment {
                     ((Spinner) getView().findViewById(R.id.spSDKPokr)).getSelectedItemPosition());
     }
 
+    @SuppressWarnings("ConstantConditions")
     @Override
     protected String onCopy() {
         return ((EditText) getView().findViewById(R.id.etSDSifra)).getText().toString();
     }
 
+    @SuppressWarnings("ConstantConditions")
     @Override
     protected void onPaste(String s) {
         ((EditText) getView().findViewById(R.id.etSDSifra)).setText(s);
         adapter.setInput(s);
     }
 
+    @SuppressWarnings("ConstantConditions")
     @Override
     protected void onClear() {
         ((EditText) getView().findViewById(R.id.etSDSifra)).setText("");
@@ -136,6 +141,7 @@ public final class SubstDFragment extends AbstractDFragment {
             updateFGL();
     }
 
+    @SuppressWarnings("ConstantConditions")
     private void loadAbc() {
         abc = Alphabet.getPreferentialInstance();
         int cnt = abc.count();
@@ -159,13 +165,13 @@ public final class SubstDFragment extends AbstractDFragment {
             View v = inflater.inflate(R.layout.subst_item, null);
             ((TextView) v.findViewById(R.id.puv)).setText(abc.chr(i));
             ((TextView) v.findViewById(R.id.nove)).setText(abc.chr(i));
-            v.setTag(Integer.valueOf(i));
+            v.setTag(i);
             v.setOnClickListener(new OnClickListener() {
                 public void onClick(View v) {
                     if (!(adapter instanceof TranslateAdapter))
                         return;
-                    int from = ((Integer) v.getTag()).intValue();
-                    ((ListView) getView().findViewById(R.id.lvSDRes)).requestFocus();
+                    int from = (Integer) v.getTag();
+                    getView().findViewById(R.id.lvSDRes).requestFocus();
                     setSubs(from);
                 }
             });
@@ -173,6 +179,7 @@ public final class SubstDFragment extends AbstractDFragment {
         }
     }
 
+    @SuppressWarnings("ConstantConditions")
     private void updateLayout() {
         String str = ((EditText) getView().findViewById(R.id.etSDSifra)).getText().toString();
         int selItem = groupIDs[((Spinner) getView().findViewById(R.id.spSDTyp)).getSelectedItemPosition()];
@@ -242,7 +249,7 @@ public final class SubstDFragment extends AbstractDFragment {
         dialog.show(getFragmentManager(), "setSubs");
     }
 
-    private TranslateFragment.OnSelectedListener setSelectedListener = new TranslateFragment.OnSelectedListener() {
+    private final TranslateFragment.OnSelectedListener setSelectedListener = new TranslateFragment.OnSelectedListener() {
         @SuppressLint("DefaultLocale")
         public void onSelected(int from, int to) {
             ((TranslateAdapter) adapter).setOne(from, to);
@@ -250,6 +257,7 @@ public final class SubstDFragment extends AbstractDFragment {
         }
     };
 
+    @SuppressWarnings("ConstantConditions")
     private void updateFGL() {
         FixedGridLayout fgl = (FixedGridLayout) getView().findViewById(R.id.fglSDVlastni);
         savedTr = ((TranslateAdapter) adapter).getTr();
@@ -290,8 +298,8 @@ public final class SubstDFragment extends AbstractDFragment {
     }
 
     private final class KoefItem {
-        int koef;
-        int inv;
+        final int koef;
+        final int inv;
 
         public KoefItem(int koef, int inv) {
             this.koef = koef;

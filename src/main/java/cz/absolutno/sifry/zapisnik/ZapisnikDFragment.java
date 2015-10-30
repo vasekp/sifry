@@ -20,7 +20,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -81,15 +80,13 @@ public final class ZapisnikDFragment extends AbstractDFragment {
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(stan);
             oos.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
     }
 
-    private OnItemClickListener itemClickListener = new OnItemClickListener() {
+    private final OnItemClickListener itemClickListener = new OnItemClickListener() {
         public void onItemClick(AdapterView<?> parentView, View childView, int position, long id) {
             if (id == -1)
                 prichod();
@@ -109,8 +106,6 @@ public final class ZapisnikDFragment extends AbstractDFragment {
         if (s.odchod != null)
             menu.findItem(R.id.mZCtxOdchod).setVisible(false);
     }
-
-    ;
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
@@ -141,7 +136,7 @@ public final class ZapisnikDFragment extends AbstractDFragment {
         dialog.show(getFragmentManager(), "prichod");
     }
 
-    private ZapisnikSFragment.OnPositiveButtonListener prichodListener = new ZapisnikSFragment.OnPositiveButtonListener() {
+    private final ZapisnikSFragment.OnPositiveButtonListener prichodListener = new ZapisnikSFragment.OnPositiveButtonListener() {
         public void onPositiveButton(Stanoviste s) {
             stan.add(s);
             lvMain.invalidateViews();
@@ -158,7 +153,7 @@ public final class ZapisnikDFragment extends AbstractDFragment {
         dialog.show(getFragmentManager(), "zmena");
     }
 
-    private ZapisnikSFragment.OnPositiveButtonListener zmenaListener = new ZapisnikSFragment.OnPositiveButtonListener() {
+    private final ZapisnikSFragment.OnPositiveButtonListener zmenaListener = new ZapisnikSFragment.OnPositiveButtonListener() {
         public void onPositiveButton(Stanoviste s) {
             lvMain.invalidateViews();
         }
@@ -171,7 +166,7 @@ public final class ZapisnikDFragment extends AbstractDFragment {
         dialog.show(getFragmentManager(), "clear");
     }
 
-    private SmazVseFragment.OnPositiveButtonListener clearListener = new SmazVseFragment.OnPositiveButtonListener() {
+    private final SmazVseFragment.OnPositiveButtonListener clearListener = new SmazVseFragment.OnPositiveButtonListener() {
         public void onPositiveButton() {
             stan.clear();
             lvMain.invalidateViews();
@@ -212,7 +207,7 @@ public final class ZapisnikDFragment extends AbstractDFragment {
     public void onResume() {
         super.onResume();
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        cislovat = (sp != null ? sp.getBoolean("pref_zap_auto", true) : true);
+        cislovat = (sp == null || sp.getBoolean("pref_zap_auto", true));
         lvMain.invalidateViews();
     }
 
@@ -276,6 +271,7 @@ public final class ZapisnikDFragment extends AbstractDFragment {
                         type == TYPE_STAN ? R.layout.zapisnik_item : R.layout.zapisnik_item_new, null);
             if (type == TYPE_STAN) {
                 Stanoviste s = getItem(position);
+                assert s != null;
                 ((TextView) convertView.findViewById(R.id.tvZStan)).setText(s.nazev);
                 ((TextView) convertView.findViewById(R.id.tvZCas)).setText(s.fmtCas());
                 ((TextView) convertView.findViewById(R.id.tvZRes)).setText(s.reseni);

@@ -24,6 +24,7 @@ public final class CtverecVFragment extends AbstractRFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         ArrayList<Integer> raw = getArguments().getIntegerArrayList(App.DATA);
+        assert raw != null;
         int sz = raw.size();
         sour = new int[sz][2];
         for (int i = 0; i < sz; i++) {
@@ -86,6 +87,7 @@ public final class CtverecVFragment extends AbstractRFragment {
             return childPosition;
         }
 
+        @SuppressWarnings("UnusedParameters")
         private String getChildDesc(int groupPosition, int childPosition) {
             if (childPosition == 0) return "0";
             StringBuilder sb = new StringBuilder();

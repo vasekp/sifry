@@ -21,7 +21,7 @@ public final class AutokeyAdapter extends AbstractSubstAdapter {
     private static final int RUNMINUS0 = 11;
     private static final int SKOK = 12;
 
-    private String[] items;
+    private final String[] items;
 
     public AutokeyAdapter(Alphabet abc) {
         super(abc);

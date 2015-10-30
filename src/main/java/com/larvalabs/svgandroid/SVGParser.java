@@ -12,7 +12,6 @@ import android.graphics.RadialGradient;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.Shader.TileMode;
-import android.util.FloatMath;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -44,6 +43,7 @@ import org.xml.sax.helpers.DefaultHandler;
 /**
  * @author Larva Labs, LLC
  */
+@SuppressWarnings("unused")
 public class SVGParser {
 
 	static final String TAG = "SVGAndroid";
@@ -206,6 +206,7 @@ public class SVGParser {
 		return matrix;
 	}
 
+	@SuppressWarnings("UnusedReturnValue")
 	private static Matrix parseTransformItem(String s, Matrix matrix) {
 		if (s.startsWith("matrix(")) {
 			NumberParse np = parseNumbers(s.substring("matrix(".length()));
@@ -295,6 +296,7 @@ public class SVGParser {
 	 * 
 	 * @param s the path string from the XML
 	 */
+	@SuppressWarnings("ConstantConditions") // too complex to analyze by data flow algorithm
 	private static Path doPath(String s) {
 		int n = s.length();
 		ParserHelper ph = new ParserHelper(s, 0);
@@ -490,8 +492,7 @@ public class SVGParser {
 	}
 
 	private static float angle(float x1, float y1, float x2, float y2) {
-
-		return (float) Math.toDegrees(Math.atan2(x1, y1) - Math.atan2(x2, y2)) % 360;
+		return (float) Math.toDegrees(Math.atan2(y1, x1) - Math.atan2(y2, x2)) % 360;
 	}
 
 	private static final RectF arcRectf = new RectF();
@@ -620,9 +621,10 @@ public class SVGParser {
 		return Float.parseFloat(str);
 	}
 
+	@SuppressWarnings("unused")
 	private static class NumberParse {
-		private ArrayList<Float> numbers;
-		private int nextCmd;
+		private final ArrayList<Float> numbers;
+		private final int nextCmd;
 
 		public NumberParse(ArrayList<Float> numbers, int nextCmd) {
 			this.numbers = numbers;
@@ -684,7 +686,7 @@ public class SVGParser {
 	}
 
 	private static class StyleSet {
-		HashMap<String, String> styleMap = new HashMap<String, String>();
+		final HashMap<String, String> styleMap = new HashMap<String, String>();
 
 		private StyleSet(String string) {
 			String[] styles = string.split(";");
@@ -703,7 +705,7 @@ public class SVGParser {
 
 	private static class Properties {
 		StyleSet styles = null;
-		Attributes atts;
+		final Attributes atts;
 
 		private Properties(Attributes atts) {
 			this.atts = atts;
@@ -802,18 +804,18 @@ public class SVGParser {
 
 		Paint strokePaint;
 		boolean strokeSet = false;
-		Stack<Paint> strokePaintStack = new Stack<Paint>();
-		Stack<Boolean> strokeSetStack = new Stack<Boolean>();
+		final Stack<Paint> strokePaintStack = new Stack<Paint>();
+		final Stack<Boolean> strokeSetStack = new Stack<Boolean>();
 
 		Paint fillPaint;
 		boolean fillSet = false;
-		Stack<Paint> fillPaintStack = new Stack<Paint>();
-		Stack<Boolean> fillSetStack = new Stack<Boolean>();
+		final Stack<Paint> fillPaintStack = new Stack<Paint>();
+		final Stack<Boolean> fillSetStack = new Stack<Boolean>();
 
 		// Scratch rect (so we aren't constantly making new ones)
-		RectF rect = new RectF();
+		final RectF rect = new RectF();
 		RectF bounds = null;
-		RectF limits = new RectF(
+		final RectF limits = new RectF(
 				Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY, Float.NEGATIVE_INFINITY, Float.NEGATIVE_INFINITY);
 
 		Integer searchColor = null;
@@ -823,10 +825,10 @@ public class SVGParser {
 
 		Integer canvasRestoreCount;
 
-		Stack<Boolean> transformStack = new Stack<Boolean>();
-		Stack<Matrix> matrixStack = new Stack<Matrix>();
+		final Stack<Boolean> transformStack = new Stack<Boolean>();
+		final Stack<Matrix> matrixStack = new Stack<Matrix>();
 
-		HashMap<String, Gradient> gradientMap = new HashMap<String, Gradient>();
+		final HashMap<String, Gradient> gradientMap = new HashMap<String, Gradient>();
 		Gradient gradient = null;
 
 		public SVGHandler() {
@@ -1038,7 +1040,7 @@ public class SVGParser {
 
 		private void doColor(Properties atts, Integer color, boolean fillMode, Paint paint) {
 			int c = (0xFFFFFF & color) | 0xFF000000;
-			if (searchColor != null && searchColor.intValue() == c) {
+			if (searchColor != null && searchColor == c) {
 				c = replaceColor;
 			}
 			paint.setShader(null);
@@ -1212,7 +1214,8 @@ public class SVGParser {
 					canvasRestoreCount = null;
 				}
 
-			} else if (localName.equals("defs")) {
+			} else //noinspection StatementWithEmptyBody
+				if (localName.equals("defs")) {
 				// Ignore
 			} else if (localName.equals("linearGradient")) {
 				gradient = doGradient(true, atts);
@@ -1390,70 +1393,75 @@ public class SVGParser {
 
 		@Override
 		public void endElement(String namespaceURI, String localName, String qName) throws SAXException {
-			if (localName.equals("svg")) {
-				if (canvasRestoreCount != null) {
-					canvas.restoreToCount(canvasRestoreCount);
-				}
-				if (limitsAdjustmentX != null) {
-					limits.left += limitsAdjustmentX;
-					limits.right += limitsAdjustmentX;
-				}
-				if (limitsAdjustmentY != null) {
-					limits.top += limitsAdjustmentY;
-					limits.bottom += limitsAdjustmentY;
-				}
-				picture.endRecording();
+			switch (localName) {
+				case "svg":
+					if (canvasRestoreCount != null) {
+						canvas.restoreToCount(canvasRestoreCount);
+					}
+					if (limitsAdjustmentX != null) {
+						limits.left += limitsAdjustmentX;
+						limits.right += limitsAdjustmentX;
+					}
+					if (limitsAdjustmentY != null) {
+						limits.top += limitsAdjustmentY;
+						limits.bottom += limitsAdjustmentY;
+					}
+					picture.endRecording();
 
-			} else if (localName.equals("linearGradient") || localName.equals("radialGradient")) {
-				if (gradient.id != null) {
-					if (gradient.xlink != null) {
-						Gradient parent = gradientMap.get(gradient.xlink);
-						if (parent != null) {
-							gradient = parent.createChild(gradient);
+					break;
+				case "linearGradient":
+				case "radialGradient":
+					if (gradient.id != null) {
+						if (gradient.xlink != null) {
+							Gradient parent = gradientMap.get(gradient.xlink);
+							if (parent != null) {
+								gradient = parent.createChild(gradient);
+							}
+						}
+						int[] colors = new int[gradient.colors.size()];
+						for (int i = 0; i < colors.length; i++) {
+							colors[i] = gradient.colors.get(i);
+						}
+						float[] positions = new float[gradient.positions.size()];
+						for (int i = 0; i < positions.length; i++) {
+							positions[i] = gradient.positions.get(i);
+						}
+						if (colors.length == 0) {
+							Log.d("BAD", "BAD");
+						}
+						if (localName.equals("linearGradient")) {
+							gradient.shader =
+									new LinearGradient(
+											gradient.x1, gradient.y1, gradient.x2, gradient.y2, colors, positions,
+											gradient.tilemode);
+						} else {
+							gradient.shader =
+									new RadialGradient(
+											gradient.x, gradient.y, gradient.radius, colors, positions, gradient.tilemode);
+						}
+						gradientMap.put(gradient.id, gradient);
+					}
+					break;
+				case "g":
+					if (boundsMode) {
+						boundsMode = false;
+					}
+					// Break out of hidden mode
+					if (hidden) {
+						hiddenLevel--;
+						// Util.debug("Hidden down: " + hiddenLevel);
+						if (hiddenLevel == 0) {
+							hidden = false;
 						}
 					}
-					int[] colors = new int[gradient.colors.size()];
-					for (int i = 0; i < colors.length; i++) {
-						colors[i] = gradient.colors.get(i);
-					}
-					float[] positions = new float[gradient.positions.size()];
-					for (int i = 0; i < positions.length; i++) {
-						positions[i] = gradient.positions.get(i);
-					}
-					if (colors.length == 0) {
-						Log.d("BAD", "BAD");
-					}
-					if (localName.equals("linearGradient")) {
-						gradient.shader =
-								new LinearGradient(
-										gradient.x1, gradient.y1, gradient.x2, gradient.y2, colors, positions,
-										gradient.tilemode);
-					} else {
-						gradient.shader =
-								new RadialGradient(
-										gradient.x, gradient.y, gradient.radius, colors, positions, gradient.tilemode);
-					}
-					gradientMap.put(gradient.id, gradient);
-				}
-			} else if (localName.equals("g")) {
-				if (boundsMode) {
-					boundsMode = false;
-				}
-				// Break out of hidden mode
-				if (hidden) {
-					hiddenLevel--;
-					// Util.debug("Hidden down: " + hiddenLevel);
-					if (hiddenLevel == 0) {
-						hidden = false;
-					}
-				}
-				// // Clear gradient map
-				// gradientRefMap.clear();
-				popTransform();
-				fillPaint = fillPaintStack.pop();
-				fillSet = fillSetStack.pop();
-				strokePaint = strokePaintStack.pop();
-				strokeSet = strokeSetStack.pop();
+					// // Clear gradient map
+					// gradientRefMap.clear();
+					popTransform();
+					fillPaint = fillPaintStack.pop();
+					fillSet = fillSetStack.pop();
+					strokePaint = strokePaintStack.pop();
+					strokeSet = strokeSetStack.pop();
+					break;
 			}
 		}
 	}

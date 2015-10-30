@@ -19,6 +19,7 @@ import android.graphics.drawable.PictureDrawable;
  * 
  * @author Larva Labs, LLC
  */
+@SuppressWarnings("unused")
 public class SVG {
 
 	/**

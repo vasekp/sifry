@@ -67,7 +67,7 @@ public final class FrekvDFragment extends AbstractDFragment {
     }
 
     @SuppressLint("InlinedApi")
-    private OnClickListener autoListener = new OnClickListener() {
+    private final OnClickListener autoListener = new OnClickListener() {
         public void onClick(View v) {
             if (((ToggleButton) v).isChecked())
                 vstup.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_MULTI_LINE |

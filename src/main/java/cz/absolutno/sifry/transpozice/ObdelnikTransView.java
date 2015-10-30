@@ -11,6 +11,7 @@ import android.graphics.RectF;
 import android.os.Handler;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.MotionEventCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -23,20 +24,20 @@ public final class ObdelnikTransView extends Trans2DView {
 
     private int col = 0, row = 0;
     private int tmpCol = 0, tmpRow = 0;
-    private Paint p;
+    private final Paint p;
     private float downX, downY;
     private boolean resCallback = false;
     private boolean resize = false;
     private boolean alignRows = false, tmpAlign = false;
     private float resScale;
-    private Path pth = new Path();
-    private Handler h = new Handler();
+    private final Path pth = new Path();
+    private final Handler h = new Handler();
 
     public ObdelnikTransView(Context ctx, AttributeSet as) {
         super(ctx, as);
 
         p = new Paint();
-        p.setColor(getResources().getColor(R.color.mainColor));
+        p.setColor(ContextCompat.getColor(ctx, R.color.mainColor));
         p.setStrokeWidth(0);
         p.setStyle(Style.STROKE);
         p.setAntiAlias(true);
@@ -114,7 +115,7 @@ public final class ObdelnikTransView extends Trans2DView {
         return super.onTouchEvent(e);
     }
 
-    private Runnable resizeRunnable = new Runnable() {
+    private final Runnable resizeRunnable = new Runnable() {
         public void run() {
             tmpRow = row;
             tmpCol = col;

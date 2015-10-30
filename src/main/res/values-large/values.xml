@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="mainTextSize">20dp</dimen>
+    <dimen name="mainTextSize">20sp</dimen>
     <dimen name="defTextSize">32sp</dimen>
 
     <item name="vlajkyr_item" type="layout">@layout/vlajkyr_item_wide</item>

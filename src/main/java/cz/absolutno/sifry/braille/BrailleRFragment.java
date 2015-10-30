@@ -25,9 +25,9 @@ public final class BrailleRFragment extends AbstractRFragment {
 
     private static final class BrailleELA extends BaseExpandableListAdapter {
 
-        private String groups[];
-        private int groupIDs[];
-        private String[][] elms;
+        private final String[] groups;
+        private final int[] groupIDs;
+        private final String[][] elms;
 
         public BrailleELA() {
             groups = App.getContext().getResources().getStringArray(R.array.saBRGroups);
@@ -112,12 +112,12 @@ public final class BrailleRFragment extends AbstractRFragment {
     }
 
     private static final class Item {
-        public int x;
-        public String desc;
+        public final int x;
+        public final String desc;
 
         public Item(int x, String desc) {
             this.x = x;
             this.desc = desc;
         }
     }
-};
+}

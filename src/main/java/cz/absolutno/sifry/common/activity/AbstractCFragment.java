@@ -19,7 +19,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -54,7 +53,8 @@ public abstract class AbstractCFragment extends AbstractDFragment {
         });
     }
 
-    private final EditText vstup() {
+    @SuppressWarnings("ConstantConditions")
+    private EditText vstup() {
         return (EditText) getView().findViewById(R.id.etCVstup);
     }
 
@@ -93,7 +93,7 @@ public abstract class AbstractCFragment extends AbstractDFragment {
         }
     };
 
-    protected final void zpracuj(boolean novy) {
+    protected void zpracuj(boolean novy) {
         boolean err = encode(vstup().getText().toString());
         if (err && novy)
             Utils.toast(R.string.tErrEncode);
@@ -162,8 +162,6 @@ public abstract class AbstractCFragment extends AbstractDFragment {
             fos = getActivity().openFileOutput(FN_COPY, Context.MODE_WORLD_READABLE);
             bmp.compress(CompressFormat.PNG, 100, fos);
             fos.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -176,7 +174,7 @@ public abstract class AbstractCFragment extends AbstractDFragment {
         dialog.show(getActivity().getSupportFragmentManager(), "copy");
     }
 
-    public OnItemClickListener genItemClickListener = new OnItemClickListener() {
+    public final OnItemClickListener genItemClickListener = new OnItemClickListener() {
         public void onItemClick(AdapterView<?> parentView, View childView, int position, long id) {
             View v = childView.findViewById(R.id.cont);
             if (v instanceof TextView)

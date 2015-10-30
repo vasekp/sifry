@@ -19,7 +19,7 @@ public final class StatefulDecoder extends Decoder {
 
     private OnStateChangedListener onStateChangedListener = null;
 
-    private SparseArray<ChainDecoder> decoders = new SparseArray<ChainDecoder>();
+    private final SparseArray<ChainDecoder> decoders = new SparseArray<ChainDecoder>();
     private ChainDecoder defDecoder = null;
     private ChainDecoder curDecoder = null;
     private ChainDecoder tmpDecoder = null;
@@ -30,12 +30,12 @@ public final class StatefulDecoder extends Decoder {
     private boolean decoderClaimed;
 
     private static final class Rule {
-        private int ref;
-        private int code;
-        private int format;
-        private int after;
-        private String state;
-        private String tmpState;
+        private final int ref;
+        private final int code;
+        private final int format;
+        private final int after;
+        private final String state;
+        private final String tmpState;
 
         private Rule(int ref, int code, int format, int after, String state, String tmpState) {
             super();
@@ -50,10 +50,10 @@ public final class StatefulDecoder extends Decoder {
 
     private final class RuleDecoder extends ChainDecoder {
 
-        private ArrayList<Rule> rules = new ArrayList<Rule>();
-        private String state;
-        private boolean temp;
-        private int codeDesc;
+        private final ArrayList<Rule> rules = new ArrayList<Rule>();
+        private final String state;
+        private final boolean temp;
+        private final int codeDesc;
 
         public RuleDecoder(String state, boolean temp, int codeDesc) {
             this.state = state;
@@ -127,7 +127,7 @@ public final class StatefulDecoder extends Decoder {
 
         @Override
         public EncodeResult encodeSingle(String s, int ix, boolean prefix) {
-            EncodeResult er = null;
+            EncodeResult er;
             for (Rule r : rules) {
                 if (prefix && r.code >= 0) continue;
                 ChainDecoder d = decoders.get(r.ref);
@@ -190,7 +190,7 @@ public final class StatefulDecoder extends Decoder {
                         entry = xml.getAttributeResourceValue(null, "entrypoint", 0);
                         String pref = xml.getAttributeValue(null, "format_flag");
                         codeDescGlobal = xml.getAttributeResourceValue(null, "code_desc", 0);
-                        if (pref != null && (sp != null ? sp.getBoolean(pref, false) : false))
+                        if (pref != null && sp != null && sp.getBoolean(pref, false))
                             defaultFormat = R.id.idFormatLowerCase;
                         else
                             defaultFormat = R.id.idFormatUpperCase;
@@ -215,17 +215,17 @@ public final class StatefulDecoder extends Decoder {
                         int format = xml.getAttributeResourceValue(null, "format", 0);
                         if (xml.getName().equals("strings"))
                             decoders.put(ref, new StringDecoder(ref));
-                        if (acc == null || (acc != null && (sp != null ? sp.getBoolean(acc, accdef) : accdef)))
+                        if (acc == null || (sp != null ? sp.getBoolean(acc, accdef) : accdef)) {
+                            assert rd != null;
                             rd.newRule(ref, code, format, after, state, tmpstate);
+                        }
                     }
                 } else if (xml.getEventType() == XmlPullParser.END_TAG)
                     if (xml.getName().equals("rule-array"))
                         decoders.put(id, rd);
             }
             defDecoder = decoders.get(entry);
-        } catch (XmlPullParserException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (XmlPullParserException | IOException e) {
             e.printStackTrace();
         }
 
@@ -344,7 +344,7 @@ public final class StatefulDecoder extends Decoder {
     }
 
     public interface OnStateChangedListener {
-        public void onStateChanged(String state);
+        void onStateChanged(String state);
     }
 
 }

@@ -10,6 +10,7 @@ import android.graphics.PointF;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.preference.PreferenceManager;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -36,10 +37,10 @@ public abstract class TransView extends View {
     public TransView(Context ctx, AttributeSet as) {
         super(ctx, as);
 
-        priColor = isInEditMode() ? Color.WHITE : getResources().getColor(R.color.priColor);
-        selColor = getResources().getColor(R.color.transSelColor);
-        usedColor = getResources().getColor(R.color.transUsedColor);
-        bothColor = getResources().getColor(R.color.transBothColor);
+        priColor = isInEditMode() ? Color.WHITE : ContextCompat.getColor(ctx, R.color.priColor);
+        selColor = ContextCompat.getColor(ctx, R.color.transSelColor);
+        usedColor = ContextCompat.getColor(ctx, R.color.transUsedColor);
+        bothColor = ContextCompat.getColor(ctx, R.color.transBothColor);
 
         p = new Paint();
         p.setTextAlign(Paint.Align.CENTER);
@@ -50,10 +51,10 @@ public abstract class TransView extends View {
         setMinimumHeight(3 * getResources().getDimensionPixelSize(R.dimen.butSize));
     }
 
-    private final void loadPreferences() {
+    private void loadPreferences() {
         abc = Alphabet.getPreferentialFullInstance();
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
-        ignoreNP = (sp != null ? sp.getBoolean("pref_parse_np", false) : false);
+        ignoreNP = (sp != null && sp.getBoolean("pref_parse_np", false));
     }
 
     public final void reloadPreferences() {
@@ -166,7 +167,7 @@ public abstract class TransView extends View {
     }
 
     public interface OnInputListener {
-        public abstract void onInput(String in);
+        void onInput(String in);
     }
 
     public final void setOnInputListener(OnInputListener oil) {

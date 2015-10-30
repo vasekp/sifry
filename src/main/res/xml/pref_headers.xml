@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
+<preference-headers
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <header
         android:fragment="cz.absolutno.sifry.common.activity.SettingsFragment"
-        android:title="@string/prefLocale">
+        android:title="@string/prefLocale"
+        tools:ignore="UnusedAttribute">
         <extra
             android:name="action"
             android:value="cz.absolutno.sifry.R.xml.pref_locale" />
@@ -12,7 +15,8 @@
     <header
         android:fragment="cz.absolutno.sifry.common.activity.SettingsFragment"
         android:title="@string/prefAbcTitle"
-        android:summary="@string/prefAbcSummary">
+        android:summary="@string/prefAbcSummary"
+        tools:ignore="UnusedAttribute">
         <extra
             android:name="action"
             android:value="cz.absolutno.sifry.R.xml.pref_abc" />
@@ -21,7 +25,8 @@
     <header
         android:fragment="cz.absolutno.sifry.common.activity.SettingsFragment"
         android:title="@string/prefParseTitle"
-        android:summary="@string/prefParseSummary">
+        android:summary="@string/prefParseSummary"
+        tools:ignore="UnusedAttribute">
         <extra
             android:name="action"
             android:value="cz.absolutno.sifry.R.xml.pref_parse" />
@@ -29,7 +34,8 @@
 
     <header
         android:fragment="cz.absolutno.sifry.common.activity.SettingsFragment"
-        android:title="@string/cptBraille">
+        android:title="@string/cptBraille"
+        tools:ignore="UnusedAttribute">
         <extra
             android:name="action"
             android:value="cz.absolutno.sifry.R.xml.pref_braille" />
@@ -37,7 +43,8 @@
 
     <header
         android:fragment="cz.absolutno.sifry.common.activity.SettingsFragment"
-        android:title="@string/cptSemafor">
+        android:title="@string/cptSemafor"
+        tools:ignore="UnusedAttribute">
         <extra
             android:name="action"
             android:value="cz.absolutno.sifry.R.xml.pref_semafor" />
@@ -45,7 +52,8 @@
 
     <header
         android:fragment="cz.absolutno.sifry.common.activity.SettingsFragment"
-        android:title="@string/cptTabulky">
+        android:title="@string/cptTabulky"
+        tools:ignore="UnusedAttribute">
         <extra
             android:name="action"
             android:value="cz.absolutno.sifry.R.xml.pref_tabulky" />
@@ -53,7 +61,8 @@
 
     <header
         android:fragment="cz.absolutno.sifry.common.activity.SettingsFragment"
-        android:title="@string/cptVlajky">
+        android:title="@string/cptVlajky"
+        tools:ignore="UnusedAttribute">
         <extra
             android:name="action"
             android:value="cz.absolutno.sifry.R.xml.pref_vlajky" />
@@ -61,7 +70,8 @@
 
     <header
         android:fragment="cz.absolutno.sifry.common.activity.SettingsFragment"
-        android:title="@string/cptKalendar">
+        android:title="@string/cptKalendar"
+        tools:ignore="UnusedAttribute">
         <extra
             android:name="action"
             android:value="cz.absolutno.sifry.R.xml.pref_kalendar" />
@@ -69,7 +79,8 @@
 
     <header
         android:fragment="cz.absolutno.sifry.common.activity.SettingsFragment"
-        android:title="@string/cptZapisnik">
+        android:title="@string/cptZapisnik"
+        tools:ignore="UnusedAttribute">
         <extra
             android:name="action"
             android:value="cz.absolutno.sifry.R.xml.pref_zapisnik" />
@@ -77,7 +88,8 @@
 
     <header
         android:fragment="cz.absolutno.sifry.common.activity.SettingsFragment"
-        android:title="@string/cptRegExp">
+        android:title="@string/cptRegExp"
+        tools:ignore="UnusedAttribute">
         <extra
             android:name="action"
             android:value="cz.absolutno.sifry.R.xml.pref_regexp" />
@@ -85,7 +97,8 @@
 
     <header
         android:fragment="cz.absolutno.sifry.common.activity.SettingsFragment"
-        android:title="@string/prefClearTitle">
+        android:title="@string/prefClearTitle"
+        tools:ignore="UnusedAttribute">
         <extra
             android:name="action"
             android:value="cz.absolutno.sifry.R.xml.pref_clear" />

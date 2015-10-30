@@ -111,7 +111,7 @@ public final class TabulkyCFragment extends AbstractCFragment {
         updateAdapter();
     }
 
-    private OnItemSelectedListener varListener = new OnItemSelectedListener() {
+    private final OnItemSelectedListener varListener = new OnItemSelectedListener() {
         public void onItemSelected(AdapterView<?> parentView, View childView, int position, long id) {
             updateAdapter();
         }
@@ -120,6 +120,7 @@ public final class TabulkyCFragment extends AbstractCFragment {
         }
     };
 
+    @SuppressWarnings("ConstantConditions")
     private void updateAdapter() {
         int item = tabulkyID[spVar.getSelectedItemPosition()];
         if (item != selItem) {

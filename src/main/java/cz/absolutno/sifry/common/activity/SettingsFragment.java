@@ -58,7 +58,7 @@ public final class SettingsFragment extends PreferenceFragment implements OnShar
         updateSummary(findPreference(key));
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean("pref_changed", true);
-        editor.commit();
+        editor.apply();
         if (key.equals("pref_locale"))
             App.restart();
     }

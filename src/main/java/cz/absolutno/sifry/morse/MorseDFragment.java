@@ -69,6 +69,7 @@ public final class MorseDFragment extends AbstractDFragment {
         super.onConfigurationChanged(newConfig);
 
         ViewGroup vp = (ViewGroup) getView();
+        assert vp != null;
         View v = onCreateView(App.getInflater(), null, null);
         vp.removeAllViews();
         vp.addView(v);
@@ -121,9 +122,9 @@ public final class MorseDFragment extends AbstractDFragment {
 
     private static final class MorseLA extends BaseAdapter {
 
-        private String[] varianty;
+        private final String[] varianty;
         private ArrayList<Integer> raw = new ArrayList<Integer>();
-        private MorseDecoder md = new MorseDecoder();
+        private final MorseDecoder md = new MorseDecoder();
 
         public MorseLA() {
             varianty = App.getContext().getResources().getStringArray(R.array.saMDVarianty);

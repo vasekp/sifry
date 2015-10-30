@@ -18,10 +18,10 @@ import cz.absolutno.sifry.R;
 
 public abstract class AidView extends View {
 
-    private int yOff;
+    private final int yOff;
 
-    private LinearLayout llAid;
-    private PopupWindow pwAid;
+    private final LinearLayout llAid;
+    private final PopupWindow pwAid;
     private int pwWd, pwHt;
     private boolean active;
 
@@ -34,7 +34,8 @@ public abstract class AidView extends View {
 
         llAid = (LinearLayout) App.getInflater().inflate(R.layout.aid_popup, null);
         pwAid = new PopupWindow(this);
-        pwAid.setWindowLayoutMode(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+        pwAid.setWidth(LayoutParams.WRAP_CONTENT);
+        pwAid.setHeight(LayoutParams.WRAP_CONTENT);
         pwAid.setContentView(llAid);
         pwAid.setTouchable(false);
         pwAid.setBackgroundDrawable(null);
@@ -58,8 +59,8 @@ public abstract class AidView extends View {
         if (list.length > numEntries) {
             LayoutInflater inflater = App.getInflater();
             for (int i = numEntries; i < list.length; i++) {
-                View v = inflater.inflate(R.layout.aid_entry, null);
-                llAid.addView(v);
+                View v = inflater.inflate(R.layout.aid_entry, llAid);
+                //llAid.addView(v);
             }
         } else if (list.length < numEntries) {
             for (int i = list.length; i < numEntries; i++)
@@ -124,7 +125,7 @@ public abstract class AidView extends View {
     }
 
     public interface OnInputListener {
-        abstract public void onInput(int x, String s);
+        void onInput(int x, String s);
     }
 
 }

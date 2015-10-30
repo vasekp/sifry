@@ -15,6 +15,7 @@ import cz.absolutno.sifry.R;
 
 public final class Stanoviste implements Parcelable, Serializable {
 
+    @SuppressWarnings("unused")
     private static final long serialVersionUID = -8774189962438235929L;
     private static final DateFormat timeFormatter = DateFormat.getTimeInstance(DateFormat.SHORT, Locale.getDefault());
     private static final DateFormat dateTimeFormatter = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT, Locale.getDefault());

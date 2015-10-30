@@ -43,6 +43,7 @@ public final class KalendarRFragment extends AbstractRFragment {
         return v;
     }
 
+    @SuppressWarnings("ConstantConditions")
     @Override
     public void onResume() {
         super.onResume();
@@ -59,8 +60,8 @@ public final class KalendarRFragment extends AbstractRFragment {
     private final class JmenoDatumELA extends BaseExpandableListAdapter {
 
         @SuppressWarnings("unchecked") // Can't create an array of ArrayList<String>'s
-        private ArrayList<String>[] pismena = new ArrayList[26];
-        private int indexy[] = new int[26];
+        private final ArrayList<String>[] pismena = new ArrayList[26];
+        private final int[] indexy = new int[26];
         private int used;
 
         public JmenoDatumELA() {
@@ -143,7 +144,7 @@ public final class KalendarRFragment extends AbstractRFragment {
 
     private final class DatumJmenoELA extends BaseExpandableListAdapter {
 
-        private String[] mesice = App.getContext().getResources().getStringArray(R.array.saKDMesice);
+        private final String[] mesice = App.getContext().getResources().getStringArray(R.array.saKDMesice);
 
         public String getChild(int groupPosition, int childPosition) {
             return db[groupPosition][childPosition].toString();

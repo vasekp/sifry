@@ -6,14 +6,14 @@
     <string name="prefAbcTitle">Nastavení abecedy</string>
     <string name="prefAbcSummary">Čísla písmen, Substituce a Posuny</string>
 
-    <string name="prefAbcChTitle">Počítat do abecedy Ch</string>
-    <string name="prefAbcChSummary">Zaškrtněte pro zařazení Ch mezi H a I</string>
+    <string name="prefAbcChTitle" tools:ignore="ExtraTranslation">Počítat do abecedy Ch</string>
+    <string name="prefAbcChSummary" tools:ignore="ExtraTranslation">Zaškrtněte pro zařazení Ch mezi H a I</string>
 
     <string name="prefAbcQTitle">Počítat do abecedy Q</string>
     <string name="prefAbcQSummary">Zrušte zaškrtnutí pro vyřazení Q z abecedy (…OPRS…)</string>
 
-    <string name="prefAbcWTitle">Počítat do abecedy W</string>
-    <string name="prefAbcWSummary">Zrušte zaškrtnutí pro vyřazení W z abecedy</string>
+    <string name="prefAbcWTitle" tools:ignore="ExtraTranslation">Počítat do abecedy W</string>
+    <string name="prefAbcWSummary" tools:ignore="ExtraTranslation">Zrušte zaškrtnutí pro vyřazení W z abecedy</string>
 
     <string name="prefAbcXTitle">Počítat do abecedy X</string>
     <string name="prefAbcXSummary">Zrušte zaškrtnutí pro vyřazení X z abecedy</string>
@@ -27,11 +27,11 @@
     <string name="prefBNumberTitle">Umožnit zadávání číslic</string>
     <string name="prefBNumberSummary">Přijmout do vstupu číselný prefix</string>
 
-    <string name="prefBNumPersTitle">Řetězce číslic</string>
-    <string name="prefBNumPersSummary">Číselný prefix platný až do zrušení</string>
+    <string name="prefBNumPersTitle" tools:ignore="ExtraTranslation">Řetězce číslic</string>
+    <string name="prefBNumPersSummary" tools:ignore="ExtraTranslation">Číselný prefix platný až do zrušení</string>
 
-    <string name="prefBDiaTitle">Umožnit zadávání diakritiky</string>
-    <string name="prefBDiaSummary">Přijmout znak do vstupu, pokud obsahuje diakritiku</string>
+    <string name="prefBDiaTitle" tools:ignore="ExtraTranslation">Umožnit zadávání diakritiky</string>
+    <string name="prefBDiaSummary" tools:ignore="ExtraTranslation">Přijmout znak do vstupu, pokud obsahuje diakritiku</string>
 
     <string name="prefBItpTitle">Umožnit zadávání interpunkce</string>
     <string name="prefBItpSummary">Přijmout do vstupu interpunkční znaménka</string>
@@ -63,8 +63,8 @@
     <string name="prefParseTitle">Dělení textu na znaky</string>
     <string name="prefParseSummary">Frekvenční analýza, Transpozice</string>
 
-    <string name="prefParseAbcTitle">Pojetí abecedy</string>
-    <string name="prefParseAbcDefault">-Ch</string>
+    <string name="prefParseAbcTitle" tools:ignore="ExtraTranslation">Pojetí abecedy</string>
+    <string name="prefParseAbcDefault" tools:ignore="ExtraTranslation">-Ch</string>
 
     <string name="prefParseNPTitle">Ignorovat nepísmenné znaky</string>
     <string name="prefParseNPSummary">Přeskočit (Transpozice) nebo nevypisovat v seznamu (Empirická substituce)</string>
@@ -76,7 +76,7 @@
     </string-array>
 
     <string-array name="saLocale">
-        <item></item>
+        <item/>
         <item>cs</item>
         <item>en</item>
     </string-array>

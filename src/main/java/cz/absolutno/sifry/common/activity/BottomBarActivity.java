@@ -24,9 +24,9 @@ import cz.absolutno.sifry.common.widget.BottomBarView;
 @SuppressWarnings("deprecation")
 public abstract class BottomBarActivity extends FragmentActivity implements OnBackStackChangedListener {
 
-    protected static final int HAS_COPY = 0x1;
-    protected static final int HAS_PASTE = 0x2;
-    protected static final int HAS_CLEAR = 0x4;
+    private static final int HAS_COPY = 0x1;
+    private static final int HAS_PASTE = 0x2;
+    private static final int HAS_CLEAR = 0x4;
 
     private BottomBarView bbar;
 
@@ -148,7 +148,7 @@ public abstract class BottomBarActivity extends FragmentActivity implements OnBa
         }
         SharedPreferences.Editor editor = sp.edit();
         editor.putBoolean("pref_changed", false);
-        editor.commit();
+        editor.apply();
         getSupportFragmentManager().addOnBackStackChangedListener(this);
     }
 

@@ -43,6 +43,7 @@ public final class RegExpDFragment extends AbstractDFragment {
         return v;
     }
 
+    @SuppressWarnings("ConstantConditions")
     public void loadRE(RegExpNative re) {
         this.re = re;
         adapter = new RegExpExpListAdapter(re);
@@ -72,7 +73,8 @@ public final class RegExpDFragment extends AbstractDFragment {
         }
     }
 
-    private OnClickListener goListener = new OnClickListener() {
+    private final OnClickListener goListener = new OnClickListener() {
+        @SuppressWarnings("ConstantConditions")
         public void onClick(View v) {
             if (re.isRunning()) {
                 re.stopThread();
@@ -90,7 +92,8 @@ public final class RegExpDFragment extends AbstractDFragment {
         }
     };
 
-    public void updateGoButton() {
+    @SuppressWarnings("ConstantConditions")
+    private void updateGoButton() {
         ((Button) getView().findViewById(R.id.btRDGo)).setText(re.isRunning() ? R.string.tRDStop : R.string.tRDHledej);
     }
 
@@ -139,6 +142,7 @@ public final class RegExpDFragment extends AbstractDFragment {
         pbProgress.setVisibility(View.VISIBLE);
     }
 
+    @SuppressWarnings("ConstantConditions")
     @Override
     protected void onClear() {
         if (re != null)
@@ -152,6 +156,6 @@ public final class RegExpDFragment extends AbstractDFragment {
         updateGoButton();
     }
 
-    final int[] idET = {R.id.etRDFiltr1, R.id.etRDFiltr2, R.id.etRDFiltr3};
-    final int[] idCB = {R.id.cbRDFiltr1, R.id.cbRDFiltr2, R.id.cbRDFiltr3};
+    private final int[] idET = {R.id.etRDFiltr1, R.id.etRDFiltr2, R.id.etRDFiltr3};
+    private final int[] idCB = {R.id.cbRDFiltr1, R.id.cbRDFiltr2, R.id.cbRDFiltr3};
 }

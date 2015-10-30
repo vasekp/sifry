@@ -10,8 +10,8 @@ public class TranslateAdapter extends AbstractSubstAdapter {
     private static final int ENCRYPT = 1;
     private static final int DECRYPT = 0;
 
-    private int[] tr, trInv;
-    private String enc, dec;
+    private final int[] tr, trInv;
+    private final String enc, dec;
 
     public TranslateAdapter(Alphabet abc) {
         super(abc);

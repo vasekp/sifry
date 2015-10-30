@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <string name="cptBraille">Braille</string>
     <string name="tBDTitul">Mark the positions of the raised dots:</string>
@@ -84,7 +84,7 @@ goal by leading the swipe carefully between the unwanted dots, or outside of the
     </array>
 
 
-    <string-array name="saBRLetters">
+    <string-array name="saBRLetters" tools:ignore="MissingTranslation">
         <item>1:A</item>
         <item>3:B</item>
         <item>9:C</item>
@@ -113,7 +113,7 @@ goal by leading the swipe carefully between the unwanted dots, or outside of the
         <item>53:Z</item>
     </string-array>
 
-    <string-array name="saBRDigits">
+    <string-array name="saBRDigits" tools:ignore="MissingTranslation">
         <item>1:1</item>
         <item>3:2</item>
         <item>9:3</item>
@@ -126,16 +126,16 @@ goal by leading the swipe carefully between the unwanted dots, or outside of the
         <item>26:0</item>
     </string-array>
 
-    <string-array name="saBRNumberExtra">
+    <string-array name="saBRNumberExtra" tools:ignore="MissingTranslation">
         <item>40:Decimal point:.</item>
         <item>2:Thousands separator:,</item>
     </string-array>
 
-    <string-array name="saBRSpace">
+    <string-array name="saBRSpace" tools:ignore="MissingTranslation">
         <item>0:space:·</item>
     </string-array>
 
-    <string-array name="saBRPrefixes">
+    <string-array name="saBRPrefixes" tools:ignore="MissingTranslation">
         <item>60:Numbers</item>
         <item>48:Letters</item>
         <item>32:Capital</item>
@@ -150,7 +150,7 @@ goal by leading the swipe carefully between the unwanted dots, or outside of the
         <item>32:Final abbreviation 3</item>
     </string-array>
 
-    <string-array name="saBRPunctuation">
+    <string-array name="saBRPunctuation" tools:ignore="MissingTranslation">
         <item>50:Dot:.</item>
         <item>2:Comma:,</item>
         <item>18:Colon::</item>
@@ -165,7 +165,7 @@ goal by leading the swipe carefully between the unwanted dots, or outside of the
         <item>40:Decimal point:</item>
     </string-array>
 
-    <string-array name="saBRLigatures">
+    <string-array name="saBRLigatures" tools:ignore="MissingTranslation">
         <item>47:and</item>
         <item>63:for</item>
         <item>55:of</item>
@@ -194,13 +194,13 @@ goal by leading the swipe carefully between the unwanted dots, or outside of the
         <item>60:(-ble):</item>
     </string-array>
 
-    <string-array name="saBRLigaturesStart">
+    <string-array name="saBRLigaturesStart" tools:ignore="MissingTranslation">
         <item>6:be-:be</item>
         <item>18:con-:con</item>
         <item>50:dis-:dis</item>
     </string-array>
 
-    <string-array name="saBRLigaturesMid">
+    <string-array name="saBRLigaturesMid" tools:ignore="MissingTranslation">
         <item>2:-ea-:ea</item>
         <item>6:-bb-:bb</item>
         <item>18:-cc-:cc</item>
@@ -209,7 +209,7 @@ goal by leading the swipe carefully between the unwanted dots, or outside of the
         <item>44:-ing:ing</item>
     </string-array>
 
-    <string-array name="saBRContractions">
+    <string-array name="saBRContractions" tools:ignore="MissingTranslation">
         <item>1:a</item>
         <item>3:but</item>
         <item>9:can</item>
@@ -252,7 +252,7 @@ goal by leading the swipe carefully between the unwanted dots, or outside of the
         <item>36:(com-)</item>
     </string-array>
 
-    <string-array name="saBRIni1">
+    <string-array name="saBRIni1" tools:ignore="MissingTranslation">
         <item>20:here</item>
         <item>46:there</item>
         <item>49:where</item>
@@ -277,7 +277,7 @@ goal by leading the swipe carefully between the unwanted dots, or outside of the
         <item>61:young</item>
     </string-array>
 
-    <string-array name="saBRIni2">
+    <string-array name="saBRIni2" tools:ignore="MissingTranslation">
         <item>46:these</item>
         <item>57:those</item>
         <item>37:upon</item>
@@ -285,7 +285,7 @@ goal by leading the swipe carefully between the unwanted dots, or outside of the
         <item>58:word</item>
     </string-array>
 
-    <string-array name="saBRIni3">
+    <string-array name="saBRIni3" tools:ignore="MissingTranslation">
         <item>9:cannot</item>
         <item>13:many</item>
         <item>20:had</item>
@@ -294,7 +294,7 @@ goal by leading the swipe carefully between the unwanted dots, or outside of the
         <item>58:world</item>
     </string-array>
 
-    <string-array name="saBRFin1">
+    <string-array name="saBRFin1" tools:ignore="MissingTranslation">
         <item>25:-ound:ound</item>
         <item>30:-ount:ount</item>
         <item>17:-ance:ance</item>
@@ -302,7 +302,7 @@ goal by leading the swipe carefully between the unwanted dots, or outside of the
         <item>29:-sion:sion</item>
     </string-array>
 
-    <string-array name="saBRFin2">
+    <string-array name="saBRFin2" tools:ignore="MissingTranslation">
         <item>27:-ong:ong</item>
         <item>7:-ful:ful</item>
         <item>30:-ment:ment</item>
@@ -312,7 +312,7 @@ goal by leading the swipe carefully between the unwanted dots, or outside of the
         <item>61:-ity:ity</item>
     </string-array>
 
-    <string-array name="saBRFin3">
+    <string-array name="saBRFin3" tools:ignore="MissingTranslation">
         <item>61:-ally:ally</item>
         <item>29:-ation:ation</item>
     </string-array>

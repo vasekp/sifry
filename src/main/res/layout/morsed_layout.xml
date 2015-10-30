@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -41,6 +42,7 @@
             android:clickable="true"
             android:contentDescription="@string/tBsp"
             android:src="@drawable/ic_input_delete" />
+
     </LinearLayout>
 
     <TextView
@@ -52,6 +54,6 @@
         android:id="@+id/lvMDReseni"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.5"></ListView>
+        android:layout_weight="0.5" />
 
 </LinearLayout>

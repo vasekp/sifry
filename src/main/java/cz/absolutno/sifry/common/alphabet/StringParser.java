@@ -44,8 +44,8 @@ public abstract class StringParser {
 
 
     public static final class Ret {
-        public int ord;
-        public char last;
+        public final int ord;
+        public final char last;
 
         public Ret(int ord) {
             this.ord = ord;

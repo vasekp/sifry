@@ -102,7 +102,7 @@ public final class VlajkyDFragment extends AbstractDFragment implements GestureO
         }
     }
 
-    private OnClickListener listener = new OnClickListener() {
+    private final OnClickListener listener = new OnClickListener() {
         public void onClick(View v) {
             reseni += (String) v.getTag();
             tvRes.setText(reseni);
@@ -110,7 +110,7 @@ public final class VlajkyDFragment extends AbstractDFragment implements GestureO
         }
     };
 
-    private OnClickListener bspListener = new OnClickListener() {
+    private final OnClickListener bspListener = new OnClickListener() {
         public void onClick(View v) {
             if (reseni.length() == 0) return;
             reseni = reseni.substring(0, reseni.length() - 1);
@@ -124,8 +124,6 @@ public final class VlajkyDFragment extends AbstractDFragment implements GestureO
         data.putString(App.VSTUP, reseni);
         return true;
     }
-
-    ;
 
     @Override
     public void loadData(Bundle data) {
@@ -144,6 +142,7 @@ public final class VlajkyDFragment extends AbstractDFragment implements GestureO
         llOdhady.removeAllViews();
     }
 
+    @SuppressWarnings("ConstantConditions")
     @Override
     public void onResume() {
         super.onResume();

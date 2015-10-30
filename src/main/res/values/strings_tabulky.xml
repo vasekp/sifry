@@ -154,8 +154,8 @@ and the plaintext is cleared when a different type of the cipher is selected.</p
     </array>
 
     <string-array name="saTDVPABCVar">
-        <item></item>
-        <item></item>
+        <item/>
+        <item/>
     </string-array>
 
 
@@ -172,9 +172,9 @@ and the plaintext is cleared when a different type of the cipher is selected.</p
     </array>
 
     <string-array name="saTDMPABCVar">
-        <item></item>
-        <item></item>
-        <item></item>
+        <item/>
+        <item/>
+        <item/>
     </string-array>
 
 
@@ -208,8 +208,8 @@ and the plaintext is cleared when a different type of the cipher is selected.</p
     </array>
 
     <string-array name="saTVVPABCVar">
-        <item></item>
-        <item></item>
+        <item/>
+        <item/>
     </string-array>
 
 

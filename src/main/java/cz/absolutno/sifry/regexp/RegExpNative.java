@@ -18,13 +18,14 @@ public final class RegExpNative {
         public static final int SIZE = 4;
     }
 
-    private AssetManager mgr;
+    @SuppressWarnings("FieldCanBeLocal")
+    private final AssetManager mgr; // We need to keep an explicit reference as long as re is running.
 
     private native void init(AssetManager mgr, String fn);
 
     private native void swtch(String fn);
 
-    public native int free();
+    public native void free();
 
     private native void nativeFinalize();
 
@@ -50,7 +51,8 @@ public final class RegExpNative {
     }
 
     @Override
-    public void finalize() {
+    public void finalize() throws Throwable {
+        super.finalize();
         nativeFinalize();
     }
 

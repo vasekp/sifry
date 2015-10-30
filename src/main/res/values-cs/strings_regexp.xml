@@ -97,7 +97,7 @@ Slova ze samých různých písmen:<br/>
     </string-array>
 
     <string-array name="saREDictionaryFilenames">
-        <item></item>
+        <item/>
         <item>cs.canon</item>
         <item>en.canon</item>
     </string-array>

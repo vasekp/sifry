@@ -42,7 +42,7 @@ public final class FrekvActivity extends BottomBarActivity {
                 if (lastIx == ANALYZA) {
                     args = new Bundle();
                     frag = new EmpirSubstFragment();
-                    if (((FrekvDFragment) getCurrFragment()).saveData(args))
+                    if (getCurrFragment().saveData(args))
                         frag.setArguments(args);
                     else {
                         Utils.toast(R.string.tErrVar);

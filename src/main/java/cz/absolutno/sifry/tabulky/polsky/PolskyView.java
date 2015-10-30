@@ -24,6 +24,7 @@ public abstract class PolskyView extends AidView {
         return pk.decode(i);
     }
 
+    @SuppressWarnings("unused")
     public final Decoder getDecoder() {
         return pk;
     }

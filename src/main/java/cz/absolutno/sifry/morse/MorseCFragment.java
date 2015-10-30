@@ -44,13 +44,13 @@ public final class MorseCFragment extends AbstractCFragment {
     private static final class MorseCLA extends BaseAdapter {
 
         private String in;
-        private String[] items;
-        private String[] znaky;
-        private int[] itemIDs;
-        private ArrayList<String> bin = new ArrayList<String>();
-        private ArrayList<Integer> trits = new ArrayList<Integer>();
+        private final String[] items;
+        private final String[] znaky;
+        private final int[] itemIDs;
+        private final ArrayList<String> bin = new ArrayList<String>();
+        private final ArrayList<Integer> trits = new ArrayList<Integer>();
 
-        private MorseDecoder md;
+        private final MorseDecoder md;
 
         public MorseCLA() {
             items = App.getContext().getResources().getStringArray(R.array.saMCItems);
@@ -115,6 +115,8 @@ public final class MorseCFragment extends AbstractCFragment {
                     for (Integer i : trits) {
                         if (last >= 0)
                             sb.append("0");
+                        // lint thinks this can never happen
+                        //noinspection ConstantConditions
                         if (last == 2 && i == 2)
                             sb.append("00");
                         switch (i) {

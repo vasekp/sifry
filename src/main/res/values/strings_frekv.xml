@@ -13,7 +13,7 @@
     <string name="tFDInter" translatable="false">.,;:!?-\'\"()/</string>
     <string name="tFDMezera">spc.</string>
 
-    <string name="tFRAbcVar"></string>
+    <string name="tFRAbcVar"/>
     <string name="tFRSort">Sort:</string>
     <string name="tFRTab">Table:</string>
 

@@ -16,10 +16,6 @@ public final class PolskyKrizDecoder extends AlphabetDecoder {
         setVar(27, var);
     }
 
-    public String decode(int i, int j, int k) {
-        return decode(i * 9 + j * 3 + k);
-    }
-
     public String decode(int[] a) {
         return decode(a[0] * 9 + a[1] * 3 + a[2]);
     }

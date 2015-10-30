@@ -71,7 +71,7 @@ se nemá zobrazovat vůbec. Změny se projeví okamžitě.</p>
     <string-array name="saKDKalendareKody">
         <item>svatkyCZ</item>
         <item>svatkySK</item>
-        <item></item>
+        <item/>
     </string-array>
 
     <string name="pref_kal_namedays_default">svatkyCZ</string>

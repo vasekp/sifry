@@ -19,6 +19,7 @@ import com.larvalabs.svgandroid.SVGParser.SVGHandler;
  * 
  * @since 24/12/2012
  */
+@SuppressWarnings("unused")
 public class SVGBuilder {
 	private InputStream data;
 	private Integer searchColor = null;
@@ -151,8 +152,7 @@ public class SVGBuilder {
 				handler.fillPaint.setColorFilter(fillColorFilter);
 			}
 
-			final SVG svg = SVGParser.parse(new InputSource(data), handler);
-			return svg;
+			return SVGParser.parse(new InputSource(data), handler);
 
 		} finally {
 			if (closeInputStream) {

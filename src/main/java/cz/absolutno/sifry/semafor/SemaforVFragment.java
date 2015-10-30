@@ -34,7 +34,7 @@ public final class SemaforVFragment extends AbstractRFragment {
 
     private final class SemaforLA extends BaseAdapter {
 
-        private StatefulDecoder sd;
+        private final StatefulDecoder sd;
 
         public SemaforLA() {
             sd = new StatefulDecoder(R.xml.semafor_decoder);

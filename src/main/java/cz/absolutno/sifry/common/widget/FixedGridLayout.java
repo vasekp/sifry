@@ -11,10 +11,11 @@ import cz.absolutno.sifry.Utils;
 
 public final class FixedGridLayout extends ViewGroup {
 
-    private int numColumns;
+    private final int numColumns;
     private int nX, nY;
+    @SuppressWarnings("FieldCanBeLocal")
     private int w1, h1;
-    private boolean alignLeft;
+    private final boolean alignLeft;
 
     public FixedGridLayout(Context ctx) {
         this(ctx, null);

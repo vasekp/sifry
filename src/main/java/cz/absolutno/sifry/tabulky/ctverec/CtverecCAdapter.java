@@ -19,8 +19,8 @@ public final class CtverecCAdapter extends TabulkyCListAdapter {
 
     private Alphabet abc;
     private int[][] sour;
-    private String[] items;
-    private int[] itemIDs;
+    private final String[] items;
+    private final int[] itemIDs;
 
     public CtverecCAdapter() {
         abc = null;

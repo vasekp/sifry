@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 
 import cz.absolutno.sifry.R;
@@ -12,6 +13,7 @@ public final class SmazVseFragment extends DialogFragment {
 
     private OnPositiveButtonListener onPositiveButtonListener = null;
 
+    @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -37,7 +39,7 @@ public final class SmazVseFragment extends DialogFragment {
     }
 
     public interface OnPositiveButtonListener {
-        public abstract void onPositiveButton();
+        void onPositiveButton();
     }
 
 }

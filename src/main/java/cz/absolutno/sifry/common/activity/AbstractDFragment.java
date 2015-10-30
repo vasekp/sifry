@@ -44,7 +44,7 @@ public abstract class AbstractDFragment extends Fragment {
     }
 
     /* Convenience for subclasses */
-    protected OnLongClickListener clearListener = new OnLongClickListener() {
+    protected final OnLongClickListener clearListener = new OnLongClickListener() {
         public boolean onLongClick(View v) {
             onClear();
             return true;

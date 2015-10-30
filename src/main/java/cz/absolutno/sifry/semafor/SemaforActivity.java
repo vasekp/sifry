@@ -6,7 +6,6 @@ import android.support.v4.app.FragmentTransaction;
 
 import cz.absolutno.sifry.R;
 import cz.absolutno.sifry.Utils;
-import cz.absolutno.sifry.common.activity.AbstractCFragment;
 import cz.absolutno.sifry.common.activity.AbstractDFragment;
 import cz.absolutno.sifry.common.activity.BottomBarActivity;
 
@@ -48,7 +47,7 @@ public final class SemaforActivity extends BottomBarActivity {
                 if (lastIx == DECODE) {
                     args = new Bundle();
                     frag = new SemaforCFragment();
-                    if (((SemaforDFragment) getCurrFragment()).saveData(args))
+                    if (getCurrFragment().saveData(args))
                         frag.setArguments(args);
                     trans.replace(R.id.content, frag, "C");
                     trans.addToBackStack(null);
@@ -60,13 +59,13 @@ public final class SemaforActivity extends BottomBarActivity {
                 frag = getCurrFragment();
                 args = new Bundle();
                 if (frag.getTag().equals("C"))
-                    if (((AbstractCFragment) frag).saveData(args))
+                    if (frag.saveData(args))
                         ((AbstractDFragment) fm.findFragmentByTag("D")).loadData(args);
                 fm.popBackStack();
                 break;
             case VARIANTS:
                 args = new Bundle();
-                if (((SemaforDFragment) getCurrFragment()).saveData(args)) {
+                if (getCurrFragment().saveData(args)) {
                     frag = new SemaforVFragment();
                     frag.setArguments(args);
                     trans.replace(R.id.content, frag, "V");

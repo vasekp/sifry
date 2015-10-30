@@ -7,6 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -59,7 +60,7 @@ public final class MainActivity extends FragmentActivity {
                 new Aktivita(RegExpActivity.class, R.string.cptRegExp, R.raw.ic_regexp)
         };
 
-        int tint = getResources().getColor(R.color.tintColor);
+        int tint = ContextCompat.getColor(this, R.color.tintColor);
         FixedGridLayout glMain = (FixedGridLayout) findViewById(R.id.glMain);
         LayoutInflater inflater = App.getInflater();
         for (Aktivita a : aktivity) {
@@ -80,13 +81,13 @@ public final class MainActivity extends FragmentActivity {
 				new NewsFragment().show(getSupportFragmentManager(), "news");
             SharedPreferences.Editor editor = sp.edit();
             editor.putInt("last_version", thisVersion);
-            editor.commit();
+            editor.apply();
         } catch (NameNotFoundException e) {
             e.printStackTrace();
         }
     }
 
-    OnClickListener listener = new OnClickListener() {
+    private final OnClickListener listener = new OnClickListener() {
         public void onClick(View v) {
             Aktivita a = (Aktivita) (v.getTag());
             Intent intent = new Intent(MainActivity.this, a.cls);
@@ -130,14 +131,14 @@ public final class MainActivity extends FragmentActivity {
         if (sp == null) return;
         SharedPreferences.Editor editor = sp.edit();
         editor.putBoolean("pref_changed", false);
-        editor.commit();
+        editor.apply();
     }
 
 
     private static final class Aktivita {
-        Class<?> cls;
-        String caption;
-        Drawable icon;
+        final Class<?> cls;
+        final String caption;
+        final Drawable icon;
 
         public Aktivita(Class<?> cls, int cpt, int icon) {
             this.cls = cls;

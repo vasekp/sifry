@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 import android.view.View;
 import android.widget.TextView;
@@ -27,6 +28,8 @@ import cz.absolutno.sifry.Utils;
 
 public final class BitmapFragment extends DialogFragment {
 
+    @SuppressWarnings("ConstantConditions")
+    @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         final File file = new File(getArguments().getString(App.VSTUP));
@@ -44,11 +47,12 @@ public final class BitmapFragment extends DialogFragment {
         builder.setCancelable(true);
         builder.setPositiveButton(R.string.tSave, new OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
-                String name = ((TextView) content.findViewById(R.id.etBmpDFName)).getText().toString();
-                File outputDir = new File(Environment.getExternalStorageDirectory(), getString(R.string.tExportDir));
-                outputDir.mkdirs();
-                File output = new File(outputDir, name);
                 try {
+                    String name = ((TextView) content.findViewById(R.id.etBmpDFName)).getText().toString();
+                    File outputDir = new File(Environment.getExternalStorageDirectory(), getString(R.string.tExportDir));
+                    if(!outputDir.mkdirs())
+                        throw new IOException();
+                    File output = new File(outputDir, name);
                     FileInputStream fis = new FileInputStream(file);
                     FileOutputStream fos = new FileOutputStream(output);
                     FileChannel in = fis.getChannel();

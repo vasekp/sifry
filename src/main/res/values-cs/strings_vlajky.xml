@@ -48,8 +48,8 @@ anglické abecedy a číslice, které se zobrazí v systému ICS.</p>
 
     <string-array name="saVRGroups">
         <item>Písmena</item>
-        <item>Čísla ICS</item>
-        <item>Čísla NATO</item>
+        <item>Číslice ICS</item>
+        <item>Číslice NATO</item>
     </string-array>
 
     <array name="iaVRGroups">

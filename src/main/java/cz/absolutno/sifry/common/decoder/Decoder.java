@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public abstract class Decoder {
 
-    public Decoder() {
+    protected Decoder() {
     }
 
     public abstract String decode(int x);

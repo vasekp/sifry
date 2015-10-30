@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res/cz.absolutno.sifry"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
@@ -52,6 +53,7 @@
                     android:layout_marginLeft="5dp"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </LinearLayout>
+
         </FrameLayout>
 
         <TextView
@@ -131,6 +133,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:textAppearance="?android:attr/textAppearanceLarge" />
+
     </LinearLayout>
 
 </ScrollView>

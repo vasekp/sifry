@@ -8,6 +8,7 @@ import android.graphics.Paint.Cap;
 import android.graphics.Paint.Style;
 import android.graphics.PointF;
 import android.graphics.Typeface;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.MotionEventCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -20,8 +21,9 @@ import cz.absolutno.sifry.tabulky.AidView;
 
 public final class MalyPolskyView extends AidView {
 
-    private int w, h, sx, sy, wd;
-    private Paint pLine, pFill, pText;
+    private int w, h, sx, sy;
+    private final int wd;
+    private final Paint pLine, pFill, pText;
     private MalyPolskyKrizDecoder mpk = null;
 
     private int lastAidIx = -1;
@@ -32,7 +34,7 @@ public final class MalyPolskyView extends AidView {
         wd = Utils.dpToPix(3);
 
         pLine = new Paint();
-        pLine.setColor(getResources().getColor(R.color.mainColor));
+        pLine.setColor(ContextCompat.getColor(ctx, R.color.mainColor));
         pLine.setStrokeWidth(wd);
         pLine.setStrokeCap(Cap.ROUND);
         pLine.setStyle(Style.STROKE);
@@ -44,7 +46,7 @@ public final class MalyPolskyView extends AidView {
         pText = new Paint();
         pText.setAntiAlias(true);
         pText.setTypeface(Typeface.DEFAULT);
-        pText.setColor(getResources().getColor(R.color.priColor));
+        pText.setColor(ContextCompat.getColor(ctx, R.color.priColor));
         pText.setTextAlign(Align.CENTER);
     }
 
@@ -215,6 +217,7 @@ public final class MalyPolskyView extends AidView {
         return mpk.decode(i);
     }
 
+    @SuppressWarnings("unused")
     public Decoder getDecoder() {
         return mpk;
     }

@@ -62,7 +62,7 @@ public final class ZapisnikEFragment extends AbstractDFragment {
         return content;
     }
 
-    private OnClickListener goListener = new OnClickListener() {
+    private final OnClickListener goListener = new OnClickListener() {
         public void onClick(View vw) {
             String state = Environment.getExternalStorageState();
             if (!state.equals(Environment.MEDIA_MOUNTED)) {
@@ -84,10 +84,11 @@ public final class ZapisnikEFragment extends AbstractDFragment {
             }
             boolean ext = cbExt.isChecked();
 
-            File outputDir = new File(Environment.getExternalStorageDirectory(), getString(R.string.tExportDir));
-            outputDir.mkdirs();
-            File output = new File(outputDir, tv.getText().toString());
             try {
+                File outputDir = new File(Environment.getExternalStorageDirectory(), getString(R.string.tExportDir));
+                if(!outputDir.mkdirs())
+                    throw new IOException();
+                File output = new File(outputDir, tv.getText().toString());
                 FileWriter writer = new FileWriter(output);
 
                 String[] arr = Stanoviste.getHeaders(fields);
@@ -122,7 +123,6 @@ public final class ZapisnikEFragment extends AbstractDFragment {
                 }
             } catch (IOException e) {
                 Utils.toast(R.string.tErrFile);
-                return;
             }
         }
     };

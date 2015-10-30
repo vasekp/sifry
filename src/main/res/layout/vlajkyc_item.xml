@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+<ImageView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/image"
     android:background="#80000000"
@@ -13,4 +14,4 @@
     android:maxHeight="50dp"
     android:maxWidth="60dp"
     android:layerType="software"
-    tools:ignore="ContentDescription" />
+    tools:ignore="ContentDescription,UnusedAttribute" />

@@ -10,7 +10,8 @@ import cz.absolutno.sifry.R;
 
 public final class AspectLayout extends ViewGroup {
 
-    private float relWidth, relHeight;
+    private final float relWidth;
+    private final float relHeight;
 
     public AspectLayout(Context ctx) {
         this(ctx, null);

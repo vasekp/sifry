@@ -26,11 +26,11 @@ public final class VlajkyRFragment extends AbstractRFragment {
 
     private static final class VlajkyELA extends BaseExpandableListAdapter {
 
-        private VlajkySVGs svgs;
-        private String[] groups;
-        private int[] groupIDs;
-        private String[] pismena;
-        private String[] cisla;
+        private final VlajkySVGs svgs;
+        private final String[] groups;
+        private final int[] groupIDs;
+        private final String[] pismena;
+        private final String[] cisla;
 
         public VlajkyELA() {
             Resources res = App.getContext().getResources();

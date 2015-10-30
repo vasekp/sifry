@@ -8,9 +8,9 @@ public abstract class ChainDecoder extends Decoder {
     public abstract EncodeResult encodeSingle(String s, int ix, boolean prefix);
 
     public static final class EncodeResult {
-        int code;
+        final int code;
+        final int len;
         int prefix;
-        int len;
 
         public EncodeResult(int code, int len) {
             this.code = code;

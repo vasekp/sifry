@@ -69,7 +69,7 @@ public final class CislaRFragment extends AbstractRFragment {
         return v;
     }
 
-    public void selectList(boolean ascii, boolean mala) {
+    private void selectList(boolean ascii, boolean mala) {
         headerOrd.setVisibility(ascii ? View.GONE : View.VISIBLE);
         headerASCII.setVisibility(ascii ? View.VISIBLE : View.GONE);
         adapter.set(ascii, mala);
@@ -78,7 +78,7 @@ public final class CislaRFragment extends AbstractRFragment {
 
     private static final class CislaLA extends BaseAdapter {
 
-        private Alphabet abc, abcPerm;
+        private final Alphabet abc, abcPerm;
         private boolean ascii = false;
         private boolean alt = false;
 

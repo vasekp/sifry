@@ -23,4 +23,4 @@ public final class HelpActivity extends Activity {
         ((TextView) findViewById(R.id.tvREHelp)).setText(Utils.fromHtml(getString(resID)));
     }
 
-};
+}

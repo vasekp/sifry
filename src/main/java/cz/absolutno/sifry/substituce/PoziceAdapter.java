@@ -16,7 +16,7 @@ public final class PoziceAdapter extends AbstractSubstAdapter {
     private static final int SKOK1 = 6;
     private static final int SKOK2 = 7;
 
-    private String[] items;
+    private final String[] items;
 
     public PoziceAdapter(Alphabet abc) {
         super(abc);
@@ -32,7 +32,6 @@ public final class PoziceAdapter extends AbstractSubstAdapter {
     public String getItem(int position) {
         StringBuilder dst = new StringBuilder();
         StringParser spa = abc.getStringParser(str);
-        StringBuilder sv = new StringBuilder();
         int oa, ix = 0;
         while ((oa = spa.getNextOrd()) != StringParser.EOF) {
             if (oa < 0) {
@@ -72,7 +71,6 @@ public final class PoziceAdapter extends AbstractSubstAdapter {
                 c += abc.count();
             c %= abc.count();
             dst.append(abc.chr(c));
-            sv.append(abc.chr(c));
             ix++;
             if (ix == cnt) ix = 0;
         }

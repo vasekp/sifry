@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Paint.Cap;
 import android.graphics.Paint.Style;
 import android.graphics.Path;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -16,19 +17,20 @@ import cz.absolutno.sifry.common.widget.DrawOnWhiteView;
 
 public final class SemaforTView extends View implements DrawOnWhiteView {
 
-    private int colB1, colB2, colV1, colV2;
+    private int colB1, colB2;
+    private final int colV1, colV2;
     private int s1 = -1, s2 = -1;
     private boolean valid = false;
-    private Paint pStroke, pFill;
-    private Path[] path = new Path[4];
+    private final Paint pStroke, pFill;
+    private final Path[] path = new Path[4];
 
     public SemaforTView(Context ctx, AttributeSet as) {
         super(ctx, as);
 
-        colB1 = getResources().getColor(R.color.semaforB1Color);
-        colB2 = getResources().getColor(R.color.semaforB2Color);
-        colV1 = getResources().getColor(R.color.semaforV1Color);
-        colV2 = getResources().getColor(R.color.semaforV2Color);
+        colB1 = ContextCompat.getColor(ctx, R.color.semaforB1Color);
+        colB2 = ContextCompat.getColor(ctx, R.color.semaforB2Color);
+        colV1 = ContextCompat.getColor(ctx, R.color.semaforV1Color);
+        colV2 = ContextCompat.getColor(ctx, R.color.semaforV2Color);
 
         pStroke = new Paint();
         pStroke.setColor(colB1);
@@ -144,7 +146,7 @@ public final class SemaforTView extends View implements DrawOnWhiteView {
         colB1 = Color.BLACK;
         colB2 = Color.BLACK;
         draw(c);
-        colB1 = getResources().getColor(R.color.semaforB1Color);
-        colB2 = getResources().getColor(R.color.semaforB2Color);
+        colB1 = ContextCompat.getColor(getContext(), R.color.semaforB1Color);
+        colB2 = ContextCompat.getColor(getContext(), R.color.semaforB2Color);
     }
 }

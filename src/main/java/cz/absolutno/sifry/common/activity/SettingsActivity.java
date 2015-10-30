@@ -29,7 +29,7 @@ public final class SettingsActivity extends PreferenceActivity implements OnShar
             SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
             SharedPreferences.Editor editor = sp.edit();
             editor.clear();
-            editor.commit();
+            editor.apply();
             finish();
             App.restart();
         }
@@ -86,7 +86,7 @@ public final class SettingsActivity extends PreferenceActivity implements OnShar
         updateSummary(findPreference(key));
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean("pref_changed", true);
-        editor.commit();
+        editor.apply();
         if (key.equals("pref_locale"))
             App.restart();
     }
@@ -96,7 +96,7 @@ public final class SettingsActivity extends PreferenceActivity implements OnShar
         return SettingsFragment.class.getName().equals(fragmentName);
     }
 
-    protected void updateSummary(Preference pref) {
+    private void updateSummary(Preference pref) {
         if (pref instanceof ListPreference)
             pref.setSummary(((ListPreference) pref).getEntry().toString());
     }

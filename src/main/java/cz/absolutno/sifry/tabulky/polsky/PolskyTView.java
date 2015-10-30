@@ -14,10 +14,10 @@ import cz.absolutno.sifry.common.widget.DrawOnWhiteView;
 
 public final class PolskyTView extends View implements DrawOnWhiteView {
 
-    private boolean[] steny = new boolean[4];
+    private final boolean[] steny = new boolean[4];
     private int tecky;
     private boolean alt;
-    private Paint pLine, pFill;
+    private final Paint pLine, pFill;
 
     public PolskyTView(Context ctx, AttributeSet as) {
         super(ctx, as);

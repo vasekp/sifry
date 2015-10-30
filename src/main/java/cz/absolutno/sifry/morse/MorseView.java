@@ -10,7 +10,6 @@ import cz.absolutno.sifry.common.widget.ButtonView;
 public final class MorseView extends ButtonView {
 
     private static String[] znaky;
-    ;
 
     public MorseView(Context ctx, AttributeSet as) {
         super(ctx, as);

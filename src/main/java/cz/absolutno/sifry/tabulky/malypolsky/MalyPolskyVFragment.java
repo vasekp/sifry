@@ -24,6 +24,7 @@ public final class MalyPolskyVFragment extends AbstractRFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         ArrayList<Integer> raw = getArguments().getIntegerArrayList(App.DATA);
+        assert raw != null;
         int sz = raw.size();
         sour = new int[sz][];
         for (int i = 0; i < sz; i++)
@@ -89,6 +90,7 @@ public final class MalyPolskyVFragment extends AbstractRFragment {
             return filter(groupPosition, rot, rX, inv);
         }
 
+        @SuppressWarnings("UnusedParameters")
         @SuppressLint("DefaultLocale")
         private String getChildDesc(int groupPosition, int childPosition) {
             int rot = childPosition % 4;

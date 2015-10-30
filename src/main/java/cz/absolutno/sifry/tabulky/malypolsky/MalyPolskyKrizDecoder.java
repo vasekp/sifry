@@ -9,7 +9,7 @@ import cz.absolutno.sifry.common.decoder.Decoder;
 
 public final class MalyPolskyKrizDecoder extends Decoder {
     private int var;
-    private Alphabet abc;
+    private final Alphabet abc;
 
     private static final int YQ_SHIFT = 5;
     private static final int XQ_SHIFT = 4;
@@ -25,6 +25,7 @@ public final class MalyPolskyKrizDecoder extends Decoder {
         abc = Alphabet.getVariantInstance(26, abcVar);
     }
 
+    @SuppressWarnings("unused")
     public void setVar(int var) {
         this.var = var;
     }
@@ -42,7 +43,7 @@ public final class MalyPolskyKrizDecoder extends Decoder {
 	 */
 
     public String decode(int x, int y, int xq, int yq) {
-        int ixc = -1;
+        int ixc;
         x++;
         y++;
         if (yq == 1) {

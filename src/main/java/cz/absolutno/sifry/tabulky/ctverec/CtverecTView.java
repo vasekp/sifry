@@ -13,10 +13,10 @@ import cz.absolutno.sifry.common.widget.DrawOnWhiteView;
 
 public final class CtverecTView extends View implements DrawOnWhiteView {
 
-    private float wd;
+    private final float wd;
     private int x, y;
     private boolean alt;
-    private Paint pLine, pFill;
+    private final Paint pLine, pFill;
 
     public CtverecTView(Context ctx, AttributeSet as) {
         super(ctx, as);

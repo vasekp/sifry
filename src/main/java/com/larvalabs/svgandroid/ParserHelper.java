@@ -1,7 +1,5 @@
 package com.larvalabs.svgandroid;
 
-import java.lang.reflect.Field;
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more contributor license agreements. See the NOTICE
  * file distributed with this work for additional information regarding copyright ownership. The ASF licenses this file
@@ -74,6 +72,7 @@ public class ParserHelper {
 	/**
 	 * Parses the content of the buffer and converts it to a float.
 	 */
+	@SuppressWarnings("ConstantConditions") // too complex to analyze by data flow algorithm
 	public float parseFloat() {
 		int mant = 0;
 		int mantDig = 0;

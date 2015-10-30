@@ -17,7 +17,7 @@ public abstract class Alphabet {
 
     public abstract StringParser getStringParser(String s);
 
-    public static final Alphabet getPreferentialInstance() {
+    public static Alphabet getPreferentialInstance() {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(App.getContext());
         if (sp == null)
             return getVariantInstance(0, "");

@@ -7,7 +7,7 @@ import cz.absolutno.sifry.common.alphabet.StringParser;
 
 public class PosunyAdapter extends AbstractSubstAdapter {
 
-    private String patList;
+    private final String patList;
 
     public PosunyAdapter(Alphabet abc) {
         super(abc);

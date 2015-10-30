@@ -14,10 +14,10 @@ import cz.absolutno.sifry.tabulky.TabulkyCListAdapter;
 
 public final class PolskyCAdapter extends TabulkyCListAdapter {
 
-    private PolskyKrizDecoder pk;
+    private final PolskyKrizDecoder pk;
     private boolean alt;
-    private String[] itemsKlas, itemsAlt;
-    private int[] itemIDsKlas, itemIDsAlt;
+    private final String[] itemsKlas, itemsAlt;
+    private final int[] itemIDsKlas, itemIDsAlt;
     private int[][] triples;
 
     public PolskyCAdapter() {
@@ -94,13 +94,12 @@ public final class PolskyCAdapter extends TabulkyCListAdapter {
         if (getItemId(position) == R.id.idTCPrimo) {
             FixedGridLayout fgl = (FixedGridLayout) v.findViewById(R.id.cont);
             LayoutInflater inflater = App.getInflater();
-            int sz = triples.length;
-            for (int i = 0; i < sz; i++) {
+            for (int[] triple : triples) {
                 PolskyTView t = (PolskyTView) inflater.inflate(R.layout.polskyc_item, null);
                 if (alt)
-                    t.setIn(triples[i][2], triples[i][1], triples[i][0], true);
+                    t.setIn(triple[2], triple[1], triple[0], true);
                 else
-                    t.setIn(triples[i][1], triples[i][0], triples[i][2], false);
+                    t.setIn(triple[1], triple[0], triple[2], false);
                 fgl.addView(t);
             }
         }

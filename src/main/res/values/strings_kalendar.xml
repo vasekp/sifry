@@ -67,12 +67,12 @@ name days either alphabetically or in the order they appear during the year, res
     </string-array>
 
     <string-array name="saKDKalendareKody">
-        <item></item>
+        <item/>
         <item>svatkyCZ</item>
         <item>svatkySK</item>
     </string-array>
 
-    <string name="pref_kal_namedays_default"></string>
+    <string name="pref_kal_namedays_default"/>
 
 
     <string-array name="saKDMesice">

@@ -7,6 +7,7 @@ import android.media.AudioManager;
 import android.media.AudioTrack;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.content.ContextCompat;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
@@ -32,14 +33,15 @@ import cz.absolutno.sifry.R;
 import cz.absolutno.sifry.Utils;
 import cz.absolutno.sifry.common.activity.AbstractDFragment;
 
+@SuppressWarnings("deprecation")
 public final class MorseTFragment extends AbstractDFragment implements SurfaceHolder.Callback {
 
     private String in;
     private ArrayList<String> bin;
     private ModItem[] mody;
-    int selMod;
+    private int selMod;
 
-    private Handler handler = new Handler();
+    private final Handler handler = new Handler();
     private String binCurr;
     private int activeColor;
     private int delay, freq, vol;
@@ -82,7 +84,7 @@ public final class MorseTFragment extends AbstractDFragment implements SurfaceHo
             bin = args.getStringArrayList(App.DATA);
         }
 
-        activeColor = getResources().getColor(R.color.morseActiveColor);
+        activeColor = ContextCompat.getColor(getContext(), R.color.morseActiveColor);
 
         setRetainInstance(true);
     }
@@ -100,7 +102,7 @@ public final class MorseTFragment extends AbstractDFragment implements SurfaceHo
         ((SeekBar) v.findViewById(R.id.sbMTFreq)).setProgress(getResources().getInteger(R.integer.mtFreqDef) - getResources().getInteger(R.integer.mtFreqMin));
         ((SeekBar) v.findViewById(R.id.sbMTVol)).setProgress(getResources().getInteger(R.integer.mtVolDef) - getResources().getInteger(R.integer.mtVolMin));
 
-        ((Button) v.findViewById(R.id.btMTGo)).setOnClickListener(goListener);
+        v.findViewById(R.id.btMTGo).setOnClickListener(goListener);
 
         ((SurfaceView) v.findViewById(R.id.sfMTPreview)).getHolder().addCallback(this);
         ((SurfaceView) v.findViewById(R.id.sfMTPreview)).getHolder().setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
@@ -123,6 +125,7 @@ public final class MorseTFragment extends AbstractDFragment implements SurfaceHo
         cam = null;
     }
 
+    @SuppressWarnings("ConstantConditions")
     @Override
     public void onResume() {
         super.onResume();
@@ -178,6 +181,7 @@ public final class MorseTFragment extends AbstractDFragment implements SurfaceHo
         public void onStartTrackingTouch(SeekBar seekBar) {
         }
 
+        @SuppressWarnings("ConstantConditions")
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
             int x = progress + getResources().getInteger(R.integer.mtSpeedMin);
             ((TextView) getView().findViewById(R.id.tvMTSpeed)).setText(String.format(getString(R.string.patMTSpeed), x));
@@ -193,6 +197,7 @@ public final class MorseTFragment extends AbstractDFragment implements SurfaceHo
         public void onStartTrackingTouch(SeekBar seekBar) {
         }
 
+        @SuppressWarnings("ConstantConditions")
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
             freq = (progress + getResources().getInteger(R.integer.mtFreqMin)) * 10;
             ((TextView) getView().findViewById(R.id.tvMTFreq)).setText(String.format(getString(R.string.patMTFreq), freq));
@@ -207,6 +212,7 @@ public final class MorseTFragment extends AbstractDFragment implements SurfaceHo
         public void onStartTrackingTouch(SeekBar seekBar) {
         }
 
+        @SuppressWarnings("ConstantConditions")
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
             vol = (progress + getResources().getInteger(R.integer.mtVolMin));
             ((TextView) getView().findViewById(R.id.tvMTVol)).setText(String.format(getString(R.string.patMTVol), vol));
@@ -214,6 +220,7 @@ public final class MorseTFragment extends AbstractDFragment implements SurfaceHo
     };
 
     private final OnItemSelectedListener modListener = new OnItemSelectedListener() {
+        @SuppressWarnings("ConstantConditions")
         public void onItemSelected(AdapterView<?> parentView, View childView, int position, long id) {
             selMod = ((ModItem) parentView.getAdapter().getItem(position)).id;
             getView().findViewById(R.id.llMTFreq).setVisibility(selMod == R.id.idMTZvuk ? View.VISIBLE : View.GONE);
@@ -245,6 +252,7 @@ public final class MorseTFragment extends AbstractDFragment implements SurfaceHo
     };
 
 
+    @SuppressWarnings("ConstantConditions")
     private void setRunning(boolean running) {
         View v = getView();
         v.findViewById(R.id.spMTMod).setEnabled(!running);
@@ -252,9 +260,10 @@ public final class MorseTFragment extends AbstractDFragment implements SurfaceHo
         v.findViewById(R.id.sbMTSpeed).setEnabled(!running);
         v.findViewById(R.id.sbMTVol).setEnabled(!running);
         ((Button) v.findViewById(R.id.btMTGo)).setText(running ? R.string.tStop : R.string.tStart);
-        ((Button) v.findViewById(R.id.btMTGo)).setOnClickListener(running ? stopListener : goListener);
+        v.findViewById(R.id.btMTGo).setOnClickListener(running ? stopListener : goListener);
     }
 
+    @SuppressWarnings("ConstantConditions")
     private void stop() {
         handler.removeCallbacks(newChar);
         handler.removeCallbacks(newBit);
@@ -284,6 +293,7 @@ public final class MorseTFragment extends AbstractDFragment implements SurfaceHo
 
 
     private final Runnable newChar = new Runnable() {
+        @SuppressWarnings("ConstantConditions")
         public void run() {
             SpannableString ss = new SpannableString(in);
             ss.setSpan(new ForegroundColorSpan(activeColor), ix1, ix1 + 1, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -329,8 +339,8 @@ public final class MorseTFragment extends AbstractDFragment implements SurfaceHo
 
 
     private static final class ModItem {
-        private int id;
-        private String s;
+        private final int id;
+        private final String s;
 
         public ModItem(int id, String s) {
             this.id = id;

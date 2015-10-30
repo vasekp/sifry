@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <string name="cptBraille">Braillovo písmo</string>
     <string name="tBDTitul">Zadejte znak označením poloh černých teček:</string>
@@ -87,7 +87,7 @@ pracovní prostor nebo prstem projet mezi nežádoucími pozicemi.</p>
     </array>
 
 
-    <string-array name="saBRPismena">
+    <string-array name="saBRPismena" tools:ignore="ExtraTranslation">
         <item>1:A</item>
         <item>3:B</item>
         <item>9:C</item>
@@ -117,11 +117,11 @@ pracovní prostor nebo prstem projet mezi nežádoucími pozicemi.</p>
         <item>53:Z</item>
     </string-array>
 
-    <string-array name="saBRPismenaFallback">
+    <string-array name="saBRPismenaFallback" tools:ignore="ExtraTranslation">
         <item>58:W britské:W</item>
     </string-array>
 
-    <string-array name="saBRCislice">
+    <string-array name="saBRCislice" tools:ignore="ExtraTranslation">
         <item>1:1</item>
         <item>3:2</item>
         <item>9:3</item>
@@ -134,22 +134,22 @@ pracovní prostor nebo prstem projet mezi nežádoucími pozicemi.</p>
         <item>26:0</item>
     </string-array>
 
-    <string-array name="saBRCisliceSym">
+    <string-array name="saBRCisliceSym" tools:ignore="ExtraTranslation">
         <item>15:%</item>
         <item>23:‰</item>
         <item>44:§</item>
     </string-array>
 
-    <string-array name="saBRCislaSym">
+    <string-array name="saBRCislaSym" tools:ignore="ExtraTranslation">
         <item>4:Oddělovač tisíců:.</item>
         <item>2:Desetinná čárka:,</item>
     </string-array>
 
-    <string-array name="saBRMezera">
+    <string-array name="saBRMezera" tools:ignore="ExtraTranslation">
         <item>0:mezera:·</item>
     </string-array>
 
-    <string-array name="saBRPrefixy">
+    <string-array name="saBRPrefixy" tools:ignore="ExtraTranslation">
         <item>60:Prefix číslic</item>
         <item>16:Malá písmena</item>
         <item>32:Velké písmeno</item>
@@ -158,7 +158,7 @@ pracovní prostor nebo prstem projet mezi nežádoucími pozicemi.</p>
         <item>40:Velké řecké</item>
     </string-array>
 
-    <string-array name="saBRInterpunkce">
+    <string-array name="saBRInterpunkce" tools:ignore="ExtraTranslation">
         <item>4:Tečka:.</item>
         <item>2:Čárka:,</item>
         <item>22:Vykřičník:!</item>
@@ -179,7 +179,7 @@ pracovní prostor nebo prstem projet mezi nežádoucími pozicemi.</p>
         <item>8:Apostrof:\'</item>
     </string-array>
 
-    <string-array name="saBRDiakritika">
+    <string-array name="saBRDiakritika" tools:ignore="ExtraTranslation">
         <item>33:Á</item>
         <item>41:Č</item>
         <item>57:Ď</item>
@@ -197,7 +197,7 @@ pracovní prostor nebo prstem projet mezi nežádoucími pozicemi.</p>
         <item>46:Ž</item>
     </string-array>
 
-    <string-array name="saBRRecka">
+    <string-array name="saBRRecka" tools:ignore="ExtraTranslation">
         <item>1:α / Α:α</item>
         <item>3:β / Β:β</item>
         <item>27:γ / Γ:γ</item>

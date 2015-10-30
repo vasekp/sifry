@@ -15,7 +15,7 @@ public abstract class AbstractSubstAdapter extends BaseAdapter {
     protected final int cnt;
     protected String str;
 
-    public AbstractSubstAdapter(Alphabet abc) {
+    AbstractSubstAdapter(Alphabet abc) {
         this.abc = abc;
         cnt = abc.count();
     }
@@ -53,7 +53,7 @@ public abstract class AbstractSubstAdapter extends BaseAdapter {
 
     public final View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null)
-            convertView = App.getInflater().inflate(R.layout.gen_list_item, null);
+            convertView = App.getInflater().inflate(R.layout.gen_list_item, parent);
         TextView tvDesc = (TextView) convertView.findViewById(R.id.desc);
         TextView tvCont = (TextView) convertView.findViewById(R.id.cont);
         tvDesc.setText(getItemDesc(position));

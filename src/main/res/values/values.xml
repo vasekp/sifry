@@ -6,7 +6,7 @@
     <dimen name="aidOffset">30dp</dimen>
     <dimen name="vlajkyOkraj">5dp</dimen>
 
-    <dimen name="mainTextSize">14dp</dimen>
+    <dimen name="mainTextSize">14sp</dimen>
     <dimen name="defTextSize">22sp</dimen>
 
     <dimen name="maxTextSize">100sp</dimen>

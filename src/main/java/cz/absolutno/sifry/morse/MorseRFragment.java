@@ -24,10 +24,10 @@ public final class MorseRFragment extends AbstractRFragment {
 
     private static final class MorseELA extends BaseExpandableListAdapter {
 
-        private String[] groups;
+        private final String[] groups;
         private final String[][] elms = new String[3][];
-        private String[] znaky;
-        private char tecka, carka;
+        private final String[] znaky;
+        private final char tecka, carka;
 
         public MorseELA() {
             Resources res = App.getContext().getResources();

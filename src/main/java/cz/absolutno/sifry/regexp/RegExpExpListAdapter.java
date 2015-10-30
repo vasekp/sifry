@@ -11,7 +11,7 @@ import cz.absolutno.sifry.R;
 public final class RegExpExpListAdapter extends BaseExpandableListAdapter {
 
     private int matches = 0;
-    private RegExpNative re;
+    private final RegExpNative re;
 
     public RegExpExpListAdapter(RegExpNative re) {
         this.re = re;

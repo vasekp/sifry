@@ -14,7 +14,7 @@ public abstract class Trans2DView extends TransView {
 
     private float[] mx = new float[6];
     private float ow, oh, sz;
-    private float[] lastX = new float[3], lastY = new float[3];
+    private final float[] lastX = new float[3], lastY = new float[3];
     private boolean motion;
 
     public Trans2DView(Context ctx, AttributeSet as) {

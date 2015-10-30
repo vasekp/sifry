@@ -6,11 +6,9 @@ import android.content.SharedPreferences;
 
 public final class EnglishAlphabet extends Alphabet {
 
-    private boolean j;
-    private boolean k;
-    private boolean q;
-    private boolean x;
+    private final boolean j, k, q, x;
 
+    @SuppressWarnings("unused")
     public EnglishAlphabet() {
         j = true;
         k = true;
@@ -40,21 +38,25 @@ public final class EnglishAlphabet extends Alphabet {
                 else
                     return new PlainEnglishAlphabet();
             case 25:
-                if (variant.equals("J"))
-                    return new EnglishAlphabet(false, true, true, true);
-                else if (variant.equals("K"))
-                    return new EnglishAlphabet(true, false, true, true);
-                else if (variant.equals("X"))
-                    return new EnglishAlphabet(true, true, true, false);
-                else
-                    return new EnglishAlphabet(true, true, false, true);
+                switch (variant) {
+                    case "J":
+                        return new EnglishAlphabet(false, true, true, true);
+                    case "K":
+                        return new EnglishAlphabet(true, false, true, true);
+                    case "X":
+                        return new EnglishAlphabet(true, true, true, false);
+                    default:
+                        return new EnglishAlphabet(true, true, false, true);
+                }
             case 24:
-                if (variant.equals("JQ"))
-                    return new EnglishAlphabet(false, true, false, true);
-                else if (variant.equals("JX"))
-                    return new EnglishAlphabet(false, true, true, false);
-                else
-                    return new EnglishAlphabet(true, true, false, false);
+                switch (variant) {
+                    case "JQ":
+                        return new EnglishAlphabet(false, true, false, true);
+                    case "JX":
+                        return new EnglishAlphabet(false, true, true, false);
+                    default:
+                        return new EnglishAlphabet(true, true, false, false);
+                }
             default:
                 return new PlainEnglishAlphabet();
         }

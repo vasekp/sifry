@@ -23,6 +23,7 @@ public final class PolskyVFragment extends AbstractRFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         ArrayList<Integer> raw = getArguments().getIntegerArrayList(App.DATA);
+        assert raw != null;
         int var = Utils.getIdArray(R.array.iaTDVPVar)[getArguments().getInt(App.VSTUP2, 0)];
 
         final int sz = raw.size();
@@ -49,15 +50,15 @@ public final class PolskyVFragment extends AbstractRFragment {
 
     private static final class PolskyVELA extends BaseExpandableListAdapter {
 
-        private HashMap<String, PolskyKrizDecoder> pkHash = new HashMap<String, PolskyKrizDecoder>();
+        private final HashMap<String, PolskyKrizDecoder> pkHash = new HashMap<String, PolskyKrizDecoder>();
         private int[][] triples;
         private boolean alt;
 
         private final String[] groups;
         private final int[] groupIDs;
         private final String[] groupVars;
-        private String[] permKlas, permAlt;
-        private String[] reflKlas, reflAlt;
+        private final String[] permKlas, permAlt;
+        private final String[] reflKlas, reflAlt;
 
         public PolskyVELA() {
             Resources res = App.getContext().getResources();

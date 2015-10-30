@@ -7,6 +7,7 @@ import android.graphics.Paint.Align;
 import android.graphics.Paint.Cap;
 import android.graphics.Typeface;
 import android.os.Handler;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.MotionEventCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -18,25 +19,26 @@ import cz.absolutno.sifry.tabulky.AidView;
 
 public final class MobilView extends AidView {
 
-    private int w, h, sx, sy, wd;
-    private int priColor, secColor;
-    private Paint pLine, pText, pTextSmall;
-    private MobilDecoder md;
+    private int w, h, sx, sy;
+    private final int wd;
+    private final int priColor, secColor;
+    private final Paint pLine, pText, pTextSmall;
+    private final MobilDecoder md;
 
     private int lastAidIx = -1;
     private int hl = 0;
 
-    private Handler hnd;
+    private final Handler hnd;
 
     public MobilView(Context ctx, AttributeSet as) {
         super(ctx, as);
 
         wd = Utils.dpToPix(3);
-        priColor = getResources().getColor(R.color.priColor);
-        secColor = getResources().getColor(R.color.secColor);
+        priColor = ContextCompat.getColor(ctx, R.color.priColor);
+        secColor = ContextCompat.getColor(ctx, R.color.secColor);
 
         pLine = new Paint();
-        pLine.setColor(getResources().getColor(R.color.mainColor));
+        pLine.setColor(ContextCompat.getColor(ctx, R.color.mainColor));
         pLine.setStrokeWidth(wd);
         pLine.setStrokeCap(Cap.ROUND);
         pLine.setAntiAlias(true);
@@ -148,7 +150,7 @@ public final class MobilView extends AidView {
         return false;
     }
 
-    private Runnable enterRunnable = new Runnable() {
+    private final Runnable enterRunnable = new Runnable() {
         public void run() {
             if (lastAidIx > 0) {
                 if (oil != null)

@@ -6,12 +6,8 @@ import java.util.Locale;
 
 
 public final class CzechAlphabet extends Alphabet {
-    private boolean ch;
-    private boolean j;
-    private boolean q;
-    private boolean w;
-    private boolean x;
-    private static Locale locale = new Locale("cs");
+    private final boolean ch, j, q, w, x;
+    private static final Locale locale = new Locale("cs");
 
     public CzechAlphabet() {
         ch = false;
@@ -60,30 +56,36 @@ public final class CzechAlphabet extends Alphabet {
             case 26:
                 return new CzechAlphabet();
             case 25:
-                if (variant.equals("J"))
-                    return new CzechAlphabet(false, false, true, true, true);
-                else if (variant.equals("W"))
-                    return new CzechAlphabet(false, true, true, false, true);
-                else if (variant.equals("X"))
-                    return new CzechAlphabet(false, true, true, true, false);
-                else
-                    return new CzechAlphabet(false, true, false, true, true);
+                switch (variant) {
+                    case "J":
+                        return new CzechAlphabet(false, false, true, true, true);
+                    case "W":
+                        return new CzechAlphabet(false, true, true, false, true);
+                    case "X":
+                        return new CzechAlphabet(false, true, true, true, false);
+                    default:
+                        return new CzechAlphabet(false, true, false, true, true);
+                }
             case 24:
-                if (variant.equals("WX"))
-                    return new CzechAlphabet(false, true, true, false, false);
-                else if (variant.equals("QX"))
-                    return new CzechAlphabet(false, true, false, true, false);
-                else
-                    return new CzechAlphabet(false, true, false, false, true);
+                switch (variant) {
+                    case "WX":
+                        return new CzechAlphabet(false, true, true, false, false);
+                    case "QX":
+                        return new CzechAlphabet(false, true, false, true, false);
+                    default:
+                        return new CzechAlphabet(false, true, false, false, true);
+                }
             default:
-                if (variant.equals("Full+Ch"))
-                    return new FullCzechAlphabet(true);
-                else if (variant.equals("Full-Ch"))
-                    return new FullCzechAlphabet(false);
-                else if (variant.equals("+Ch"))
-                    return new CzechAlphabet(true);
-                else
-                    return new CzechAlphabet();
+                switch (variant) {
+                    case "Full+Ch":
+                        return new FullCzechAlphabet(true);
+                    case "Full-Ch":
+                        return new FullCzechAlphabet(false);
+                    case "+Ch":
+                        return new CzechAlphabet(true);
+                    default:
+                        return new CzechAlphabet();
+                }
         }
     }
 

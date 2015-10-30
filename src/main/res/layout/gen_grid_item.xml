@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<cz.absolutno.sifry.common.widget.FixedGridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<cz.absolutno.sifry.common.widget.FixedGridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:sifry="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/gridItem"

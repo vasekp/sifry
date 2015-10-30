@@ -9,7 +9,7 @@ import cz.absolutno.sifry.R;
 
 public final class ReferenceFragment extends Fragment {
 
-    RegExpNative re = null;
+    private RegExpNative re = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -45,6 +45,7 @@ public final class ReferenceFragment extends Fragment {
             re.free();
     }
 
+    @SuppressWarnings("unused")
     public RegExpNative getRE() {
         return re;
     }

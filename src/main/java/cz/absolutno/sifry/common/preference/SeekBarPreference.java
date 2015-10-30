@@ -17,10 +17,10 @@ public final class SeekBarPreference extends DialogPreference {
 
     private SeekBar input;
     private TextView tVal;
-    private String hi, lo, fmt;
-    private int min, max;
+    private final String hi, lo, fmt;
+    private final int min, max;
     private int value;
-    private boolean showHiLo, showVal;
+    private final boolean showHiLo, showVal;
 
     public SeekBarPreference(Context ctx, AttributeSet as) {
         super(ctx, as);

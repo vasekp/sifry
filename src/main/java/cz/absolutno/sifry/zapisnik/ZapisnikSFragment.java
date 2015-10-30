@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 import android.text.Selection;
 import android.view.View;
@@ -23,6 +24,7 @@ import java.util.Calendar;
 import cz.absolutno.sifry.App;
 import cz.absolutno.sifry.R;
 
+@SuppressWarnings("deprecation")
 public final class ZapisnikSFragment extends DialogFragment {
 
     private EditText etNazev;
@@ -37,7 +39,6 @@ public final class ZapisnikSFragment extends DialogFragment {
     private Calendar cPrichod, cOdchod;
     private TimePicker tpPrichod, tpOdchod;
     private DatePicker dpPrichod, dpOdchod;
-    private DateFormat dateFormatter;
 
     public enum Mod {
         PRICHOD,
@@ -45,12 +46,12 @@ public final class ZapisnikSFragment extends DialogFragment {
         ZMENA
     }
 
-    private Mod mod;
     private Stanoviste s;
 
     private OnPositiveButtonListener onPositiveButtonListener = null;
 
 
+    @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
@@ -104,7 +105,7 @@ public final class ZapisnikSFragment extends DialogFragment {
             }
         });
 
-        dateFormatter = DateFormat.getDateInstance(DateFormat.SHORT);
+        DateFormat dateFormatter = DateFormat.getDateInstance(DateFormat.SHORT);
 
         tvPrichodDatum.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -125,7 +126,8 @@ public final class ZapisnikSFragment extends DialogFragment {
         tpOdchod.setIs24HourView(android.text.format.DateFormat.is24HourFormat(getActivity()));
 
         s = (Stanoviste) (getArguments().getSerializable(App.DATA));
-        mod = (Mod) (getArguments().getSerializable(App.SPEC));
+        Mod mod = (Mod) (getArguments().getSerializable(App.SPEC));
+        assert mod != null;
 
         boolean showPrichod = false, showOdchod = false;
         switch (mod) {
@@ -192,6 +194,7 @@ public final class ZapisnikSFragment extends DialogFragment {
             if (s.prichod != null)
                 cPrichod.setTime(s.prichod);
         }
+        assert cPrichod != null;
         tvPrichodDatum.setText(dateFormatter.format(cPrichod.getTime()));
         dpPrichod.updateDate(cPrichod.get(Calendar.YEAR), cPrichod.get(Calendar.MONTH), cPrichod.get(Calendar.DAY_OF_MONTH));
         tpPrichod.setCurrentHour(cPrichod.get(Calendar.HOUR_OF_DAY));
@@ -233,15 +236,13 @@ public final class ZapisnikSFragment extends DialogFragment {
             cOdchod.set(Calendar.YEAR, dpOdchod.getYear());
             cOdchod.set(Calendar.MONTH, dpOdchod.getMonth());
             cOdchod.set(Calendar.DAY_OF_MONTH, dpOdchod.getDayOfMonth());
-            cOdchod.set(Calendar.HOUR_OF_DAY,
-                    tpOdchod.getCurrentHour());
+            cOdchod.set(Calendar.HOUR_OF_DAY, tpOdchod.getCurrentHour());
             cOdchod.set(Calendar.MINUTE, tpOdchod.getCurrentMinute());
             s.odchod = cOdchod.getTime();
         } else
             s.odchod = null;
         if (onPositiveButtonListener != null)
             onPositiveButtonListener.onPositiveButton(s);
-        return;
     }
 
     @Override
@@ -263,6 +264,6 @@ public final class ZapisnikSFragment extends DialogFragment {
     }
 
     public interface OnPositiveButtonListener {
-        public abstract void onPositiveButton(Stanoviste s);
+        void onPositiveButton(Stanoviste s);
     }
 }

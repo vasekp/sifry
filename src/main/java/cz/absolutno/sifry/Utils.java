@@ -23,6 +23,7 @@ public final class Utils {
         return (int) (App.getScale() * dp + 0.5);
     }
 
+    @SuppressWarnings("unused")
     public static float pixToDp(float pix) {
         return pix / App.getScale();
     }
@@ -58,19 +59,19 @@ public final class Utils {
         dialog.show(activity.getSupportFragmentManager(), "copy");
     }
 
-    public static OnClickListener copyClickListener = new OnClickListener() {
+    public static final OnClickListener copyClickListener = new OnClickListener() {
         public void onClick(View view) {
             copy((FragmentActivity) view.getContext(), ((TextView) view).getText().toString());
         }
     };
 
-    public static OnItemClickListener copyItemClickListener = new OnItemClickListener() {
+    public static final OnItemClickListener copyItemClickListener = new OnItemClickListener() {
         public void onItemClick(AdapterView<?> parentView, View childView, int position, long id) {
             copy((FragmentActivity) parentView.getContext(), parentView.getAdapter().getItem(position).toString());
         }
     };
 
-    public static OnChildClickListener copyChildClickListener = new OnChildClickListener() {
+    public static final OnChildClickListener copyChildClickListener = new OnChildClickListener() {
         public boolean onChildClick(ExpandableListView parentView, View childView, int groupPosition, int childPosition, long id) {
             copy((FragmentActivity) parentView.getContext(), parentView.getExpandableListAdapter().getChild(groupPosition, childPosition).toString());
             return true;
@@ -87,6 +88,7 @@ public final class Utils {
         return arr;
     }
 
+    @SuppressWarnings("unused")
     public static ArrayList<Integer> getIdList(int resId) {
         TypedArray ta = App.getContext().getResources().obtainTypedArray(resId);
         final int len = ta.length();
@@ -109,16 +111,11 @@ public final class Utils {
 
     public static CharSequence fromHtml(String s) {
         CharSequence cs = Html.fromHtml(s);
-        int i;
-        for (i = cs.length() - 1; i > 0 && Character.isWhitespace(cs.charAt(i - 1)); i--) {
-        }
+        int i = cs.length() - 1;
+        while(i > 0 && Character.isWhitespace(cs.charAt(i - 1))) i--;
         return cs.subSequence(0, i);
     }
 
-
-    public static String getCharDesc(char c) {
-        return getCharDesc(c, "\" \"");
-    }
 
     public static String getCharDesc(char c, String mezera) {
         if (Character.isLetterOrDigit(c))
@@ -133,7 +130,7 @@ public final class Utils {
 
 
     public static String normalizeFN(String in) {
-        return in.replaceAll("[\\/?*:\"<>|]", "-");
+        return in.replaceAll("[\\\\/?*:\"<>|]", "-");
     }
 
 }

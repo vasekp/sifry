@@ -62,7 +62,7 @@ public final class SemaforDFragment extends AbstractDFragment {
         return v;
     }
 
-    private SemaforView.OnInputListener inputListener = new SemaforView.OnInputListener() {
+    private final SemaforView.OnInputListener inputListener = new SemaforView.OnInputListener() {
         public void onInput(int x, int c) {
             llOdhady.removeAllViews();
             if (sd == null)
@@ -81,7 +81,7 @@ public final class SemaforDFragment extends AbstractDFragment {
                             View v = inflater.inflate(R.layout.semaford_item, null);
                             ((SemaforTView) v.findViewById(R.id.image)).setIn(x2);
                             ((TextView) v.findViewById(R.id.text)).setText(s);
-                            v.setTag(Integer.valueOf(x2));
+                            v.setTag(x2);
                             v.setOnClickListener(clickListener);
                             llOdhady.addView(v);
                         }
@@ -95,7 +95,7 @@ public final class SemaforDFragment extends AbstractDFragment {
         }
     };
 
-    private OnClickListener clickListener = new OnClickListener() {
+    private final OnClickListener clickListener = new OnClickListener() {
         public void onClick(View v) {
             int x = (Integer) v.getTag();
             reseni.append(sd.decode(x));
@@ -105,7 +105,7 @@ public final class SemaforDFragment extends AbstractDFragment {
         }
     };
 
-    private OnClickListener bspListener = new OnClickListener() {
+    private final OnClickListener bspListener = new OnClickListener() {
         public void onClick(View v) {
             if (sv.isActive()) {
                 sv.clear();
@@ -118,7 +118,7 @@ public final class SemaforDFragment extends AbstractDFragment {
         }
     };
 
-    private OnStateChangedListener stateListener = new OnStateChangedListener() {
+    private final OnStateChangedListener stateListener = new OnStateChangedListener() {
         public void onStateChanged(String state) {
             llState.setVisibility(state.length() > 0 ? View.VISIBLE : View.INVISIBLE);
             tvState.setText(state);

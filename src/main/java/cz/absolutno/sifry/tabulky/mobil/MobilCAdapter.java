@@ -14,10 +14,10 @@ import cz.absolutno.sifry.tabulky.TabulkyCListAdapter;
 
 public final class MobilCAdapter extends TabulkyCListAdapter {
 
-    private MobilDecoder md;
+    private final MobilDecoder md;
     private int[][] sour;
-    private String[] items;
-    private int[] itemIDs;
+    private final String[] items;
+    private final int[] itemIDs;
     private String input;
 
     public MobilCAdapter() {

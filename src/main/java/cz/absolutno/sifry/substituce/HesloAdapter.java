@@ -29,7 +29,7 @@ public final class HesloAdapter extends AbstractSubstAdapter {
     private static final int SKOK1 = 18;
     private static final int SKOK2 = 19;
 
-    private String[] items;
+    private final String[] items;
     private String key, strProc;
 
     public HesloAdapter(Alphabet abc) {
@@ -73,7 +73,6 @@ public final class HesloAdapter extends AbstractSubstAdapter {
         while ((ord = sp.getNextOrd()) != StringParser.EOF)
             if (ord == StringParser.ERR) {
                 Utils.toast(R.string.tSDChybaHesla);
-                key = null;
                 return;
             }
         this.key = key;

@@ -13,6 +13,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.StateListDrawable;
 import android.os.Handler;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.MotionEventCompat;
 import android.util.AttributeSet;
 import android.util.TypedValue;
@@ -27,11 +28,11 @@ import cz.absolutno.sifry.Utils;
 public class ButtonView extends View {
 
     private int w, h, sz, sep;
-    private Paint p;
+    private final Paint p;
     private OnInputListener oil = null;
     private int rd = 1, sl = 1, poc;
     private int pressed;
-    private boolean alignLeft;
+    private final boolean alignLeft;
 
     public ButtonView(Context ctx, AttributeSet as) {
         super(ctx, as);
@@ -39,15 +40,14 @@ public class ButtonView extends View {
         p = new Paint();
         p.setAntiAlias(true);
         p.setTypeface(Typeface.DEFAULT);
-        int color = (isInEditMode() ? Color.WHITE : getResources().getColor(R.color.priColor));
+        int color = (isInEditMode() ? Color.WHITE : ContextCompat.getColor(ctx, R.color.priColor));
         try {
             TypedValue tv = new TypedValue();
             getContext().getTheme().resolveAttribute(android.R.attr.buttonStyle, tv, true);
             TypedArray a = getContext().obtainStyledAttributes(tv.data, new int[]{android.R.attr.textColor});
             color = a.getColor(0, color);
             a.recycle();
-        } catch (Resources.NotFoundException e) {
-        }
+        } catch (Resources.NotFoundException ignored) { }
         p.setColor(color);
         p.setTextAlign(Align.CENTER);
 
@@ -72,7 +72,8 @@ public class ButtonView extends View {
             sz = Math.min((w - (sl - 1) * sep) / sl, (h - (rd - 1) * sep) / rd);
         }
 
-        StateListDrawable sld = (StateListDrawable) getResources().getDrawable(R.drawable.btn_mytheme);
+        StateListDrawable sld = (StateListDrawable) ContextCompat.getDrawable(getContext(), R.drawable.btn_mytheme);
+        assert sld != null;
         Drawable dNormal = sld.getCurrent();
         sld.setState(new int[]{android.R.attr.state_pressed});
         Drawable dPressed = sld.getCurrent();
@@ -90,7 +91,7 @@ public class ButtonView extends View {
         }
     }
 
-    private final Rect getRect(int ix) {
+    private Rect getRect(int ix) {
         final Rect r = new Rect();
         final RectF rf = getRectF(ix);
         if (alignLeft) {
@@ -142,7 +143,7 @@ public class ButtonView extends View {
         return false;
     }
 
-    private final int index(float xc, float yc) {
+    private int index(float xc, float yc) {
         for (int ix = 0; ix < poc; ix++)
             if (getRect(ix).contains((int) xc, (int) yc))
                 return ix;
@@ -183,7 +184,7 @@ public class ButtonView extends View {
     }
 
     public interface OnInputListener {
-        abstract public void onInput(int tag, String text);
+        void onInput(int tag, String text);
     }
 
 }

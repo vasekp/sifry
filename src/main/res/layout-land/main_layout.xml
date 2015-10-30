@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<cz.absolutno.sifry.common.widget.FixedGridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<cz.absolutno.sifry.common.widget.FixedGridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:sifry="http://schemas.android.com/apk/res-auto"
     android:id="@+id/glMain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    sifry:numColumns="4">
-
-</cz.absolutno.sifry.common.widget.FixedGridLayout>
+    sifry:numColumns="4" />

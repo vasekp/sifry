@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:sifry="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -27,6 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="15dp" />
+
         </cz.absolutno.sifry.common.widget.AspectLayout>
 
         <LinearLayout
@@ -51,7 +53,9 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="5dp"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
+
         </LinearLayout>
+
     </FrameLayout>
 
     <TextView
@@ -67,7 +71,8 @@
             android:id="@+id/llSmDNavrhy"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:orientation="horizontal"></LinearLayout>
+            android:orientation="horizontal" />
+
     </HorizontalScrollView>
 
     <TextView

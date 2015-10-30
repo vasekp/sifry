@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<cz.absolutno.sifry.tabulky.malypolsky.MalyPolskyTView xmlns:android="http://schemas.android.com/apk/res/android"
+<cz.absolutno.sifry.tabulky.malypolsky.MalyPolskyTView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:minWidth="30dp"
@@ -8,4 +10,5 @@
     android:paddingRight="0dp"
     android:paddingTop="3dp"
     android:paddingBottom="3dp"
-    android:layerType="software" />
+    android:layerType="software"
+    tools:ignore="UnusedAttribute" />

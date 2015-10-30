@@ -1,9 +1,10 @@
 package cz.absolutno.sifry.common.alphabet;
 
+@SuppressWarnings("unused")
 public class DigitsExtendedAlphabet<T extends Alphabet> extends Alphabet {
 
-    private T abcOrig;
-    private int cntOrig;
+    private final T abcOrig;
+    private final int cntOrig;
 
     public DigitsExtendedAlphabet(T abc) {
         this.abcOrig = abc;
@@ -55,7 +56,7 @@ public class DigitsExtendedAlphabet<T extends Alphabet> extends Alphabet {
 
     public final class NumberAddedStringParser extends StringParser {
 
-        private StringParser spOrig;
+        private final StringParser spOrig;
 
         public NumberAddedStringParser(String s) {
             super("");

@@ -48,7 +48,7 @@ public final class ZapisnikActivity extends BottomBarActivity {
                 }
                 frag = new ZapisnikEFragment();
                 args = new Bundle();
-                if (!((ZapisnikDFragment) getCurrFragment()).saveData(args)) {
+                if (!getCurrFragment().saveData(args)) {
                     Utils.toast(R.string.tZEErrEmpty);
                     getBBar().goTo(DEFAULT);
                     break;

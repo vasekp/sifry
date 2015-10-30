@@ -19,11 +19,9 @@ public class VlajkySVGs {
     public static VlajkySVGs getInstance() {
         VlajkySVGs ref;
         if (soft == null || soft.get() == null) {
-            //android.util.Log.d("SR", "**Creating NEW**");
             ref = new VlajkySVGs();
             soft = new SoftReference<VlajkySVGs>(ref);
         } else {
-            //android.util.Log.d("SR", "**Using REF**");
             ref = soft.get();
         }
         return ref;
@@ -39,9 +37,7 @@ public class VlajkySVGs {
         for (char c = 'a'; c <= 'z'; c++) {
             try {
                 pismena[c - 'a'] = new SVGBuilder().readFromAsset(assets, "vlajky/pismena/" + c + ".svg").build();
-            } catch (SVGParseException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
+            } catch (SVGParseException | IOException e) {
                 e.printStackTrace();
             }
         }
@@ -52,9 +48,7 @@ public class VlajkySVGs {
             try {
                 cislaICS[c - '0'] = new SVGBuilder().readFromAsset(assets, "vlajky/cisla1/" + c + ".svg").build();
                 cislaNATO[c - '0'] = new SVGBuilder().readFromAsset(assets, "vlajky/cisla2/" + c + ".svg").build();
-            } catch (SVGParseException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
+            } catch (SVGParseException | IOException e) {
                 e.printStackTrace();
             }
         }

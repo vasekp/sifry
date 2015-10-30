@@ -70,6 +70,7 @@ public final class CislaDFragment extends AbstractDFragment {
         itp = interp[0];
 
         ((Spinner) v.findViewById(R.id.spCDSoust)).setOnItemSelectedListener(new OnItemSelectedListener() {
+            @SuppressWarnings("ConstantConditions")
             public void onItemSelected(AdapterView<?> parentView, View childView, int position, long id) {
                 mod = mody[position];
                 zaklad = zaklady[position];
@@ -103,7 +104,7 @@ public final class CislaDFragment extends AbstractDFragment {
         spInterp.setAdapter(adapter);
         spInterp.setOnItemSelectedListener(new OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parentView, View childView, int position, long id) {
-                itp = ((InterpItem) parentView.getItemAtPosition(position)).interp;//interp[position];
+                itp = ((InterpItem) parentView.getItemAtPosition(position)).interp;
                 cvVstup.setLayout(mod, zaklad, itp);
                 updateNula();
                 updateVstup();
@@ -241,7 +242,7 @@ public final class CislaDFragment extends AbstractDFragment {
     }
 
 
-    private OnClickListener enterListener = new OnClickListener() {
+    private final OnClickListener enterListener = new OnClickListener() {
         public void onClick(View v) {
             if (!(vstup == 0 && !nula))
                 reseni += znak();
@@ -251,7 +252,7 @@ public final class CislaDFragment extends AbstractDFragment {
         }
     };
 
-    private OnClickListener bspListener = new OnClickListener() {
+    private final OnClickListener bspListener = new OnClickListener() {
         public void onClick(View v) {
             if (vstup != 0) {
                 switch (mod) {
@@ -316,7 +317,6 @@ public final class CislaDFragment extends AbstractDFragment {
     }
 
     private InterpItem[] interpList(int count) {
-        int[] interp = Utils.getIdArray(R.array.iaCDInterp);
         String[] elms = getResources().getStringArray(R.array.pataCDInterp);
         InterpItem res[] = new InterpItem[elms.length];
         for (int i = 0; i < elms.length; i++)
@@ -329,8 +329,8 @@ public final class CislaDFragment extends AbstractDFragment {
 
 
     private static final class InterpItem {
-        int interp;
-        String txt;
+        final int interp;
+        final String txt;
 
         public InterpItem(int interp, String txt) {
             this.interp = interp;

@@ -16,8 +16,8 @@ public class AlphaBitmapCacheView extends ImageView {
 
     private static Bitmap bmpTemp;
     private Bitmap bmp;
-    private Paint pAlpha;
-    private Paint paint;
+    private final Paint pAlpha;
+    private final Paint paint;
 
     public AlphaBitmapCacheView(Context context, AttributeSet attrs) {
         super(context, attrs);

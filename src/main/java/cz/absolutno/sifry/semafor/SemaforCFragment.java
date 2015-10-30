@@ -49,10 +49,10 @@ public final class SemaforCFragment extends AbstractCFragment {
 
     private static final class SemaforCLA extends BaseAdapter {
 
-        private ArrayList<Integer> raw;
+        private final ArrayList<Integer> raw;
+        private final String[] items;
+        private final int[] itemIDs;
         StatefulDecoder sd;
-        private String[] items;
-        private int[] itemIDs;
 
         public SemaforCLA() {
             items = App.getContext().getResources().getStringArray(R.array.saSCItems);

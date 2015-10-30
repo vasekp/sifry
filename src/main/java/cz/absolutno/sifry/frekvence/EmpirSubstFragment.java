@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -42,8 +43,8 @@ public final class EmpirSubstFragment extends AbstractDFragment {
     private int colPrimary, colNT, colOK, colColl;
     private String mezera;
 
-    public static final int SORT_FREQ = 0;
-    public static final int SORT_ABC = 1;
+    private static final int SORT_FREQ = 0;
+    private static final int SORT_ABC = 1;
 
     @Override
     protected int getMenuCaps() {
@@ -54,10 +55,10 @@ public final class EmpirSubstFragment extends AbstractDFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        colPrimary = getResources().getColor(R.color.priColor);
-        colNT = getResources().getColor(R.color.esubsNTColor);
-        colOK = getResources().getColor(R.color.esubsOKColor);
-        colColl = getResources().getColor(R.color.esubsCollColor);
+        colPrimary = ContextCompat.getColor(getContext(), R.color.priColor);
+        colNT = ContextCompat.getColor(getContext(), R.color.esubsNTColor);
+        colOK = ContextCompat.getColor(getContext(), R.color.esubsOKColor);
+        colColl = ContextCompat.getColor(getContext(), R.color.esubsCollColor);
 
         format = getString(R.string.patFDRes);
         mezera = getString(R.string.tFDMezera);
@@ -68,6 +69,7 @@ public final class EmpirSubstFragment extends AbstractDFragment {
         rebuildHash();
 
         if (savedInstanceState != null) {
+            //noinspection unchecked
             hash = (HashMap<String, SubsItem>) savedInstanceState.getSerializable(App.DATA);
             sort = savedInstanceState.getInt(App.SPEC);
         } else
@@ -89,13 +91,13 @@ public final class EmpirSubstFragment extends AbstractDFragment {
         return v;
     }
 
-    private OnClickListener sortListener = new OnClickListener() {
+    private final OnClickListener sortListener = new OnClickListener() {
         public void onClick(View v) {
             rebuildList(((ToggleButton) v).isChecked() ? SORT_FREQ : SORT_ABC);
         }
     };
 
-    private OnChunkClickListener chunkListener = new OnChunkClickListener() {
+    private final OnChunkClickListener chunkListener = new OnChunkClickListener() {
         public void onChunkClick(int ix) {
             StringParser sp = abc.getStringParser(s);
             for (int i = 0; i < ix; i++)
@@ -191,19 +193,19 @@ public final class EmpirSubstFragment extends AbstractDFragment {
         }
     }
 
-    private OnClickListener setClickListener = new OnClickListener() {
+    private final OnClickListener setClickListener = new OnClickListener() {
         public void onClick(final View v) {
             setSubs((SubsItem) v.getTag());
         }
     };
 
-    private OnClickListener resetClickListener = new OnClickListener() {
+    private final OnClickListener resetClickListener = new OnClickListener() {
         public void onClick(View v) {
             resetSubs((SubsItem) v.getTag());
         }
     };
 
-    private EmpirSubstDialog.OnSelectedListener setSelectedListener = new EmpirSubstDialog.OnSelectedListener() {
+    private final EmpirSubstDialog.OnSelectedListener setSelectedListener = new EmpirSubstDialog.OnSelectedListener() {
         @SuppressLint("DefaultLocale")
         public void onSelected(String from, String to) {
             if (hash.containsKey(from))
@@ -223,7 +225,7 @@ public final class EmpirSubstFragment extends AbstractDFragment {
         dialog.show(getFragmentManager(), "setSubs");
     }
 
-    void resetSubs(final SubsItem item) {
+    private void resetSubs(final SubsItem item) {
         item.repl = null;
         rebuildList(sort);
         updateSubs();
@@ -256,7 +258,7 @@ public final class EmpirSubstFragment extends AbstractDFragment {
 
     private void rebuildHash() {
         SharedPreferences shp = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        boolean ignore = (shp != null ? shp.getBoolean("pref_parse_np", false) : false);
+        boolean ignore = (shp != null && shp.getBoolean("pref_parse_np", false));
         StringParser sp = abc.getStringParser(s);
         int ord;
 

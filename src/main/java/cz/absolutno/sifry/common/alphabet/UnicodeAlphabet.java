@@ -1,6 +1,7 @@
 package cz.absolutno.sifry.common.alphabet;
 
 
+@SuppressWarnings("unused")
 public final class UnicodeAlphabet extends Alphabet {
 
     public UnicodeAlphabet() {

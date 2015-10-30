@@ -51,7 +51,9 @@ public final class CislaCFragment extends AbstractCFragment {
     private static final class CislaCELA extends BaseExpandableListAdapter {
 
         private String input;
-        private Alphabet abcPref, abcAscii, abcPerm;
+        private Alphabet abcPref;
+        private final Alphabet abcAscii;
+        private final Alphabet abcPerm;
 
         private final String[] groups;
         private final int[] groupIDs;

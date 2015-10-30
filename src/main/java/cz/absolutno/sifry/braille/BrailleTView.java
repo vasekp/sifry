@@ -10,8 +10,8 @@ import android.view.View;
 
 public final class BrailleTView extends View {
 
-    private boolean[] in = {false, false, false, false, false, false};
-    private Paint p;
+    private final boolean[] in = {false, false, false, false, false, false};
+    private final Paint p;
 
     public BrailleTView(Context ctx, AttributeSet as) {
         super(ctx, as);

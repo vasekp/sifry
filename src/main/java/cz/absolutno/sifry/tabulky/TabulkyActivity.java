@@ -7,7 +7,6 @@ import android.support.v4.app.FragmentTransaction;
 import cz.absolutno.sifry.App;
 import cz.absolutno.sifry.R;
 import cz.absolutno.sifry.Utils;
-import cz.absolutno.sifry.common.activity.AbstractCFragment;
 import cz.absolutno.sifry.common.activity.AbstractDFragment;
 import cz.absolutno.sifry.common.activity.BottomBarActivity;
 import cz.absolutno.sifry.tabulky.ctverec.CtverecVFragment;
@@ -45,7 +44,7 @@ public final class TabulkyActivity extends BottomBarActivity {
             case ENCODE:
                 args = new Bundle();
                 frag = new TabulkyCFragment();
-                ((TabulkyDFragment) getCurrFragment()).saveData(args);
+                getCurrFragment().saveData(args);
                 frag.setArguments(args);
                 trans.replace(R.id.content, frag, "C");
                 trans.addToBackStack(null);
@@ -54,17 +53,14 @@ public final class TabulkyActivity extends BottomBarActivity {
             case DECODE:
                 frag = getCurrFragment();
                 args = new Bundle();
-                if (frag.getTag().equals("C"))
-                    res = ((AbstractCFragment) frag).saveData(args);
-                else
-                    res = false;
+                res = frag.getTag().equals("C") && frag.saveData(args);
                 fm.popBackStackImmediate();
                 if (res)
                     getCurrFragment().loadData(args);
                 break;
             case VARIANTS:
                 args = new Bundle();
-                res = ((TabulkyDFragment) getCurrFragment()).saveData(args);
+                res = getCurrFragment().saveData(args);
                 int selLayout = args.getInt(App.VSTUP1);
                 if (selLayout == R.id.idTDMobil) {
                     Utils.toast(R.string.tTDErrMobilVar);
@@ -92,9 +88,7 @@ public final class TabulkyActivity extends BottomBarActivity {
                         trans.replace(R.id.content, frag, "V");
                         trans.addToBackStack(null);
                         trans.commit();
-                    } catch (InstantiationException e) {
-                        e.printStackTrace();
-                    } catch (IllegalAccessException e) {
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                 } else {

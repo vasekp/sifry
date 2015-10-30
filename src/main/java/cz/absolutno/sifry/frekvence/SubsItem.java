@@ -6,9 +6,10 @@ import java.util.Comparator;
 
 public final class SubsItem implements Serializable {
 
+    @SuppressWarnings("unused")
     private static final long serialVersionUID = 3996457042461256515L;
-    public int ord;
-    public String orig;
+    public final int ord;
+    public final String orig;
     public int cnt;
     public String repl;
 
@@ -22,7 +23,7 @@ public final class SubsItem implements Serializable {
 
 
     protected static class AlphComparator implements Comparator<SubsItem> {
-        protected final Collator c = Collator.getInstance();
+        final Collator c = Collator.getInstance();
 
         public int compare(SubsItem lhs, SubsItem rhs) {
             if (lhs.ord >= 0 && rhs.ord >= 0)

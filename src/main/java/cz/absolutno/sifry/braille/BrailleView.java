@@ -10,6 +10,7 @@ import android.graphics.Paint.Style;
 import android.graphics.Typeface;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.MotionEventCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -21,8 +22,9 @@ import cz.absolutno.sifry.Utils;
 
 public final class BrailleView extends View {
 
-    private float w, h, r, wd;
-    private Paint pDash, pFill, pText;
+    private float w, h, r;
+    private final float wd;
+    private final Paint pDash, pFill, pText;
     private boolean[] in = new boolean[6];
     private OnChangeListener ocl = null;
     private boolean tah = false;
@@ -34,7 +36,7 @@ public final class BrailleView extends View {
         wd = Utils.dpToPix(3);
 
         pDash = new Paint();
-        pDash.setColor(getResources().getColor(R.color.mainColor));
+        pDash.setColor(ContextCompat.getColor(ctx, R.color.mainColor));
         pDash.setAntiAlias(true);
         pDash.setStrokeWidth(wd);
         pDash.setStrokeCap(Cap.ROUND);
@@ -46,7 +48,7 @@ public final class BrailleView extends View {
         pText = new Paint();
         pText.setTextAlign(Paint.Align.CENTER);
         pText.setTypeface(Typeface.DEFAULT_BOLD);
-        pText.setColor(isInEditMode() ? Color.WHITE : getResources().getColor(R.color.priColor));
+        pText.setColor(isInEditMode() ? Color.WHITE : ContextCompat.getColor(ctx, R.color.priColor));
         pText.setAntiAlias(true);
     }
 
@@ -112,9 +114,10 @@ public final class BrailleView extends View {
         return x;
     }
 
+    @SuppressWarnings("unused")
     public void setVal(int x) {
         for (int i = 0; i < 6; i++) {
-            in[i] = ((x & (1 << i)) != 0) ? true : false;
+            in[i] = ((x & (1 << i)) != 0);
         }
         if (ocl != null) ocl.onChange(x, true);
         lastVal = x;
@@ -165,7 +168,7 @@ public final class BrailleView extends View {
     }
 
     public interface OnChangeListener {
-        public abstract void onChange(int x, boolean down);
+        void onChange(int x, boolean down);
     }
 
     public void setOnChangeListener(OnChangeListener ocl) {

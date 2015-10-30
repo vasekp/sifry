@@ -16,8 +16,8 @@ public final class MalyPolskyCAdapter extends TabulkyCListAdapter {
 
     private MalyPolskyKrizDecoder mpk;
     private int[][] sour;
-    private String[] items;
-    private int[] itemIDs;
+    private final String[] items;
+    private final int[] itemIDs;
 
     public MalyPolskyCAdapter() {
         items = App.getContext().getResources().getStringArray(R.array.saTCMPItems);

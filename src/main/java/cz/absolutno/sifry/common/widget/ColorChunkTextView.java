@@ -19,7 +19,7 @@ import cz.absolutno.sifry.Utils;
 public final class ColorChunkTextView extends View {
 
     private OnChunkClickListener onChunkClickListener = null;
-    private Paint p;
+    private final Paint p;
 
     private int downIx;
     private boolean trackingScroll;
@@ -30,7 +30,8 @@ public final class ColorChunkTextView extends View {
     private boolean widthsValid = false;
 
     private ChunkInternal[] data = new ChunkInternal[0];
-    private float sz, defSz, maxSz;
+    private float sz;
+    private final float defSz, maxSz;
     private float dy = 0;
 
     public ColorChunkTextView(Context ctx, AttributeSet as) {
@@ -116,6 +117,7 @@ public final class ColorChunkTextView extends View {
         return sb.toString();
     }
 
+    @SuppressWarnings("unused")
     public void replaceChunk(int i, ColorChunk newChunk) {
         data[i] = new ChunkInternal(newChunk);
         invalidateWidths();
@@ -228,7 +230,7 @@ public final class ColorChunkTextView extends View {
         return -1;
     }
 
-    protected void onChunkClick(int ix) {
+    private void onChunkClick(int ix) {
         if (onChunkClickListener != null)
             onChunkClickListener.onChunkClick(ix);
     }
@@ -309,14 +311,15 @@ public final class ColorChunkTextView extends View {
 
 
     public interface OnChunkClickListener {
-        public void onChunkClick(int ix);
+        void onChunkClick(int ix);
     }
 
 
     public static class ColorChunk implements Serializable {
+        @SuppressWarnings("unused")
         private static final long serialVersionUID = -5907611771010408650L;
 
-        public String chr;
+        public final String chr;
         public int color;
 
         public ColorChunk(String chr, int color) {
@@ -336,9 +339,10 @@ public final class ColorChunkTextView extends View {
     }
 
     private static final class ChunkInternal extends ColorChunk {
+        @SuppressWarnings("unused")
         private static final long serialVersionUID = 7320543464412705968L;
 
-        public boolean goodbreak;
+        public final boolean goodbreak;
         public float w;
         public float x;
         public int ln;

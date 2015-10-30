@@ -16,8 +16,8 @@ public final class BottomBarFlinger {
     private long lastT;
     private boolean gotoMode;
 
-    private float minX;
-    private float maxX;
+    private final float minX;
+    private final float maxX;
     private float lastX;
 
     public BottomBarFlinger(float minX, float maxX, float curX) {

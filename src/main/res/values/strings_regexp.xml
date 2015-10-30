@@ -96,7 +96,7 @@ Words with no repeating letters:<br/>
     </string-array>
 
     <string-array name="saREDictionaryFilenames">
-        <item></item>
+        <item/>
         <item>en.canon</item>
         <item>cs.canon</item>
     </string-array>
