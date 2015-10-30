@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical">
 
-                <android.support.v7.widget.Space
+                <android.support.v4.widget.Space
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.3" />
@@ -87,7 +87,7 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@color/priColor" />
 
-                <android.support.v7.widget.Space
+                <android.support.v4.widget.Space
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4" />
@@ -122,7 +122,7 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@color/priColor" />
 
-                <android.support.v7.widget.Space
+                <android.support.v4.widget.Space
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.3" />

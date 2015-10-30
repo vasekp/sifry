@@ -18,27 +18,13 @@ import java.lang.reflect.Field;
  */
 public class ParserHelper {
 
-	private static final Field STRING_CHARS;
-	static {
-		try {
-			STRING_CHARS = String.class.getDeclaredField("value");
-			STRING_CHARS.setAccessible(true);
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		}
-	}
-
 	private final char[] s;
 	private final int n;
 	private char current;
 	public int pos;
 
 	public ParserHelper(String str, int pos) {
-		try {
-			this.s = (char[]) STRING_CHARS.get(str);
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		}
+		this.s = str.toCharArray();
 		this.pos = pos;
 		n = s.length;
 		current = s[pos];

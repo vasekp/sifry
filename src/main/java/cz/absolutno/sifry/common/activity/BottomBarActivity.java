@@ -105,7 +105,8 @@ public abstract class BottomBarActivity extends FragmentActivity implements OnBa
                 Bundle b = new Bundle();
                 b.putInt(App.SPEC, getPrefID());
                 intent.putExtra(PreferenceActivity.EXTRA_NO_HEADERS, true);
-                intent.putExtra(PreferenceActivity.EXTRA_SHOW_FRAGMENT, SettingsFragment.class.getName());
+                /* Class does not exist in Gingerbread ⇒ getName() results in a NoClassDefFoundError */
+                intent.putExtra(PreferenceActivity.EXTRA_SHOW_FRAGMENT, "cz.absolutno.sifry.common.activity.SettingsFragment");
                 intent.putExtra(PreferenceActivity.EXTRA_SHOW_FRAGMENT_ARGUMENTS, b);
                 startActivity(intent);
                 return true;
