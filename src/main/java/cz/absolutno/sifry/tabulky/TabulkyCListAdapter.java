@@ -2,6 +2,7 @@ package cz.absolutno.sifry.tabulky;
 
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
@@ -52,14 +53,14 @@ public abstract class TabulkyCListAdapter extends BaseAdapter {
         return 2;
     }
 
-    protected final View getViewHelper(View convertView, int position) {
+    protected final View getViewHelper(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = App.getInflater();
         if (getItemViewType(position) == TYPE_GRID) {
-            convertView = inflater.inflate(R.layout.grid_list_item, null);
+            convertView = inflater.inflate(R.layout.grid_list_item, parent, false);
             ((TextView) convertView.findViewById(R.id.desc)).setText(getItemDesc(position));
         } else {
             if (convertView == null || convertView.getId() == R.id.itemGrid)
-                convertView = inflater.inflate(R.layout.gen_list_item, null);
+                convertView = inflater.inflate(R.layout.gen_list_item, parent, false);
             ((TextView) convertView.findViewById(R.id.desc)).setText(getItemDesc(position));
             ((TextView) convertView.findViewById(R.id.cont)).setText(getItem(position));
         }

@@ -92,7 +92,7 @@ public final class MorseTFragment extends AbstractDFragment implements SurfaceHo
     @SuppressWarnings("deprecation")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.morset_layout, null);
+        View v = inflater.inflate(R.layout.morset_layout, container, false);
 
         ArrayAdapter<ModItem> adapter = new ArrayAdapter<ModItem>(getActivity(), android.R.layout.simple_spinner_item, mody);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

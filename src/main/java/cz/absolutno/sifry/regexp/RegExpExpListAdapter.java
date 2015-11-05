@@ -46,7 +46,7 @@ public final class RegExpExpListAdapter extends BaseExpandableListAdapter {
 
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
         if (convertView == null)
-            convertView = App.getInflater().inflate(R.layout.gen_group_item, null);
+            convertView = App.getInflater().inflate(R.layout.gen_group_item, parent, false);
         ((TextView) convertView).setText(getGroup(groupPosition));
         return convertView;
     }
@@ -66,7 +66,7 @@ public final class RegExpExpListAdapter extends BaseExpandableListAdapter {
 
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
         if (convertView == null)
-            convertView = App.getInflater().inflate(R.layout.simple_list_item, null);
+            convertView = App.getInflater().inflate(R.layout.simple_list_item, parent, false);
         ((TextView) convertView).setText(getChild(groupPosition, childPosition));
         return convertView;
     }

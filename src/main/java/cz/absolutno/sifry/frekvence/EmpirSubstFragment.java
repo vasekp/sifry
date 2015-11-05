@@ -79,7 +79,7 @@ public final class EmpirSubstFragment extends AbstractDFragment {
     @SuppressWarnings("unchecked")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.esubs_layout, null);
+        View v = inflater.inflate(R.layout.esubs_layout, container, false);
         v.findViewById(R.id.smaz).setVisibility(View.GONE);
 
         ctv = ((ColorChunkTextView) v.findViewById(R.id.ctvESMain));

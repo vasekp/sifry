@@ -64,7 +64,7 @@ public final class MainActivity extends FragmentActivity {
         FixedGridLayout glMain = (FixedGridLayout) findViewById(R.id.glMain);
         LayoutInflater inflater = App.getInflater();
         for (Aktivita a : aktivity) {
-            View v = inflater.inflate(R.layout.main_item, null);
+            View v = inflater.inflate(R.layout.main_item, glMain, false);
             ((ImageView) v.findViewById(R.id.icon)).setImageDrawable(a.icon);
             ((AlphaBitmapCacheView) v.findViewById(R.id.icon)).setColor(tint);
             ((TextView) v.findViewById(R.id.text)).setText(a.caption);

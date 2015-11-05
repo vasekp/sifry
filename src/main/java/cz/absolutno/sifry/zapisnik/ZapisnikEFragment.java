@@ -40,7 +40,7 @@ public final class ZapisnikEFragment extends AbstractDFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View content = App.getInflater().inflate(R.layout.zapisnik_export_layout, null);
+        View content = App.getInflater().inflate(R.layout.zapisnik_export_layout, container, false);
 
         String name = Utils.normalizeFN(DateFormat.getDateInstance(DateFormat.SHORT, Locale.getDefault()).format(new Date()));
         tv = (EditText) content.findViewById(R.id.etZENazev);

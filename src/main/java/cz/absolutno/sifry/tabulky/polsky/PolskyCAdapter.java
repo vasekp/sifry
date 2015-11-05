@@ -90,12 +90,12 @@ public final class PolskyCAdapter extends TabulkyCListAdapter {
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
-        View v = getViewHelper(convertView, position);
+        View v = getViewHelper(position, convertView, parent);
         if (getItemId(position) == R.id.idTCPrimo) {
             FixedGridLayout fgl = (FixedGridLayout) v.findViewById(R.id.cont);
             LayoutInflater inflater = App.getInflater();
             for (int[] triple : triples) {
-                PolskyTView t = (PolskyTView) inflater.inflate(R.layout.polskyc_item, null);
+                PolskyTView t = (PolskyTView) inflater.inflate(R.layout.polskyc_item, fgl, false);
                 if (alt)
                     t.setIn(triple[2], triple[1], triple[0], true);
                 else

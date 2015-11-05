@@ -55,7 +55,7 @@ public final class CislaDFragment extends AbstractDFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.cislad_layout, null);
+        View v = inflater.inflate(R.layout.cislad_layout, container, false);
 
         abcPref = Alphabet.getPreferentialInstance();
         abcPerm = Alphabet.getVariantInstance(24, "");

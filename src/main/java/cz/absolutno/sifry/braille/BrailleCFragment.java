@@ -23,7 +23,7 @@ public final class BrailleCFragment extends AbstractCFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.gen_list_c_layout, null);
+        View v = inflater.inflate(R.layout.gen_list_c_layout, container, false);
         adapter = new BrailleCLA();
         ((ListView) v.findViewById(R.id.lvCVystup)).setAdapter(adapter);
         ((ListView) v.findViewById(R.id.lvCVystup)).setOnItemClickListener(genItemClickListener);
@@ -137,17 +137,17 @@ public final class BrailleCFragment extends AbstractCFragment {
         public View getView(int position, View convertView, ViewGroup parent) {
             LayoutInflater inflater = App.getInflater();
             if (getItemId(position) == R.id.idBCPrimo) {
-                convertView = inflater.inflate(R.layout.grid_list_item, null);
+                convertView = inflater.inflate(R.layout.grid_list_item, parent, false);
                 ((TextView) convertView.findViewById(R.id.desc)).setText(getItemDesc(position));
                 FixedGridLayout fgl = (FixedGridLayout) convertView.findViewById(R.id.cont);
                 for (Integer x : raw) {
-                    BrailleTView bt = (BrailleTView) inflater.inflate(R.layout.braillec_item, null);
+                    BrailleTView bt = (BrailleTView) inflater.inflate(R.layout.braillec_item, fgl, false);
                     bt.setIn(x);
                     fgl.addView(bt);
                 }
             } else {
                 if (convertView == null || convertView.getId() == R.id.itemGrid)
-                    convertView = inflater.inflate(R.layout.gen_list_item, null);
+                    convertView = inflater.inflate(R.layout.gen_list_item, parent, false);
                 ((TextView) convertView.findViewById(R.id.desc)).setText(getItemDesc(position));
                 ((TextView) convertView.findViewById(R.id.cont)).setText(getItem(position));
             }

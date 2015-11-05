@@ -1,5 +1,6 @@
 package cz.absolutno.sifry.substituce;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
@@ -43,6 +44,7 @@ public final class TranslateFragment extends DialogFragment {
         int to = getArguments().getInt(App.VSTUP2);
         abc = Alphabet.getPreferentialInstance();
 
+        @SuppressLint("InflateParams")
         View layout = App.getInflater().inflate(R.layout.subst_dialog, null);
         ((TextView) layout.findViewById(R.id.tvSVVPuv)).setText(abc.chr(from));
         GridView grid = (GridView) layout.findViewById(R.id.gvSVDialog);
@@ -92,7 +94,7 @@ public final class TranslateFragment extends DialogFragment {
         public View getView(int position, View convertView, ViewGroup parent) {
             TextView tv;
             if (convertView == null)
-                tv = (TextView) App.getInflater().inflate(R.layout.gen_letter_item, null);
+                tv = (TextView) App.getInflater().inflate(R.layout.gen_letter_item, parent, false);
             else
                 tv = (TextView) convertView;
             String chr = getItem(position);

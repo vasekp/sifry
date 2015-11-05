@@ -45,7 +45,7 @@ public final class SemaforDFragment extends AbstractDFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.semaford_layout, null);
+        View v = inflater.inflate(R.layout.semaford_layout, container, false);
 
         sv = (SemaforView) v.findViewById(R.id.svSmDVstup);
         sv.setOnInputListener(inputListener);
@@ -78,7 +78,7 @@ public final class SemaforDFragment extends AbstractDFragment {
                         x2 = x | (1 << sx);
                         String s = sd.getDesc(x2);
                         if (!s.equals("?")) {
-                            View v = inflater.inflate(R.layout.semaford_item, null);
+                            View v = inflater.inflate(R.layout.semaford_item, llOdhady, false);
                             ((SemaforTView) v.findViewById(R.id.image)).setIn(x2);
                             ((TextView) v.findViewById(R.id.text)).setText(s);
                             v.setTag(x2);

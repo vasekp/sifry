@@ -42,8 +42,13 @@ public final class MorseDFragment extends AbstractDFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.morsed_layout, null);
         FrameLayout fl = new FrameLayout(getActivity());
+        fl.addView(inflateView(inflater, fl));
+        return fl;
+    }
+
+    public View inflateView(LayoutInflater inflater, ViewGroup container) {
+        View v = inflater.inflate(R.layout.morsed_layout, container, false);
 
         vstup = (TextView) v.findViewById(R.id.tvMDVstup);
         ImageView ivBsp = (ImageView) v.findViewById(R.id.ivBsp);
@@ -59,9 +64,7 @@ public final class MorseDFragment extends AbstractDFragment {
 
         ((ListView) v.findViewById(R.id.lvMDReseni)).setAdapter(adapter);
         ((ListView) v.findViewById(R.id.lvMDReseni)).setOnItemClickListener(Utils.copyItemClickListener);
-
-        fl.addView(v);
-        return fl;
+        return v;
     }
 
     @Override
@@ -70,9 +73,11 @@ public final class MorseDFragment extends AbstractDFragment {
 
         ViewGroup vp = (ViewGroup) getView();
         assert vp != null;
-        View v = onCreateView(App.getInflater(), null, null);
+        CharSequence vstup = ((TextView) vp.findViewById(R.id.tvMDVstup)).getText();
         vp.removeAllViews();
+        View v = inflateView(App.getInflater(), vp);
         vp.addView(v);
+        ((TextView) vp.findViewById(R.id.tvMDVstup)).setText(vstup);
     }
 
     private final OnClickListener bspListener = new OnClickListener() {
@@ -179,7 +184,7 @@ public final class MorseDFragment extends AbstractDFragment {
 
         public View getView(int position, View convertView, ViewGroup parent) {
             if (convertView == null)
-                convertView = App.getInflater().inflate(R.layout.gen_list_item, null);
+                convertView = App.getInflater().inflate(R.layout.gen_list_item, parent, false);
             TextView tvDesc = (TextView) convertView.findViewById(R.id.desc);
             TextView tvCont = (TextView) convertView.findViewById(R.id.cont);
             tvDesc.setText(getItemDesc(position));

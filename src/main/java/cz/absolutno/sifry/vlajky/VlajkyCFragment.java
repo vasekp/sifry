@@ -25,7 +25,7 @@ public final class VlajkyCFragment extends AbstractCFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.vlajkyc_layout, null);
+        View v = inflater.inflate(R.layout.vlajkyc_layout, container, false);
         fgl = (FixedGridLayout) v.findViewById(R.id.fglVCVystup);
         svgs = VlajkySVGs.getInstance();
         fgl.setOnClickListener(new OnClickListener() {
@@ -51,7 +51,7 @@ public final class VlajkyCFragment extends AbstractCFragment {
                 continue;
             }
             SVG svg = svgs.getChar(abc.chr(ord).charAt(0));
-            ImageView v = (ImageView) inflater.inflate(R.layout.vlajkyc_item, null);
+            ImageView v = (ImageView) inflater.inflate(R.layout.vlajkyc_item, fgl, false);
             v.setImageDrawable(svg.getDrawable());
             fgl.addView(v);
             sb.append(abc.chr(ord));

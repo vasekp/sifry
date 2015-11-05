@@ -88,7 +88,7 @@ public final class MobilCAdapter extends TabulkyCListAdapter {
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
-        return getViewHelper(convertView, position);
+        return getViewHelper(position, convertView, parent);
     }
 
 }

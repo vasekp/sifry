@@ -1,5 +1,6 @@
 package cz.absolutno.sifry.common.activity;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -37,6 +38,7 @@ public final class BitmapFragment extends DialogFragment {
         int h = getArguments().getInt(App.VSTUP2);
         long sz = file.length();
 
+        @SuppressLint("InflateParams") // exception for AlertDialog
         final View content = App.getInflater().inflate(R.layout.bitmap_dialog, null);
         ((TextView) content.findViewById(R.id.tvBmpDMessage)).setText(String.format(getString(R.string.patBitmapCap), w, h, sz));
         String date = Utils.normalizeFN(DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT, Locale.getDefault()).format(new Date()));

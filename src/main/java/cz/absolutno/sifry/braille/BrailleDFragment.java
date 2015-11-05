@@ -51,7 +51,7 @@ public final class BrailleDFragment extends AbstractDFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.brailled_layout, null);
+        View v = inflater.inflate(R.layout.brailled_layout, container, false);
 
         bvVstup = (BrailleView) v.findViewById(R.id.bvBDVstup);
         reseni = (TextView) v.findViewById(R.id.tvRes);
@@ -103,7 +103,7 @@ public final class BrailleDFragment extends AbstractDFragment {
     private void submit() {
         int x = bvVstup.getVal();
         if (x == 0 && !space) return;
-        BrailleTView v = (BrailleTView) App.getInflater().inflate(R.layout.braillec_item, null);
+        BrailleTView v = (BrailleTView) App.getInflater().inflate(R.layout.braillec_item, fglVstup, false);
         v.setIn(x);
         fglVstup.addView(v);
         raw.add(x);
@@ -177,7 +177,7 @@ public final class BrailleDFragment extends AbstractDFragment {
 
         fglVstup.removeAllViews();
         for (int i = 0; i < raw.size(); i++) {
-            BrailleTView v = (BrailleTView) App.getInflater().inflate(R.layout.braillec_item, null);
+            BrailleTView v = (BrailleTView) App.getInflater().inflate(R.layout.braillec_item, fglVstup, false);
             v.setIn(raw.get(i));
             fglVstup.addView(v);
         }

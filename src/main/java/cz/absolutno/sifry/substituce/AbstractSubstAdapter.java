@@ -53,7 +53,7 @@ public abstract class AbstractSubstAdapter extends BaseAdapter {
 
     public final View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null)
-            convertView = App.getInflater().inflate(R.layout.gen_list_item, parent);
+            convertView = App.getInflater().inflate(R.layout.gen_list_item, parent, false);
         TextView tvDesc = (TextView) convertView.findViewById(R.id.desc);
         TextView tvCont = (TextView) convertView.findViewById(R.id.cont);
         tvDesc.setText(getItemDesc(position));

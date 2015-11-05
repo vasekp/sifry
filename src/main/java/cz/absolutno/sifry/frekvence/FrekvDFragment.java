@@ -30,7 +30,7 @@ public final class FrekvDFragment extends AbstractDFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.frekvd_layout, null);
+        View v = inflater.inflate(R.layout.frekvd_layout, container, false);
 
         vstup = (EditText) v.findViewById(R.id.etFDVstup);
         vstup.setOnEditorActionListener(new OnEditorActionListener() {

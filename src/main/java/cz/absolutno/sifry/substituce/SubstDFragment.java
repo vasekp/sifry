@@ -43,8 +43,7 @@ public final class SubstDFragment extends AbstractDFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        View v = inflater.inflate(R.layout.subst_layout, null);
+        View v = inflater.inflate(R.layout.subst_layout, container, false);
         ((Spinner) v.findViewById(R.id.spSDTyp)).setOnItemSelectedListener(itemSelectedListener);
         ((Spinner) v.findViewById(R.id.spSDAKoef)).setOnItemSelectedListener(itemSelectedListener);
         ((Spinner) v.findViewById(R.id.spSDKPokr)).setOnItemSelectedListener(itemSelectedListener);
@@ -162,7 +161,7 @@ public final class SubstDFragment extends AbstractDFragment {
         FixedGridLayout fgl = (FixedGridLayout) getView().findViewById(R.id.fglSDVlastni);
         fgl.removeAllViews();
         for (int i = 0; i < cnt; i++) {
-            View v = inflater.inflate(R.layout.subst_item, null);
+            View v = inflater.inflate(R.layout.subst_item, fgl, false);
             ((TextView) v.findViewById(R.id.puv)).setText(abc.chr(i));
             ((TextView) v.findViewById(R.id.nove)).setText(abc.chr(i));
             v.setTag(i);

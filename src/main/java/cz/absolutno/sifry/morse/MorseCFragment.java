@@ -21,7 +21,7 @@ public final class MorseCFragment extends AbstractCFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.gen_list_c_layout, null);
+        View v = inflater.inflate(R.layout.gen_list_c_layout, container, false);
         adapter = new MorseCLA();
         ((ListView) v.findViewById(R.id.lvCVystup)).setAdapter(adapter);
         ((ListView) v.findViewById(R.id.lvCVystup)).setOnItemClickListener(genItemClickListener);
@@ -148,7 +148,7 @@ public final class MorseCFragment extends AbstractCFragment {
 
         public View getView(int position, View convertView, ViewGroup parent) {
             if (convertView == null)
-                convertView = App.getInflater().inflate(R.layout.gen_list_item, null);
+                convertView = App.getInflater().inflate(R.layout.gen_list_item, parent, false);
             ((TextView) convertView.findViewById(R.id.desc)).setText(getItemDesc(position));
             ((TextView) convertView.findViewById(R.id.cont)).setText(getItem(position));
             return convertView;

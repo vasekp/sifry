@@ -49,14 +49,14 @@ public final class ZapisnikDFragment extends AbstractDFragment {
     // reading an ArrayList serialized in an input stream in onDestroy() below
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        lvMain = (ListView) inflater.inflate(R.layout.gen_list_layout, null);
+        lvMain = (ListView) inflater.inflate(R.layout.gen_list_layout, container, false);
 
         try {
             FileInputStream fis = App.getContext().openFileInput(ZapisnikActivity.FILE);
             ObjectInputStream ois = new ObjectInputStream(fis);
             stan = (ArrayList<Stanoviste>) ois.readObject();
         } catch (Exception e) {
-            e.printStackTrace();
+            //e.printStackTrace();
             stan = new ArrayList<Stanoviste>();
         }
 
@@ -268,7 +268,7 @@ public final class ZapisnikDFragment extends AbstractDFragment {
             int type = getItemViewType(position);
             if (convertView == null || type != TYPE_STAN || convertView.getId() != R.id.zdItem)
                 convertView = App.getInflater().inflate(
-                        type == TYPE_STAN ? R.layout.zapisnik_item : R.layout.zapisnik_item_new, null);
+                        type == TYPE_STAN ? R.layout.zapisnik_item : R.layout.zapisnik_item_new, parent, false);
             if (type == TYPE_STAN) {
                 Stanoviste s = getItem(position);
                 assert s != null;

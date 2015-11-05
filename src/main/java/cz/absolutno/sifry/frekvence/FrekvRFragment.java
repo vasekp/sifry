@@ -35,7 +35,7 @@ public final class FrekvRFragment extends AbstractRFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.frekvr_layout, null);
+        View v = inflater.inflate(R.layout.frekvr_layout, container, false);
         sortIDs = Utils.getIdArray(R.array.iaFRSort);
         adapter = new FrekvRELA();
         ((Spinner) v.findViewById(R.id.spFRSort)).setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -154,7 +154,7 @@ public final class FrekvRFragment extends AbstractRFragment {
 
         public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
             if (convertView == null)
-                convertView = App.getInflater().inflate(R.layout.gen_group_item, null);
+                convertView = App.getInflater().inflate(R.layout.gen_group_item, parent, false);
             ((TextView) convertView).setText(getGroup(groupPosition));
             return convertView;
         }
@@ -173,7 +173,7 @@ public final class FrekvRFragment extends AbstractRFragment {
 
         public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
             if (convertView == null)
-                convertView = App.getInflater().inflate(R.layout.frekvr_item, null);
+                convertView = App.getInflater().inflate(R.layout.frekvr_item, parent, false);
             ((TextView) convertView.findViewById(R.id.pism)).setText(getChild(groupPosition, childPosition).str);
             switch (groupIDs[groupPosition]) {
                 case R.array.saFRFrekvenceBi:

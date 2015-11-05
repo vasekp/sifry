@@ -18,7 +18,7 @@ public final class BrailleRFragment extends AbstractRFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.gen_exp_list_layout, null);
+        View v = inflater.inflate(R.layout.gen_exp_list_layout, container, false);
         ((ExpandableListView) v.findViewById(R.id.main)).setAdapter(new BrailleELA());
         return v;
     }
@@ -51,7 +51,7 @@ public final class BrailleRFragment extends AbstractRFragment {
 
         public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
             if (convertView == null)
-                convertView = App.getInflater().inflate(R.layout.gen_group_item, null);
+                convertView = App.getInflater().inflate(R.layout.gen_group_item, parent, false);
             ((TextView) convertView).setText(getGroup(groupPosition));
             return convertView;
         }
@@ -82,13 +82,11 @@ public final class BrailleRFragment extends AbstractRFragment {
             LayoutInflater inflater = App.getInflater();
             FixedGridLayout fgl;
             if (convertView == null)
-                fgl = (FixedGridLayout) inflater.inflate(R.layout.gen_grid_item, null);
+                fgl = (FixedGridLayout) inflater.inflate(R.layout.gen_grid_item, parent, false);
             else
                 fgl = (FixedGridLayout) convertView;
-            for (int i = fgl.getChildCount(); i < getChildrenCountFull(groupPosition); i++) {
-                View v = inflater.inflate(R.layout.brailler_item, null);
-                fgl.addView(v);
-            }
+            for (int i = fgl.getChildCount(); i < getChildrenCountFull(groupPosition); i++)
+                inflater.inflate(R.layout.brailler_item, fgl);
             for (int i = 0; i < getChildrenCountFull(groupPosition); i++) {
                 View v = fgl.getChildAt(i);
                 Item it = getChild(groupPosition, i);

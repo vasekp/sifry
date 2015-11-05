@@ -44,7 +44,7 @@ public final class KalendarDFragment extends AbstractDFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.kalendar_layout, null);
+        View v = inflater.inflate(R.layout.kalendar_layout, container, false);
         kalMain = (KalendarView) v.findViewById(R.id.kalKDMain);
 
         fmt = DateFormat.getDateInstance(DateFormat.SHORT);

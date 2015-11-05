@@ -36,7 +36,7 @@ public final class TransDFragment extends AbstractDFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.transd_layout, null);
+        View v = inflater.inflate(R.layout.transd_layout, container, false);
 
         tvarIDs = Utils.getIdArray(R.array.iaTTvary);
 

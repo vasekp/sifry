@@ -17,7 +17,7 @@ public final class MorseRFragment extends AbstractRFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.gen_exp_list_layout, null);
+        View v = inflater.inflate(R.layout.gen_exp_list_layout, container, false);
         ((ExpandableListView) v.findViewById(R.id.main)).setAdapter(new MorseELA());
         return v;
     }
@@ -54,7 +54,7 @@ public final class MorseRFragment extends AbstractRFragment {
 
         public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
             if (convertView == null)
-                convertView = App.getInflater().inflate(R.layout.gen_group_item, null);
+                convertView = App.getInflater().inflate(R.layout.gen_group_item, parent, false);
             ((TextView) convertView).setText(getGroup(groupPosition));
             return convertView;
         }
@@ -74,7 +74,7 @@ public final class MorseRFragment extends AbstractRFragment {
         public View getChildView(int groupPosition, int childPosition, boolean isLastChild,
                                  View convertView, ViewGroup parent) {
             if (convertView == null)
-                convertView = App.getInflater().inflate(R.layout.morse_item, null);
+                convertView = App.getInflater().inflate(R.layout.morse_item, parent, false);
 
             String s = getChild(groupPosition, childPosition);
             int i1 = s.indexOf(':');

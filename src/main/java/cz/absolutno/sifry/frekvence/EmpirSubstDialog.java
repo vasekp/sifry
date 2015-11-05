@@ -1,5 +1,6 @@
 package cz.absolutno.sifry.frekvence;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
@@ -52,6 +53,7 @@ public final class EmpirSubstDialog extends DialogFragment {
     @NonNull
     @SuppressWarnings("unchecked")
     @Override
+    @SuppressLint("InflateParams")
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         Builder bld = new Builder(getActivity());
         bld.setCancelable(true);
@@ -158,7 +160,7 @@ public final class EmpirSubstDialog extends DialogFragment {
         public View getView(int position, View convertView, ViewGroup parent) {
             TextView tv;
             if (convertView == null)
-                tv = (TextView) App.getInflater().inflate(R.layout.gen_letter_item, null);
+                tv = (TextView) App.getInflater().inflate(R.layout.gen_letter_item, parent, false);
             else
                 tv = (TextView) convertView;
             String chr = getItem(position);

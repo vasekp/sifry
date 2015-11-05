@@ -32,7 +32,7 @@ public final class KalendarRFragment extends AbstractRFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.gen_exp_list_layout, null);
+        View v = inflater.inflate(R.layout.gen_exp_list_layout, container, false);
         smer = getArguments().getInt(App.SPEC, SMER_JD);
         kalendar = ((KalendarActivity) getActivity()).getKalendar();
         db = Utils.load2DStringArray(kalendar);
@@ -99,7 +99,7 @@ public final class KalendarRFragment extends AbstractRFragment {
 
         public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
             if (convertView == null)
-                convertView = App.getInflater().inflate(R.layout.gen_group_item, null);
+                convertView = App.getInflater().inflate(R.layout.gen_group_item, parent, false);
             ((TextView) convertView).setText(getGroup(groupPosition));
             return convertView;
         }
@@ -124,7 +124,7 @@ public final class KalendarRFragment extends AbstractRFragment {
 
         public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
             if (convertView == null)
-                convertView = App.getInflater().inflate(R.layout.gen_list_item, null);
+                convertView = App.getInflater().inflate(R.layout.gen_list_item, parent, false);
             TextView tvDesc = (TextView) convertView.findViewById(R.id.desc);
             TextView tvCont = (TextView) convertView.findViewById(R.id.cont);
             tvDesc.setText(getChildDesc(groupPosition, childPosition));
@@ -165,7 +165,7 @@ public final class KalendarRFragment extends AbstractRFragment {
 
         public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
             if (convertView == null)
-                convertView = App.getInflater().inflate(R.layout.gen_list_item, null);
+                convertView = App.getInflater().inflate(R.layout.gen_list_item, parent, false);
             TextView tvDesc = (TextView) convertView.findViewById(R.id.desc);
             TextView tvCont = (TextView) convertView.findViewById(R.id.cont);
             tvDesc.setText(getChildDesc(groupPosition, childPosition));
@@ -187,7 +187,7 @@ public final class KalendarRFragment extends AbstractRFragment {
 
         public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
             if (convertView == null)
-                convertView = App.getInflater().inflate(R.layout.gen_group_item, null);
+                convertView = App.getInflater().inflate(R.layout.gen_group_item, parent, false);
             ((TextView) convertView).setText(getGroup(groupPosition));
             return convertView;
         }

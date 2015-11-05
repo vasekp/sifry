@@ -23,7 +23,7 @@ public final class CislaCFragment extends AbstractCFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.cislac_layout, null);
+        View v = inflater.inflate(R.layout.cislac_layout, container, false);
         adapter = new CislaCELA();
         ((ExpandableListView) v.findViewById(R.id.elCCVystup)).setAdapter(adapter);
         ((ExpandableListView) v.findViewById(R.id.elCCVystup)).setOnChildClickListener(Utils.copyChildClickListener);
@@ -111,10 +111,9 @@ public final class CislaCFragment extends AbstractCFragment {
             return groups[groupPosition];
         }
 
-        public View getGroupView(int groupPosition, boolean isExpanded,
-                                 View convertView, ViewGroup parent) {
+        public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
             if (convertView == null)
-                convertView = App.getInflater().inflate(R.layout.gen_group_item, null);
+                convertView = App.getInflater().inflate(R.layout.gen_group_item, parent, false);
             ((TextView) convertView).setText(getGroup(groupPosition));
             return convertView;
         }
@@ -192,7 +191,7 @@ public final class CislaCFragment extends AbstractCFragment {
         public View getChildView(int groupPosition, int childPosition,
                                  boolean isLastChild, View convertView, ViewGroup parent) {
             if (convertView == null)
-                convertView = App.getInflater().inflate(R.layout.gen_list_item, null);
+                convertView = App.getInflater().inflate(R.layout.gen_list_item, parent, false);
             ((TextView) convertView.findViewById(R.id.desc)).setText(getChildDesc(groupPosition, childPosition));
             ((TextView) convertView.findViewById(R.id.cont)).setText(getChild(groupPosition, childPosition));
             return convertView;

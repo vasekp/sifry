@@ -25,7 +25,7 @@ public final class CislaRFragment extends AbstractRFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.cislar_layout, null);
+        View v = inflater.inflate(R.layout.cislar_layout, container, false);
 
         tabIDs = Utils.getIdArray(R.array.iaCRGroups);
 
@@ -108,7 +108,7 @@ public final class CislaRFragment extends AbstractRFragment {
 
         public View getView(int position, View convertView, ViewGroup parent) {
             if (convertView == null || convertView.getId() != (ascii ? R.id.crItemASCII : R.id.crItemOrd))
-                convertView = App.getInflater().inflate(ascii ? R.layout.cisla_item_ascii : R.layout.cisla_item, null);
+                convertView = App.getInflater().inflate(ascii ? R.layout.cisla_item_ascii : R.layout.cisla_item, parent, false);
             String pism;
             int x;
             if (ascii) {

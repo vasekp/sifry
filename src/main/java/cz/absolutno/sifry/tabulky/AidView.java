@@ -1,5 +1,6 @@
 package cz.absolutno.sifry.tabulky;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
@@ -27,6 +28,7 @@ public abstract class AidView extends View {
 
     protected OnInputListener oil = null;
 
+    @SuppressLint("InflateParams")
     public AidView(Context ctx, AttributeSet as) {
         super(ctx, as);
 
@@ -58,10 +60,8 @@ public abstract class AidView extends View {
         final int numEntries = llAid.getChildCount();
         if (list.length > numEntries) {
             LayoutInflater inflater = App.getInflater();
-            for (int i = numEntries; i < list.length; i++) {
-                View v = inflater.inflate(R.layout.aid_entry, llAid);
-                //llAid.addView(v);
-            }
+            for (int i = numEntries; i < list.length; i++)
+                inflater.inflate(R.layout.aid_entry, llAid);
         } else if (list.length < numEntries) {
             for (int i = list.length; i < numEntries; i++)
                 llAid.removeViewAt(i);

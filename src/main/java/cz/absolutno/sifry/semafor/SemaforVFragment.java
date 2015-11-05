@@ -24,7 +24,7 @@ public final class SemaforVFragment extends AbstractRFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         src = getArguments().getIntegerArrayList(App.DATA);
-        View v = inflater.inflate(R.layout.gen_list_layout, null);
+        View v = inflater.inflate(R.layout.gen_list_layout, container, false);
         ListView lv = (ListView) v.findViewById(R.id.main);
         lv.setAdapter(new SemaforLA());
         lv.setOnItemClickListener(Utils.copyItemClickListener);
@@ -67,7 +67,7 @@ public final class SemaforVFragment extends AbstractRFragment {
         @SuppressLint("StringFormatMatches") /* LINT error: says we supply 3 arguments instead of 3 */
         public View getView(int position, View convertView, ViewGroup parent) {
             if (convertView == null)
-                convertView = App.getInflater().inflate(R.layout.gen_list_item, null);
+                convertView = App.getInflater().inflate(R.layout.gen_list_item, parent, false);
             TextView tvDesc = (TextView) convertView.findViewById(R.id.desc);
             TextView tvCont = (TextView) convertView.findViewById(R.id.cont);
             tvDesc.setText(String.format(getString(R.string.patSmVPosun), (position >= 8 ? getString(R.string.tSmVInv) : ""), position % 8,

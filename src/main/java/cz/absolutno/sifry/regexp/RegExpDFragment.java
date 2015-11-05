@@ -35,7 +35,7 @@ public final class RegExpDFragment extends AbstractDFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.regexp_layout, null);
+        View v = inflater.inflate(R.layout.regexp_layout, container, false);
         tvProgress = (TextView) v.findViewById(R.id.tvRDPocet);
         pbProgress = (ProgressBar) v.findViewById(R.id.pbRDProgress);
         ((ExpandableListView) v.findViewById(R.id.elRDResults)).setOnChildClickListener(Utils.copyChildClickListener);

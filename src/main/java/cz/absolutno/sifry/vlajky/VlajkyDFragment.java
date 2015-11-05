@@ -48,7 +48,7 @@ public final class VlajkyDFragment extends AbstractDFragment implements GestureO
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.vlajkyd_layout, null);
+        View v = inflater.inflate(R.layout.vlajkyd_layout, container, false);
 
         GestureOverlayView gestures = (GestureOverlayView) v.findViewById(R.id.gestVD);
         gestures.addOnGesturePerformedListener(this);
@@ -89,7 +89,7 @@ public final class VlajkyDFragment extends AbstractDFragment implements GestureO
                         for (int k = 0; k < c; k++)
                             if (((TextView) (llOdhady.getChildAt(k).findViewById(R.id.text))).getText().equals(schr))
                                 continue A;
-                        View v = inflater.inflate(R.layout.vlajkyd_item, null);
+                        View v = inflater.inflate(R.layout.vlajkyd_item, llOdhady, false);
                         ((ImageView) v.findViewById(R.id.image)).setImageDrawable(svgs.getChar(chr).getDrawable());
                         ((TextView) v.findViewById(R.id.text)).setText(schr);
                         v.setTag(String.valueOf(chr));

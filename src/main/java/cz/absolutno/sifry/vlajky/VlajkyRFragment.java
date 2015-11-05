@@ -19,7 +19,7 @@ public final class VlajkyRFragment extends AbstractRFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.gen_exp_list_layout, null);
+        View v = inflater.inflate(R.layout.gen_exp_list_layout, container, false);
         ((ExpandableListView) v.findViewById(R.id.main)).setAdapter(new VlajkyELA());
         return v;
     }
@@ -55,7 +55,7 @@ public final class VlajkyRFragment extends AbstractRFragment {
 
         public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
             if (convertView == null)
-                convertView = App.getInflater().inflate(R.layout.gen_group_item, null);
+                convertView = App.getInflater().inflate(R.layout.gen_group_item, parent, false);
             ((TextView) convertView).setText(getGroup(groupPosition));
             return convertView;
         }
@@ -75,7 +75,7 @@ public final class VlajkyRFragment extends AbstractRFragment {
         public View getChildView(int groupPosition, int childPosition, boolean isLastChild,
                                  View convertView, ViewGroup parent) {
             if (convertView == null)
-                convertView = App.getInflater().inflate(R.layout.vlajkyr_item, null);
+                convertView = App.getInflater().inflate(R.layout.vlajkyr_item, parent, false);
             int id = (int) getGroupId(groupPosition);
             ImageView iw = ((ImageView) convertView.findViewById(R.id.image));
             iw.setImageDrawable(svgs.get(id, childPosition).getDrawable());

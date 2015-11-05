@@ -31,7 +31,7 @@ public final class TabulkyCFragment extends AbstractCFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.tabulkyc_layout, null);
+        View v = inflater.inflate(R.layout.tabulkyc_layout, container, false);
 
         tabulkyID = Utils.getIdArray(R.array.iaTDTabulky);
         vpVarID = Utils.getIdArray(R.array.iaTDVPVar);

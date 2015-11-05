@@ -1,5 +1,6 @@
 package cz.absolutno.sifry.zapisnik;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -51,6 +52,7 @@ public final class ZapisnikSFragment extends DialogFragment {
     private OnPositiveButtonListener onPositiveButtonListener = null;
 
 
+    @SuppressLint("InflateParams")
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
