@@ -80,7 +80,8 @@ public final class ObdelnikTransView extends Trans2DView {
                 if (tmpAlign) {
                     yo = untransY(e.getX(), e.getY());
                     int tmpRow = Math.max(Utils.floor(Math.abs(2 * yo / resScale)), 1);
-                    android.util.Log.d("res/a", String.format("%f %d", yo, tmpRow));
+                    if(tmpRow > getLength())
+                        tmpRow = getLength();
                     if (tmpRow != this.tmpRow) {
                         this.tmpRow = tmpRow;
                         invalidate();
@@ -88,6 +89,8 @@ public final class ObdelnikTransView extends Trans2DView {
                 } else {
                     xo = untransX(e.getX(), e.getY());
                     int tmpCol = Math.max(Utils.floor(Math.abs(2 * xo / resScale)), 1);
+                    if(tmpCol > getLength())
+                        tmpCol = getLength();
                     if (tmpCol != this.tmpCol) {
                         this.tmpCol = tmpCol;
                         invalidate();
@@ -192,7 +195,7 @@ public final class ObdelnikTransView extends Trans2DView {
                 pth.moveTo(0, 0);
                 pth.lineTo(tmpCol, 0);
                 int len = getLength();
-                if (len % tmpCol != 0 && tmpRow > 1) {
+                if (tmpCol > 0 && len % tmpCol != 0 && tmpRow > 1) {
                     int ry = len % tmpRow;
                     pth.lineTo(tmpCol, ry);
                     pth.lineTo(tmpCol - 1, ry);
@@ -210,7 +213,7 @@ public final class ObdelnikTransView extends Trans2DView {
                 pth.moveTo(0, 0);
                 pth.lineTo(tmpCol, 0);
                 int len = getLength();
-                if (len % tmpCol != 0 && tmpRow > 1) {
+                if (tmpCol > 0 && len % tmpCol != 0 && tmpRow > 1) {
                     int rx = len % tmpCol;
                     pth.lineTo(tmpCol, tmpRow - 1);
                     pth.lineTo(rx, tmpRow - 1);

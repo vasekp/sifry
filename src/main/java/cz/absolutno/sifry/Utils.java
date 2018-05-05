@@ -67,7 +67,8 @@ public final class Utils {
 
     public static final OnItemClickListener copyItemClickListener = new OnItemClickListener() {
         public void onItemClick(AdapterView<?> parentView, View childView, int position, long id) {
-            copy((FragmentActivity) parentView.getContext(), parentView.getAdapter().getItem(position).toString());
+            if(parentView.getContext() instanceof FragmentActivity)
+                copy((FragmentActivity) parentView.getContext(), parentView.getAdapter().getItem(position).toString());
         }
     };
 

@@ -160,7 +160,7 @@ public final class FrekvRFragment extends AbstractRFragment {
         }
 
         public int getChildrenCount(int groupPosition) {
-            return elms[groupPosition].length;
+            return elms[groupPosition] != null ? elms[groupPosition].length : 0;
         }
 
         public long getChildId(int groupPosition, int childPosition) {

@@ -16,6 +16,7 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -85,7 +86,7 @@ public final class KalendarView extends View {
         setMinimumHeight(7 * getResources().getDimensionPixelSize(R.dimen.butSize));
     }
 
-    private class HistEntry {
+    private static class HistEntry implements Serializable {
         int year;
         int dayOfYear;
 

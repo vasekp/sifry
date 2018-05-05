@@ -48,6 +48,7 @@ public final class FrekvExpListAdapter extends BaseExpandableListAdapter {
             sortedDelky, sortedPrvni, sortedPosledni, sortedNezname;
 
     private final int priColor, secColor;
+    private static final int maxDS = 30;
 
     public FrekvExpListAdapter() {
         Context ctx = App.getContext();
@@ -161,11 +162,11 @@ public final class FrekvExpListAdapter extends BaseExpandableListAdapter {
                     nezn.put(c, nezn.get(c) + 1);
                     nerozp++;
                 } else if (ad != 0) {
-                    if (ad < 50) {
-                        delky.put(ad, delky.get(ad) + 1);
-                        if (ad > maxNum)
-                            maxNum = ad;
-                    }
+                    if(ad >= maxDS)
+                        ad = maxDS;
+                    delky.put(ad, delky.get(ad) + 1);
+                    if (ad > maxNum)
+                        maxNum = ad;
                     posledni[lastOrd]++;
                     slov++;
                     ad = 0;
@@ -174,11 +175,11 @@ public final class FrekvExpListAdapter extends BaseExpandableListAdapter {
             }
         }
         if (ad != 0) {
-            if (ad < 50) {
-                delky.put(ad, delky.get(ad) + 1);
-                if (ad > maxNum)
-                    maxNum = ad;
-            }
+            if(ad >= maxDS)
+                ad = maxDS;
+            delky.put(ad, delky.get(ad) + 1);
+            if (ad > maxNum)
+                maxNum = ad;
             posledni[lastOrd]++;
             slov++;
             //ad = 0;
@@ -251,8 +252,11 @@ public final class FrekvExpListAdapter extends BaseExpandableListAdapter {
 
         sort = new ArrayList<SortItem>(maxNum);
         for (int i = 0; i < delky.size(); i++)
-            sort.add(new SortItem(String.valueOf(delky.keyAt(i)), i, delky
-                    .valueAt(i)));
+            sort.add(new SortItem(
+                    delky.keyAt(i) < maxDS
+                            ? String.valueOf(delky.keyAt(i))
+                            : String.valueOf(maxDS) + "+",
+                    i, delky.valueAt(i)));
         sortedDelky = sortAndCollect(sort);
 
         if (pismen > 0)
@@ -504,7 +508,9 @@ public final class FrekvExpListAdapter extends BaseExpandableListAdapter {
             case R.id.idFDGDelkyC:
                 return format(sortedDelky[childPosition].pocet, slov);
             case R.id.idFDGDelkyP:
-                return String.valueOf(childPosition + 1);
+                return childPosition + 1 < maxDS
+                    ? String.valueOf(childPosition + 1)
+                    : String.valueOf(maxDS) + "+";
             case R.id.idFDGPrvni:
                 return format(sortedPrvni[childPosition].pocet, slov);
             case R.id.idFDGPosledni:
