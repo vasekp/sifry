@@ -198,7 +198,7 @@ public final class CislaDFragment extends AbstractDFragment {
             case R.id.idCDCisla:
                 if (zaklad != 10) {
                     sb.append(prevod(vstup, zaklad)).append(" (").append(zaklad).append(")");
-                    if (vstup > 0) sb.append(" = ").append(vstup).append(" (10)");
+                    sb.append(" = ").append(vstup).append(" (10)");
                 } else sb.append(vstup);
                 break;
             case R.id.idCDRim:
@@ -229,8 +229,10 @@ public final class CislaDFragment extends AbstractDFragment {
     }
 
     private String prevod(int x, int zaklad) {
-        if (x <= 0)
+        if (x < 0)
             return null;
+        else if(x == 0)
+            return "0";
         else {
             String s = "";
             while (x != 0) {
