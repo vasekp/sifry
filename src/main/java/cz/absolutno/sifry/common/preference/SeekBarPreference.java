@@ -46,17 +46,17 @@ public final class SeekBarPreference extends DialogPreference {
     protected void onBindDialogView(View view) {
         super.onBindDialogView(view);
 
-        tVal = (TextView) view.findViewById(R.id.tvSbDVal);
+        tVal = view.findViewById(R.id.tvSbDVal);
         if (!showVal)
             tVal.setVisibility(View.GONE);
 
-        input = (SeekBar) view.findViewById(R.id.sbSbDVstup);
+        input = view.findViewById(R.id.sbSbDVstup);
         input.setMax(max - min);
         input.setOnSeekBarChangeListener(listener);
         input.setProgress(value - min);
 
-        TextView hi = (TextView) view.findViewById(R.id.tvSbDHi);
-        TextView lo = (TextView) view.findViewById(R.id.tvSbDLo);
+        TextView hi = view.findViewById(R.id.tvSbDHi);
+        TextView lo = view.findViewById(R.id.tvSbDLo);
         if (showHiLo) {
             hi.setText(this.hi);
             lo.setText(this.lo);
@@ -128,11 +128,11 @@ public final class SeekBarPreference extends DialogPreference {
     private static final class SavedState extends BaseSavedState {
         int value;
 
-        public SavedState(Parcelable superState) {
+        SavedState(Parcelable superState) {
             super(superState);
         }
 
-        public SavedState(Parcel source) {
+        SavedState(Parcel source) {
             super(source);
             value = source.readInt();
         }

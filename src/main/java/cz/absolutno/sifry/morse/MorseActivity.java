@@ -5,7 +5,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
 import cz.absolutno.sifry.R;
-import cz.absolutno.sifry.Utils;
 import cz.absolutno.sifry.common.activity.AbstractDFragment;
 import cz.absolutno.sifry.common.activity.BottomBarActivity;
 

@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SVGColors {
+class SVGColors {
 	private static final Map<String, Integer> COLOURS;
 
 	public static Integer mapColour(String colour) {
@@ -12,7 +12,7 @@ public class SVGColors {
 	}
 
 	static {
-		Map<String, Integer> colors = new HashMap<String, Integer>();
+		Map<String, Integer> colors = new HashMap<>();
 		colors.put("aliceblue", 0xf0f8ff);
 		colors.put("antiquewhite", 0xfaebd7);
 		colors.put("aqua", 0x00ffff);

@@ -15,7 +15,7 @@ public final class MorseDecoder extends Decoder {
     public MorseDecoder() {
         super();
 
-        add = new SparseArray<String>();
+        add = new SparseArray<>();
 
         addFields(R.array.saMDPismena);
         addFields(R.array.saMDCislice);

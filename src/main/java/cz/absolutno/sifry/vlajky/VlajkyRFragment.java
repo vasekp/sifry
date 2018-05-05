@@ -32,7 +32,7 @@ public final class VlajkyRFragment extends AbstractRFragment {
         private final String[] pismena;
         private final String[] cisla;
 
-        public VlajkyELA() {
+        VlajkyELA() {
             Resources res = App.getContext().getResources();
             groups = res.getStringArray(R.array.saVRGroups);
             groupIDs = Utils.getIdArray(R.array.iaVRGroups);
@@ -77,7 +77,7 @@ public final class VlajkyRFragment extends AbstractRFragment {
             if (convertView == null)
                 convertView = App.getInflater().inflate(R.layout.vlajkyr_item, parent, false);
             int id = (int) getGroupId(groupPosition);
-            ImageView iw = ((ImageView) convertView.findViewById(R.id.image));
+            ImageView iw = convertView.findViewById(R.id.image);
             iw.setImageDrawable(svgs.get(id, childPosition).getDrawable());
 
             String s = getChild(groupPosition, childPosition);

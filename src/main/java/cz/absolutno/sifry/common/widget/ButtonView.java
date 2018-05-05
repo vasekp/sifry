@@ -1,5 +1,6 @@
 package cz.absolutno.sifry.common.widget;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -14,7 +15,6 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.StateListDrawable;
 import android.os.Handler;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.MotionEventCompat;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.MotionEvent;
@@ -33,6 +33,8 @@ public class ButtonView extends View {
     private int rd = 1, sl = 1, poc;
     private int pressed;
     private final boolean alignLeft;
+
+    private static final int[] state_pressed = new int[]{android.R.attr.state_pressed}; // for onDraw()
 
     public ButtonView(Context ctx, AttributeSet as) {
         super(ctx, as);
@@ -75,7 +77,7 @@ public class ButtonView extends View {
         StateListDrawable sld = (StateListDrawable) ContextCompat.getDrawable(getContext(), R.drawable.btn_mytheme);
         assert sld != null;
         Drawable dNormal = sld.getCurrent();
-        sld.setState(new int[]{android.R.attr.state_pressed});
+        sld.setState(state_pressed);
         Drawable dPressed = sld.getCurrent();
 
         p.setTextSize(Math.min(0.8f * sz, getResources().getDimensionPixelSize(R.dimen.defTextSize)));
@@ -113,11 +115,12 @@ public class ButtonView extends View {
         return rf;
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public final boolean onTouchEvent(MotionEvent e) {
         int cnt = e.getPointerCount();
         if (cnt != 1) return false;
-        switch (MotionEventCompat.getActionMasked(e)) {
+        switch (e.getActionMasked()) {
             case MotionEvent.ACTION_UP:
                 pressed = -1;
                 new Handler().postDelayed(new Runnable() {

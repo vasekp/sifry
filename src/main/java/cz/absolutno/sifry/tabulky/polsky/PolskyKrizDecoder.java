@@ -3,7 +3,7 @@ package cz.absolutno.sifry.tabulky.polsky;
 import cz.absolutno.sifry.common.decoder.AlphabetDecoder;
 
 
-public final class PolskyKrizDecoder extends AlphabetDecoder {
+final class PolskyKrizDecoder extends AlphabetDecoder {
     public PolskyKrizDecoder() {
         super(27, "");
     }

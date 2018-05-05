@@ -16,8 +16,8 @@ public final class StringDecoder extends ChainDecoder {
 
         if (resId == 0) return;
         String[] elms = App.getContext().getResources().getStringArray(resId);
-        desc = new SparseArray<String>(elms.length);
-        add = new SparseArray<String>(elms.length);
+        desc = new SparseArray<>(elms.length);
+        add = new SparseArray<>(elms.length);
         for (String e : elms) {
             int i1 = e.indexOf(':');
             int i2 = e.indexOf(':', i1 + 1);

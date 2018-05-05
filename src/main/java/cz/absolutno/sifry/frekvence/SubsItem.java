@@ -22,7 +22,7 @@ public final class SubsItem implements Serializable {
     }
 
 
-    protected static class AlphComparator implements Comparator<SubsItem> {
+    static class AlphComparator implements Comparator<SubsItem> {
         final Collator c = Collator.getInstance();
 
         public int compare(SubsItem lhs, SubsItem rhs) {

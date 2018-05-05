@@ -47,7 +47,7 @@ public final class TranslateFragment extends DialogFragment {
         @SuppressLint("InflateParams")
         View layout = App.getInflater().inflate(R.layout.subst_dialog, null);
         ((TextView) layout.findViewById(R.id.tvSVVPuv)).setText(abc.chr(from));
-        GridView grid = (GridView) layout.findViewById(R.id.gvSVDialog);
+        GridView grid = layout.findViewById(R.id.gvSVDialog);
         grid.setAdapter(new AlphabetLA(to));
 
         bld.setView(layout);
@@ -74,7 +74,7 @@ public final class TranslateFragment extends DialogFragment {
         private final int cnt;
         private final int orig;
 
-        public AlphabetLA(int orig) {
+        AlphabetLA(int orig) {
             this.orig = orig;
             cnt = abc.count();
         }

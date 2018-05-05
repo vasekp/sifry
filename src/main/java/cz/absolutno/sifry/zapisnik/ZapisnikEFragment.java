@@ -43,10 +43,10 @@ public final class ZapisnikEFragment extends AbstractDFragment {
         View content = App.getInflater().inflate(R.layout.zapisnik_export_layout, container, false);
 
         String name = Utils.normalizeFN(DateFormat.getDateInstance(DateFormat.SHORT, Locale.getDefault()).format(new Date()));
-        tv = (EditText) content.findViewById(R.id.etZENazev);
+        tv = content.findViewById(R.id.etZENazev);
         tv.setText(String.format(getString(R.string.patZENazev), name));
 
-        ll = (LinearLayout) content.findViewById(R.id.llZEPole);
+        ll = content.findViewById(R.id.llZEPole);
         cnt = ll.getChildCount();
         for (int i = 0; i < cnt; i++) {
             CheckBox v = (CheckBox) ll.getChildAt(i);
@@ -54,7 +54,7 @@ public final class ZapisnikEFragment extends AbstractDFragment {
             orig = orig.substring(0, orig.lastIndexOf(':'));
             v.setText(orig);
         }
-        cbExt = (CheckBox) content.findViewById(R.id.cbZEExt);
+        cbExt = content.findViewById(R.id.cbZEExt);
 
         stan = getArguments().getParcelableArrayList(App.DATA);
 

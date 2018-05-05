@@ -11,6 +11,8 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 import cz.absolutno.sifry.App;
 import cz.absolutno.sifry.R;
 import cz.absolutno.sifry.Utils;
@@ -82,13 +84,13 @@ public final class CislaRFragment extends AbstractRFragment {
         private boolean ascii = false;
         private boolean alt = false;
 
-        public CislaLA() {
+        CislaLA() {
             super();
             abc = Alphabet.getPreferentialInstance();
             abcPerm = Alphabet.getVariantInstance(24, "");
         }
 
-        public void set(boolean ascii, boolean alt) {
+        void set(boolean ascii, boolean alt) {
             this.ascii = ascii;
             this.alt = alt;
             notifyDataSetChanged();
@@ -119,7 +121,7 @@ public final class CislaRFragment extends AbstractRFragment {
                 pism = abc.chr(position);
             }
             ((TextView) convertView.findViewById(R.id.pis)).setText(pism);
-            ((TextView) convertView.findViewById(R.id.s10)).setText(String.format("%d", x));
+            ((TextView) convertView.findViewById(R.id.s10)).setText(String.format(Locale.ROOT, "%d", x));
             ((TextView) convertView.findViewById(R.id.s16)).setText(String.format("%02X", x));
             if (ascii) {
                 ((TextView) convertView.findViewById(R.id.s8)).setText(String.format("%03o", x));

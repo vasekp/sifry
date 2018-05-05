@@ -25,7 +25,7 @@ public final class SemaforVFragment extends AbstractRFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         src = getArguments().getIntegerArrayList(App.DATA);
         View v = inflater.inflate(R.layout.gen_list_layout, container, false);
-        ListView lv = (ListView) v.findViewById(R.id.main);
+        ListView lv = v.findViewById(R.id.main);
         lv.setAdapter(new SemaforLA());
         lv.setOnItemClickListener(Utils.copyItemClickListener);
         return v;
@@ -36,7 +36,7 @@ public final class SemaforVFragment extends AbstractRFragment {
 
         private final StatefulDecoder sd;
 
-        public SemaforLA() {
+        SemaforLA() {
             sd = new StatefulDecoder(R.xml.semafor_decoder);
         }
 
@@ -68,8 +68,8 @@ public final class SemaforVFragment extends AbstractRFragment {
         public View getView(int position, View convertView, ViewGroup parent) {
             if (convertView == null)
                 convertView = App.getInflater().inflate(R.layout.gen_list_item, parent, false);
-            TextView tvDesc = (TextView) convertView.findViewById(R.id.desc);
-            TextView tvCont = (TextView) convertView.findViewById(R.id.cont);
+            TextView tvDesc = convertView.findViewById(R.id.desc);
+            TextView tvCont = convertView.findViewById(R.id.cont);
             tvDesc.setText(String.format(getString(R.string.patSmVPosun), (position >= 8 ? getString(R.string.tSmVInv) : ""), position % 8,
                     (position % 8) == 0 ? 0 : (8 - (position % 8))));
             tvCont.setText(getItem(position));

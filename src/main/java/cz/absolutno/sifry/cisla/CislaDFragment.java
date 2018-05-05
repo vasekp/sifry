@@ -98,8 +98,8 @@ public final class CislaDFragment extends AbstractDFragment {
         if (savedInstanceState == null)
             ((Spinner) v.findViewById(R.id.spCDSoust)).setSelection(3);
 
-        spInterp = (Spinner) v.findViewById(R.id.spCDInterp);
-        ArrayAdapter<InterpItem> adapter = new ArrayAdapter<CislaDFragment.InterpItem>(getActivity(), android.R.layout.simple_spinner_item, interpList(abc.count()));
+        spInterp = v.findViewById(R.id.spCDInterp);
+        ArrayAdapter<InterpItem> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, interpList(abc.count()));
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spInterp.setAdapter(adapter);
         spInterp.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -116,7 +116,7 @@ public final class CislaDFragment extends AbstractDFragment {
         if (savedInstanceState == null)
             spInterp.setSelection(0);
 
-        cvVstup = (CislaView) v.findViewById(R.id.cvCDVstup);
+        cvVstup = v.findViewById(R.id.cvCDVstup);
         cvVstup.setOnInputListener(new CislaView.OnInputListener() {
             public void onInput(int tag, String txt) {
                 switch (mod) {
@@ -136,13 +136,13 @@ public final class CislaDFragment extends AbstractDFragment {
             }
         });
 
-        tvVstup = (TextView) v.findViewById(R.id.tvCDVstup);
+        tvVstup = v.findViewById(R.id.tvCDVstup);
         tvVstup.setOnClickListener(enterListener);
 
-        tvRes = (TextView) v.findViewById(R.id.tvRes);
+        tvRes = v.findViewById(R.id.tvRes);
         tvRes.setOnClickListener(Utils.copyClickListener);
 
-        ImageView ivBsp = (ImageView) v.findViewById(R.id.ivBsp);
+        ImageView ivBsp = v.findViewById(R.id.ivBsp);
         ivBsp.setOnClickListener(bspListener);
         ivBsp.setOnLongClickListener(clearListener);
 
@@ -234,12 +234,12 @@ public final class CislaDFragment extends AbstractDFragment {
         else if(x == 0)
             return "0";
         else {
-            String s = "";
+            StringBuilder sb = new StringBuilder();
             while (x != 0) {
-                s = String.format("%X", x % zaklad) + s;
+                sb.insert(0, String.format("%X", x % zaklad));
                 x /= zaklad;
             }
-            return s;
+            return sb.toString();
         }
     }
 
@@ -310,7 +310,7 @@ public final class CislaDFragment extends AbstractDFragment {
         else
             abcPref = Alphabet.getPreferentialInstance();
 
-        ArrayAdapter<InterpItem> adapter = new ArrayAdapter<CislaDFragment.InterpItem>(getActivity(), android.R.layout.simple_spinner_item, interpList(abc.count()));
+        ArrayAdapter<InterpItem> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, interpList(abc.count()));
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spInterp.setAdapter(adapter);
 
@@ -334,7 +334,7 @@ public final class CislaDFragment extends AbstractDFragment {
         final int interp;
         final String txt;
 
-        public InterpItem(int interp, String txt) {
+        InterpItem(int interp, String txt) {
             this.interp = interp;
             this.txt = txt;
         }

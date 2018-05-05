@@ -26,12 +26,12 @@ public final class LicenceActivity extends ExpandableListActivity {
     }
 
 
-    public static final class LicenceELA extends BaseExpandableListAdapter {
+    static final class LicenceELA extends BaseExpandableListAdapter {
 
         private final String[] groups;
         private final int[] groupIDs;
 
-        public LicenceELA() {
+        LicenceELA() {
             groups = App.getContext().getResources().getStringArray(R.array.saLicence);
             groupIDs = Utils.getIdArray(R.array.iaLicence);
         }

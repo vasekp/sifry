@@ -94,7 +94,7 @@ public final class CtverecCAdapter extends TabulkyCListAdapter {
         View v = getViewHelper(position, convertView, parent);
         if (graf) {
             boolean alt = (getItemId(position) == R.id.idTCCtv3x3);
-            FixedGridLayout fgl = (FixedGridLayout) v.findViewById(R.id.cont);
+            FixedGridLayout fgl = v.findViewById(R.id.cont);
             LayoutInflater inflater = App.getInflater();
             for (int[] s : sour) {
                 CtverecTView t = (CtverecTView) inflater.inflate(R.layout.ctverecc_item, fgl, false);

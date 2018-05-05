@@ -40,7 +40,7 @@ public final class KalendarView extends View {
     private int[] weekNos, days, daysPre, daysPost;
     private String[] dayNames;
     private int todayIx, anchorIx;
-    private HashSet<HistEntry> hist = new HashSet<HistEntry>(10);
+    private HashSet<HistEntry> hist = new HashSet<>(10);
     private final boolean[] isHist = new boolean[32];
 
     public KalendarView(Context ctx, AttributeSet as) {
@@ -90,12 +90,12 @@ public final class KalendarView extends View {
         int year;
         int dayOfYear;
 
-        public HistEntry() {
+        HistEntry() {
             year = 0;
             dayOfYear = 0;
         }
 
-        public HistEntry(int year, int dayOfYear) {
+        HistEntry(int year, int dayOfYear) {
             super();
             this.year = year;
             this.dayOfYear = dayOfYear;
@@ -112,6 +112,7 @@ public final class KalendarView extends View {
         }
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(MotionEvent e) {
         gesture.onTouchEvent(e);
@@ -372,11 +373,11 @@ public final class KalendarView extends View {
         rebuild();
     }
 
-    public int getSince() {
+    private int getSince() {
         return (int) Math.round((sel.getTimeInMillis() - anchor.getTimeInMillis()) / 86400000.);
     }
 
-    public void reset() {
+    private void reset() {
         sel = Calendar.getInstance();
         rebuild();
     }
@@ -430,18 +431,17 @@ public final class KalendarView extends View {
         private Calendar sel, anchor;
         private HashSet<HistEntry> hist;
 
-        public SavedState(Parcelable in) {
+        SavedState(Parcelable in) {
             super(in);
         }
 
-        public void read(KalendarView kv) {
+        void read(KalendarView kv) {
             sel = kv.sel;
             anchor = kv.anchor;
             hist = kv.hist;
         }
 
-        @SuppressWarnings("unchecked") /* přetypování na HashSet<HistEntry> */
-        public SavedState(Parcel in) {
+        @SuppressWarnings("unchecked") /* přetypování na HashSet<HistEntry> */ SavedState(Parcel in) {
             super(in);
             sel = (Calendar) in.readSerializable();
             anchor = (Calendar) in.readSerializable();
@@ -456,7 +456,7 @@ public final class KalendarView extends View {
             dest.writeSerializable(hist);
         }
 
-        public void apply(KalendarView kv) {
+        void apply(KalendarView kv) {
             kv.sel = sel;
             kv.anchor = anchor;
             kv.hist = hist;

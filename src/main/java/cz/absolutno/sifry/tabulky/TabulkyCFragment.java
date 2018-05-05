@@ -40,10 +40,10 @@ public final class TabulkyCFragment extends AbstractCFragment {
         mpVarABC = getResources().getStringArray(R.array.saTDMPABCVar);
         ctvVarABC = getResources().getStringArray(R.array.saTDCtvABCVar);
 
-        spVar = (Spinner) v.findViewById(R.id.spTDTab);
-        spVPVar = (Spinner) v.findViewById(R.id.spTDVPVar);
-        spMPVar = (Spinner) v.findViewById(R.id.spTDMPVar);
-        spCtvVar = (Spinner) v.findViewById(R.id.spTDCtvAbeceda);
+        spVar = v.findViewById(R.id.spTDTab);
+        spVPVar = v.findViewById(R.id.spTDVPVar);
+        spMPVar = v.findViewById(R.id.spTDMPVar);
+        spCtvVar = v.findViewById(R.id.spTDCtvAbeceda);
 
         int var1 = getArguments().getInt(App.VSTUP1, 0);
         int var2 = getArguments().getInt(App.VSTUP2, 0);

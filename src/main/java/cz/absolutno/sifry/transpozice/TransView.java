@@ -23,8 +23,8 @@ import cz.absolutno.sifry.common.alphabet.StringParser;
 public abstract class TransView extends View {
 
     private String s = "";
-    protected Alphabet abc;
-    protected boolean ignoreNP;
+    Alphabet abc;
+    boolean ignoreNP;
     private OnInputListener oil = null;
     private int len = 0;
 
@@ -76,7 +76,7 @@ public abstract class TransView extends View {
         clearMarks();
     }
 
-    protected final void registerInput(int ix) {
+    final void registerInput(int ix) {
         mark = null;
         if (ix < 0) return;
         bsUsed.set(ix);
@@ -100,7 +100,7 @@ public abstract class TransView extends View {
             oil.onInput(mark);
     }
 
-    public final int getLength() {
+    final int getLength() {
         return len;
     }
 
@@ -145,7 +145,7 @@ public abstract class TransView extends View {
         }
     }
 
-    protected final int getColor(int i, String chr) {
+    final int getColor(int i, String chr) {
         if (chr.equals(mark))
             return bsUsed.get(i) ? bothColor : selColor;
         else
@@ -199,17 +199,17 @@ public abstract class TransView extends View {
         private String s, mark;
         private BitSet bsUsed;
 
-        public SavedState(Parcelable in) {
+        SavedState(Parcelable in) {
             super(in);
         }
 
-        public void read(TransView tv) {
+        void read(TransView tv) {
             s = tv.s;
             mark = tv.mark;
             bsUsed = tv.bsUsed;
         }
 
-        public SavedState(Parcel in) {
+        SavedState(Parcel in) {
             super(in);
             s = in.readString();
             mark = in.readString();
@@ -224,7 +224,7 @@ public abstract class TransView extends View {
             dest.writeSerializable(bsUsed);
         }
 
-        public void apply(TransView tv) {
+        void apply(TransView tv) {
             tv.setText(s);
             tv.mark = mark;
             tv.bsUsed = bsUsed;

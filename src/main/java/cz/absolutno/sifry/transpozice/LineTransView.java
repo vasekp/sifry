@@ -32,7 +32,7 @@ public final class LineTransView extends TransView {
 
     @Override
     public void setText(String s) {
-        ArrayList<ColorChunk> data = new ArrayList<ColorChunkTextView.ColorChunk>();
+        ArrayList<ColorChunk> data = new ArrayList<>();
         StringParser sp = abc.getStringParser(s);
         int ord;
         while ((ord = sp.getNextOrd()) != StringParser.EOF) {

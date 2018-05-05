@@ -57,7 +57,7 @@ public final class ZapisnikDFragment extends AbstractDFragment {
             stan = (ArrayList<Stanoviste>) ois.readObject();
         } catch (Exception e) {
             //e.printStackTrace();
-            stan = new ArrayList<Stanoviste>();
+            stan = new ArrayList<>();
         }
 
         patNazev = getString(R.string.patZDDefault);
@@ -126,7 +126,7 @@ public final class ZapisnikDFragment extends AbstractDFragment {
         return super.onContextItemSelected(item);
     }
 
-    public void prichod() {
+    private void prichod() {
         ZapisnikSFragment dialog = new ZapisnikSFragment();
         Bundle args = new Bundle();
         args.putSerializable(App.DATA, new Stanoviste(dalsiStan()));

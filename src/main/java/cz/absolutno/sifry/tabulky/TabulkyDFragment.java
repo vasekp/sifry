@@ -28,7 +28,7 @@ import cz.absolutno.sifry.tabulky.polsky.PolskyView;
 
 public final class TabulkyDFragment extends AbstractDFragment {
 
-    private ArrayList<Integer> raw = new ArrayList<Integer>();
+    private ArrayList<Integer> raw = new ArrayList<>();
     private TextView tvRes;
     private TextView tvSour;
     private String reseni, sour;
@@ -61,39 +61,39 @@ public final class TabulkyDFragment extends AbstractDFragment {
         mpVarABC = getResources().getStringArray(R.array.saTDMPABCVar);
         ctvVarABC = getResources().getStringArray(R.array.saTDCtvABCVar);
 
-        spVar = (Spinner) v.findViewById(R.id.spTDTab);
+        spVar = v.findViewById(R.id.spTDTab);
         spVar.setOnItemSelectedListener(varListener);
 
         polsky = (PolskyKlasView) v.findViewById(R.id.avTDPolskyKlas);
         polsky.setOnInputListener(inputListener);
         polsky = (PolskyTransView) v.findViewById(R.id.avTDPolskyTrans);
         polsky.setOnInputListener(inputListener);
-        spVPVar = (Spinner) v.findViewById(R.id.spTDVPVar);
+        spVPVar = v.findViewById(R.id.spTDVPVar);
         spVPVar.setOnItemSelectedListener(varListener);
 
-        maly = (MalyPolskyView) v.findViewById(R.id.avTDMaly);
+        maly = v.findViewById(R.id.avTDMaly);
         maly.setOnInputListener(inputListener);
-        spMPVar = (Spinner) v.findViewById(R.id.spTDMPVar);
+        spMPVar = v.findViewById(R.id.spTDMPVar);
         spMPVar.setOnItemSelectedListener(varListener);
 
-        mobil = (MobilView) v.findViewById(R.id.avTDMobil);
+        mobil = v.findViewById(R.id.avTDMobil);
         mobil.setOnInputListener(inputListener);
 
-        ctverec = (CtverecView) v.findViewById(R.id.avTDCtverec);
+        ctverec = v.findViewById(R.id.avTDCtverec);
         ctverec.setOnInputListener(inputListener);
-        spCtvVar = (Spinner) v.findViewById(R.id.spTDCtvAbeceda);
+        spCtvVar = v.findViewById(R.id.spTDCtvAbeceda);
         spCtvVar.setOnItemSelectedListener(varListener);
 
-        tvRes = (TextView) v.findViewById(R.id.tvRes);
+        tvRes = v.findViewById(R.id.tvRes);
         tvRes.setOnClickListener(Utils.copyClickListener);
         reseni = "";
 
-        tvSour = (TextView) v.findViewById(R.id.tvTDSour);
+        tvSour = v.findViewById(R.id.tvTDSour);
         ((ButtonView) v.findViewById(R.id.bvTDSour)).setOnInputListener(digitListener);
         tvSour.setOnClickListener(digitViewListener);
         sour = "";
 
-        ImageView ivBsp = (ImageView) v.findViewById(R.id.ivBsp);
+        ImageView ivBsp = v.findViewById(R.id.ivBsp);
         ivBsp.setOnClickListener(bspListener);
         ivBsp.setOnLongClickListener(clearListener);
 
@@ -143,7 +143,7 @@ public final class TabulkyDFragment extends AbstractDFragment {
             int selVar = vpVarID[spVPVar.getSelectedItemPosition()];
             getView().findViewById(R.id.alTDPolskyKlas).setVisibility(selVar == R.id.idTDVPKlas ? View.VISIBLE : View.GONE);
             getView().findViewById(R.id.alTDPolskyTrans).setVisibility(selVar == R.id.idTDVPAlt ? View.VISIBLE : View.GONE);
-            polsky = (PolskyView) getView().findViewById(selVar == R.id.idTDVPKlas ? R.id.avTDPolskyKlas : R.id.avTDPolskyTrans);
+            polsky = getView().findViewById(selVar == R.id.idTDVPKlas ? R.id.avTDPolskyKlas : R.id.avTDPolskyTrans);
         } else {
             getView().findViewById(R.id.alTDPolskyKlas).setVisibility(View.GONE);
             getView().findViewById(R.id.alTDPolskyTrans).setVisibility(View.GONE);
@@ -272,7 +272,7 @@ public final class TabulkyDFragment extends AbstractDFragment {
         }
     };
 
-    public void updateReseni() {
+    private void updateReseni() {
         if (selLayout == R.id.idTDMobil)
             return;
         final int sz = raw.size();

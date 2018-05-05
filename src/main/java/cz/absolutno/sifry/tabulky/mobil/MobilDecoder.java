@@ -6,6 +6,7 @@ import cz.absolutno.sifry.common.alphabet.PlainEnglishAlphabet;
 import cz.absolutno.sifry.common.alphabet.StringParser;
 import cz.absolutno.sifry.common.decoder.Decoder;
 
+@SuppressWarnings("PointlessBitwiseExpression")
 public final class MobilDecoder extends Decoder {
 
     public static final int KEY_SHIFT = 4;

@@ -1,5 +1,6 @@
 package cz.absolutno.sifry.common.widget;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -12,7 +13,6 @@ import android.graphics.drawable.GradientDrawable.Orientation;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.MotionEventCompat;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -79,10 +79,11 @@ public final class BottomBarView extends View {
         return entries;
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(MotionEvent e) {
-        int action = MotionEventCompat.getActionMasked(e);
-        int index = MotionEventCompat.getActionIndex(e);
+        int action = e.getActionMasked();
+        int index = e.getActionIndex();
         if (index != 0) return false;
         switch (action) {
             case MotionEvent.ACTION_DOWN:
@@ -205,16 +206,16 @@ public final class BottomBarView extends View {
         private String[] entries;
         private int index;
 
-        public SavedState(Parcelable in) {
+        SavedState(Parcelable in) {
             super(in);
         }
 
-        public void read(BottomBarView bv) {
+        void read(BottomBarView bv) {
             entries = bv.entries;
             index = bv.index;
         }
 
-        public SavedState(Parcel in) {
+        SavedState(Parcel in) {
             super(in);
             entries = in.createStringArray();
             index = in.readInt();
@@ -227,7 +228,7 @@ public final class BottomBarView extends View {
             dest.writeInt(index);
         }
 
-        public void apply(BottomBarView bv) {
+        void apply(BottomBarView bv) {
             bv.setEntries(entries, index);
         }
 

@@ -22,8 +22,6 @@
     <color name="kalendarHistColor">#FFFFFF00</color>
     <color name="kalendarBothColor">#FFFF8000</color>
 
-    <color name="morseActiveColor">#FFFF8080</color>
-
     <color name="priColor">@android:color/primary_text_dark</color>
     <color name="secColor">@android:color/tertiary_text_dark</color>
     <color name="terColor">#FFC0C0C0</color>

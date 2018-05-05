@@ -12,6 +12,7 @@ import cz.absolutno.sifry.Utils;
 import cz.absolutno.sifry.common.alphabet.PlainEnglishAlphabet;
 import cz.absolutno.sifry.tabulky.TabulkyCListAdapter;
 
+@SuppressWarnings("PointlessBitwiseExpression")
 public final class MobilCAdapter extends TabulkyCListAdapter {
 
     private final MobilDecoder md;

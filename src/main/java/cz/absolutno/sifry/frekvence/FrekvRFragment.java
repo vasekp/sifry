@@ -88,7 +88,7 @@ public final class FrekvRFragment extends AbstractRFragment {
         private final FrekvRItem[][] elms;
         private final String patProc, patRel;
 
-        public FrekvRELA() {
+        FrekvRELA() {
             Resources res = App.getContext().getResources();
             groups = res.getStringArray(R.array.saFRGroups);
             groupIDs = Utils.getIdArray(R.array.iaFRGroups);
@@ -101,7 +101,7 @@ public final class FrekvRFragment extends AbstractRFragment {
             Resources res = App.getContext().getResources();
             for (int i = 0; i < groups.length; i++) {
                 String[] in = res.getStringArray(groupIDs[i]);
-                ArrayList<FrekvRItem> list = new ArrayList<FrekvRItem>(in.length);
+                ArrayList<FrekvRItem> list = new ArrayList<>(in.length);
                 for (String a : in) {
                     int ix = a.indexOf(':');
                     float frekv = Float.valueOf(a.substring(ix + 1));
@@ -197,17 +197,17 @@ public final class FrekvRFragment extends AbstractRFragment {
 
 
     private static final class FrekvRItem {
-        public final String str;
-        public float frekv;
+        final String str;
+        float frekv;
 
-        public FrekvRItem(String str, float frekv) {
+        FrekvRItem(String str, float frekv) {
             this.str = str;
             this.frekv = frekv;
         }
     }
 
     private static class AlphComparator implements Comparator<FrekvRItem> {
-        protected final Collator c = Collator.getInstance();
+        final Collator c = Collator.getInstance();
 
         public int compare(FrekvRItem lhs, FrekvRItem rhs) {
             return c.compare(lhs.str, rhs.str);

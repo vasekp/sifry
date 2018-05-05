@@ -21,7 +21,7 @@ import cz.absolutno.sifry.common.decoder.StatefulDecoder.OnStateChangedListener;
 public final class SemaforDFragment extends AbstractDFragment {
 
     private TextView reseni;
-    private ArrayList<Integer> raw = new ArrayList<Integer>();
+    private ArrayList<Integer> raw = new ArrayList<>();
     private SemaforView sv;
     private LinearLayout llOdhady, llState;
     private TextView tvState;
@@ -47,15 +47,15 @@ public final class SemaforDFragment extends AbstractDFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.semaford_layout, container, false);
 
-        sv = (SemaforView) v.findViewById(R.id.svSmDVstup);
+        sv = v.findViewById(R.id.svSmDVstup);
         sv.setOnInputListener(inputListener);
 
-        reseni = (TextView) v.findViewById(R.id.tvRes);
+        reseni = v.findViewById(R.id.tvRes);
         reseni.setOnClickListener(Utils.copyClickListener);
-        llOdhady = (LinearLayout) v.findViewById(R.id.llSmDNavrhy);
-        llState = (LinearLayout) v.findViewById(R.id.llSmDStav);
-        tvState = (TextView) v.findViewById(R.id.tvSmDStav);
-        ImageView ivBsp = (ImageView) v.findViewById(R.id.ivBsp);
+        llOdhady = v.findViewById(R.id.llSmDNavrhy);
+        llState = v.findViewById(R.id.llSmDStav);
+        tvState = v.findViewById(R.id.tvSmDStav);
+        ImageView ivBsp = v.findViewById(R.id.ivBsp);
         ivBsp.setOnClickListener(bspListener);
         ivBsp.setOnLongClickListener(clearListener);
 

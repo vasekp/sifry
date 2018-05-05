@@ -55,25 +55,25 @@ public final class BrailleCFragment extends AbstractCFragment {
         private final int[] itemIDs;
         private StatefulDecoder bd;
 
-        public BrailleCLA() {
+        BrailleCLA() {
             items = App.getContext().getResources().getStringArray(R.array.saBCItems);
             itemIDs = Utils.getIdArray(R.array.iaBCItems);
-            raw = new ArrayList<Integer>();
+            raw = new ArrayList<>();
             bd = new StatefulDecoder(R.xml.braille_decoder);
         }
 
-        public void reloadPref() {
+        void reloadPref() {
             bd = new StatefulDecoder(R.xml.braille_decoder);
             notifyDataSetChanged();
         }
 
-        public boolean load(String input) {
+        boolean load(String input) {
             this.input = input.replace(' ', '·');
             notifyDataSetChanged();
             return bd.encode(this.input, raw);
         }
 
-        public ArrayList<Integer> getData() {
+        ArrayList<Integer> getData() {
             return raw;
         }
 
@@ -106,7 +106,7 @@ public final class BrailleCFragment extends AbstractCFragment {
                 case R.id.idBCBin:
                     for (int i = 0; i < sz; i++) {
                         if (i > 0) sb.append(", ");
-                        sb.append(toRevBinary(raw.get(i), 6));
+                        sb.append(toRevBinary(raw.get(i)));
                     }
                     return sb.toString();
                 case R.id.idBCDec:
@@ -120,9 +120,9 @@ public final class BrailleCFragment extends AbstractCFragment {
             }
         }
 
-        private String toRevBinary(int x, int d) {
+        private String toRevBinary(int x) {
             StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < d; i++)
+            for (int i = 0; i < 6; i++)
                 sb.append((x >> i) & 1);
             return sb.toString();
         }
@@ -139,7 +139,7 @@ public final class BrailleCFragment extends AbstractCFragment {
             if (getItemId(position) == R.id.idBCPrimo) {
                 convertView = inflater.inflate(R.layout.grid_list_item, parent, false);
                 ((TextView) convertView.findViewById(R.id.desc)).setText(getItemDesc(position));
-                FixedGridLayout fgl = (FixedGridLayout) convertView.findViewById(R.id.cont);
+                FixedGridLayout fgl = convertView.findViewById(R.id.cont);
                 for (Integer x : raw) {
                     BrailleTView bt = (BrailleTView) inflater.inflate(R.layout.braillec_item, fgl, false);
                     bt.setIn(x);

@@ -12,6 +12,7 @@ import android.widget.TextView;
 import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Locale;
 
 import cz.absolutno.sifry.App;
 import cz.absolutno.sifry.R;
@@ -64,16 +65,16 @@ public final class KalendarRFragment extends AbstractRFragment {
         private final int[] indexy = new int[26];
         private int used;
 
-        public JmenoDatumELA() {
+        JmenoDatumELA() {
             for (int i = 0; i < 26; i++)
-                pismena[i] = new ArrayList<String>();
+                pismena[i] = new ArrayList<>();
             for (int m = 0; m < db.length; m++)
                 for (int d = 0; d < db[m].length; d++) {
                     String jmena = db[m][d].toString();
                     if (jmena.substring(0, 1).equals("*")) continue;
                     for (String jmeno : jmena.split(", ")) {
                         String n = CzechAlphabet.normalize(jmeno);
-                        pismena[n.charAt(0) - 'A'].add(String.format("%s:%d. %d.", jmeno, d + 1, m + 1));
+                        pismena[n.charAt(0) - 'A'].add(String.format(Locale.ROOT, "%s:%d. %d.", jmeno, d + 1, m + 1));
                     }
                 }
             used = 0;
@@ -125,8 +126,8 @@ public final class KalendarRFragment extends AbstractRFragment {
         public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
             if (convertView == null)
                 convertView = App.getInflater().inflate(R.layout.gen_list_item, parent, false);
-            TextView tvDesc = (TextView) convertView.findViewById(R.id.desc);
-            TextView tvCont = (TextView) convertView.findViewById(R.id.cont);
+            TextView tvDesc = convertView.findViewById(R.id.desc);
+            TextView tvCont = convertView.findViewById(R.id.cont);
             tvDesc.setText(getChildDesc(groupPosition, childPosition));
             tvCont.setText(getChild(groupPosition, childPosition));
             return convertView;
@@ -166,8 +167,8 @@ public final class KalendarRFragment extends AbstractRFragment {
         public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
             if (convertView == null)
                 convertView = App.getInflater().inflate(R.layout.gen_list_item, parent, false);
-            TextView tvDesc = (TextView) convertView.findViewById(R.id.desc);
-            TextView tvCont = (TextView) convertView.findViewById(R.id.cont);
+            TextView tvDesc = convertView.findViewById(R.id.desc);
+            TextView tvCont = convertView.findViewById(R.id.cont);
             tvDesc.setText(getChildDesc(groupPosition, childPosition));
             tvCont.setText(getChild(groupPosition, childPosition));
             return convertView;

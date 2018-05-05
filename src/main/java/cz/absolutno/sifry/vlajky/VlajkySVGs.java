@@ -20,7 +20,7 @@ public class VlajkySVGs {
         VlajkySVGs ref;
         if (soft == null || soft.get() == null) {
             ref = new VlajkySVGs();
-            soft = new SoftReference<VlajkySVGs>(ref);
+            soft = new SoftReference<>(ref);
         } else {
             ref = soft.get();
         }

@@ -3,28 +3,28 @@ package cz.absolutno.sifry.common.decoder;
 import java.util.ArrayList;
 
 public abstract class ChainDecoder extends Decoder {
-    public abstract boolean isTemp();
+    protected abstract boolean isTemp();
 
-    public abstract EncodeResult encodeSingle(String s, int ix, boolean prefix);
+    protected abstract EncodeResult encodeSingle(String s, int ix, boolean prefix);
 
     public static final class EncodeResult {
         final int code;
         final int len;
         int prefix;
 
-        public EncodeResult(int code, int len) {
+        EncodeResult(int code, int len) {
             this.code = code;
             this.prefix = -1;
             this.len = len;
         }
 
-        public EncodeResult(EncodeResult er) {
+        EncodeResult(EncodeResult er) {
             code = er.code;
             prefix = er.prefix;
             len = er.len;
         }
 
-        public EncodeResult(EncodeResult er, int prefix) {
+        EncodeResult(EncodeResult er, int prefix) {
             this(er);
             this.prefix = prefix;
         }

@@ -19,14 +19,4 @@
 
     <integer name="pref_vlajky_delay_default">500</integer>
 
-    <integer name="mtSpeedMin">1</integer>
-    <integer name="mtSpeedDef">5</integer>
-    <integer name="mtSpeedSpan">9</integer>
-    <integer name="mtFreqMin">50</integer>
-    <integer name="mtFreqDef">100</integer>
-    <integer name="mtFreqSpan">100</integer>
-    <integer name="mtVolMin">1</integer>
-    <integer name="mtVolDef">50</integer>
-    <integer name="mtVolSpan">99</integer>
-
 </resources>

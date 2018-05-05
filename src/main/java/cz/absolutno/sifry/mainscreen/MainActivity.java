@@ -61,7 +61,7 @@ public final class MainActivity extends FragmentActivity {
         };
 
         int tint = ContextCompat.getColor(this, R.color.tintColor);
-        FixedGridLayout glMain = (FixedGridLayout) findViewById(R.id.glMain);
+        FixedGridLayout glMain = findViewById(R.id.glMain);
         LayoutInflater inflater = App.getInflater();
         for (Aktivita a : aktivity) {
             View v = inflater.inflate(R.layout.main_item, glMain, false);
@@ -140,7 +140,7 @@ public final class MainActivity extends FragmentActivity {
         final String caption;
         final Drawable icon;
 
-        public Aktivita(Class<?> cls, int cpt, int icon) {
+        Aktivita(Class<?> cls, int cpt, int icon) {
             this.cls = cls;
             this.caption = App.getContext().getString(cpt);
             this.icon = new SVGBuilder().readFromResource(App.getContext().getResources(), icon).build().getDrawable();

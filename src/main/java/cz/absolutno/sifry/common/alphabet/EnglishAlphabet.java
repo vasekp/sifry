@@ -16,7 +16,7 @@ public final class EnglishAlphabet extends Alphabet {
         x = true;
     }
 
-    public EnglishAlphabet(boolean j, boolean k, boolean q, boolean x) {
+    private EnglishAlphabet(boolean j, boolean k, boolean q, boolean x) {
         this.j = j;
         this.k = k;
         this.q = q;
@@ -34,7 +34,7 @@ public final class EnglishAlphabet extends Alphabet {
         switch (maxCount) {
             case 36:
                 if (variant.equals("dig"))
-                    return new DigitsExtendedAlphabet<PlainEnglishAlphabet>(new PlainEnglishAlphabet());
+                    return new DigitsExtendedAlphabet<>(new PlainEnglishAlphabet());
                 else
                     return new PlainEnglishAlphabet();
             case 25:
@@ -104,9 +104,9 @@ public final class EnglishAlphabet extends Alphabet {
     }
 
 
-    public final class EnglishStringParser extends StringParser {
+    protected final class EnglishStringParser extends StringParser {
 
-        public EnglishStringParser(String s) {
+        EnglishStringParser(String s) {
             super(s);
         }
 

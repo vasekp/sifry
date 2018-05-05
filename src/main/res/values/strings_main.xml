@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <string name="app_name">Puzzlehunt Assistant</string>
     <string name="tExportDir">Puzzlehunt Assistant</string>
@@ -22,8 +22,6 @@
     <string name="tVar">Variants</string>
     <string name="tClose">Close</string>
     <string name="tGo">Go</string>
-    <string name="tStart">Start</string>
-    <string name="tStop">Stop</string>
 
 
     <string name="patCopyCap">Text: \"%s\"</string>
@@ -53,7 +51,7 @@
     <string name="tSipkaD" translatable="false">▼</string>
 
 
-<string name="tHelpMain"><![CDATA[
+<string name="tHelpMain" tools:ignore="Typos"><![CDATA[
 <h1>Puzzlehunt Assistant</h1>
 
 <p>The purpose of this application is to help with routine tasks used in cipher solving and

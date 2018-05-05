@@ -74,19 +74,19 @@ public final class ZapisnikSFragment extends DialogFragment {
                 });
 
         mainView = App.getInflater().inflate(R.layout.zapisnik_dialog, null);
-        etNazev = (EditText) mainView.findViewById(R.id.etZDNazev);
-        etHeslo = (EditText) mainView.findViewById(R.id.etZDHeslo);
-        etRes = (EditText) mainView.findViewById(R.id.etZDRes);
-        etUpres = (EditText) mainView.findViewById(R.id.etZDUpres);
-        etPozn = (EditText) mainView.findViewById(R.id.etZDPozn);
-        cbPrichod = (CheckBox) mainView.findViewById(R.id.cbZDPrichod);
-        cbOdchod = (CheckBox) mainView.findViewById(R.id.cbZDOdchod);
-        tpPrichod = (TimePicker) mainView.findViewById(R.id.tpZDPrichod);
-        tpOdchod = (TimePicker) mainView.findViewById(R.id.tpZDOdchod);
-        dpPrichod = (DatePicker) mainView.findViewById(R.id.dpZDPrichod);
-        dpOdchod = (DatePicker) mainView.findViewById(R.id.dpZDOdchod);
-        tvPrichodDatum = (TextView) mainView.findViewById(R.id.tvZDPrichodDatum);
-        tvOdchodDatum = (TextView) mainView.findViewById(R.id.tvZDOdchodDatum);
+        etNazev = mainView.findViewById(R.id.etZDNazev);
+        etHeslo = mainView.findViewById(R.id.etZDHeslo);
+        etRes = mainView.findViewById(R.id.etZDRes);
+        etUpres = mainView.findViewById(R.id.etZDUpres);
+        etPozn = mainView.findViewById(R.id.etZDPozn);
+        cbPrichod = mainView.findViewById(R.id.cbZDPrichod);
+        cbOdchod = mainView.findViewById(R.id.cbZDOdchod);
+        tpPrichod = mainView.findViewById(R.id.tpZDPrichod);
+        tpOdchod = mainView.findViewById(R.id.tpZDOdchod);
+        dpPrichod = mainView.findViewById(R.id.dpZDPrichod);
+        dpOdchod = mainView.findViewById(R.id.dpZDOdchod);
+        tvPrichodDatum = mainView.findViewById(R.id.tvZDPrichodDatum);
+        tvOdchodDatum = mainView.findViewById(R.id.tvZDOdchodDatum);
 
         cbPrichod.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -162,8 +162,8 @@ public final class ZapisnikSFragment extends DialogFragment {
         mainView.findViewById(R.id.llZDOdchod1).setVisibility(showOdchod ? View.VISIBLE : View.GONE);
         mainView.findViewById(R.id.llZDOdchod2).setVisibility(showOdchod ? View.VISIBLE : View.GONE);
 
-        final Button btSipkaPrichod = (Button) mainView.findViewById(R.id.btZDSipkaPrichod);
-        final Button btSipkaOdchod = (Button) mainView.findViewById(R.id.btZDSipkaOdchod);
+        final Button btSipkaPrichod = mainView.findViewById(R.id.btZDSipkaPrichod);
+        final Button btSipkaOdchod = mainView.findViewById(R.id.btZDSipkaOdchod);
         btSipkaPrichod.setVisibility(showPrichod ? View.GONE : View.VISIBLE);
         btSipkaOdchod.setVisibility(showOdchod ? View.GONE : View.VISIBLE);
         btSipkaPrichod.setOnClickListener(new OnClickListener() {

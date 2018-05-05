@@ -1,5 +1,6 @@
 package cz.absolutno.sifry.braille;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -11,7 +12,6 @@ import android.graphics.Typeface;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.MotionEventCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SoundEffectConstants;
@@ -52,11 +52,12 @@ public final class BrailleView extends View {
         pText.setAntiAlias(true);
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(MotionEvent e) {
         int cnt = e.getPointerCount();
         int ix;
-        int action = MotionEventCompat.getActionMasked(e);
+        int action = e.getActionMasked();
         if (tah && cnt == 1) {
             if (action == MotionEvent.ACTION_UP) {
                 if (ocl != null) ocl.onChange(getVal(), false);
@@ -82,7 +83,7 @@ public final class BrailleView extends View {
             invalidate();
         } else {
             if (action == MotionEvent.ACTION_DOWN || action == MotionEvent.ACTION_POINTER_DOWN) {
-                int index = MotionEventCompat.getActionIndex(e);
+                int index = e.getActionIndex();
                 ix = index(e.getX(index), e.getY(index));
                 if (ix >= 0) {
                     in[ix] = !in[ix];
@@ -200,16 +201,16 @@ public final class BrailleView extends View {
         private boolean tah;
         private boolean[] in;
 
-        public SavedState(Parcelable in) {
+        SavedState(Parcelable in) {
             super(in);
         }
 
-        public void read(BrailleView bv) {
+        void read(BrailleView bv) {
             tah = bv.tah;
             in = bv.in;
         }
 
-        public SavedState(Parcel in) {
+        SavedState(Parcel in) {
             super(in);
             tah = (in.readInt() != 0);
             this.in = in.createBooleanArray();
@@ -222,7 +223,7 @@ public final class BrailleView extends View {
             dest.writeBooleanArray(in);
         }
 
-        public void apply(BrailleView bv) {
+        void apply(BrailleView bv) {
             bv.tah = tah;
             bv.in = in;
             bv.invalidate();

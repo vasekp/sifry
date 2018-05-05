@@ -1,5 +1,6 @@
 package cz.absolutno.sifry.semafor;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.DashPathEffect;
@@ -10,7 +11,6 @@ import android.graphics.RadialGradient;
 import android.graphics.Shader;
 import android.os.Handler;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.MotionEventCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SoundEffectConstants;
@@ -52,10 +52,11 @@ public final class SemaforView extends View {
         pFill.setStyle(Style.FILL);
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(MotionEvent e) {
         int cnt = e.getPointerCount();
-        int action = MotionEventCompat.getActionMasked(e);
+        int action = e.getActionMasked();
         if (cnt == 0) return false;
         switch (action) {
             case MotionEvent.ACTION_CANCEL:
@@ -72,7 +73,7 @@ public final class SemaforView extends View {
                     clear();
                     tracking = true;
                 }
-                int pointerIndex = MotionEventCompat.getActionIndex(e);
+                int pointerIndex = e.getActionIndex();
                 int ix = index(e.getX(pointerIndex), e.getY(pointerIndex));
                 if (ix >= 0) {
                     if (action == MotionEvent.ACTION_DOWN && in[ix]) {
@@ -123,7 +124,7 @@ public final class SemaforView extends View {
         return dole() != 0;
     }
 
-    public int getVal() {
+    private int getVal() {
         int x = 0;
         for (int i = 0; i < 8; i++)
             if (in[i])

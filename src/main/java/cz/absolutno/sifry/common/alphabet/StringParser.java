@@ -3,15 +3,15 @@ package cz.absolutno.sifry.common.alphabet;
 import java.util.Locale;
 
 public abstract class StringParser {
-    protected CharSequence s;
-    protected int ix;
-    protected int len;
-    protected char lastChar;
+    CharSequence s;
+    int ix;
+    int len;
+    private char lastChar;
 
     public static final int ERR = -1;
     public static final int EOF = -2;
 
-    public StringParser(String s) {
+    StringParser(String s) {
         this.s = s.toUpperCase(new Locale("C"));
         len = s.length();
         ix = 0;
@@ -44,15 +44,15 @@ public abstract class StringParser {
 
 
     public static final class Ret {
-        public final int ord;
-        public final char last;
+        final int ord;
+        final char last;
 
-        public Ret(int ord) {
+        Ret(int ord) {
             this.ord = ord;
             this.last = 0;
         }
 
-        public Ret(int ord, char last) {
+        Ret(int ord, char last) {
             this.ord = ord;
             this.last = last;
         }

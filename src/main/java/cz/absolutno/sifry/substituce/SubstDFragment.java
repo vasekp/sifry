@@ -2,7 +2,6 @@ package cz.absolutno.sifry.substituce;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.support.v4.view.MotionEventCompat;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -64,8 +63,9 @@ public final class SubstDFragment extends AbstractDFragment {
     }
 
     private final OnTouchListener interceptListener = new OnTouchListener() {
+        @SuppressLint("ClickableViewAccessibility")
         public boolean onTouch(View v, MotionEvent event) {
-            v.getParent().requestDisallowInterceptTouchEvent(MotionEventCompat.getActionMasked(event) != MotionEvent.ACTION_UP);
+            v.getParent().requestDisallowInterceptTouchEvent(event.getActionMasked() != MotionEvent.ACTION_UP);
             return false;
         }
     };
@@ -145,7 +145,7 @@ public final class SubstDFragment extends AbstractDFragment {
         abc = Alphabet.getPreferentialInstance();
         int cnt = abc.count();
 
-        ArrayList<KoefItem> entries = new ArrayList<KoefItem>();
+        ArrayList<KoefItem> entries = new ArrayList<>();
         for (int i = 2; i < cnt - 1; i++) {
             if (gcd(i, cnt) != 1) continue;
             int j;
@@ -153,12 +153,12 @@ public final class SubstDFragment extends AbstractDFragment {
                 if (i * j % cnt == 1) break;
             entries.add(new KoefItem(i, j));
         }
-        ArrayAdapter<KoefItem> coeffAdapter = new ArrayAdapter<KoefItem>(getActivity(), android.R.layout.simple_spinner_item, entries);
+        ArrayAdapter<KoefItem> coeffAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, entries);
         coeffAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         ((Spinner) getView().findViewById(R.id.spSDAKoef)).setAdapter(coeffAdapter);
 
         LayoutInflater inflater = App.getInflater();
-        FixedGridLayout fgl = (FixedGridLayout) getView().findViewById(R.id.fglSDVlastni);
+        FixedGridLayout fgl = getView().findViewById(R.id.fglSDVlastni);
         fgl.removeAllViews();
         for (int i = 0; i < cnt; i++) {
             View v = inflater.inflate(R.layout.subst_item, fgl, false);
@@ -258,7 +258,7 @@ public final class SubstDFragment extends AbstractDFragment {
 
     @SuppressWarnings("ConstantConditions")
     private void updateFGL() {
-        FixedGridLayout fgl = (FixedGridLayout) getView().findViewById(R.id.fglSDVlastni);
+        FixedGridLayout fgl = getView().findViewById(R.id.fglSDVlastni);
         savedTr = ((TranslateAdapter) adapter).getTr();
         int cnt = abc.count();
         for (int i = 0; i < cnt; i++) {
@@ -300,7 +300,7 @@ public final class SubstDFragment extends AbstractDFragment {
         final int koef;
         final int inv;
 
-        public KoefItem(int koef, int inv) {
+        KoefItem(int koef, int inv) {
             this.koef = koef;
             this.inv = inv;
         }

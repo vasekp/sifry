@@ -18,8 +18,8 @@ public abstract class TabulkyCListAdapter extends BaseAdapter {
 
     private final ArrayList<Integer> raw;
 
-    public TabulkyCListAdapter() {
-        raw = new ArrayList<Integer>();
+    protected TabulkyCListAdapter() {
+        raw = new ArrayList<>();
     }
 
     public final boolean load(String input) {

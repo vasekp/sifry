@@ -32,9 +32,9 @@ public final class AsciiAlphabet extends Alphabet {
     }
 
 
-    public static final class AsciiStringParser extends StringParser {
+    protected static final class AsciiStringParser extends StringParser {
 
-        public AsciiStringParser(String s) {
+        AsciiStringParser(String s) {
             super(s);
             this.s = s; /* skip toUpperCase() */
         }

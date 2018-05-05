@@ -83,6 +83,7 @@ public abstract class AbstractCFragment extends AbstractDFragment {
     @Override
     public void onPause() {
         super.onPause();
+        //noinspection ConstantConditions
         ((android.view.inputmethod.InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(((BottomBarActivity) getActivity()).getBBar().getWindowToken(), 0);
     }
 
@@ -93,7 +94,7 @@ public abstract class AbstractCFragment extends AbstractDFragment {
         }
     };
 
-    protected void zpracuj(boolean novy) {
+    private void zpracuj(boolean novy) {
         boolean err = encode(vstup().getText().toString());
         if (err && novy)
             Utils.toast(R.string.tErrEncode);
@@ -174,7 +175,7 @@ public abstract class AbstractCFragment extends AbstractDFragment {
         dialog.show(getActivity().getSupportFragmentManager(), "copy");
     }
 
-    public final OnItemClickListener genItemClickListener = new OnItemClickListener() {
+    protected final OnItemClickListener genItemClickListener = new OnItemClickListener() {
         public void onItemClick(AdapterView<?> parentView, View childView, int position, long id) {
             View v = childView.findViewById(R.id.cont);
             if (v instanceof TextView)

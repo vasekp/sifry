@@ -32,8 +32,8 @@ public final class Stanoviste implements Parcelable, Serializable {
         this.nazev = nazev;
     }
 
-    public Stanoviste(String nazev, Date prichod, Date odchod,
-                      String reseni, String upres, String heslo, String pozn) {
+    private Stanoviste(String nazev, Date prichod, Date odchod,
+                       String reseni, String upres, String heslo, String pozn) {
         super();
         this.nazev = nazev;
         this.heslo = heslo;

@@ -7,6 +7,7 @@ import cz.absolutno.sifry.common.alphabet.Alphabet;
 import cz.absolutno.sifry.common.alphabet.StringParser;
 import cz.absolutno.sifry.common.decoder.Decoder;
 
+@SuppressWarnings("PointlessBitwiseExpression")
 public final class MalyPolskyKrizDecoder extends Decoder {
     private int var;
     private final Alphabet abc;

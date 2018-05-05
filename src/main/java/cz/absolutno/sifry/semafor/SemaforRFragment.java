@@ -29,7 +29,7 @@ public final class SemaforRFragment extends AbstractRFragment {
         private final int[] groupIDs;
         private final String[][] elms;
 
-        public SemaforELA() {
+        SemaforELA() {
             groups = App.getContext().getResources().getStringArray(R.array.saSmRGroups);
             groupIDs = Utils.getIdArray(R.array.iaSmRGroups);
             elms = new String[groups.length][];
@@ -60,7 +60,7 @@ public final class SemaforRFragment extends AbstractRFragment {
             return 1;
         }
 
-        public int getChildrenCountFull(int groupPosition) {
+        int getChildrenCountFull(int groupPosition) {
             return elms[groupPosition].length;
         }
 
@@ -110,10 +110,10 @@ public final class SemaforRFragment extends AbstractRFragment {
     }
 
     private static final class Item {
-        public final int x;
-        public final String desc;
+        final int x;
+        final String desc;
 
-        public Item(int x, String desc) {
+        Item(int x, String desc) {
             this.x = x;
             this.desc = desc;
         }

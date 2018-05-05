@@ -29,7 +29,7 @@ public final class MorseRFragment extends AbstractRFragment {
         private final String[] znaky;
         private final char tecka, carka;
 
-        public MorseELA() {
+        MorseELA() {
             Resources res = App.getContext().getResources();
             groups = res.getStringArray(R.array.saMDGroups);
             elms[0] = res.getStringArray(R.array.saMDPismena);

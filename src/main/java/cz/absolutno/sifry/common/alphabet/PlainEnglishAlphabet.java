@@ -36,9 +36,9 @@ public final class PlainEnglishAlphabet extends Alphabet {
     }
 
 
-    public static final class PlainEnglishStringParser extends StringParser {
+    protected static final class PlainEnglishStringParser extends StringParser {
 
-        public PlainEnglishStringParser(String s) {
+        PlainEnglishStringParser(String s) {
             super(s);
         }
 

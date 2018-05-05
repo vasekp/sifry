@@ -57,9 +57,9 @@ public final class FullCzechAlphabet extends FullAlphabet {
     }
 
 
-    public final class CzechStringParser extends StringParser {
+    protected final class CzechStringParser extends StringParser {
 
-        public CzechStringParser(String s) {
+        CzechStringParser(String s) {
             super(s);
         }
 

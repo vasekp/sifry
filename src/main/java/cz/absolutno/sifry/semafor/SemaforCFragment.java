@@ -54,25 +54,25 @@ public final class SemaforCFragment extends AbstractCFragment {
         private final int[] itemIDs;
         StatefulDecoder sd;
 
-        public SemaforCLA() {
+        SemaforCLA() {
             items = App.getContext().getResources().getStringArray(R.array.saSCItems);
             itemIDs = Utils.getIdArray(R.array.iaSCItems);
-            raw = new ArrayList<Integer>();
+            raw = new ArrayList<>();
             sd = new StatefulDecoder(R.xml.semafor_decoder);
         }
 
-        public void reloadPref() {
+        void reloadPref() {
             sd = new StatefulDecoder(R.xml.semafor_decoder);
             notifyDataSetChanged();
         }
 
-        public boolean load(String input) {
+        boolean load(String input) {
             raw.clear();
             notifyDataSetChanged();
             return sd.encode(input, raw);
         }
 
-        public ArrayList<Integer> getData() {
+        ArrayList<Integer> getData() {
             return raw;
         }
 
@@ -115,7 +115,7 @@ public final class SemaforCFragment extends AbstractCFragment {
             if (getItemId(position) == R.id.idSCPrimo) {
                 convertView = inflater.inflate(R.layout.grid_list_item, parent, false);
                 ((TextView) convertView.findViewById(R.id.desc)).setText(getItemDesc(position));
-                FixedGridLayout fgl = (FixedGridLayout) convertView.findViewById(R.id.cont);
+                FixedGridLayout fgl = convertView.findViewById(R.id.cont);
                 for (Integer x : raw) {
                     SemaforTView st = (SemaforTView) inflater.inflate(R.layout.semaforc_item, fgl, false);
                     st.setIn(x);

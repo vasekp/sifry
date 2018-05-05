@@ -52,7 +52,7 @@
     <string name="prefREDictionaryTitle">Dictionary data</string>
 
     <string name="prefClearTitle">Reset all preferences</string>
-    <string name="prefClearSummary">Revert all settings to their default values</string>
+    <string name="prefClearSummary" tools:keep="@string/prefClearSummary">Revert all settings to their default values</string>
 
     <string name="prefParseTitle">Parsing options</string>
     <string name="prefParseSummary">Frequency analysis, Transposition ciphers</string>

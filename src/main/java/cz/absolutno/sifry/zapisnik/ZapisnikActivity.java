@@ -12,8 +12,8 @@ import cz.absolutno.sifry.common.activity.BottomBarActivity;
 
 public final class ZapisnikActivity extends BottomBarActivity {
 
-    protected static final int DEFAULT = 0;
-    protected static final int EXPORT = 1;
+    static final int DEFAULT = 0;
+    private static final int EXPORT = 1;
 
     public static final String FILE = "zapisnik";
 

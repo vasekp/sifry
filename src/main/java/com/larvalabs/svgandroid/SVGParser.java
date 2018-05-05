@@ -25,7 +25,6 @@ import javax.xml.parsers.SAXParserFactory;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
 import org.xml.sax.SAXNotRecognizedException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
@@ -43,7 +42,7 @@ import org.xml.sax.helpers.DefaultHandler;
 /**
  * @author Larva Labs, LLC
  */
-@SuppressWarnings("unused")
+@SuppressWarnings("ALL")
 public class SVGParser {
 
 	static final String TAG = "SVGAndroid";
@@ -95,7 +94,7 @@ public class SVGParser {
 		// Util.debug("Parsing numbers from: '" + s + "'");
 		int n = s.length();
 		int p = 0;
-		ArrayList<Float> numbers = new ArrayList<Float>();
+		ArrayList<Float> numbers = new ArrayList<>();
 		boolean skipChar = false;
 		boolean prevWasE = false;
 		for (int i = 1; i < n; i++) {
@@ -647,8 +646,8 @@ public class SVGParser {
 		boolean isLinear;
 		float x1, y1, x2, y2;
 		float x, y, radius;
-		ArrayList<Float> positions = new ArrayList<Float>();
-		ArrayList<Integer> colors = new ArrayList<Integer>();
+		ArrayList<Float> positions = new ArrayList<>();
+		ArrayList<Integer> colors = new ArrayList<>();
 		Matrix matrix = null;
 		public Shader shader = null;
 		public boolean boundingBox = false;
@@ -686,7 +685,7 @@ public class SVGParser {
 	}
 
 	private static class StyleSet {
-		final HashMap<String, String> styleMap = new HashMap<String, String>();
+		final HashMap<String, String> styleMap = new HashMap<>();
 
 		private StyleSet(String string) {
 			String[] styles = string.split(";");
@@ -804,13 +803,13 @@ public class SVGParser {
 
 		Paint strokePaint;
 		boolean strokeSet = false;
-		final Stack<Paint> strokePaintStack = new Stack<Paint>();
-		final Stack<Boolean> strokeSetStack = new Stack<Boolean>();
+		final Stack<Paint> strokePaintStack = new Stack<>();
+		final Stack<Boolean> strokeSetStack = new Stack<>();
 
 		Paint fillPaint;
 		boolean fillSet = false;
-		final Stack<Paint> fillPaintStack = new Stack<Paint>();
-		final Stack<Boolean> fillSetStack = new Stack<Boolean>();
+		final Stack<Paint> fillPaintStack = new Stack<>();
+		final Stack<Boolean> fillSetStack = new Stack<>();
 
 		// Scratch rect (so we aren't constantly making new ones)
 		final RectF rect = new RectF();
@@ -825,10 +824,10 @@ public class SVGParser {
 
 		Integer canvasRestoreCount;
 
-		final Stack<Boolean> transformStack = new Stack<Boolean>();
-		final Stack<Matrix> matrixStack = new Stack<Matrix>();
+		final Stack<Boolean> transformStack = new Stack<>();
+		final Stack<Matrix> matrixStack = new Stack<>();
 
-		final HashMap<String, Gradient> gradientMap = new HashMap<String, Gradient>();
+		final HashMap<String, Gradient> gradientMap = new HashMap<>();
 		Gradient gradient = null;
 
 		public SVGHandler() {
@@ -855,12 +854,12 @@ public class SVGParser {
 		}
 
 		@Override
-		public void startDocument() throws SAXException {
+		public void startDocument() {
 			// Set up prior to parsing a doc
 		}
 
 		@Override
-		public void endDocument() throws SAXException {
+		public void endDocument() {
 			// Clean up after parsing a doc
 		}
 
@@ -948,22 +947,22 @@ public class SVGParser {
 			}
 
 			String linecap = atts.getString("stroke-linecap");
-			if ("round".equals(linecap)) {
-				strokePaint.setStrokeCap(Paint.Cap.ROUND);
-			} else if ("square".equals(linecap)) {
-				strokePaint.setStrokeCap(Paint.Cap.SQUARE);
-			} else if ("butt".equals(linecap)) {
-				strokePaint.setStrokeCap(Paint.Cap.BUTT);
-			}
+            if ("round".equals(linecap)) {
+                strokePaint.setStrokeCap(Paint.Cap.ROUND);
+            } else if ("square".equals(linecap)) {
+                strokePaint.setStrokeCap(Paint.Cap.SQUARE);
+            } else if ("butt".equals(linecap)) {
+                strokePaint.setStrokeCap(Paint.Cap.BUTT);
+            }
 
 			String linejoin = atts.getString("stroke-linejoin");
-			if ("miter".equals(linejoin)) {
-				strokePaint.setStrokeJoin(Paint.Join.MITER);
-			} else if ("round".equals(linejoin)) {
-				strokePaint.setStrokeJoin(Paint.Join.ROUND);
-			} else if ("bevel".equals(linejoin)) {
-				strokePaint.setStrokeJoin(Paint.Join.BEVEL);
-			}
+            if ("miter".equals(linejoin)) {
+                strokePaint.setStrokeJoin(Paint.Join.MITER);
+            } else if ("round".equals(linejoin)) {
+                strokePaint.setStrokeJoin(Paint.Join.ROUND);
+            } else if ("bevel".equals(linejoin)) {
+                strokePaint.setStrokeJoin(Paint.Join.BEVEL);
+            }
 
 			pathStyleHelper(atts.getString("stroke-dasharray"), atts.getString("stroke-dashoffset"));
 
@@ -1162,8 +1161,7 @@ public class SVGParser {
 		}
 
 		@Override
-		public void startElement(String namespaceURI, String localName, String qName, Attributes atts)
-				throws SAXException {
+		public void startElement(String namespaceURI, String localName, String qName, Attributes atts) {
 			// Reset paint opacity
 			strokePaint.setAlpha(255);
 			fillPaint.setAlpha(255);
@@ -1392,7 +1390,7 @@ public class SVGParser {
 		}
 
 		@Override
-		public void endElement(String namespaceURI, String localName, String qName) throws SAXException {
+		public void endElement(String namespaceURI, String localName, String qName) {
 			switch (localName) {
 				case "svg":
 					if (canvasRestoreCount != null) {

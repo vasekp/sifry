@@ -34,7 +34,7 @@ public final class BrailleDFragment extends AbstractDFragment {
     private boolean space = false;
     private boolean tah = false;
 
-    private ArrayList<Integer> raw = new ArrayList<Integer>();
+    private ArrayList<Integer> raw = new ArrayList<>();
 
     @Override
     protected int getMenuCaps() {
@@ -53,18 +53,18 @@ public final class BrailleDFragment extends AbstractDFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.brailled_layout, container, false);
 
-        bvVstup = (BrailleView) v.findViewById(R.id.bvBDVstup);
-        reseni = (TextView) v.findViewById(R.id.tvRes);
+        bvVstup = v.findViewById(R.id.bvBDVstup);
+        reseni = v.findViewById(R.id.tvRes);
         reseni.setOnClickListener(Utils.copyClickListener);
-        pism = (TextView) v.findViewById(R.id.tvBDPism);
-        bt = (BrailleTView) v.findViewById(R.id.btBDVstup);
-        thumb = (LinearLayout) v.findViewById(R.id.llBDThumb);
-        fglVstup = (FixedGridLayout) v.findViewById(R.id.fglBDVstup);
+        pism = v.findViewById(R.id.tvBDPism);
+        bt = v.findViewById(R.id.btBDVstup);
+        thumb = v.findViewById(R.id.llBDThumb);
+        fglVstup = v.findViewById(R.id.fglBDVstup);
 
         bvVstup.setOnChangeListener(brailleListener);
         v.findViewById(R.id.llBDThumb).setOnClickListener(thumbListener);
 
-        ImageView ivBsp = (ImageView) v.findViewById(R.id.ivBsp);
+        ImageView ivBsp = v.findViewById(R.id.ivBsp);
         ivBsp.setOnClickListener(bspListener);
         ivBsp.setOnLongClickListener(clearListener);
 

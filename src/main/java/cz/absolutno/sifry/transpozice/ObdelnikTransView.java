@@ -1,5 +1,6 @@
 package cz.absolutno.sifry.transpozice;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -12,7 +13,6 @@ import android.os.Handler;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.MotionEventCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
@@ -44,12 +44,13 @@ public final class ObdelnikTransView extends Trans2DView {
         p.setStrokeCap(Cap.BUTT);
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(MotionEvent e) {
         float xo, yo;
         if (e.getPointerCount() > 1)
             return super.onTouchEvent(e);
-        switch (MotionEventCompat.getActionMasked(e)) {
+        switch (e.getActionMasked()) {
             case MotionEvent.ACTION_DOWN:
                 xo = untransX(e.getX(), e.getY());
                 yo = untransY(e.getX(), e.getY());
@@ -163,14 +164,14 @@ public final class ObdelnikTransView extends Trans2DView {
             return new PointF((i % col) - (col - 1) / 2f, (i / col) - (row - 1) / 2f);
     }
 
-    public void setCol(int col) {
+    private void setCol(int col) {
         if (col <= 0) col = 1;
         this.col = col;
         row = Utils.ceil((float) getLength() / col);
         alignRows = false;
     }
 
-    public void setRow(int row) {
+    private void setRow(int row) {
         if (col <= 0) col = 1;
         this.row = row;
         col = Utils.ceil((float) getLength() / row);
@@ -251,15 +252,15 @@ public final class ObdelnikTransView extends Trans2DView {
 
         int col;
 
-        public SavedState(Parcelable in) {
+        SavedState(Parcelable in) {
             super(in);
         }
 
-        public void read(ObdelnikTransView tv) {
+        void read(ObdelnikTransView tv) {
             col = tv.col;
         }
 
-        public SavedState(Parcel in) {
+        SavedState(Parcel in) {
             super(in);
             col = in.readInt();
         }
@@ -270,7 +271,7 @@ public final class ObdelnikTransView extends Trans2DView {
             dest.writeInt(col);
         }
 
-        public void apply(ObdelnikTransView tv) {
+        void apply(ObdelnikTransView tv) {
             tv.setCol(col);
             tv.invalidate();
         }

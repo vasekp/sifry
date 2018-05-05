@@ -47,11 +47,11 @@ public final class MorseDFragment extends AbstractDFragment {
         return fl;
     }
 
-    public View inflateView(LayoutInflater inflater, ViewGroup container) {
+    private View inflateView(LayoutInflater inflater, ViewGroup container) {
         View v = inflater.inflate(R.layout.morsed_layout, container, false);
 
-        vstup = (TextView) v.findViewById(R.id.tvMDVstup);
-        ImageView ivBsp = (ImageView) v.findViewById(R.id.ivBsp);
+        vstup = v.findViewById(R.id.tvMDVstup);
+        ImageView ivBsp = v.findViewById(R.id.ivBsp);
         ivBsp.setOnClickListener(bspListener);
         ivBsp.setOnLongClickListener(clearListener);
 
@@ -128,29 +128,29 @@ public final class MorseDFragment extends AbstractDFragment {
     private static final class MorseLA extends BaseAdapter {
 
         private final String[] varianty;
-        private ArrayList<Integer> raw = new ArrayList<Integer>();
+        private ArrayList<Integer> raw = new ArrayList<>();
         private final MorseDecoder md = new MorseDecoder();
 
-        public MorseLA() {
+        MorseLA() {
             varianty = App.getContext().getResources().getStringArray(R.array.saMDVarianty);
         }
 
-        public void load(ArrayList<Integer> raw) {
+        void load(ArrayList<Integer> raw) {
             this.raw = raw;
             notifyDataSetChanged();
         }
 
-        public void clear() {
+        void clear() {
             raw.clear();
             notifyDataSetChanged();
         }
 
-        public void append(int x) {
+        void append(int x) {
             raw.add(x);
             notifyDataSetChanged();
         }
 
-        public void removeLast() {
+        void removeLast() {
             if (raw == null) return;
             int sz = raw.size();
             if (sz == 0) return;
@@ -158,7 +158,7 @@ public final class MorseDFragment extends AbstractDFragment {
             notifyDataSetChanged();
         }
 
-        public ArrayList<Integer> getData() {
+        ArrayList<Integer> getData() {
             return raw;
         }
 
@@ -185,8 +185,8 @@ public final class MorseDFragment extends AbstractDFragment {
         public View getView(int position, View convertView, ViewGroup parent) {
             if (convertView == null)
                 convertView = App.getInflater().inflate(R.layout.gen_list_item, parent, false);
-            TextView tvDesc = (TextView) convertView.findViewById(R.id.desc);
-            TextView tvCont = (TextView) convertView.findViewById(R.id.cont);
+            TextView tvDesc = convertView.findViewById(R.id.desc);
+            TextView tvCont = convertView.findViewById(R.id.cont);
             tvDesc.setText(getItemDesc(position));
             tvCont.setText(getItem(position));
             return convertView;

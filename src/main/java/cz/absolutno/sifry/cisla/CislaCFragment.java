@@ -64,7 +64,7 @@ public final class CislaCFragment extends AbstractCFragment {
         private final int[] itemsASCIIMod;
         private final int[] itemsASCIIZakl;
 
-        public CislaCELA() {
+        CislaCELA() {
             Resources res = App.getContext().getResources();
             groups = res.getStringArray(R.array.saCCGroups);
             groupIDs = Utils.getIdArray(R.array.iaCCGroups);
@@ -81,17 +81,17 @@ public final class CislaCFragment extends AbstractCFragment {
             input = "";
         }
 
-        public void reloadPref() {
+        void reloadPref() {
             abcPref = Alphabet.getPreferentialInstance();
             notifyDataSetChanged();
         }
 
-        public void load(String input) {
+        void load(String input) {
             this.input = input;
             notifyDataSetChanged();
         }
 
-        public String getInput() {
+        String getInput() {
             return abcPref.filter(input);
         }
 

@@ -14,7 +14,7 @@ package com.larvalabs.svgandroid;
  * 
  * @author Apache Software Foundation, Larva Labs LLC
  */
-public class ParserHelper {
+class ParserHelper {
 
 	private final char[] s;
 	private final int n;
@@ -49,7 +49,7 @@ public class ParserHelper {
 		}
 	}
 
-	public void skipNumberSeparator() {
+	private void skipNumberSeparator() {
 		while (pos < n) {
 			char c = s[pos];
 			switch (c) {
@@ -73,7 +73,7 @@ public class ParserHelper {
 	 * Parses the content of the buffer and converts it to a float.
 	 */
 	@SuppressWarnings("ConstantConditions") // too complex to analyze by data flow algorithm
-	public float parseFloat() {
+    private float parseFloat() {
 		int mant = 0;
 		int mantDig = 0;
 		boolean mantPos = true;
@@ -342,7 +342,7 @@ public class ParserHelper {
 	/**
 	 * Computes a float from mantissa and exponent.
 	 */
-	public static float buildFloat(int mant, int exp) {
+	private static float buildFloat(int mant, int exp) {
 		if (exp < -125 || mant == 0) {
 			return 0.0f;
 		}

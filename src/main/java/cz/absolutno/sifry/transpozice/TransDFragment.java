@@ -40,7 +40,7 @@ public final class TransDFragment extends AbstractDFragment {
 
         tvarIDs = Utils.getIdArray(R.array.iaTTvary);
 
-        text = (EditText) v.findViewById(R.id.etTVstup);
+        text = v.findViewById(R.id.etTVstup);
         text.setOnEditorActionListener(new OnEditorActionListener() {
             @SuppressWarnings("ConstantConditions")
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -58,7 +58,7 @@ public final class TransDFragment extends AbstractDFragment {
             }
         });
 
-        tvRes = (TextView) v.findViewById(R.id.tvRes);
+        tvRes = v.findViewById(R.id.tvRes);
         tvRes.setOnClickListener(Utils.copyClickListener);
         reseni = "";
 
@@ -120,16 +120,16 @@ public final class TransDFragment extends AbstractDFragment {
 
         switch (id) {
             case R.id.idTNic:
-                vstup = (TransView) getView().findViewById(R.id.trvTVstupLine);
+                vstup = getView().findViewById(R.id.trvTVstupLine);
                 break;
             case R.id.idTObdelnik:
-                vstup = (TransView) getView().findViewById(R.id.trvTVstupObdelnik);
+                vstup = getView().findViewById(R.id.trvTVstupObdelnik);
                 break;
             case R.id.idTTrojuhelnik:
-                vstup = (TransView) getView().findViewById(R.id.trvTVstupTrojuhelnik);
+                vstup = getView().findViewById(R.id.trvTVstupTrojuhelnik);
                 break;
             case R.id.idTRTrojuhelnik:
-                vstup = (TransView) getView().findViewById(R.id.trvTVstupRTrojuhelnik);
+                vstup = getView().findViewById(R.id.trvTVstupRTrojuhelnik);
                 break;
         }
         vstup.setOnInputListener(new OnInputListener() {

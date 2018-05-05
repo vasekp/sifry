@@ -2,7 +2,7 @@ package cz.absolutno.sifry.substituce;
 
 import cz.absolutno.sifry.common.alphabet.Alphabet;
 
-public final class AtbashAdapter extends PosunyAdapter {
+final class AtbashAdapter extends PosunyAdapter {
 
     public AtbashAdapter(Alphabet abc) {
         super(abc);

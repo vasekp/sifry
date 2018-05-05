@@ -37,8 +37,8 @@ public final class FrekvExpListAdapter extends BaseExpandableListAdapter {
     private final int[] statIDs;
     private final int[] statPluralIDs;
 
-    private final ArrayList<Integer> groupsFiltered = new ArrayList<Integer>();
-    private final ArrayList<Integer> statFiltered = new ArrayList<Integer>();
+    private final ArrayList<Integer> groupsFiltered = new ArrayList<>();
+    private final ArrayList<Integer> statFiltered = new ArrayList<>();
 
     private final String formatString;
     private final String mezera;
@@ -83,7 +83,7 @@ public final class FrekvExpListAdapter extends BaseExpandableListAdapter {
         ip = new int[inter.length()];
     }
 
-    public void clear() {
+    private void clear() {
         maxNum = 0;
         pismen = cislic = mezer = itp = znaku = slov = vet = souveti = nerozp = 0;
         ruzPismen = ruzCislic;
@@ -195,7 +195,7 @@ public final class FrekvExpListAdapter extends BaseExpandableListAdapter {
 
         ArrayList<SortItem> sort;
 
-        sort = new ArrayList<SortItem>(abcCount);
+        sort = new ArrayList<>(abcCount);
         for (int i = 0; i < abcCount; i++) {
             sort.add(new SortItem(abc.chr(i), i, pism[i]));
             if (pism[i] != 0)
@@ -203,7 +203,7 @@ public final class FrekvExpListAdapter extends BaseExpandableListAdapter {
         }
         sortedPismena = sortAndCollect(sort);
 
-        sort = new ArrayList<SortItem>(10);
+        sort = new ArrayList<>(10);
         for (int i = 0; i < 10; i++) {
             sort.add(new SortItem(String.valueOf(i), i, cisl[i]));
             if (cisl[i] != 0)
@@ -211,7 +211,7 @@ public final class FrekvExpListAdapter extends BaseExpandableListAdapter {
         }
         sortedCislice = sortAndCollect(sort);
 
-        sort = new ArrayList<SortItem>(10 + abcCount);
+        sort = new ArrayList<>(10 + abcCount);
         for (int i = 0; i < abcCount; i++)
             if (pism[i] > 0)
                 sort.add(new SortItem(abc.chr(i), i, pism[i]));
@@ -220,13 +220,13 @@ public final class FrekvExpListAdapter extends BaseExpandableListAdapter {
                 sort.add(new SortItem(String.valueOf(i), i, cisl[i]));
         sortedAlnum = sortAndCollect(sort);
 
-        sort = new ArrayList<SortItem>(nezn.size());
+        sort = new ArrayList<>(nezn.size());
         for (int i = 0; i < nezn.size(); i++)
             sort.add(new SortItem(String.valueOf((char) nezn.keyAt(i)), nezn
                     .keyAt(i), nezn.valueAt(i)));
         sortedNezname = sortAndCollect(sort);
 
-        sort = new ArrayList<SortItem>(vse.size());
+        sort = new ArrayList<>(vse.size());
         for (int i = 0; i < vse.size(); i++) {
             int x = vse.keyAt(i);
             if (x < 0)
@@ -238,19 +238,19 @@ public final class FrekvExpListAdapter extends BaseExpandableListAdapter {
         }
         sortedVse = sortAndCollect(sort);
 
-        sort = new ArrayList<SortItem>(abc.count());
+        sort = new ArrayList<>(abc.count());
         for (int i = 0; i < abc.count(); i++)
             if (prvni[i] > 0)
                 sort.add(new SortItem(abc.chr(i), i, prvni[i]));
         sortedPrvni = sortAndCollect(sort);
 
-        sort = new ArrayList<SortItem>(abc.count());
+        sort = new ArrayList<>(abc.count());
         for (int i = 0; i < abc.count(); i++)
             if (posledni[i] > 0)
                 sort.add(new SortItem(abc.chr(i), i, posledni[i]));
         sortedPosledni = sortAndCollect(sort);
 
-        sort = new ArrayList<SortItem>(maxNum);
+        sort = new ArrayList<>(maxNum);
         for (int i = 0; i < delky.size(); i++)
             sort.add(new SortItem(
                     delky.keyAt(i) < maxDS
@@ -305,20 +305,24 @@ public final class FrekvExpListAdapter extends BaseExpandableListAdapter {
 
     private SortItem[] sortAndCollect(ArrayList<SortItem> sort) {
         Collections.sort(sort, new SortComparator());
-        int j = 1;
-        for (int i = 1; i < sort.size(); i++)
-            if (sort.get(i).pocet != sort.get(i - 1).pocet)
-                j++;
-        SortItem[] sorted = new SortItem[j];
-        j = 0;
-        for (int i = 0; i < sort.size(); i++) {
-            if (i > 0 && sort.get(i).pocet == sort.get(i - 1).pocet)
-                sorted[j - 1].pismena = sorted[j - 1].pismena + ", "
-                        + sort.get(i).pismena;
-            else
-                sorted[j++] = sort.get(i);
+        StringBuilder sb = new StringBuilder();
+        ArrayList<SortItem> result = new ArrayList<>();
+        int last = -1;
+        for(SortItem si : sort) {
+            if(si.pocet != last) {
+                if(sb.length() > 0)
+                    result.add(new SortItem(sb.toString(), 0, last));
+                sb.setLength(0);
+                sb.append(si.pismena);
+                last = si.pocet;
+            } else {
+                sb.append(", ");
+                sb.append(si.pismena);
+            }
         }
-        return sorted;
+        if(sb.length() > 0)
+            result.add(new SortItem(sb.toString(), 0, last));
+        return result.toArray(new SortItem[result.size()]);
     }
 
     private String format(int n, int t) {
@@ -527,8 +531,8 @@ public final class FrekvExpListAdapter extends BaseExpandableListAdapter {
                              boolean isLastChild, View convertView, ViewGroup parent) {
         if (convertView == null)
             convertView = App.getInflater().inflate(R.layout.gen_list_item, parent, false);
-        TextView tvDesc = (TextView) convertView.findViewById(R.id.desc);
-        TextView tvCont = (TextView) convertView.findViewById(R.id.cont);
+        TextView tvDesc = convertView.findViewById(R.id.desc);
+        TextView tvCont = convertView.findViewById(R.id.cont);
         tvDesc.setText(getChildDesc(groupPosition, childPosition));
         Ret r = getChild(groupPosition, childPosition);
         assert r != null;
@@ -550,11 +554,11 @@ public final class FrekvExpListAdapter extends BaseExpandableListAdapter {
 
 
     private static final class SortItem {
-        public final int pocet;
-        public final int ord;
-        public String pismena;
+        final int pocet;
+        final int ord;
+        final String pismena;
 
-        public SortItem(String pismena, int ord, int pocet) {
+        SortItem(String pismena, int ord, int pocet) {
             this.pocet = pocet;
             this.ord = ord;
             this.pismena = pismena;
@@ -575,38 +579,39 @@ public final class FrekvExpListAdapter extends BaseExpandableListAdapter {
 
 
     private class Ret {
-        public String s;
-        public final boolean zero;
+        String s;
+        final boolean zero;
 
-        public Ret(String s, boolean z) {
+        Ret(String s, boolean z) {
             this.s = s;
             this.zero = z;
         }
 
-        public Ret(int n) {
+        Ret(int n) {
             s = String.valueOf(n);
             zero = (n == 0);
         }
 
-        public Ret(int n, int t) {
+        Ret(int n, int t) {
             s = FrekvExpListAdapter.this.format(n, t);
             zero = (n == 0);
         }
     }
 
     private class RetStat extends Ret {
-        public RetStat(int n) {
+        RetStat(int n) {
             super(n);
         }
 
-        public RetStat(int n, int diff, int id) {
+        RetStat(int n, int diff, int id) {
             super(n);
             if (diff >= 2 && diff < n)
                 s = App.getContext().getResources().getQuantityString(
                         statPluralIDs[statIndexOf(id)], diff, n, diff);
         }
 
-        public RetStat(int n, int diff, int spol, int id) {
+        @SuppressWarnings("SameParameterValue")
+        RetStat(int n, int diff, int spol, int id) {
             super(n);
             if (diff < n)
                 s = App.getContext().getResources().getQuantityString(

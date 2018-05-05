@@ -1,5 +1,6 @@
 package cz.absolutno.sifry.tabulky.polsky;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -7,7 +8,6 @@ import android.graphics.Paint.Align;
 import android.graphics.Paint.Cap;
 import android.graphics.Typeface;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.MotionEventCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SoundEffectConstants;
@@ -80,6 +80,7 @@ public final class PolskyKlasView extends PolskyView {
                 }
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(MotionEvent e) {
         int cnt = e.getPointerCount();
@@ -87,7 +88,7 @@ public final class PolskyKlasView extends PolskyView {
 
         final int ix = index(e.getX(), e.getY());
 
-        switch (MotionEventCompat.getActionMasked(e)) {
+        switch (e.getActionMasked()) {
             case MotionEvent.ACTION_UP:
                 if (ix >= 0) {
                     if (oil != null) oil.onInput(ix, pk.decode(ix));

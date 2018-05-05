@@ -4,7 +4,8 @@ public class FullAlphabet extends Alphabet {
 
     private final String full;
 
-    public FullAlphabet(String full) {
+    @SuppressWarnings("SameParameterValue")
+    FullAlphabet(String full) {
         this.full = full;
     }
 
@@ -25,7 +26,7 @@ public class FullAlphabet extends Alphabet {
         else return full.indexOf(c);
     }
 
-    protected int ord(char c) {
+    int ord(char c) {
         return full.indexOf(c);
     }
 
@@ -35,9 +36,9 @@ public class FullAlphabet extends Alphabet {
     }
 
 
-    public class FullStringParser extends StringParser {
+    protected class FullStringParser extends StringParser {
 
-        public FullStringParser(String s) {
+        FullStringParser(String s) {
             super(s);
         }
 

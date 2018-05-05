@@ -20,9 +20,8 @@
         android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:theme="@style/MainTheme"
-        android:allowBackup="true"
         android:name="cz.absolutno.sifry.App"
-        tools:ignore="UnusedAttribute">
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning,UnusedAttribute">
 
         <uses-library
             android:required="false"

@@ -34,7 +34,7 @@ public final class CtverecVFragment extends AbstractRFragment {
         }
 
         View v = inflater.inflate(R.layout.gen_exp_list_layout, container, false);
-        ExpandableListView el = (ExpandableListView) v.findViewById(R.id.main);
+        ExpandableListView el = v.findViewById(R.id.main);
         el.setAdapter(new CtverecELA());
         el.setOnChildClickListener(Utils.copyChildClickListener);
 
@@ -48,7 +48,7 @@ public final class CtverecVFragment extends AbstractRFragment {
         private final String[] groupID;
         private final Alphabet[] abc;
 
-        public CtverecELA() {
+        CtverecELA() {
             groups = App.getContext().getResources().getStringArray(R.array.saTDCtvVar);
             groupID = App.getContext().getResources().getStringArray(R.array.saTDCtvABCVar);
             abc = new Alphabet[groups.length];
@@ -102,19 +102,21 @@ public final class CtverecVFragment extends AbstractRFragment {
         }
 
         public String getChild(int groupPosition, int childPosition) {
-            if (childPosition == 8)
-                return bifid(groupPosition, false);
-            else if (childPosition == 9)
-                return bifid(groupPosition, true);
-            else
-                return filter(groupPosition, (childPosition & 4) != 0, (childPosition & 1) != 0, (childPosition & 2) != 0);
+            switch (childPosition) {
+                case 8:
+                    return bifid(groupPosition, false);
+                case 9:
+                    return bifid(groupPosition, true);
+                default:
+                    return filter(groupPosition, (childPosition & 4) != 0, (childPosition & 1) != 0, (childPosition & 2) != 0);
+            }
         }
 
         public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
             if (convertView == null)
                 convertView = App.getInflater().inflate(R.layout.gen_list_item, parent, false);
-            TextView tvDesc = (TextView) convertView.findViewById(R.id.desc);
-            TextView tvCont = (TextView) convertView.findViewById(R.id.cont);
+            TextView tvDesc = convertView.findViewById(R.id.desc);
+            TextView tvCont = convertView.findViewById(R.id.cont);
             tvDesc.setText(getChildDesc(groupPosition, childPosition));
             tvCont.setText(getChild(groupPosition, childPosition));
             return convertView;

@@ -82,11 +82,11 @@ public final class EmpirSubstFragment extends AbstractDFragment {
         View v = inflater.inflate(R.layout.esubs_layout, container, false);
         v.findViewById(R.id.smaz).setVisibility(View.GONE);
 
-        ctv = ((ColorChunkTextView) v.findViewById(R.id.ctvESMain));
+        ctv = v.findViewById(R.id.ctvESMain);
         ctv.setOnChunkClickListener(chunkListener);
         v.findViewById(R.id.tbESSort).setOnClickListener(sortListener);
 
-        llTabulka = (LinearLayout) v.findViewById(R.id.llESTabulka);
+        llTabulka = v.findViewById(R.id.llESTabulka);
 
         return v;
     }
@@ -124,7 +124,7 @@ public final class EmpirSubstFragment extends AbstractDFragment {
 
     private void updateSubs() {
         StringParser sp = abc.getStringParser(s);
-        ArrayList<ColorChunk> chunks = new ArrayList<ColorChunk>();
+        ArrayList<ColorChunk> chunks = new ArrayList<>();
         int ord;
 
         while ((ord = sp.getNextOrd()) != StringParser.EOF) {
@@ -152,9 +152,7 @@ public final class EmpirSubstFragment extends AbstractDFragment {
     private void rebuildList(int sort) {
         int cnt = hash.size();
 
-        ArrayList<SubsItem> frekvence = new ArrayList<SubsItem>();
-        for (SubsItem item : hash.values())
-            frekvence.add(item);
+        ArrayList<SubsItem> frekvence = new ArrayList<>(hash.values());
 
         switch (sort) {
             case SORT_ABC:
@@ -263,7 +261,7 @@ public final class EmpirSubstFragment extends AbstractDFragment {
         int ord;
 
         len = 0;
-        hash = new HashMap<String, SubsItem>();
+        hash = new HashMap<>();
         while ((ord = sp.getNextOrd()) != StringParser.EOF) {
             if (ord < 0 && ignore) continue;
             len++;
@@ -277,7 +275,7 @@ public final class EmpirSubstFragment extends AbstractDFragment {
             else
                 hash.get(chr).cnt++;
         }
-        used = new HashMap<String, Integer>(hash.size());
+        used = new HashMap<>(hash.size());
     }
 
     @Override

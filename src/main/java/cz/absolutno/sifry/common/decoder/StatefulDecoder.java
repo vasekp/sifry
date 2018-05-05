@@ -19,7 +19,7 @@ public final class StatefulDecoder extends Decoder {
 
     private OnStateChangedListener onStateChangedListener = null;
 
-    private final SparseArray<ChainDecoder> decoders = new SparseArray<ChainDecoder>();
+    private final SparseArray<ChainDecoder> decoders = new SparseArray<>();
     private ChainDecoder defDecoder = null;
     private ChainDecoder curDecoder = null;
     private ChainDecoder tmpDecoder = null;
@@ -50,23 +50,23 @@ public final class StatefulDecoder extends Decoder {
 
     private final class RuleDecoder extends ChainDecoder {
 
-        private final ArrayList<Rule> rules = new ArrayList<Rule>();
+        private final ArrayList<Rule> rules = new ArrayList<>();
         private final String state;
         private final boolean temp;
         private final int codeDesc;
 
-        public RuleDecoder(String state, boolean temp, int codeDesc) {
+        RuleDecoder(String state, boolean temp, int codeDesc) {
             this.state = state;
             this.temp = temp;
             this.codeDesc = codeDesc;
         }
 
-        public void newRule(int ref, int code, int format, int after, String state, String tmpState) {
+        void newRule(int ref, int code, int format, int after, String state, String tmpState) {
             rules.add(new Rule(ref, code, format, after, state, tmpState));
         }
 
         @Override
-        public boolean isTemp() {
+        protected boolean isTemp() {
             return temp;
         }
 
@@ -186,38 +186,46 @@ public final class StatefulDecoder extends Decoder {
             int codeDescGlobal = 0;
             for (xml.next(); xml.getEventType() != XmlPullParser.END_DOCUMENT; xml.next()) {
                 if (xml.getEventType() == XmlPullParser.START_TAG) {
-                    if (xml.getName().equals("state-decoder")) {
-                        entry = xml.getAttributeResourceValue(null, "entrypoint", 0);
-                        String pref = xml.getAttributeValue(null, "format_flag");
-                        codeDescGlobal = xml.getAttributeResourceValue(null, "code_desc", 0);
-                        if (pref != null && sp != null && sp.getBoolean(pref, false))
-                            defaultFormat = R.id.idFormatLowerCase;
-                        else
-                            defaultFormat = R.id.idFormatUpperCase;
-                        if (codeDescGlobal != 0)
-                            decoders.put(codeDescGlobal, new StringDecoder(codeDescGlobal));
-                    } else if (xml.getName().equals("rule-array")) {
-                        id = xml.getAttributeResourceValue(null, "id", 0);
-                        int codeDesc = xml.getAttributeResourceValue(null, "code_desc", codeDescGlobal);
-                        String state = xml.getAttributeValue(null, "state");
-                        boolean temp = xml.getAttributeBooleanValue(null, "temp", false);
-                        rd = new RuleDecoder(state, temp, codeDesc);
-                        if (codeDesc != codeDescGlobal)
-                            decoders.put(codeDesc, new StringDecoder(codeDesc));
-                    } else if (xml.getName().equals("rules") || xml.getName().equals("strings") || xml.getName().equals("special")) {
-                        int ref = xml.getAttributeResourceValue(null, "ref", 0);
-                        int code = xml.getAttributeIntValue(null, "code", -1);
-                        String acc = xml.getAttributeValue(null, "access");
-                        boolean accdef = xml.getAttributeBooleanValue(null, "access_def", false);
-                        int after = xml.getAttributeResourceValue(null, "after", 0);
-                        String state = xml.getAttributeValue(null, "state");
-                        String tmpstate = xml.getAttributeValue(null, "tmp_state");
-                        int format = xml.getAttributeResourceValue(null, "format", 0);
-                        if (xml.getName().equals("strings"))
-                            decoders.put(ref, new StringDecoder(ref));
-                        if (acc == null || (sp != null ? sp.getBoolean(acc, accdef) : accdef)) {
-                            assert rd != null;
-                            rd.newRule(ref, code, format, after, state, tmpstate);
+                    switch (xml.getName()) {
+                        case "state-decoder":
+                            entry = xml.getAttributeResourceValue(null, "entrypoint", 0);
+                            String pref = xml.getAttributeValue(null, "format_flag");
+                            codeDescGlobal = xml.getAttributeResourceValue(null, "code_desc", 0);
+                            if (pref != null && sp != null && sp.getBoolean(pref, false))
+                                defaultFormat = R.id.idFormatLowerCase;
+                            else
+                                defaultFormat = R.id.idFormatUpperCase;
+                            if (codeDescGlobal != 0)
+                                decoders.put(codeDescGlobal, new StringDecoder(codeDescGlobal));
+                            break;
+                        case "rule-array": {
+                            id = xml.getAttributeResourceValue(null, "id", 0);
+                            int codeDesc = xml.getAttributeResourceValue(null, "code_desc", codeDescGlobal);
+                            String state = xml.getAttributeValue(null, "state");
+                            boolean temp = xml.getAttributeBooleanValue(null, "temp", false);
+                            rd = new RuleDecoder(state, temp, codeDesc);
+                            if (codeDesc != codeDescGlobal)
+                                decoders.put(codeDesc, new StringDecoder(codeDesc));
+                            break;
+                        }
+                        case "rules":
+                        case "strings":
+                        case "special": {
+                            int ref = xml.getAttributeResourceValue(null, "ref", 0);
+                            int code = xml.getAttributeIntValue(null, "code", -1);
+                            String acc = xml.getAttributeValue(null, "access");
+                            boolean accdef = xml.getAttributeBooleanValue(null, "access_def", false);
+                            int after = xml.getAttributeResourceValue(null, "after", 0);
+                            String state = xml.getAttributeValue(null, "state");
+                            String tmpstate = xml.getAttributeValue(null, "tmp_state");
+                            int format = xml.getAttributeResourceValue(null, "format", 0);
+                            if (xml.getName().equals("strings"))
+                                decoders.put(ref, new StringDecoder(ref));
+                            if (acc == null || (sp != null ? sp.getBoolean(acc, accdef) : accdef)) {
+                                assert rd != null;
+                                rd.newRule(ref, code, format, after, state, tmpstate);
+                            }
+                            break;
                         }
                     }
                 } else if (xml.getEventType() == XmlPullParser.END_TAG)

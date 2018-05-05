@@ -26,6 +26,7 @@ public final class CopyFragment extends DialogFragment {
         builder.setCancelable(true);
         builder.setPositiveButton(R.string.tCopy, new OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
+                //noinspection ConstantConditions
                 ((ClipboardManager) getActivity().getSystemService(
                         Context.CLIPBOARD_SERVICE)).setText(str);
                 dialog.dismiss();

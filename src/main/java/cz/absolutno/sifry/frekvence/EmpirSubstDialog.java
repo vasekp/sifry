@@ -65,7 +65,7 @@ public final class EmpirSubstDialog extends DialogFragment {
 
         layout = App.getInflater().inflate(R.layout.esubs_dialog, null);
         ((TextView) layout.findViewById(R.id.tvESDPuv)).setText(item.ord >= 0 ? item.orig : Utils.getCharDesc(item.orig.charAt(0), mezera));
-        GridView grid = (GridView) layout.findViewById(R.id.gvESDialog);
+        GridView grid = layout.findViewById(R.id.gvESDialog);
         grid.setAdapter(new AlphabetLA(item.repl));
 
         bld.setView(layout);
@@ -135,7 +135,7 @@ public final class EmpirSubstDialog extends DialogFragment {
         private final String orig;
         private final int cnt;
 
-        public AlphabetLA(String orig) {
+        AlphabetLA(String orig) {
             this.orig = orig;
             cnt = abc.count();
         }

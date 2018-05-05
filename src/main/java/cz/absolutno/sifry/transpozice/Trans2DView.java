@@ -6,7 +6,6 @@ import android.graphics.PointF;
 import android.graphics.RectF;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.v4.view.MotionEventCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
@@ -25,7 +24,7 @@ public abstract class Trans2DView extends TransView {
     public boolean onTouchEvent(MotionEvent e) {
         int cnt = e.getPointerCount();
         if (cnt >= 4) return false;
-        int action = MotionEventCompat.getActionMasked(e);
+        int action = e.getActionMasked();
         switch (action) {
             case MotionEvent.ACTION_DOWN:
                 motion = false;
@@ -42,7 +41,7 @@ public abstract class Trans2DView extends TransView {
             case MotionEvent.ACTION_POINTER_UP:
                 int j = 0;
                 for (int i = 0; i < cnt; i++) {
-                    if (i == MotionEventCompat.getActionIndex(e)) continue;
+                    if (i == e.getActionIndex()) continue;
                     lastX[j] = e.getX(i);
                     lastY[j] = e.getY(i);
                     j++;
@@ -124,12 +123,12 @@ public abstract class Trans2DView extends TransView {
             return ixMin;
     }
 
-    protected final float untransX(float xc, float yc) {
+    final float untransX(float xc, float yc) {
         float det = mx[0] * mx[3] - mx[1] * mx[2];
         return (mx[3] * (xc - mx[4]) - mx[2] * (yc - mx[5])) / det;
     }
 
-    protected final float untransY(float xc, float yc) {
+    final float untransY(float xc, float yc) {
         float det = mx[0] * mx[3] - mx[1] * mx[2];
         return (mx[0] * (yc - mx[5]) - mx[1] * (xc - mx[4])) / det;
     }
@@ -219,14 +218,14 @@ public abstract class Trans2DView extends TransView {
 
     protected abstract PointF get2DCoords(int i);
 
-    protected final Matrix getTrfMatrix() {
+    final Matrix getTrfMatrix() {
         Matrix m = new Matrix();
         float[] values = new float[]{mx[0], mx[2], mx[4], mx[1], mx[3], mx[5], 0, 0, 1};
         m.setValues(values);
         return m;
     }
 
-    protected final float getLineLength(float dx, float dy) {
+    final float getLineLength(float dx, float dy) {
         return (float) Math.sqrt((mx[0] * dx + mx[2] * dy) * (mx[0] * dx + mx[2] * dy) + (mx[1] * dx + mx[3] * dy) * (mx[1] * dx + mx[3] * dy));
     }
 
@@ -255,18 +254,18 @@ public abstract class Trans2DView extends TransView {
         float ow, oh, sz;
         float[] mx;
 
-        public SavedState(Parcelable in) {
+        SavedState(Parcelable in) {
             super(in);
         }
 
-        public void read(Trans2DView tv) {
+        void read(Trans2DView tv) {
             ow = tv.ow;
             oh = tv.oh;
             sz = tv.sz;
             mx = tv.mx;
         }
 
-        public SavedState(Parcel in) {
+        SavedState(Parcel in) {
             super(in);
             ow = in.readFloat();
             oh = in.readFloat();
@@ -284,7 +283,7 @@ public abstract class Trans2DView extends TransView {
             dest.writeFloatArray(mx);
         }
 
-        public void apply(Trans2DView tv) {
+        void apply(Trans2DView tv) {
             tv.mx = mx;
             tv.ow = ow;
             tv.oh = oh;

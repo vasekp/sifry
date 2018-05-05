@@ -40,7 +40,7 @@ public final class PolskyVFragment extends AbstractRFragment {
         adapter.setVar(var);
 
         View v = inflater.inflate(R.layout.gen_exp_list_layout, container, false);
-        ExpandableListView el = (ExpandableListView) v.findViewById(R.id.main);
+        ExpandableListView el = v.findViewById(R.id.main);
         el.setAdapter(adapter);
         el.setOnChildClickListener(Utils.copyChildClickListener);
 
@@ -50,7 +50,7 @@ public final class PolskyVFragment extends AbstractRFragment {
 
     private static final class PolskyVELA extends BaseExpandableListAdapter {
 
-        private final HashMap<String, PolskyKrizDecoder> pkHash = new HashMap<String, PolskyKrizDecoder>();
+        private final HashMap<String, PolskyKrizDecoder> pkHash = new HashMap<>();
         private int[][] triples;
         private boolean alt;
 
@@ -60,7 +60,7 @@ public final class PolskyVFragment extends AbstractRFragment {
         private final String[] permKlas, permAlt;
         private final String[] reflKlas, reflAlt;
 
-        public PolskyVELA() {
+        PolskyVELA() {
             Resources res = App.getContext().getResources();
             groups = res.getStringArray(R.array.saTVVPGroups);
             groupIDs = Utils.getIdArray(R.array.iaTVVPGroups);
@@ -76,12 +76,12 @@ public final class PolskyVFragment extends AbstractRFragment {
             }
         }
 
-        public void setData(int[][] triples) {
+        void setData(int[][] triples) {
             this.triples = triples;
             notifyDataSetChanged();
         }
 
-        public void setVar(int var) {
+        void setVar(int var) {
             alt = (var == R.id.idTDVPAlt);
         }
 
@@ -159,8 +159,8 @@ public final class PolskyVFragment extends AbstractRFragment {
         public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
             if (convertView == null)
                 convertView = App.getInflater().inflate(R.layout.gen_list_item, parent, false);
-            TextView tvDesc = (TextView) convertView.findViewById(R.id.desc);
-            TextView tvCont = (TextView) convertView.findViewById(R.id.cont);
+            TextView tvDesc = convertView.findViewById(R.id.desc);
+            TextView tvCont = convertView.findViewById(R.id.cont);
             tvDesc.setText(getChildDesc(groupPosition, childPosition));
             tvCont.setText(getChild(groupPosition, childPosition));
             return convertView;

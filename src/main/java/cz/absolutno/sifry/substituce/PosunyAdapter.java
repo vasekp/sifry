@@ -38,7 +38,7 @@ public class PosunyAdapter extends AbstractSubstAdapter {
         return String.format(patList, abc.chr(encode(0, position)), position, position == 0 ? 0 : (cnt - position));
     }
 
-    public int encode(int ord, int position) {
+    int encode(int ord, int position) {
         return (ord + position) % cnt;
     }
 

@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 import cz.absolutno.sifry.R;
 
-public final class CislaConv {
+final class CislaConv {
 
     public static int parseRoman(String s) {
         if (s.length() == 0) return 0;
@@ -96,22 +96,28 @@ public final class CislaConv {
         int des = (x / 10) % 10, jed = x % 10;
         for (int i = 0; i < des; i++)
             sb.append("X");
-        if (jed == 9) sb.append("IX");
-        else if (jed == 4) sb.append("IV");
-        else {
-            if (jed >= 5) {
-                sb.append("V");
-                jed -= 5;
-            }
-            for (int i = 0; i < jed; i++)
-                sb.append("I");
+        switch (jed) {
+            case 9:
+                sb.append("IX");
+                break;
+            case 4:
+                sb.append("IV");
+                break;
+            default:
+                if (jed >= 5) {
+                    sb.append("V");
+                    jed -= 5;
+                }
+                for (int i = 0; i < jed; i++)
+                    sb.append("I");
+                break;
         }
         return sb.toString();
     }
 
     public static String toPerm(int x) {
         if (x < 0) return "––––";
-        ArrayList<String> arr = new ArrayList<String>();
+        ArrayList<String> arr = new ArrayList<>();
         arr.add("A");
         arr.add("B");
         arr.add("C");

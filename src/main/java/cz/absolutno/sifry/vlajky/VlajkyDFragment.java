@@ -50,7 +50,7 @@ public final class VlajkyDFragment extends AbstractDFragment implements GestureO
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.vlajkyd_layout, container, false);
 
-        GestureOverlayView gestures = (GestureOverlayView) v.findViewById(R.id.gestVD);
+        GestureOverlayView gestures = v.findViewById(R.id.gestVD);
         gestures.addOnGesturePerformedListener(this);
         gestures.setGestureStrokeWidth(getResources().getDimension(R.dimen.vlajkyOkraj));
         gest = GestureLibraries.fromRawResource(getActivity(), R.raw.vlajky);
@@ -59,12 +59,12 @@ public final class VlajkyDFragment extends AbstractDFragment implements GestureO
         if (!gest.load()) getActivity().finish();
 
         svgs = VlajkySVGs.getInstance();
-        llOdhady = (LinearLayout) v.findViewById(R.id.listVDOdhady);
+        llOdhady = v.findViewById(R.id.listVDOdhady);
 
-        tvRes = (TextView) v.findViewById(R.id.tvRes);
+        tvRes = v.findViewById(R.id.tvRes);
         tvRes.setOnClickListener(Utils.copyClickListener);
 
-        ImageView ivBsp = (ImageView) v.findViewById(R.id.ivBsp);
+        ImageView ivBsp = v.findViewById(R.id.ivBsp);
         ivBsp.setOnClickListener(bspListener);
         ivBsp.setOnLongClickListener(clearListener);
 

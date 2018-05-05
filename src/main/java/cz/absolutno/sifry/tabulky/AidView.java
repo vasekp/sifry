@@ -52,11 +52,11 @@ public abstract class AidView extends View {
             active = sp.getBoolean("pref_tab_aid", active);
     }
 
-    public final boolean isAidActive() { /* Kontrola nad zobrazováním nápovědek je na volajícím */
+    protected final boolean isAidActive() { /* Kontrola nad zobrazováním nápovědek je na volajícím */
         return active;
     }
 
-    public final void setAidEntries(String[] list) {
+    protected final void setAidEntries(String[] list) {
         final int numEntries = llAid.getChildCount();
         if (list.length > numEntries) {
             LayoutInflater inflater = App.getInflater();
@@ -76,12 +76,12 @@ public abstract class AidView extends View {
         setAidHighlight(-1);
     }
 
-    public final void setAid(String aid) {
+    protected final void setAid(String aid) {
         setAidEntries(new String[]{aid});
         setAidHighlight(-1);
     }
 
-    public final void setAidHighlight(int highlight) {
+    protected final void setAidHighlight(int highlight) {
         final int numEntries = llAid.getChildCount();
         for (int i = 0; i < numEntries; i++)
             ((TextView) (llAid.getChildAt(i))).setTypeface(i == highlight ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
@@ -89,7 +89,7 @@ public abstract class AidView extends View {
             llAid.invalidate();
     }
 
-    public final void showAid(int x, int y) {
+    protected final void showAid(int x, int y) {
         int[] loc = new int[2];
         getLocationOnScreen(loc);
         if (pwAid.isShowing())
@@ -99,11 +99,11 @@ public abstract class AidView extends View {
         getParent().requestDisallowInterceptTouchEvent(true);
     }
 
-    public final void showAid(float x, float y) {
+    protected final void showAid(float x, float y) {
         showAid((int) x, (int) y);
     }
 
-    public final void hideAid() {
+    protected final void hideAid() {
         if (pwAid.isShowing())
             pwAid.dismiss();
     }

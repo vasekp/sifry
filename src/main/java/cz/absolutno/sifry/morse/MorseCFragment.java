@@ -47,20 +47,20 @@ public final class MorseCFragment extends AbstractCFragment {
         private final String[] items;
         private final String[] znaky;
         private final int[] itemIDs;
-        private final ArrayList<String> bin = new ArrayList<String>();
-        private final ArrayList<Integer> trits = new ArrayList<Integer>();
+        private final ArrayList<String> bin = new ArrayList<>();
+        private final ArrayList<Integer> trits = new ArrayList<>();
 
         private final MorseDecoder md;
 
-        public MorseCLA() {
+        MorseCLA() {
             items = App.getContext().getResources().getStringArray(R.array.saMCItems);
             itemIDs = Utils.getIdArray(R.array.iaMCItems);
             znaky = App.getContext().getResources().getStringArray(R.array.saMDZnaky);
             md = new MorseDecoder();
         }
 
-        public boolean load(String in) {
-            ArrayList<Integer> raw = new ArrayList<Integer>();
+        boolean load(String in) {
+            ArrayList<Integer> raw = new ArrayList<>();
             boolean res = md.encode(in, raw);
             this.in = md.decode(raw);
             bin.clear();
@@ -79,15 +79,15 @@ public final class MorseCFragment extends AbstractCFragment {
             return res;
         }
 
-        public ArrayList<Integer> getData() {
+        ArrayList<Integer> getData() {
             return trits;
         }
 
-        public String getVstup() {
+        String getVstup() {
             return in;
         }
 
-        public ArrayList<String> getBin() {
+        ArrayList<String> getBin() {
             return bin;
         }
 

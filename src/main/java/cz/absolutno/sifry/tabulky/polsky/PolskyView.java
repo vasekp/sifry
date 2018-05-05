@@ -8,7 +8,7 @@ import cz.absolutno.sifry.tabulky.AidView;
 
 public abstract class PolskyView extends AidView {
 
-    protected final PolskyKrizDecoder pk;
+    final PolskyKrizDecoder pk;
 
     public PolskyView(Context ctx, AttributeSet as) {
         super(ctx, as);

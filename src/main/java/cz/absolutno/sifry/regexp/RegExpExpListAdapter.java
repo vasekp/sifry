@@ -8,7 +8,7 @@ import android.widget.TextView;
 import cz.absolutno.sifry.App;
 import cz.absolutno.sifry.R;
 
-public final class RegExpExpListAdapter extends BaseExpandableListAdapter {
+final class RegExpExpListAdapter extends BaseExpandableListAdapter {
 
     private int matches = 0;
     private final RegExpNative re;

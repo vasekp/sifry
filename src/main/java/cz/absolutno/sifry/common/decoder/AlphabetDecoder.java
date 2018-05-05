@@ -13,11 +13,13 @@ public class AlphabetDecoder extends Decoder {
         this.abc = abc;
     }
 
-    public AlphabetDecoder(int cnt, String var) {
+    @SuppressWarnings("SameParameterValue")
+    protected AlphabetDecoder(int cnt, String var) {
         abc = Alphabet.getVariantInstance(cnt, var);
     }
 
-    public final void setVar(int cnt, String var) {
+    @SuppressWarnings("SameParameterValue")
+    protected final void setVar(int cnt, String var) {
         abc = Alphabet.getVariantInstance(cnt, var);
     }
 

@@ -1,5 +1,6 @@
 package cz.absolutno.sifry.tabulky.mobil;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -8,7 +9,6 @@ import android.graphics.Paint.Cap;
 import android.graphics.Typeface;
 import android.os.Handler;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.MotionEventCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SoundEffectConstants;
@@ -100,6 +100,7 @@ public final class MobilView extends AidView {
         }
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(MotionEvent e) {
         int cnt = e.getPointerCount();
@@ -107,7 +108,7 @@ public final class MobilView extends AidView {
 
         final int ix = index(e.getX(), e.getY());
 
-        switch (MotionEventCompat.getActionMasked(e)) {
+        switch (e.getActionMasked()) {
             case MotionEvent.ACTION_UP:
                 hnd.postDelayed(enterRunnable, 500);
                 break;

@@ -45,7 +45,7 @@ public final class Utils {
         Toast.makeText(App.getContext(), txt, Toast.LENGTH_SHORT).show();
     }
 
-    public static void copy(FragmentActivity activity, String str) {
+    private static void copy(FragmentActivity activity, String str) {
         copyExact(activity, str.replace('·', ' '));
     }
 
@@ -93,7 +93,7 @@ public final class Utils {
     public static ArrayList<Integer> getIdList(int resId) {
         TypedArray ta = App.getContext().getResources().obtainTypedArray(resId);
         final int len = ta.length();
-        ArrayList<Integer> arr = new ArrayList<Integer>(len);
+        ArrayList<Integer> arr = new ArrayList<>(len);
         for (int i = 0; i < len; i++)
             arr.add(ta.getResourceId(i, 0));
         ta.recycle();

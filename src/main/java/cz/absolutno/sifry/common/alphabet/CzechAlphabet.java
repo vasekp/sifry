@@ -9,7 +9,7 @@ public final class CzechAlphabet extends Alphabet {
     private final boolean ch, j, q, w, x;
     private static final Locale locale = new Locale("cs");
 
-    public CzechAlphabet() {
+    private CzechAlphabet() {
         ch = false;
         j = true;
         q = true;
@@ -17,7 +17,8 @@ public final class CzechAlphabet extends Alphabet {
         x = true;
     }
 
-    public CzechAlphabet(boolean ch) {
+    @SuppressWarnings("SameParameterValue")
+    private CzechAlphabet(boolean ch) {
         this.ch = ch;
         j = true;
         q = true;
@@ -25,7 +26,8 @@ public final class CzechAlphabet extends Alphabet {
         x = true;
     }
 
-    public CzechAlphabet(boolean ch, boolean j, boolean q, boolean w, boolean x) {
+    @SuppressWarnings("SameParameterValue")
+    private CzechAlphabet(boolean ch, boolean j, boolean q, boolean w, boolean x) {
         this.ch = ch;
         this.j = j;
         this.q = q;
@@ -45,7 +47,7 @@ public final class CzechAlphabet extends Alphabet {
         switch (maxCount) {
             case 36:
                 if (variant.equals("dig"))
-                    return new DigitsExtendedAlphabet<PlainEnglishAlphabet>(new PlainEnglishAlphabet());
+                    return new DigitsExtendedAlphabet<>(new PlainEnglishAlphabet());
                 else
                     return new CzechAlphabet();
             case 27:
@@ -154,9 +156,9 @@ public final class CzechAlphabet extends Alphabet {
     }
 
 
-    public final class CzechStringParser extends StringParser {
+    protected final class CzechStringParser extends StringParser {
 
-        public CzechStringParser(String s) {
+        CzechStringParser(String s) {
             super(normalize(s));
         }
 
