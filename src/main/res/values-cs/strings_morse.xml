@@ -5,13 +5,7 @@
     <string name="tMDTitle">Zadejte kód:</string>
     <string name="tMDReseni">Řešení a varianty:</string>
 
-    <string name="tMTransmit">Odvysílat</string>
-    <string name="tMTMod">Odvysílat pomocí:</string>
-    <string name="tMTSpeed">Rychlost:</string>
-    <string name="tMTFreq">Výška tónu:</string>
-    <string name="tMTVol">Hlasitost:</string>
-	
-	
+
 <string name="tHelpMorse"><![CDATA[
 <h1>Morseova abeceda</h1>
 
@@ -35,10 +29,6 @@ Morseovy abecedy je zobrazováno v několika variantách:<br/>
 – přímá reprezentace pomocí teček, čárek a oddělovačů,<br/>
 – jednoduchá substituce tečky za 1, čárky za 2 a oddělovače za 0,<br/>
 – reprezentace etap zapnutí (1) a vypnutí (0) signálního světla nebo tónu.</p>
-
-<p>Komponenta také nabízí světelně nebo zvukově zašifrovaný vstup skutečně odvysílat.
-<i>Poznámka:</i> nastavení hlasitosti zvukového výstupu podléhá systémové hlasitosti médií.
-Nejvyšší hlasitost nabízená aplikací je tedy stále omezena nastavením hlasitosti v Androidu.</p>  
 ]]></string>
 
 
@@ -136,17 +126,6 @@ Nejvyšší hlasitost nabízená aplikací je tedy stále omezena nastavením hl
         <item>@id/idMCPrimo</item>
         <item>@id/idMC120</item>
         <item>@id/idMCSignal</item>
-    </array>
-
-
-    <string-array name="saMTMod">
-        <item>Světlo blesku</item>
-        <item>Zvuk</item>
-    </string-array>
-
-    <array name="iaMTMod">
-        <item>@id/idMTSvetlo</item>
-        <item>@id/idMTZvuk</item>
     </array>
 
 </resources>

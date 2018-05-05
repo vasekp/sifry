@@ -5,17 +5,7 @@
     <string name="tMDTitle">Enter the signals:</string>
     <string name="tMDReseni">Plaintext incl. variants:</string>
 
-    <string name="tMTransmit">Transmit</string>
-    <string name="tMTMod">Means of transmit:</string>
-    <string name="tMTSpeed">Speed:</string>
-    <string name="tMTFreq">Pitch:</string>
-    <string name="tMTVol">Volume:</string>
 
-    <string name="patMTSpeed" translatable="false">%d WPM</string>
-    <string name="patMTFreq" translatable="false">%d Hz</string>
-    <string name="patMTVol" translatable="false">%d %%</string>
-	
-	
 <string name="tHelpMorse"><![CDATA[
 <h1>Morse Code</h1>
 
@@ -39,10 +29,6 @@ encodings:<br/>
 – direct encoding into dashes, dots, and separators,<br/>
 – 1 for a dot, 2 for a dash, 0 for a separator,<br/> 
 – the \"on\" (1) and \"off\" (0) states of a signalling device.</p>
-
-<p>Once encoded into Morse code, the signal can also be actually transmitted using the <i>Transmit</t>
-tab. <i>NB</i> that when sound output is selected, the volume is set relative to the system-wide
-media volume.</p>
 ]]></string>
 
 
@@ -139,17 +125,6 @@ media volume.</p>
         <item>@id/idMCPrimo</item>
         <item>@id/idMC120</item>
         <item>@id/idMCSignal</item>
-    </array>
-
-
-    <string-array name="saMTMod">
-        <item>Flash light</item>
-        <item>Sound</item>
-    </string-array>
-
-    <array name="iaMTMod">
-        <item>@id/idMTSvetlo</item>
-        <item>@id/idMTZvuk</item>
     </array>
 
 </resources>
