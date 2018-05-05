@@ -3,12 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="cz.absolutno.sifry"
-    android:versionCode="2104"
-    android:versionName="2.1">
+    android:versionCode="2200"
+    android:versionName="2.2">
 
     <uses-sdk
-        android:minSdkVersion="9"
-        android:targetSdkVersion="23"
+        android:minSdkVersion="14"
+        android:targetSdkVersion="26"
         tools:ignore="GradleOverrides"/>
 
     <uses-permission
