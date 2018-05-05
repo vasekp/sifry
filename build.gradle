@@ -13,15 +13,6 @@ android {
             targetCompatibility JavaVersion.VERSION_1_7
         }
 
-        /* Until Google makes Gradle usable for NDK I'm refusing (after 5 wasted hours) to find any workarounds.
-         * If you want to modify any NDK code, go to src/main/jni and run manually:
-         *  ndk-build
-         */
-        /*ndk {
-            moduleName "regrep"
-            ldLibs "android" "pcre"
-        }*/
-
         sourceSets.main {
             jniLibs.srcDir "src/main/libs"
             jni.srcDirs = []
@@ -32,6 +23,12 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
         }
     }
 }
