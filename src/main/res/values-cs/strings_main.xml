@@ -2,7 +2,6 @@
 <resources>
 
     <string name="app_name">Šifrovací pomůcky</string>
-    <string name="tExportDir">Šifry</string>
 
     <string name="tVstup">Vstup:</string>
     <string name="tVystup">Výstup:</string>
@@ -12,10 +11,7 @@
     <string name="tEncode">Zašifrovat</string>
     <string name="tDecode">Dešifrovat</string>
     <string name="tCopy">Kopírovat</string>
-    <string name="tSave">Uložit</string>
-    <string name="tSend">Odeslat</string>
-    <string name="tExport">Exportovat</string>
-    <string name="tFilename">Uložit jako:</string>
+    <string name="tShare">Sdílet</string>
     <string name="tCtxCopy">Kopírovat</string>
     <string name="tCtxPaste">Vložit</string>
     <string name="tRef">Reference</string>
@@ -40,7 +36,6 @@
     <string name="tErrCopy">Žádný text</string>
     <string name="tErrPaste">Schránka je prázdná</string>
     <string name="tErrEncode">Některé znaky nebyly rozpoznány a byly přeskočeny.</string>
-    <string name="tErrFile">Chyba přístupu k souboru.</string>
     <string name="tErrVar">Je třeba nejprve zadat vstup.</string>
 
 
@@ -197,7 +192,7 @@ nyní můžete komponentu používat přímo.</p>
 <h1>Novinky ve verzi 2.2</h1>
 
 – Minimální verze Androidu 4.0.1 (Ice Cream Sandwich)<br/>
-– Odstraněno vysílání morseovky (není nadále třeba přístup k fotoaparátu)<br/>
+– Odstraněno vysílání morseovky a export souborů (nejsou nadále vyžadována žádná oprávnění)<br/>
 – Nově podporovány ARM64 procesory<br/>
 – Opravy chyb<br/>
 

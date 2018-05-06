@@ -39,7 +39,7 @@ pohledem vysílajícího a přijímajícího člověka), opět ve všech osmi mo
 
 <p>V záložce <i>Zašifrovat</i> můžete text do semaforové abecedy zašifrovat. Nabízí se grafická
 reprezentace pomocí obrázků postavičky s vlajkami. Na černém pozadí obrazovky aplikace jsou bílé,
-ale při exportu do obrázkového souboru se vykreslí jako černá na bílém. Aplikace dále nabízí
+ale při exportu (sdílení) se vykreslí jako černá na bílém. Aplikace dále nabízí
 reprezentaci pomocí dvojic číslic 1 až 8, kde 1 odpovídá směru dolů a další čísla postupují po
 směru hodinových ručiček (takže semaforovým znakům pro písmena A, B, C, …, G je přiřazeno označení
 12, 13, 14, …, 18).</p>

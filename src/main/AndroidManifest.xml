@@ -3,17 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="cz.absolutno.sifry"
-    android:versionCode="2200"
+    android:versionCode="2201"
     android:versionName="2.2">
 
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="26"
         tools:ignore="GradleOverrides"/>
-
-    <uses-permission
-        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        android:maxSdkVersion="18" />
 
     <application
         android:hardwareAccelerated="true"
@@ -113,6 +109,17 @@
             android:name="cz.absolutno.sifry.regexp.RegExpActivity"
             android:icon="@drawable/ic_regexp"
             android:label="@string/cptRegExp" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="cz.absolutno.sifry.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/paths"/>
+        </provider>
+
     </application>
 
 </manifest>

@@ -129,9 +129,4 @@ public final class Utils {
             return "\"" + String.valueOf(c) + "\"";
     }
 
-
-    public static String normalizeFN(String in) {
-        return in.replaceAll("[\\\\/?*:\"<>|]", "-");
-    }
-
 }

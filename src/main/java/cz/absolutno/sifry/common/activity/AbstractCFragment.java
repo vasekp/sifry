@@ -29,8 +29,6 @@ import cz.absolutno.sifry.common.widget.DrawOnWhiteView;
 
 public abstract class AbstractCFragment extends AbstractDFragment {
 
-    private static final String FN_COPY = "copytmp.png";
-
     protected abstract boolean encode(String input);
 
     protected abstract void packData(Bundle data);
@@ -158,21 +156,22 @@ public abstract class AbstractCFragment extends AbstractDFragment {
             c.restoreToCount(d);
             c.translate(w, 0);
         }
-        FileOutputStream fos;
         try {
-            fos = getActivity().openFileOutput(FN_COPY, Context.MODE_WORLD_READABLE);
+            final String fname = getContext().getString(R.string.tmpBitmapName);
+            FileOutputStream fos;
+            fos = getActivity().openFileOutput(fname, Context.MODE_PRIVATE);
             bmp.compress(CompressFormat.PNG, 100, fos);
             fos.close();
+            Bundle args = new Bundle();
+            args.putString(App.VSTUP, getActivity().getFileStreamPath(fname).toString());
+            args.putInt(App.VSTUP1, bmp.getWidth());
+            args.putInt(App.VSTUP2, bmp.getHeight());
+            BitmapFragment dialog = new BitmapFragment();
+            dialog.setArguments(args);
+            dialog.show(getActivity().getSupportFragmentManager(), "copy");
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Bundle args = new Bundle();
-        args.putString(App.VSTUP, getActivity().getFileStreamPath(FN_COPY).toString());
-        args.putInt(App.VSTUP1, bmp.getWidth());
-        args.putInt(App.VSTUP2, bmp.getHeight());
-        BitmapFragment dialog = new BitmapFragment();
-        dialog.setArguments(args);
-        dialog.show(getActivity().getSupportFragmentManager(), "copy");
     }
 
     protected final OnItemClickListener genItemClickListener = new OnItemClickListener() {

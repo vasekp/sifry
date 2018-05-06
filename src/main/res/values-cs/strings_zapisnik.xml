@@ -2,7 +2,6 @@
 <resources>
 
     <string name="cptZapisnik">Zápisník stanovišť</string>
-    <string name="tZDefault">Zápisník</string>
     <string name="tZNew">Nové stanoviště…</string>
     <string name="tZPozn">…</string>
     <string name="tZClearQ">Smazat všechny záznamy?</string>
@@ -23,22 +22,13 @@
     <string name="tZDPrichod">Čas příchodu:</string>
     <string name="tZDOdchod">Čas opuštění:</string>
 
-    <string name="tZENazev">Název souboru:</string>
-    <string name="tZEPole">Exportovat pole:</string>
-    <string name="tZEJak">Po exportu:</string>
-    <string name="tZEExt">Otevřít v externí aplikaci</string>
-    <string name="tZEErrEmpty">Zápisník je prázdný.</string>
-    <string name="tZEErrStorage">Externí úložiště nedostupné.</string>
-    <string name="patZESuccess">Uloženo jako %s.</string>
-
 
 <string name="tHelpZapisnik"><![CDATA[
 <h1>Zápisník</h1>
 
 <p>Tato komponenta nabízí funkci zápisníku kontrolních stanovišť navštívených například během
 šifrovací hry – času příchodu, odchodu, nalezeného řešení a dalších informací. Zadané hodnoty
-jsou interně uchovávány i po opuštění aplikace a je možno je i exportovat pro uložení nebo
-zpracování v jiném programu.</p>
+jsou interně uchovávány i po opuštění aplikace.</p>
 
 
 <h3>Základní ovládání</h3>
@@ -53,18 +43,6 @@ nyní předvyplněný čas odchodu a nabízející možnost zapsat si řešení 
 <p>Jestliže kliknete na některé z již plně vyplněných stanovišť, zobrazený dialog nabídne možnost
 změny libovolných údajů souvisejících s příchodem i odchodem. Stejně tak je možno si nechat zobrazit
 plnou verzi dialogu hned při příchodu.</p>
-
-
-<h3>Export</h3>
-
-<p>Pro archivaci záznamů je možno využít záložky <i>Exportovat</i>. Export vždy probíhá do textového
-formátu CSV (comma-separated values), který je rozeznáván všemi běžnými kancelářskými aplikacemi.
-Aplikace nabízí možnost zvolit si, která pole se mají ve výsledném souboru objevit.</p>
-
-<p>Vytvořený soubor se uloží na paměť zařízení v adresáři \"Šifry\" (jméno nově vytvořeného souboru
-se pak krátce zobrazí). <i>Šifrovací pomůcky</i> nabízejí možnost exportovaný soubor také přímo
-otevřít v některém z nainstalovaných tabulkových editorů; k uložení souboru do zařízení však
-dojde v každém případě.</p> 
 
 
 <h3>Nastavení</h3>

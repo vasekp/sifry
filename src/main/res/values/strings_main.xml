@@ -2,7 +2,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <string name="app_name">Puzzlehunt Assistant</string>
-    <string name="tExportDir">Puzzlehunt Assistant</string>
 
     <string name="tVstup">Input:</string>
     <string name="tVystup">Output:</string>
@@ -12,10 +11,7 @@
     <string name="tEncode">Encrypt</string>
     <string name="tDecode">Decrypt</string>
     <string name="tCopy">Copy</string>
-    <string name="tSave">Save</string>
-    <string name="tSend">Send</string>
-    <string name="tExport">Export</string>
-    <string name="tFilename">Save as:</string>
+    <string name="tShare">Share</string>
     <string name="tCtxCopy">Copy</string>
     <string name="tCtxPaste">Paste</string>
     <string name="tRef">Reference</string>
@@ -26,7 +22,7 @@
 
     <string name="patCopyCap">Text: \"%s\"</string>
     <string name="patBitmapCap">Bitmap: %1$d × %2$d, %3$d B</string>
-    <string name="patBitmapFN" translatable="false">%s.png</string>
+    <string name="tmpBitmapName" translatable="false">export.png</string>
     <string name="tNotFound">Not found!</string>
     <string name="icon">icon</string>
 
@@ -42,7 +38,6 @@
     <string name="tErrCopy">No text copied</string>
     <string name="tErrPaste">Clipboard is empty</string>
     <string name="tErrEncode">Some characters were not recognized and were omitted.</string>
-    <string name="tErrFile">File access error.</string>
     <string name="tErrVar">Please enter the input first.</string>
 
     <string name="tSipkaL" translatable="false">◀</string>
@@ -206,7 +201,7 @@ component directly.</p>
 <h1>Changes in v2.2</h1>
 
 – Minimum Android version bumped to 4.0.1 (Ice Cream Sandwich)<br/>
-– Transmit Morse no longer supported (removes need for camera permission)<br/>
+– Morse transmission and file export no longer supported (app no more requires any extra permissions)<br/>
 – ARM64 devices now supported<br/>
 – Bug fixes<br/>
 

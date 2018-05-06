@@ -32,7 +32,7 @@ public final class CopyFragment extends DialogFragment {
                 dialog.dismiss();
             }
         });
-        builder.setNeutralButton(R.string.tSend, new OnClickListener() {
+        builder.setNeutralButton(R.string.tShare, new OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_SEND);

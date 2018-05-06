@@ -2,7 +2,6 @@
 <resources>
 
     <string name="cptZapisnik">Checkpoint Logbook</string>
-    <string name="tZDefault">Notepad</string>
     <string name="tZNew">Add checkpoint…</string>
     <string name="tZPozn">…</string>
     <string name="tZClearQ">Delete all entries?</string>
@@ -23,23 +22,12 @@
     <string name="tZDPrichod">Check-in time:</string>
     <string name="tZDOdchod">Check-out time:</string>
 
-    <string name="tZENazev">File name:</string>
-    <string name="patZENazev" translatable="false">%s.csv</string>
-    <string name="tZEPole">Fields to export:</string>
-    <string name="tZEJak">After export:</string>
-    <string name="tZEExt">Send to another application</string>
-    <string name="tZEErrEmpty">No data to export.</string>
-    <string name="tZEErrStorage">External storage not writeable.</string>
-    <string name="patZESuccess">Saved as %s.</string>
-	
 	
 <string name="tHelpZapisnik"><![CDATA[
 <h1>Checkpoint Logbook</h1>
 
 <p>You can use this component to log the arrivals, departures, solution etc. in multi–level
-puzzlehunt games. All the contents of the logbook are saved between sessions and it is also
-possible to export the data for an independent storage or post–processing in an external
-application.</p>
+puzzlehunt games. All the contents of the logbook are saved between sessions.</p>
 
 
 <h3>Basic usage</h3>
@@ -57,18 +45,6 @@ solution of the puzzle and optional comments along with the departure time.</p>
 associated with it. The full dialog comprises both the arrival- and departure-related fields
 together. <i>NB</i> that it is also possible to reveal the full version of the dialog at
 arrival using the <i>Unfold</i> button.</p>
-
-
-<h3>Export</h3>
-
-<p>For the purpose of archiving or post-processing, the records can be exported in CSV (comma-separated
-values) format using the <i>Export</i> tab. The format used in the export is recognized by all major
-spreadsheet editors. You can filter the entries to appear in the exported file.</p>
-
-<p>The file is exported in a folder called \"Puzzlehunt Assistant\" on the default storage device of
-your system; for convenience, the name of the newly created file appears shortly. The app also
-provides an interface to open the file in some editors installed on your device right after the
-export. However, the exported file is stored in the \"Puzzlehunt Assistant\" in either case.</p>
 
 
 <h3>Preferences</h3>

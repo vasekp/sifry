@@ -51,6 +51,7 @@ public final class EmpirSubstFragment extends AbstractDFragment {
         return HAS_CLEAR | HAS_COPY;
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,7 +70,6 @@ public final class EmpirSubstFragment extends AbstractDFragment {
         rebuildHash();
 
         if (savedInstanceState != null) {
-            //noinspection unchecked
             hash = (HashMap<String, SubsItem>) savedInstanceState.getSerializable(App.DATA);
             sort = savedInstanceState.getInt(App.SPEC);
         } else

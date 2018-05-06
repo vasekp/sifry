@@ -88,7 +88,7 @@ telefonu má díky nevyužité klávese 1 a díky více písmenům na 7 a 9 jen 
 <p>Záložka <i>Zašifrovat</i> nabízí možnost do jednotlivých šifrovacích tabulek text zakódovat. Možnosti se
 liší podle zvolené šifrovací tabulky:</p>
 
-<p><b>Velký polský kříž</b>: grafická reprezentace (bílá na černém, při exportu do souboru černá na bílém),
+<p><b>Velký polský kříž</b>: grafická reprezentace (bílá na černém, při sdílení obrázku černá na bílém),
 souřadnice v pořadí řádek–sloupec–poloha tečky (v případě alternativního rozložení brány jako
 tabulka–řádek–sloupec) a šifra trifid ve variantách řádek–sloupec–poloha a sloupec–řádek–poloha
 (v alternativním rozložení tabulka–řádek–sloupec a tabulka–sloupec–řádek).</p>
