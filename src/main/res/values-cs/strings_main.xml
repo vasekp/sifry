@@ -175,7 +175,7 @@ Zdrojový kód můžete nalézt na adrese:<br/>
 
 <p>Verze %s</p>
 
-<p>© 2012–2015 Vašek Potoček</p>
+<p>© 2012–2018 Vašek Potoček</p>
 
 <p>Hlavní testeři:<br/>
 – Martin Polívka<br/>
@@ -194,12 +194,18 @@ nyní můžete komponentu používat přímo.</p>
 
 
 <string name="tHelpNews"><![CDATA[
-<h1>Novinky ve verzi 2.1</h1>
+<h1>Novinky ve verzi 2.2</h1>
 
-– Slovníková data přibalena v hlavním APK<br/>
-– Konec podpory systémů Android 2.2 a starších<br/>
+– Minimální verze Androidu 4.0.1 (Ice Cream Sandwich)<br/>
+– Odstraněno vysílání morseovky (není nadále třeba přístup k fotoaparátu)<br/>
+– Nově podporovány ARM64 procesory<br/>
+– Opravy chyb<br/>
 
 <h3>Starší verze</h3>
+
+<h5>Verze 2.1 (28.7.2015)</h5>
+– Slovníková data přibalena v hlavním APK<br/>
+– Konec podpory systémů Android 2.2 a starších<br/>
 
 <h5>Verze 2.0 (21.1.2014)</h5>
 – Nápověda ke všem položkám<br/>
