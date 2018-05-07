@@ -7,6 +7,7 @@
         android:key="pref_locale"
         android:title="@string/prefLocale"
         android:entries="@array/saJazyky"
-        android:entryValues="@array/saLocale" />
+        android:entryValues="@array/saLocale"
+        android:defaultValue=""/>
 
 </PreferenceScreen>
