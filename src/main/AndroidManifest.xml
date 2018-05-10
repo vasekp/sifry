@@ -3,8 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="cz.absolutno.sifry"
-    android:versionCode="2202"
-    android:versionName="2.2">
+    android:versionCode="2203"
+    android:versionName="2.2"
+    android:installLocation="auto">
 
     <uses-sdk
         android:minSdkVersion="14"
