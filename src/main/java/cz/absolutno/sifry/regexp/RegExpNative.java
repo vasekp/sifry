@@ -18,18 +18,15 @@ public final class RegExpNative {
         public static final int SIZE = 4;
     }
 
-    @SuppressWarnings("FieldCanBeLocal")
-    private final AssetManager mgr; // We need to keep an explicit reference as long as re is running.
+    private long nativeContext;
 
-    private native void init(AssetManager mgr, String fn);
-
-    private native void swtch(String fn);
+    private native void init();
 
     public native void free();
 
     private native void nativeFinalize();
 
-    public native void startThread(String re[]);
+    public native void startThread(AssetManager mgr, String fn, String re[]);
 
     public native void stopThread();
 
@@ -41,13 +38,8 @@ public final class RegExpNative {
 
     public native String getError();
 
-    public RegExpNative(String filename) {
-        mgr = App.getContext().getAssets();
-        init(mgr, "raw/" + filename);
-    }
-
-    public void switchFilename(String filename) {
-        swtch("raw/" + filename);
+    public RegExpNative() {
+        init();
     }
 
     @Override

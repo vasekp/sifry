@@ -42,12 +42,4 @@ public final class RegExpActivity extends BottomBarActivity {
             frag.loadRE(re);
     }
 
-    @Override
-    protected void onPreferencesChanged() {
-        super.onPreferencesChanged();
-        ReferenceFragment frag = (ReferenceFragment) getSupportFragmentManager().findFragmentByTag("ref");
-        if (frag != null)
-            frag.updateFilename();
-    }
-
 }

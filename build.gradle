@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-
     defaultConfig {
         applicationId "cz.absolutno.sifry"
         minSdkVersion 14
@@ -18,14 +17,12 @@ android {
             jni.srcDirs = []
         }
     }
-
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
-
     externalNativeBuild {
         cmake {
             path "CMakeLists.txt"

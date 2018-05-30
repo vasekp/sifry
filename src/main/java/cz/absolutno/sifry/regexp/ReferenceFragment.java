@@ -15,21 +15,7 @@ public final class ReferenceFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRetainInstance(true);
-        re = new RegExpNative(getFilename());
-    }
-
-    public void updateFilename() {
-        re.switchFilename(getFilename());
-    }
-
-    private String getFilename() {
-        String filename = "";
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        if (sp != null)
-            filename = sp.getString("pref_re_dictionary", filename);
-        if (filename.length() == 0)
-            filename = getString(R.string.pref_re_dictionary_default);
-        return filename;
+        re = new RegExpNative();
     }
 
     @Override

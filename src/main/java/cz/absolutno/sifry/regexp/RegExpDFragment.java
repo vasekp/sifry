@@ -1,7 +1,9 @@
 package cz.absolutno.sifry.regexp;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -87,10 +89,20 @@ public final class RegExpDFragment extends AbstractDFragment {
                         ((EditText) getView().findViewById(idET[i])).getText().toString();
             }
             adapter.clear();
-            re.startThread(zad);
+            re.startThread(getContext().getAssets(), getFilename(), zad);
             launchRefresh();
         }
     };
+
+    private String getFilename() {
+        String filename = "";
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        if (sp != null)
+            filename = sp.getString("pref_re_dictionary", filename);
+        if (filename.length() == 0)
+            filename = getString(R.string.pref_re_dictionary_default);
+        return "raw/" + filename;
+    }
 
     @SuppressWarnings("ConstantConditions")
     private void updateGoButton() {
