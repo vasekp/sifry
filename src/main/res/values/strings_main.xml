@@ -185,14 +185,12 @@ component directly.</p>
     <string-array name="saLicence" translatable="false">
         <item>%1$s v%2$s</item>
         <item>svg-android v1.1</item>
-        <item>PCRE library v8.31</item>
         <item>%s</item>
     </string-array>
 
     <array name="iaLicence" translatable="false">
         <item>@raw/lic_sifry</item>
         <item>@raw/lic_svg</item>
-        <item>@raw/lic_pcre</item>
         <item>@raw/lic_dict</item>
     </array>
 	
