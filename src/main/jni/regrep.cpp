@@ -3,20 +3,13 @@
 #include <utility>
 #include <regex>
 #include <thread>
+#include <mutex>
 
 #include <jni.h>
 #include <android/asset_manager_jni.h>
 
+constexpr const char* RetClass = "cz/absolutno/sifry/regexp/RegExpNative$Report";
 constexpr std::size_t maxSavedMatches = 10000;
-
-enum class Error {
-    NONE = 0,
-    REGEX,
-    THREAD,
-    NUMPAT,
-    ASSET,
-    READ
-};
 
 class AssetRef {
     JavaVM* jvm;
@@ -58,13 +51,23 @@ public:
 };
 
 class Context {
-public:
-    std::vector<std::string> matches{};
+    std::thread worker{};
     volatile std::atomic_bool stopFlag{false};
     bool running{false};
-    Error err{Error::NONE};
-    std::size_t size{0}, pos{0}, matchCount{0};
-    std::thread worker{};
+
+    std::vector<std::string> matches{};
+    unsigned matchCount{0};  // the full count: the vector will only store first maxSavedMatches
+    std::string error{};
+    float progress{0};
+
+    std::mutex progressMutex{};
+
+    struct Report {
+        bool running;
+        float progress;
+        bool error;
+        unsigned matchCount;
+    };
 
 public:
     ~Context() {
@@ -74,24 +77,29 @@ public:
 
     void start(AssetRef&& asset, std::vector<std::string>&& patterns);
     void stop();
+    void free();
+    void fail(const std::string& err);
 
-    void free() {
-        stop();
-        matches.clear();
-        matchCount = size = pos = 0;
+    Report report();
+
+    const std::string& getError() {
+        return error;
     }
-};
 
-void threadMain(Context* ctx, AssetRef&& asset, std::vector<std::string>&& patterns);
+    std::string getMatch(std::size_t index);
+
+private:
+    static void threadMain(Context* ctx, AssetRef&& asset, std::vector<std::string>&& patterns);
+};
 
 
 void Context::start(AssetRef&& asset, std::vector<std::string>&& patterns) {
-    stop();
+    free();
     try {
         worker = std::thread{threadMain, this, std::move(asset), std::move(patterns)};
     }
     catch(const std::system_error&) {
-        err = Error::THREAD;
+        error = "Unable to start thread";
     }
 }
 
@@ -103,6 +111,28 @@ void Context::stop() {
     stopFlag = false;
 }
 
+void Context::free() {
+    stop();
+    matches.clear();
+    matchCount = 0;
+    progress = 0;
+    error = "";
+}
+
+void Context::fail(const std::string &err) {
+    free();
+    error = err;
+}
+
+Context::Report Context::report() {
+    std::lock_guard<std::mutex> lock{progressMutex};
+    return {running, progress, !error.empty(), matchCount};
+}
+
+std::string Context::getMatch(std::size_t index) {
+    std::lock_guard<std::mutex> lock{progressMutex};
+    return index < matches.size() ? matches[index] : "";
+}
 
 
 std::string strFromJava(JNIEnv *env, jstring jfn) {
@@ -125,6 +155,7 @@ void storeContext(JNIEnv *env, jobject obj, Context *ctx) {
     jlong addr = reinterpret_cast<jlong>(ctx);
     env->SetLongField(obj, fld, addr);
 }
+
 
 extern "C" {
 
@@ -152,7 +183,11 @@ JNIEXPORT void JNICALL Java_cz_absolutno_sifry_regexp_RegExpNative_startThread(J
         jstring* js = reinterpret_cast<jstring*>(&sobj);
         patterns.push_back(strFromJava(env, *js));
     }
-    ctx->start(AssetRef{env, jmgr, strFromJava(env, jfn)}, std::move(patterns));
+    try {
+        ctx->start(AssetRef{env, jmgr, strFromJava(env, jfn)}, std::move(patterns));
+    } catch(std::runtime_error& e) {
+        ctx->fail(e.what());
+    }
 }
 
 JNIEXPORT void JNICALL Java_cz_absolutno_sifry_regexp_RegExpNative_stopThread(JNIEnv *env , jobject obj) {
@@ -160,41 +195,40 @@ JNIEXPORT void JNICALL Java_cz_absolutno_sifry_regexp_RegExpNative_stopThread(JN
 }
 
 JNIEXPORT jboolean JNICALL Java_cz_absolutno_sifry_regexp_RegExpNative_isRunning(JNIEnv *env , jobject obj) {
-    return static_cast<jboolean>(getContext(env, obj)->running ? JNI_TRUE : JNI_FALSE);
+    return static_cast<jboolean>(getContext(env, obj)->report().running ? JNI_TRUE : JNI_FALSE);
 }
 
-JNIEXPORT jintArray JNICALL Java_cz_absolutno_sifry_regexp_RegExpNative_getProgress(JNIEnv *env , jobject obj) {
+JNIEXPORT jobject JNICALL Java_cz_absolutno_sifry_regexp_RegExpNative_getProgress(JNIEnv *env , jobject obj) {
     Context* ctx = getContext(env, obj);
-    jint tmp[5] = {ctx->running, (int)(ctx->err), (int)ctx->matchCount, (int)ctx->pos, (int)ctx->size};
-    jintArray ret;
-    ret = env->NewIntArray(5);
-    env->SetIntArrayRegion(ret, 0, 5, tmp);
+    auto report = ctx->report();
+    jclass cls = env->FindClass(RetClass);
+    jmethodID ctor = env->GetMethodID(cls, "<init>", "()V");
+    jobject ret = env->NewObject(cls, ctor);
+    jfieldID fld = env->GetFieldID(cls, "running", "Z");
+    env->SetBooleanField(ret, fld, (jboolean)report.running);
+    fld = env->GetFieldID(cls, "error", "Z");
+    env->SetBooleanField(ret, fld, (jboolean)report.error);
+    fld = env->GetFieldID(cls, "matches", "I");
+    env->SetIntField(ret, fld, (jint)report.matchCount);
+    fld = env->GetFieldID(cls, "progress", "F");
+    env->SetFloatField(ret, fld, report.progress);
     return ret;
 }
 
-JNIEXPORT jstring JNICALL Java_cz_absolutno_sifry_regexp_RegExpNative_getResult(JNIEnv *env, jobject obj, jint ix) {
+JNIEXPORT jstring JNICALL Java_cz_absolutno_sifry_regexp_RegExpNative_getResult(JNIEnv *env, jobject obj, jint index) {
     Context* ctx = getContext(env, obj);
-    if(ix < 0 || ix >= ctx->matches.size()) return NULL;
-    return env->NewStringUTF(ctx->matches[ix].c_str());
+    return env->NewStringUTF(ctx->getMatch(std::size_t(index)).c_str());
 }
 
 JNIEXPORT jstring JNICALL Java_cz_absolutno_sifry_regexp_RegExpNative_getError(JNIEnv *env, jobject obj) {
     Context* ctx = getContext(env, obj);
-    switch(ctx->err) {
-        //case Error::PCRE:    return env->NewStringUTF(pcreerror);
-        case Error::REGEX:   return env->NewStringUTF("bad regex");
-        case Error::THREAD:  return env->NewStringUTF("pthread_create failed");
-        /*case Error::NUMPAT:  return env->NewStringUTF("Illegal number of patterns");*/
-        case Error::ASSET:   return env->NewStringUTF("Cannot find asset");
-        case Error::READ:    return env->NewStringUTF("Read error");
-        default: return NULL;
-    }
+    return env->NewStringUTF(ctx->getError().c_str());
 }
 
 }
 
 
-void threadMain(Context* ctx, AssetRef&& asset, std::vector<std::string>&& patterns) {
+void Context::threadMain(Context* ctx, AssetRef&& asset, std::vector<std::string>&& patterns) {
     constexpr unsigned bufAlloc = 1024;
     char buffer[bufAlloc];
     unsigned bufPos = 0, bufSize = 0;
@@ -213,8 +247,6 @@ void threadMain(Context* ctx, AssetRef&& asset, std::vector<std::string>&& patte
             REs.push_back({std::move(re), !inv});
         }
 
-        ctx->size = size_t(AAsset_getLength(asset));
-        ctx->pos = 0;
         ctx->matches.clear();
         ctx->matchCount = 0;
         ctx->running = true;
@@ -257,17 +289,21 @@ void threadMain(Context* ctx, AssetRef&& asset, std::vector<std::string>&& patte
             if (it == REs.end()) { // all tests passed
                 auto pos = line.find(':');
                 if(pos != std::string::npos) {
+                    std::lock_guard<std::mutex> lock{ctx->progressMutex};
                     if(++ctx->matchCount <= maxSavedMatches)
                         ctx->matches.push_back(line.substr(pos + 1));
                 }
             }
 
-            ctx->pos = ctx->size - AAsset_getRemainingLength(asset);
+            std::size_t assetSize = size_t(AAsset_getLength(asset));
+            std::size_t assetPos = assetSize - AAsset_getRemainingLength(asset);
+            ctx->progress = (float)(assetPos) / assetSize;
         }
     } catch (const std::regex_error& e) {
-        ctx->err = Error::REGEX;
+        using namespace std::string_literals;
+        ctx->error = "Bad regex: "s + e.what();
     } catch (const std::runtime_error& e) {
-        ctx->err = Error::ASSET;
+        ctx->error = e.what();
     }
     ctx->running = false;
 }

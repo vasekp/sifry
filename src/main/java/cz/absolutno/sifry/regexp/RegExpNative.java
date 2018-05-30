@@ -2,20 +2,10 @@ package cz.absolutno.sifry.regexp;
 
 import android.content.res.AssetManager;
 
-import cz.absolutno.sifry.App;
-
 public final class RegExpNative {
 
     static {
         System.loadLibrary("regrep");
-    }
-
-    public static final class Progress {
-        public static final int RUN = 0;
-        public static final int ERR = 1;
-        public static final int MATCHES = 2;
-        public static final int POS = 3;
-        public static final int SIZE = 4;
     }
 
     private long nativeContext;
@@ -32,13 +22,13 @@ public final class RegExpNative {
 
     public native boolean isRunning();
 
-    public native int[] getProgress();
-
-    public native String getResult(int ix);
+    public native Report getProgress();
 
     public native String getError();
 
-    public RegExpNative() {
+    public native String getResult(int ix);
+
+    RegExpNative() {
         init();
     }
 
@@ -46,6 +36,13 @@ public final class RegExpNative {
     public void finalize() throws Throwable {
         super.finalize();
         nativeFinalize();
+    }
+
+    static class Report {
+        public boolean running;
+        public boolean error;
+        public int matches;
+        public float progress;
     }
 
 }
