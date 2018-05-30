@@ -9,7 +9,6 @@
 #include <android/asset_manager_jni.h>
 
 constexpr const char* RetClass = "cz/absolutno/sifry/regexp/RegExpNative$Report";
-constexpr std::size_t maxSavedMatches = 10000;
 
 class AssetRef {
     JavaVM* jvm;
@@ -56,6 +55,7 @@ class Context {
     bool running{false};
 
     std::vector<std::string> matches{};
+    unsigned maxListResults;
     unsigned matchCount{0};  // the full count: the vector will only store first maxSavedMatches
     std::string error{};
     float progress{0};
@@ -70,6 +70,8 @@ class Context {
     };
 
 public:
+    Context(unsigned max) : maxListResults(max) { }
+
     ~Context() {
         if(worker.joinable())
             worker.detach();
@@ -161,7 +163,10 @@ extern "C" {
 
 JNIEXPORT void JNICALL
 Java_cz_absolutno_sifry_regexp_RegExpNative_init(JNIEnv *env, jobject obj) {
-    storeContext(env, obj, new Context());
+    jclass cls = env->GetObjectClass(obj);
+    jfieldID fld = env->GetStaticFieldID(cls, "MaxListResults", "I");
+    unsigned maxListResults = (unsigned)env->GetStaticIntField(cls, fld);
+    storeContext(env, obj, new Context(maxListResults));
 }
 
 JNIEXPORT void JNICALL Java_cz_absolutno_sifry_regexp_RegExpNative_free(JNIEnv *env, jobject obj) {
@@ -290,7 +295,7 @@ void Context::threadMain(Context* ctx, AssetRef&& asset, std::vector<std::string
                 auto pos = line.find(':');
                 if(pos != std::string::npos) {
                     std::lock_guard<std::mutex> lock{ctx->progressMutex};
-                    if(++ctx->matchCount <= maxSavedMatches)
+                    if(++ctx->matchCount <= ctx->maxListResults)
                         ctx->matches.push_back(line.substr(pos + 1));
                 }
             }

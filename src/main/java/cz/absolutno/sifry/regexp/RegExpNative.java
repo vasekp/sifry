@@ -8,6 +8,8 @@ public final class RegExpNative {
         System.loadLibrary("regrep");
     }
 
+    public static final int MaxListResults = 201;
+
     private long nativeContext;
 
     private native void init();

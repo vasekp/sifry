@@ -62,7 +62,7 @@ public final class RegExpDFragment extends AbstractDFragment {
             launchRefresh();
         final Report report = re.getProgress();
         if (report.matches > 0) {
-            int matches = (report.matches <= 10000) ? report.matches : 10000;
+            int matches = Math.min(report.matches, RegExpNative.MaxListResults);
             tvProgress.setText(String.valueOf(report.matches));
             adapter.update(matches);
         }
@@ -118,7 +118,7 @@ public final class RegExpDFragment extends AbstractDFragment {
                     updateGoButton();
                     return;
                 }
-                int matches = (report.matches <= 10000) ? report.matches : 10000;
+                int matches = Math.min(report.matches, RegExpNative.MaxListResults);
                 if (report.running || matches > 0 || tvProgress.length() > 0)
                     tvProgress.setText(String.valueOf(report.matches));
                 if (report.running)
