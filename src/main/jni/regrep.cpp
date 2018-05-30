@@ -1,12 +1,14 @@
 #include <string>
 #include <vector>
 #include <utility>
-#include <regex>
 #include <thread>
 #include <mutex>
+#include <algorithm>
 
 #include <jni.h>
 #include <android/asset_manager_jni.h>
+
+#include "pcre.h"
 
 constexpr const char* RetClass = "cz/absolutno/sifry/regexp/RegExpNative$Report";
 
@@ -233,13 +235,51 @@ JNIEXPORT jstring JNICALL Java_cz_absolutno_sifry_regexp_RegExpNative_getError(J
 }
 
 
+class PCRE {
+    pcre* regex;
+    pcre_extra* study;
+    bool expected;  // true: must match; false: mustn't
+    bool valid;
+
+public:
+    PCRE(const std::string& re, bool exp) : expected(exp), valid(true) {
+        const char* pcreError;
+        int errorOffset;
+        regex = pcre_compile(re.c_str(), PCRE_UTF8 | PCRE_UCP, &pcreError, &errorOffset, NULL);
+        if(!regex) {
+            using namespace std::string_literals;
+            throw std::runtime_error("Bad regex: "s + pcreError);
+        }
+        study = pcre_study(regex, PCRE_STUDY_JIT_COMPILE, &pcreError);
+    }
+
+    PCRE(const PCRE&) = delete;
+
+    PCRE(PCRE&& other) : regex(other.regex), study(other.study), expected(other.expected), valid(other.valid) {
+        other.valid = false;
+    }
+
+    ~PCRE() {
+        if(!valid)
+            return;
+        if(study) pcre_free_study(study);
+        pcre_free(regex);
+    }
+
+    bool test(const std::string& target) {
+        int r = pcre_exec(regex, study, target.c_str(), (int)target.length(), 0, 0, NULL, 0);
+        return expected ? (r >= 0) : (r < 0);
+    }
+};
+
+
 void Context::threadMain(Context* ctx, AssetRef&& asset, std::vector<std::string>&& patterns) {
     constexpr unsigned bufAlloc = 1024;
     char buffer[bufAlloc];
     unsigned bufPos = 0, bufSize = 0;
 
     try {
-        std::vector<std::pair<std::regex, bool>> REs;
+        std::vector<PCRE> REs;
         for (auto &pat : patterns) {
             bool inv = false;
             if (pat[0] == '!') {
@@ -248,8 +288,7 @@ void Context::threadMain(Context* ctx, AssetRef&& asset, std::vector<std::string
             }
             if (pat.empty())
                 continue;
-            std::regex re{pat, std::regex_constants::optimize | std::regex_constants::collate};
-            REs.push_back({std::move(re), !inv});
+            REs.push_back({pat, !inv});
         }
 
         ctx->matches.clear();
@@ -287,11 +326,9 @@ void Context::threadMain(Context* ctx, AssetRef&& asset, std::vector<std::string
             if (line.empty()) // empty line
                 continue;
 
-            auto it = REs.begin();
-            for (; it != REs.end(); it++)
-                if (std::regex_search(line, it->first) != it->second)
-                    break;
-            if (it == REs.end()) { // all tests passed
+            if(std::all_of(REs.begin(), REs.end(), [&line](PCRE& regex) -> bool {
+                return regex.test(line);
+            })) {
                 auto pos = line.find(':');
                 if(pos != std::string::npos) {
                     std::lock_guard<std::mutex> lock{ctx->progressMutex};
@@ -304,9 +341,6 @@ void Context::threadMain(Context* ctx, AssetRef&& asset, std::vector<std::string
             std::size_t assetPos = assetSize - AAsset_getRemainingLength(asset);
             ctx->progress = (float)(assetPos) / assetSize;
         }
-    } catch (const std::regex_error& e) {
-        using namespace std::string_literals;
-        ctx->error = "Bad regex: "s + e.what();
     } catch (const std::runtime_error& e) {
         ctx->error = e.what();
     }
