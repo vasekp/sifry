@@ -13,7 +13,7 @@ final class RegExpExpListAdapter extends BaseExpandableListAdapter {
     private int matches = 0;
     private final RegExpNative re;
 
-    public RegExpExpListAdapter(RegExpNative re) {
+    RegExpExpListAdapter(RegExpNative re) {
         this.re = re;
     }
 
@@ -28,10 +28,7 @@ final class RegExpExpListAdapter extends BaseExpandableListAdapter {
     }
 
     public int getGroupCount() {
-        if (re != null)
-            return (matches + 99) / 100;
-        else
-            return 0;
+        return (matches + 99) / 100;
     }
 
     public String getGroup(int groupPosition) {

@@ -45,16 +45,6 @@ public final class RegExpDFragment extends AbstractDFragment {
         return v;
     }
 
-    @SuppressWarnings("ConstantConditions")
-    public void loadRE(RegExpNative re) {
-        this.re = re;
-        adapter = new RegExpExpListAdapter(re);
-        ((ExpandableListView) getView().findViewById(R.id.elRDResults)).setAdapter(adapter);
-        getView().findViewById(R.id.btRDGo).setEnabled(re != null);
-        if (re != null && re.isRunning())
-            launchRefresh();
-    }
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();
@@ -65,12 +55,15 @@ public final class RegExpDFragment extends AbstractDFragment {
     @Override
     public void onResume() {
         super.onResume();
-        if (re == null)
-            return;
+        re = ((ReferenceFragment)getFragmentManager().findFragmentByTag("ref")).getRE();
+        adapter = new RegExpExpListAdapter(re);
+        ((ExpandableListView) getView().findViewById(R.id.elRDResults)).setAdapter(adapter);
+        if (re.isRunning())
+            launchRefresh();
         final int[] progress = re.getProgress();
         if (progress[Progress.MATCHES] > 0) {
             int matches = (progress[Progress.MATCHES] <= 10000) ? progress[Progress.MATCHES] : 10000;
-            tvProgress.setText(String.valueOf(progress[1]));
+            tvProgress.setText(String.valueOf(progress[Progress.MATCHES]));
             adapter.update(matches);
         }
     }
@@ -154,11 +147,9 @@ public final class RegExpDFragment extends AbstractDFragment {
         pbProgress.setVisibility(View.VISIBLE);
     }
 
-    @SuppressWarnings("ConstantConditions")
     @Override
     protected void onClear() {
-        if (re != null)
-            re.free();
+        re.free();
         adapter.clear();
         for (int i = 0; i < 3; i++) {
             ((EditText) getView().findViewById(idET[i])).setText("");
