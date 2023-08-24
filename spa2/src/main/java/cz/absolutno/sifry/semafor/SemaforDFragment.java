@@ -109,6 +109,7 @@ public final class SemaforDFragment extends AbstractDFragment {
         public void onClick(View v) {
             if (sv.isActive()) {
                 sv.clear();
+                llOdhady.removeAllViews();
                 return;
             }
             int sz = raw.size();

@@ -112,6 +112,10 @@ public final class VlajkyDFragment extends AbstractDFragment implements GestureO
 
     private final OnClickListener bspListener = new OnClickListener() {
         public void onClick(View v) {
+            if(llOdhady.getChildCount() > 0) {
+                llOdhady.removeAllViews();
+                return;
+            }
             if (reseni.length() == 0) return;
             reseni = reseni.substring(0, reseni.length() - 1);
             tvRes.setText(reseni);
