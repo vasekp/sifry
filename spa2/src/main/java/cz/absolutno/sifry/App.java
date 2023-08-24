@@ -1,11 +1,18 @@
 package cz.absolutno.sifry;
 
+import android.annotation.TargetApi;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+
+import androidx.annotation.NonNull;
 import androidx.preference.PreferenceManager;
+
+import android.os.Build;
+import android.os.LocaleList;
+import android.util.Log;
 import android.view.LayoutInflater;
 
 import java.util.Locale;
@@ -36,6 +43,13 @@ public final class App extends Application {
         super.onCreate();
         setTheme(R.style.MainTheme);
         scale = getResources().getDisplayMetrics().density;
+        updateLocale();
+    }
+
+    @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        updateLocale();
     }
 
     public static Context getContext() {
@@ -50,14 +64,32 @@ public final class App extends Application {
         return scale;
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+    public static Context localizedContext(Context base) {
+        String loc = PreferenceManager.getDefaultSharedPreferences(base).getString("pref_locale", "");
+        Resources res = base.getResources();
+        Configuration conf = res.getConfiguration();
+        Locale locale = loc.equals("") ? Locale.getDefault() : new Locale(loc);
+        conf.setLocale(locale);
+        return base.createConfigurationContext(conf);
+    }
+
+    @Override
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(localizedContext(base));
+    }
+
     private static void updateLocale(String loc) {
         Resources res = instance.getResources();
         Configuration conf = res.getConfiguration();
-        if (!loc.equals(""))
-            conf.locale = new Locale(loc);
+        Locale locale = loc.equals("") ? Locale.getDefault() : new Locale(loc);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1)
+            conf.setLocale(locale);
         else
-            conf.locale = Locale.getDefault();
+            conf.locale = locale;
         res.updateConfiguration(conf, res.getDisplayMetrics());
+        Log.d("SPA", conf.locale.toString());
     }
 
     public static void updateLocale() {

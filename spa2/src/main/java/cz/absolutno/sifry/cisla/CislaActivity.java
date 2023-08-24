@@ -1,9 +1,13 @@
 package cz.absolutno.sifry.cisla;
 
+import android.annotation.TargetApi;
+import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import cz.absolutno.sifry.App;
 import cz.absolutno.sifry.R;
 import cz.absolutno.sifry.common.activity.AbstractDFragment;
 import cz.absolutno.sifry.common.activity.BottomBarActivity;

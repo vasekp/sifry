@@ -1,9 +1,14 @@
 package cz.absolutno.sifry.common.activity;
 
+import static android.content.pm.PackageManager.GET_META_DATA;
+
 import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
@@ -34,6 +39,12 @@ public abstract class BottomBarActivity extends FragmentActivity implements OnBa
     protected abstract int getHelpID();
 
     @Override
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(App.localizedContext(newBase));
+    }
+
+    @Override
     protected void onCreate(Bundle state) {
         super.onCreate(state);
         App.updateLocale();
@@ -44,6 +55,12 @@ public abstract class BottomBarActivity extends FragmentActivity implements OnBa
                 onBottomBarChange(curIx, lastIx);
             }
         });
+
+        try {
+            setTitle(getPackageManager().getActivityInfo(getComponentName(), GET_META_DATA).labelRes);
+        } catch (PackageManager.NameNotFoundException e) {
+            // leave title as it is
+        }
     }
 
     public BottomBarView getBBar() {

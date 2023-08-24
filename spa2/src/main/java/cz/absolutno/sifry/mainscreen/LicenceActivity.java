@@ -1,7 +1,13 @@
 package cz.absolutno.sifry.mainscreen;
 
+import static android.content.pm.PackageManager.GET_META_DATA;
+
+import android.annotation.TargetApi;
 import android.app.ExpandableListActivity;
+import android.content.Context;
+import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,10 +25,22 @@ import cz.absolutno.sifry.Utils;
 public final class LicenceActivity extends ExpandableListActivity {
 
     @Override
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(App.localizedContext(newBase));
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         App.updateLocale();
         setListAdapter(new LicenceELA());
+
+        try {
+            setTitle(getPackageManager().getActivityInfo(getComponentName(), GET_META_DATA).labelRes);
+        } catch (PackageManager.NameNotFoundException e) {
+            // leave title as it is
+        }
     }
 
 

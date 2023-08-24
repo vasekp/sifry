@@ -1,9 +1,15 @@
 package cz.absolutno.sifry.mainscreen;
 
+import static android.content.pm.PackageManager.GET_META_DATA;
+
+import android.annotation.TargetApi;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import androidx.fragment.app.FragmentActivity;
@@ -39,6 +45,11 @@ import cz.absolutno.sifry.zapisnik.ZapisnikActivity;
 
 public final class MainActivity extends FragmentActivity {
 
+    @Override
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(App.localizedContext(newBase));
+    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,6 +95,12 @@ public final class MainActivity extends FragmentActivity {
             editor.apply();
         } catch (NameNotFoundException e) {
             e.printStackTrace();
+        }
+
+        try {
+            setTitle(getPackageManager().getActivityInfo(getComponentName(), GET_META_DATA).labelRes);
+        } catch (PackageManager.NameNotFoundException e) {
+            // leave title as it is
         }
     }
 
