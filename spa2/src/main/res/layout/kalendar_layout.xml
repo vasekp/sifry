@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_vertical">
 
-            <androidx.core.widget.Space
+            <androidx.legacy.widget.Space
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.3" />
@@ -56,7 +56,7 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/priColor" />
 
-            <androidx.core.widget.Space
+            <androidx.legacy.widget.Space
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.4" />
@@ -91,7 +91,7 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/priColor" />
 
-            <androidx.core.widget.Space
+            <androidx.legacy.widget.Space
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.3" />

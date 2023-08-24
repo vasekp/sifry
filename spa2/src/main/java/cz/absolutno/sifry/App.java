@@ -89,7 +89,6 @@ public final class App extends Application {
         else
             conf.locale = locale;
         res.updateConfiguration(conf, res.getDisplayMetrics());
-        Log.d("SPA", conf.locale.toString());
     }
 
     public static void updateLocale() {

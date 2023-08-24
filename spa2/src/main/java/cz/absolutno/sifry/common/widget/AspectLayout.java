@@ -3,6 +3,7 @@ package cz.absolutno.sifry.common.widget;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -49,15 +50,15 @@ public final class AspectLayout extends ViewGroup {
         modeX = MeasureSpec.getMode(widthMeasureSpec);
         modeY = MeasureSpec.getMode(heightMeasureSpec);
 
-        reqWidth = getSuggestedMinimumWidth();
-        reqHeight = getSuggestedMinimumHeight();
+        reqWidth = resolveSize(getSuggestedMinimumWidth(), widthMeasureSpec);
+        reqHeight = resolveSize(getSuggestedMinimumHeight(), heightMeasureSpec);
 
-        if (getChildCount() != 0) {
+        /*if (getChildCount() != 0) {
             int widthMeasureSpecChild, heightMeasureSpecChild;
 
             if (modeX == MeasureSpec.UNSPECIFIED || modeY == MeasureSpec.UNSPECIFIED) {
-                widthMeasureSpecChild = MeasureSpec.makeMeasureSpec(MeasureSpec.getSize(widthMeasureSpec), modeX == MeasureSpec.UNSPECIFIED ? modeX : MeasureSpec.AT_MOST);
-                heightMeasureSpecChild = MeasureSpec.makeMeasureSpec(reqHeight = MeasureSpec.getSize(heightMeasureSpec), modeY == MeasureSpec.UNSPECIFIED ? modeY : MeasureSpec.AT_MOST);
+                widthMeasureSpecChild = MeasureSpec.makeMeasureSpec(MeasureSpec.getSize(widthMeasureSpec), modeX != MeasureSpec.UNSPECIFIED ? modeX : MeasureSpec.AT_MOST);
+                heightMeasureSpecChild = MeasureSpec.makeMeasureSpec(MeasureSpec.getSize(heightMeasureSpec), modeY != MeasureSpec.UNSPECIFIED ? modeY : MeasureSpec.AT_MOST);
             } else {
                 unit = Math.min(reqWidth / relWidth, reqHeight / relHeight);
                 widthMeasureSpecChild = MeasureSpec.makeMeasureSpec((int) (relWidth * unit), MeasureSpec.AT_MOST);
@@ -70,11 +71,14 @@ public final class AspectLayout extends ViewGroup {
                 reqWidth = Math.max(reqWidth, child.getMeasuredWidth());
                 reqHeight = Math.max(reqHeight, child.getMeasuredHeight());
             }
-        }
+        }*/
 
-        unit = Math.max(reqWidth / relWidth, reqHeight / relHeight);
+        /*unit = Math.max(reqWidth / relWidth, reqHeight / relHeight);
         reqWidth = resolveSize((int) (unit * relWidth), widthMeasureSpec);
-        reqHeight = resolveSize((int) (unit * relHeight), heightMeasureSpec);
+        reqHeight = resolveSize((int) (unit * relHeight), heightMeasureSpec);*/
+
+        if(modeY == MeasureSpec.UNSPECIFIED)
+            reqHeight = (int)(reqWidth / relWidth * relHeight);
 
         unit = Math.min(reqWidth / relWidth, reqHeight / relHeight);
         if (getChildCount() != 0) {
@@ -86,7 +90,10 @@ public final class AspectLayout extends ViewGroup {
                 measureChild(child, widthMeasureSpecChild, heightMeasureSpecChild);
         }
 
-        setMeasuredDimension(resolveSize(reqWidth, widthMeasureSpec), resolveSize(reqHeight, heightMeasureSpec));
+        reqWidth = resolveSize((int) (unit * relWidth), widthMeasureSpec);
+        reqHeight = resolveSize((int) (unit * relHeight), heightMeasureSpec);
+        Log.d("SPA", "req: w " + reqWidth + " h " + reqHeight);
+        setMeasuredDimension(reqWidth, reqHeight);
     }
 
 }
