@@ -189,14 +189,17 @@ nyní můžete komponentu používat přímo.</p>
 
 
 <string name="tHelpNews"><![CDATA[
-<h1>Novinky ve verzi 2.2</h1>
+<h1>Novinky ve verzi 2.3</h1>
+– Opravené nastavení jazyka aplikace
+– Drobné grafické opravy
 
+<h3>Starší verze</h3>
+
+<h5>Verze 2.2 (6.5.2018)</h5>
 – Minimální verze Androidu 4.0.1 (Ice Cream Sandwich)<br/>
 – Odstraněno vysílání morseovky a export souborů (nejsou nadále vyžadována žádná oprávnění)<br/>
 – Nově podporovány ARM64 procesory<br/>
 – Opravy chyb<br/>
-
-<h3>Starší verze</h3>
 
 <h5>Verze 2.1 (28.7.2015)</h5>
 – Slovníková data přibalena v hlavním APK<br/>

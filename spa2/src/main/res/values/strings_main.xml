@@ -198,14 +198,17 @@ component directly.</p>
 	
 	
 <string name="tHelpNews"><![CDATA[
-<h1>Changes in v2.2</h1>
+<h1>Changes in v2.3</h1>
+– Fixed application language setting
+– Minor graphics fixes
 
+<h3>Older versions</h3>
+
+<h5>Version 2.2 (6 May 2018)</h5>
 – Minimum Android version bumped to 4.0.1 (Ice Cream Sandwich)<br/>
 – Morse transmission and file export no longer supported (app no more requires any extra permissions)<br/>
 – ARM64 devices now supported<br/>
 – Bug fixes<br/>
-
-<h3>Older versions</h3>
 
 <h5>Version 2.1 (28 Sep 2015)</h5>
 – Dictionary data packed in the main application APK<br/>
