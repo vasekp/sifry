@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="2301"
+    android:versionName="2.3.0">
+
+    <application
+        android:name="cz.absolutno.sifry.App"
+        android:allowBackup="true"
+        android:fullBackupContent="false"
+        android:icon="@drawable/icon"
+        android:theme="@style/MainTheme"
+        android:label="@string/app_name">
+
+        <activity
+            android:name="cz.absolutno.sifry.mainscreen.SplashActivity"
+            android:label="@string/app_name"
+            android:noHistory="false"
+            android:theme="@style/MainTheme.NoTitleBar"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="cz.absolutno.sifry.mainscreen.MainActivity"
+            android:icon="@drawable/ic_mainmenu"
+            android:label="@string/cptMain" />
+        <activity
+            android:name="cz.absolutno.sifry.mainscreen.LicenceActivity"
+            android:icon="@drawable/ic_menu_help"
+            android:label="@string/cptLicence" />
+
+        <activity
+            android:name="cz.absolutno.sifry.common.activity.HelpActivity"
+            android:icon="@drawable/ic_menu_help"
+            android:label="@string/tHelp" />
+        <activity
+            android:name="cz.absolutno.sifry.common.activity.SettingsActivity"
+            android:icon="@drawable/ic_menu_preferences"
+            android:label="@string/tSettings" />
+
+        <activity
+            android:name="cz.absolutno.sifry.morse.MorseActivity"
+            android:icon="@drawable/ic_morse"
+            android:label="@string/cptMorse"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="cz.absolutno.sifry.braille.BrailleActivity"
+            android:icon="@drawable/ic_braille"
+            android:label="@string/cptBraille" />
+        <activity
+            android:name="cz.absolutno.sifry.cisla.CislaActivity"
+            android:icon="@drawable/ic_cisla"
+            android:label="@string/cptCisla" />
+        <activity
+            android:name="cz.absolutno.sifry.semafor.SemaforActivity"
+            android:icon="@drawable/ic_semafor"
+            android:label="@string/cptSemafor" />
+        <activity
+            android:name="cz.absolutno.sifry.tabulky.TabulkyActivity"
+            android:icon="@drawable/ic_polsky"
+            android:label="@string/cptTabulky" />
+        <activity
+            android:name="cz.absolutno.sifry.vlajky.VlajkyActivity"
+            android:icon="@drawable/ic_vlajky"
+            android:label="@string/cptVlajky" />
+        <activity
+            android:name="cz.absolutno.sifry.substituce.SubstActivity"
+            android:icon="@drawable/ic_subst"
+            android:label="@string/cptSubst" />
+        <activity
+            android:name="cz.absolutno.sifry.transpozice.TransActivity"
+            android:icon="@drawable/ic_trans"
+            android:label="@string/cptTrans" />
+        <activity
+            android:name="cz.absolutno.sifry.frekvence.FrekvActivity"
+            android:icon="@drawable/ic_frekv"
+            android:label="@string/cptFrekv" />
+        <activity
+            android:name="cz.absolutno.sifry.kalendar.KalendarActivity"
+            android:icon="@drawable/ic_kalendar"
+            android:label="@string/cptKalendar" />
+        <activity
+            android:name="cz.absolutno.sifry.zapisnik.ZapisnikActivity"
+            android:icon="@drawable/ic_zapisnik"
+            android:label="@string/cptZapisnik" />
+        <activity
+            android:name="cz.absolutno.sifry.regexp.RegExpActivity"
+            android:icon="@drawable/ic_regexp"
+            android:label="@string/cptRegExp" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="cz.absolutno.sifry.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/paths"/>
+        </provider>
+
+    </application>
+
+</manifest>

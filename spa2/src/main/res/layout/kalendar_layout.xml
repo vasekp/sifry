@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:gravity="fill">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tKDMesicRok" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <androidx.core.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3" />
+
+            <Button
+                android:id="@+id/btKDMesicMinus"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/butSizeSmaller"
+                android:layout_height="@dimen/butSize"
+                android:background="@android:color/transparent"
+                android:text="@string/tSipkaL"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/priColor" />
+
+            <EditText
+                android:id="@+id/etKDMesic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="2"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="2"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <Button
+                android:id="@+id/btKDMesicPlus"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/butSizeSmaller"
+                android:layout_height="@dimen/butSize"
+                android:background="@android:color/transparent"
+                android:text="@string/tSipkaP"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/priColor" />
+
+            <androidx.core.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4" />
+
+            <Button
+                android:id="@+id/btKDRokMinus"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/butSizeSmaller"
+                android:layout_height="@dimen/butSize"
+                android:background="@android:color/transparent"
+                android:text="@string/tSipkaL"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/priColor" />
+
+            <EditText
+                android:id="@+id/etKDRok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="4"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="4"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <Button
+                android:id="@+id/btKDRokPlus"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/butSizeSmaller"
+                android:layout_height="@dimen/butSize"
+                android:background="@android:color/transparent"
+                android:text="@string/tSipkaP"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/priColor" />
+
+            <androidx.core.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tKDDny" />
+
+        <cz.absolutno.sifry.kalendar.KalendarView
+            android:id="@+id/kalKDMain"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.0"
+            android:longClickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <requestFocus />
+
+        </cz.absolutno.sifry.kalendar.KalendarView>
+
+        <LinearLayout
+            android:id="@+id/llKDSvatky"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:text="@string/tKDJmeno" />
+
+                <ProgressBar
+                    android:id="@+id/pbKDLoading"
+                    style="?android:attr/progressBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <AutoCompleteTextView
+                android:id="@+id/etKDJmeno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords|textNoSuggestions"
+                android:singleLine="true" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.5"
+                    android:gravity="center_vertical"
+                    android:text="@string/tKDDenRoku" />
+
+                <TextView
+                    android:id="@+id/tvKDDniOd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.5"
+                    android:gravity="center_vertical"
+                    android:text="@string/patKDDniOd" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/etKDDenRoku"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:ems="3"
+                    android:gravity="right"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/etKDDniOd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:ems="5"
+                    android:gravity="right"
+                    android:inputType="number"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
