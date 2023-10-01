@@ -167,30 +167,35 @@ Vám pak pomůže průběžně kontrolovat, zda je přepis bezchybný.</p>
         <item quantity="one">%1$d (%2$d různý)</item>
         <item quantity="few">%1$d (%2$d různé)</item>
         <item quantity="many">%1$d (%2$d různých)</item>
+        <item quantity="other">%1$d (%2$d různých)</item>
     </plurals>
 
     <plurals name="plRuzneM">
         <item quantity="one">%1$d (%2$d různý)</item>
         <item quantity="few">%1$d (%2$d různé)</item>
         <item quantity="many">%1$d (%2$d různých)</item>
+        <item quantity="other">%1$d (%2$d různých)</item>
     </plurals>
 
     <plurals name="plRuzneF">
         <item quantity="one">%1$d (%2$d různá)</item>
         <item quantity="few">%1$d (%2$d různé)</item>
         <item quantity="many">%1$d (%2$d různých)</item>
+        <item quantity="other">%1$d (%2$d různých)</item>
     </plurals>
 
     <plurals name="plRuzneN">
         <item quantity="one">%1$d (%2$d různé)</item>
         <item quantity="few">%1$d (%2$d různá)</item>
         <item quantity="many">%1$d (%2$d různých)</item>
+        <item quantity="other">%1$d (%2$d různých)</item>
     </plurals>
 
     <plurals name="plRuzneDelky">
         <item quantity="one">%1$d (všechna délky %3$d)</item>
         <item quantity="few">%1$d (%2$d různé délky)</item>
         <item quantity="many">%1$d (%2$d různých délek)</item>
+        <item quantity="other">%1$d (%2$d různých délek)</item>
     </plurals>
 
 
