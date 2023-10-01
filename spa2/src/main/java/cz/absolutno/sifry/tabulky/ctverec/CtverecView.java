@@ -142,7 +142,7 @@ public final class CtverecView extends AidView {
     }
 
     public void setVar(String var) {
-        abc = Alphabet.getVariantInstance(25, var);
+        abc = Alphabet.getVariantInstance(25, var.substring(0, var.indexOf(':')));
         invalidate();
     }
 
