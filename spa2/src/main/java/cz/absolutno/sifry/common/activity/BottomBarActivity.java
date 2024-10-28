@@ -39,7 +39,6 @@ public abstract class BottomBarActivity extends FragmentActivity implements OnBa
     protected abstract int getHelpID();
 
     @Override
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(App.localizedContext(newBase));
     }

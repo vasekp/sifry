@@ -12,7 +12,6 @@ import android.preference.PreferenceFragment;
 import cz.absolutno.sifry.App;
 import cz.absolutno.sifry.R;
 
-@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public final class SettingsFragment extends PreferenceFragment implements OnSharedPreferenceChangeListener {
 
     @Override

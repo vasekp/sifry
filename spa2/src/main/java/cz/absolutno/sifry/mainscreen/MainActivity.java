@@ -46,7 +46,6 @@ import cz.absolutno.sifry.zapisnik.ZapisnikActivity;
 public final class MainActivity extends FragmentActivity {
 
     @Override
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(App.localizedContext(newBase));
     }

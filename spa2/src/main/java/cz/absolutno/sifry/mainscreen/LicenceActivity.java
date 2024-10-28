@@ -2,17 +2,17 @@ package cz.absolutno.sifry.mainscreen;
 
 import static android.content.pm.PackageManager.GET_META_DATA;
 
-import android.annotation.TargetApi;
-import android.app.ExpandableListActivity;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.ExpandableListView;
 import android.widget.TextView;
+
+import androidx.fragment.app.FragmentActivity;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -22,10 +22,9 @@ import cz.absolutno.sifry.App;
 import cz.absolutno.sifry.R;
 import cz.absolutno.sifry.Utils;
 
-public final class LicenceActivity extends ExpandableListActivity {
+public final class LicenceActivity extends FragmentActivity {
 
     @Override
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(App.localizedContext(newBase));
     }
@@ -34,7 +33,9 @@ public final class LicenceActivity extends ExpandableListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         App.updateLocale();
-        setListAdapter(new LicenceELA());
+        setContentView(R.layout.licence_layout);
+        ExpandableListView el = findViewById(R.id.list);
+        el.setAdapter(new LicenceELA());
 
         try {
             setTitle(getPackageManager().getActivityInfo(getComponentName(), GET_META_DATA).labelRes);
@@ -42,7 +43,6 @@ public final class LicenceActivity extends ExpandableListActivity {
             // leave title as it is
         }
     }
-
 
     static final class LicenceELA extends BaseExpandableListAdapter {
 
@@ -121,6 +121,5 @@ public final class LicenceActivity extends ExpandableListActivity {
         public boolean isChildSelectable(int groupPosition, int childPosition) {
             return false;
         }
-
     }
 }

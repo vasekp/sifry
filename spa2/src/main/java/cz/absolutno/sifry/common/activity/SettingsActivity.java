@@ -43,7 +43,6 @@ public final class SettingsActivity extends PreferenceActivity implements OnShar
             finish();
             App.restart();
         }
-
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
